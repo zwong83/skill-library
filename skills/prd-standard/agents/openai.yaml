@@ -1,0 +1,4 @@
+interface:
+  display_name: "PRD Standard"
+  short_description: "Create and audit AI-ready PRDs"
+  default_prompt: "Use $prd-standard to create or review a structured Product Requirements Document."
