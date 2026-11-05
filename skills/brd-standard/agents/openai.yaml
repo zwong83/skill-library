@@ -1,0 +1,4 @@
+interface:
+  display_name: "BRD Standard"
+  short_description: "Create and audit structured BRDs"
+  default_prompt: "Use $brd-standard to create or review a decision-ready Business Requirements Document."
