@@ -1,0 +1,78 @@
+---
+name: system-analysis-standard
+description: Create or audit implementation-oriented system analysis documents that decompose approved requirements into system boundaries, actors, use cases, logical flows, responsibilities, data behavior, integrations, risks, and open decisions without becoming a detailed technical design.
+---
+
+# Standard System Analysis
+
+Use this skill when the user wants to create, refine, compare, or quality-check a System Analysis document. The output explains how the required system behavior is decomposed and allocated at a logical level so that technical design can begin from a consistent analysis baseline.
+
+This skill is self-contained. Do not invoke or inherit instructions from other skills unless the user explicitly asks for a separate artifact.
+
+## Core operating rules
+
+- Treat supplied requirements, source documents, confirmed decisions, and approved constraints as the source of truth.
+- Read identified source material completely before analyzing it.
+- Never invent business scope, actors, policies, data ownership, service boundaries, performance targets, security requirements, technology choices, or approvals.
+- Label uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
+- Separate logical analysis from technical design. Describe responsibilities, behavior, boundaries, flows, and decisions; leave framework, deployment, class, schema, and protocol choices to System Design.
+- Do not silently resolve contradictions. Record the conflict, impact, decision owner, and required resolution.
+- Use stable IDs and maintain traceability from source requirements through analysis decisions and verification scenarios.
+
+## Source and readiness gate
+
+1. Classify the task as drafting, refining, comparing, or reviewing System Analysis.
+2. Identify the governing requirements and record their title, version/date, status, and location when available.
+3. Read the source material completely and extract scope, actors, business rules, functional behavior, NFR implications, integrations, data sensitivity, and unresolved decisions.
+4. If source material is missing or materially ambiguous, ask for it or clearly mark the analysis as limited and not design-ready.
+5. Block a design-ready conclusion when material scope, ownership, state, integration, security, or acceptance decisions remain unresolved.
+
+## Workflow
+
+1. Read [references/system-analysis-template.md](references/system-analysis-template.md) for a full draft or structural review.
+2. Establish the system context, boundaries, actors, capabilities, external dependencies, and assumptions.
+3. Decompose requirements into use cases, system responsibilities, logical components, domain concepts, states, workflows, and cross-cutting concerns.
+4. Analyze each important flow for preconditions, main path, alternate path, failure path, authorization, idempotency, concurrency, recovery, audit, and observable outcomes.
+5. Define logical data ownership, lifecycle, consistency needs, retention/access implications, and source-of-truth responsibilities without writing physical schemas.
+6. Define integration responsibilities and business-level data exchange without writing endpoint contracts or protocol designs.
+7. Record analysis decisions, alternatives, risks, dependencies, and unresolved questions.
+8. Maintain traceability:
+
+   `Source requirement -> Analysis capability/use case -> Logical responsibility/flow -> Design input -> Verification scenario`
+
+9. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
+
+## Analysis artifact boundaries
+
+System Analysis may include:
+
+- context and scope boundaries;
+- actor and responsibility allocation;
+- capability decomposition;
+- use cases and logical workflows;
+- state models and transition rules;
+- logical data ownership and lifecycle;
+- integration purpose and business-level exchange;
+- cross-cutting security, reliability, observability, and recovery concerns;
+- alternatives, trade-offs, risks, dependencies, and open decisions.
+
+Keep these out of System Analysis unless the user explicitly requests a combined artifact:
+
+- framework, language, package, class, or module choices;
+- physical database tables, indexes, DDL, and migration scripts;
+- endpoint paths, payload schemas, protocol details, and infrastructure topology;
+- detailed algorithms, code, deployment manifests, or operational commands.
+
+## Requirement and analysis writing standard
+
+Use stable IDs such as `SA-CTX-001`, `UC-ORD-001`, `FLOW-CHK-001`, `DATA-001`, `INT-001`, and `DEC-001`.
+
+Each analysis statement should identify the source requirement, logical subject, responsibility, behavior or decision, status, and downstream design or verification impact. Use diagrams when they materially improve understanding, but describe the required meaning in text as well.
+
+## Deliverable conventions
+
+- Use Markdown headings, tables, and Mermaid or PlantUML only when they clarify relationships.
+- Preserve section numbering when refining an existing analysis.
+- Include source traceability, assumptions, risks, open decisions, review status, and version history.
+- When no destination is specified, use `output/SA/SA-<project-name>.md`.
+- Do not call the analysis approved or design-ready while material decisions, ownership, or source requirements remain unresolved.
