@@ -21,6 +21,14 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not convert a gap in
 - Important use cases include preconditions, triggers, main flow, alternate/exception paths, postconditions, and verification scenarios.
 - State transitions, validation, idempotency, concurrency, expiry, recovery, audit, and observability are analyzed where relevant.
 
+## Diagram quality
+
+- Boundaries, relationships, workflows, states, timing, and ownership are represented by focused diagrams when diagrams materially improve understanding.
+- Each diagram has a title, scope, textual explanation, source traceability, and required legend or assumptions.
+- Diagrams are readable and answer one clear question rather than combining unrelated concerns.
+- Text remains authoritative for rules, constraints, exceptions, decisions, acceptance criteria, and unresolved items.
+- Diagram and text do not conflict; any conflict is recorded and resolved before approval.
+
 ## Data and integration analysis
 
 - Logical data concepts have ownership, lifecycle, consistency, history, retention, privacy, and access implications.

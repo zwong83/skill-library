@@ -2,6 +2,10 @@
 
 Adapt this structure to the system and release. Keep unknowns explicit as `TBC`, `Proposed`, `Assumption`, `Pending Approval`, `Open`, or `Deferred`; do not fill analysis gaps with technical guesses.
 
+## Diagram-first rule
+
+Use a focused PlantUML diagram as the primary view whenever a section explains a boundary, relationship, flow, hierarchy, state, timing, or ownership. Use text as the normative source for rules, constraints, exceptions, decisions, assumptions, acceptance criteria, and unresolved items. Every diagram must have a title, scope, explanation, and traceability.
+
 ## Document control
 
 Record system/project name, analysis version, status, date, author, owner, reviewers, target release, governing sources, and approval status.
@@ -24,6 +28,8 @@ Explain the system's purpose, business or product context, system boundary, surr
 
 ### Context diagram
 
+Prefer a context diagram here to show users, external systems, system boundaries, and major information relationships. Explain trust, ownership, and unresolved boundaries in text.
+
 ## 2. Actors, Roles, and Responsibilities
 
 Identify human users, external systems, operational roles, ownership, permissions, and responsibility boundaries.
@@ -42,6 +48,8 @@ Break the system into logical capabilities and show how they satisfy source requ
 
 ### Capability map
 
+Prefer a capability or use-case view to show decomposition and relationships. Keep capability definitions and source IDs in text.
+
 ### Capability-to-requirement traceability
 
 ### Cross-cutting capabilities
@@ -52,6 +60,8 @@ Describe the important end-to-end interactions and the system responsibilities i
 
 ### Use-case register
 
+Use a focused use-case diagram when actors and system goals have meaningful relationships; use the register for IDs, priorities, scope, and status.
+
 ### Use-case template
 
 #### `<Use-case name>`
@@ -61,6 +71,8 @@ Describe the important end-to-end interactions and the system responsibilities i
 ##### Actors and preconditions
 
 ##### Trigger and main flow
+
+Prefer an activity or sequence diagram for multi-step behavior. Use text to define the normative business rules, conditions, and expected outcomes.
 
 ##### Alternate and exception flows
 
@@ -84,6 +96,8 @@ Define logical concepts, ownership, lifecycle, state, consistency, history, and 
 
 ### Entity lifecycle and state model
 
+Prefer a state diagram for lifecycle and transition relationships. Define transition guards, side effects, exceptions, and ownership in text.
+
 ### Data quality and consistency rules
 
 ### Audit, retention, privacy, and access implications
@@ -95,6 +109,8 @@ Do not include physical tables, indexes, DDL, or storage-engine choices here.
 Analyze why integrations exist, what responsibilities cross the boundary, and how failures affect system behavior.
 
 ### Integration register
+
+Prefer a context, component, or high-level sequence diagram when integration relationships or timing are complex. Keep business data, ownership, fallback, and approval status in text.
 
 ### Business-level data exchange
 

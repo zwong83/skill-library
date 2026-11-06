@@ -19,9 +19,16 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Do not silently resolve contradictions. Record the conflict, impact, decision owner, and required resolution.
 - Use stable IDs and maintain traceability from source requirements through analysis decisions and verification scenarios.
 
-## Diagram dependency
+## Diagram-first policy
 
-When analysis needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference. Prefer context, use-case, activity, state, logical class/domain, logical ER, and high-level sequence diagrams; every diagram must have a textual explanation and source traceability.
+Use diagrams as the primary representation when the analysis explains relationships, boundaries, flows, hierarchy, state, timing, or ownership. Prefer context, use-case, activity, state, logical class/domain, logical ER, and high-level sequence diagrams.
+
+- Invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference.
+- Use one focused diagram per question; do not combine unrelated concerns into an unreadable diagram.
+- Keep text as the authoritative source for rules, constraints, assumptions, exceptions, decisions, acceptance criteria, and unresolved items.
+- Every diagram must have a title, scope, textual explanation, source traceability, and any necessary legend or assumptions.
+- If a diagram and text conflict, the explicit text or Decision Register governs and the conflict must be fixed before approval.
+- Do not add a diagram when a table or short paragraph communicates the relationship more clearly.
 
 ## Input classification
 
@@ -95,7 +102,7 @@ Each analysis statement should identify the source requirement, logical subject,
 
 ## Deliverable conventions
 
-- Use Markdown headings, tables, and Mermaid or PlantUML only when they clarify relationships.
+- Use Markdown headings, tables, and PlantUML diagrams as the primary views for logical relationships and flows; use text as the normative specification.
 - Preserve section numbering when refining an existing analysis.
 - Include source traceability, assumptions, risks, open decisions, review status, and version history.
 - When no destination is specified, use `output/SA/SA-<project-name>.md`.

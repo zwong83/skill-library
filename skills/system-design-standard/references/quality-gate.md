@@ -15,6 +15,14 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
 - The design does not add components or complexity without a requirement or operational rationale.
 
+## Diagram quality
+
+- Architecture, component relationships, technical flows, states, data ownership, trust boundaries, and deployment are represented by focused diagrams when diagrams materially improve understanding.
+- Each diagram has a title, scope, design explanation, source traceability, and required legend or assumptions.
+- Diagrams are readable and answer one clear design question rather than combining unrelated views.
+- Text remains authoritative for contracts, rules, constraints, exceptions, decisions, NFR targets, and operational procedures.
+- Diagram and text do not conflict; any conflict is recorded and resolved before approval.
+
 ## Interfaces and data
 
 - Interfaces define purpose, ownership, operations/messages, contracts, authentication/authorization, validation, errors, retries, timeouts, idempotency, versioning, and monitoring as applicable.

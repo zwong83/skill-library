@@ -10,9 +10,14 @@ For every System Design drafting, refinement, comparison, or review request, rea
 
 For a full draft or review, also read the linked System Design template and quality-gate references from that skill.
 
-## Diagram dependency
+## Diagram-first policy
 
-When the design uses a diagram, also invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference. Use low-level C4, component, sequence, state, class, ER, deployment, or data-flow diagrams as appropriate, and explain every diagram in text.
+Prefer diagrams as the primary view for architecture, component relationships, technical flows, states, data ownership, trust boundaries, and deployment. Use low-level C4, component, sequence, state, class, ER, deployment, and data-flow diagrams as appropriate.
+
+- Invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference.
+- Keep contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures in authoritative text.
+- Give every diagram a title, scope, design explanation, traceability, and required legend/assumptions.
+- Do not overload diagrams or add one when a table is clearer; resolve any diagram/text conflict before approval.
 
 ## Input classification
 

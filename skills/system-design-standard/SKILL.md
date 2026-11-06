@@ -20,9 +20,16 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
 
-## Diagram dependency
+## Diagram-first policy
 
-When design needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference. Prefer C4 context/container/component, component, sequence, state, class, ER, deployment, and data-flow diagrams; every diagram must state its scope, assumptions, and design meaning in text.
+Use diagrams as the primary representation when the design explains architecture, relationships, boundaries, flows, hierarchy, state, timing, deployment, or data ownership. Prefer C4 context/container/component, component, sequence, state, class, ER, deployment, and data-flow diagrams.
+
+- Invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference.
+- Use one focused diagram per design question; do not combine unrelated architecture views into an unreadable diagram.
+- Keep text as the authoritative source for contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures.
+- Every diagram must state its title, scope, assumptions, design meaning, source traceability, and required legend.
+- If a diagram and text conflict, the explicit text or ADR governs and the conflict must be fixed before approval.
+- Do not add a diagram when a table or short design explanation is clearer.
 
 ## Input classification
 
@@ -94,7 +101,7 @@ For each design decision, state the requirement or analysis driver, selected app
 
 ## Deliverable conventions
 
-- Use Markdown headings, tables, Mermaid or PlantUML diagrams, and code blocks for schemas/contracts only when they clarify the design.
+- Use Markdown headings, tables, PlantUML diagrams, and code blocks for schemas/contracts; diagrams should be the primary views for architecture and technical flows, while text remains normative.
 - Preserve section numbering when refining an existing design.
 - Include source traceability, decision records, risks, dependencies, approval status, version history, and change control.
 - When no destination is specified, use `output/SD/SD-<project-name>.md`.

@@ -2,6 +2,10 @@
 
 Adapt this structure to the system and release. Keep unknowns explicit as `TBC`, `Proposed`, `Assumption`, `Pending Approval`, `Open`, or `Deferred`; do not turn a design assumption into an approved decision.
 
+## Diagram-first rule
+
+Use focused PlantUML diagrams as the primary views for architecture, component relationships, technical flows, state, data ownership, trust boundaries, and deployment. Use text as the normative source for contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, operational procedures, and unresolved items. Every diagram must have a title, scope, design explanation, and traceability.
+
 ## Document control
 
 Record system/project name, design version, status, date, author, owner, reviewers, target release, governing analysis/requirements, and approval status.
@@ -28,9 +32,15 @@ Show the system boundary, external actors, neighboring systems, major containers
 
 ### Context view
 
+Prefer a C4 context diagram to show users, external systems, system boundaries, trust boundaries, and major relationships. Explain ownership and assumptions in text.
+
 ### Container or subsystem view
 
+Prefer a C4 container diagram to show the major applications, services, stores, and communication relationships. Keep responsibilities and design decisions in text.
+
 ### Responsibility and ownership map
+
+Use a component or responsibility diagram when relationships are complex; use text to define ownership, lifecycle, and decision rationale.
 
 ### Trust boundaries and data classification
 
@@ -40,6 +50,8 @@ Define components or modules, their responsibilities, dependencies, ownership, l
 
 ### Component register
 
+Prefer a C4 component or component diagram to show dependencies and boundaries. Keep each component's contract and rationale in text.
+
 ### Component detail template
 
 #### `<Component name>`
@@ -47,6 +59,8 @@ Define components or modules, their responsibilities, dependencies, ownership, l
 ##### Purpose and responsibilities
 
 ##### Inputs, outputs, and dependencies
+
+Use a focused component, sequence, or data-flow diagram when interactions are complex. Define the authoritative contract and dependency rules in text.
 
 ##### State and lifecycle
 
@@ -65,6 +79,8 @@ Define components or modules, their responsibilities, dependencies, ownership, l
 Specify the interfaces required for implementation and integration review. Keep contracts consistent with the source requirements and business behavior.
 
 ### Interface inventory
+
+Use an interface or component view to show ownership and relationship. Keep the detailed contract, validation, errors, and compatibility rules in text.
 
 ### API or service contract template
 
@@ -94,6 +110,8 @@ Define data ownership, logical/physical structures, consistency, lifecycle, priv
 
 ### Logical data model
 
+Prefer an ER or class diagram for entities, relationships, cardinality, and ownership. Define constraints, lifecycle, privacy, and consistency in text.
+
 ### Physical schema or storage model
 
 ### Consistency and transaction boundaries
@@ -110,9 +128,15 @@ Show how components collaborate across critical flows, including success, failur
 
 ### Critical sequence diagrams
 
+Use sequence diagrams as the primary view for cross-component timing, calls, messages, retries, and failure paths. Explain timeout and compensation rules in text.
+
 ### State machine design
 
+Use state diagrams as the primary view for lifecycle states and transition guards. Define state meaning, side effects, authorization, and exceptions in text.
+
 ### Data-flow and event-flow design
+
+Use data-flow or sequence diagrams to show movement, transformation, and ownership of data. Keep schemas, retention, privacy, and consistency rules in text.
 
 ### Concurrency and ordering behavior
 
@@ -159,6 +183,8 @@ Define how the system will be monitored, operated, supported, diagnosed, and cha
 ### Runbooks and operational ownership
 
 ### Deployment, rollback, and configuration management
+
+Prefer a deployment diagram for nodes, environments, trust boundaries, and dependencies. Define rollback, configuration ownership, and operational procedures in text.
 
 ### Backup/restore and continuity validation
 

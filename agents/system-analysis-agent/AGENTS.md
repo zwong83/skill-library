@@ -10,9 +10,14 @@ For every System Analysis drafting, refinement, comparison, or review request, r
 
 For a full draft or review, also read the linked System Analysis template and quality-gate references from that skill.
 
-## Diagram dependency
+## Diagram-first policy
 
-When the analysis uses a diagram, also invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference. Use high-level context, use-case, activity, state, logical class/domain, logical ER, or sequence diagrams; explain every diagram in text.
+Prefer diagrams as the primary view for system boundaries, relationships, flows, hierarchy, state, timing, and ownership. Use high-level context, use-case, activity, state, logical class/domain, logical ER, and sequence diagrams as applicable.
+
+- Invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference.
+- Keep rules, constraints, exceptions, decisions, acceptance criteria, and unresolved items in authoritative text.
+- Give every diagram a title, scope, explanation, traceability, and required legend/assumptions.
+- Do not overload diagrams or add one when a table is clearer; resolve any diagram/text conflict before approval.
 
 ## Input classification
 
