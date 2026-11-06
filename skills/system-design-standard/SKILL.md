@@ -17,6 +17,7 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Label uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Make design decisions explicit: state the decision, context, alternatives, trade-offs, consequences, owner, and approval status.
 - Prefer simple, explainable designs that satisfy the requirements. Do not add components, patterns, or infrastructure without a reason tied to a requirement or operational need.
+- When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
 
@@ -25,6 +26,7 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 Use diagrams as the primary representation when the design explains architecture, relationships, boundaries, flows, hierarchy, state, timing, deployment, or data ownership. Prefer C4 context/container/component, component, sequence, state, class, ER, deployment, and data-flow diagrams.
 
 - Invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference.
+- Invoke/read `design-patterns` only when the design contains a pattern choice, pattern comparison, or reusable collaboration whose trade-offs need to be documented.
 - Use one focused diagram per design question; do not combine unrelated architecture views into an unreadable diagram.
 - Keep text as the authoritative source for contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures.
 - Every diagram must state its title, scope, assumptions, design meaning, source traceability, and required legend.

@@ -17,6 +17,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `system-analysis-standard` — Analyze system boundaries, actors, logical flows, responsibilities, data behavior, integrations, risks, and design inputs.
 - `system-design-standard` — Design architecture, components, interfaces, data, sequences, security, reliability, operations, deployment, and verification.
 - `plantuml-syntax` — Reference PlantUML syntax and diagram types for requirements and system documentation.
+- `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
 
 ### Agents
 
@@ -79,6 +80,7 @@ agents/
 
 skills/
 ├── brd-standard/
+├── design-patterns/
 ├── frs-standard/
 ├── plantuml-syntax/
 ├── prd-standard/
