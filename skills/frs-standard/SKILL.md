@@ -18,6 +18,26 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 - Do not silently resolve contradictions. Record them as open decisions with the decision owner when known.
 - Keep a feature's behavior, states, validation, permissions, failures, and acceptance criteria together so the FRS can serve as a build and QA reference.
 
+## Input classification
+
+### Mandatory inputs
+
+- Task mode: draft, refine, compare, or review.
+- Feature/system identity, user or business goal, and target release/scope when known.
+- At least one authoritative source requirement or an explicit user-provided functional brief for new work.
+- The complete existing FRS for refinement or review.
+
+### Conditional inputs
+
+- SRS is mandatory when system constraints, interfaces, data behavior, or cross-feature dependencies affect the requested FRS; otherwise record the limitation explicitly.
+- PRD/BRD is mandatory when product goals, business rules, scope, or approval constraints affect the feature.
+- Security/privacy, accessibility, performance, operational, integration, UX, and Change Request inputs are mandatory when applicable; if not applicable, record `Not Applicable`.
+- Wireframes, API examples, test data, and UAT evidence are mandatory only when the requested behavior or acceptance depends on them.
+
+### Optional context
+
+- Screenshots, examples, preferred wording, supplementary diagrams, and competitor references are optional and do not constitute approval.
+
 ## Source and readiness gate
 
 1. Classify the request as drafting, refining, comparing, or reviewing an FRS.

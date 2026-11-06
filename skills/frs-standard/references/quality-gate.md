@@ -2,6 +2,12 @@
 
 Report each check as `Pass`, `Gap`, or `Needs decision`. Do not turn a gap into an invented behavior.
 
+## Input readiness
+
+- Mandatory task, feature identity, source requirement, and mode-specific inputs are present.
+- Applicable SRS, PRD/BRD, security/privacy, accessibility, performance, operational, integration, UX, and Change Request inputs are supplied or explicitly marked `Not Applicable`.
+- Optional examples, screenshots, diagrams, and supplementary references are not treated as blockers or approvals.
+
 ## Source, scope, and actors
 
 - Source SRS/PRD/BRD or source limitation is identified with version/status.

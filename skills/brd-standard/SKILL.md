@@ -17,6 +17,25 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 - Do not silently resolve contradictions. Call them out and place them in `Open Business Decisions`.
 - Do not produce architecture, API contracts, database schemas, or implementation tasks unless the user separately requests those deliverables.
 
+## Input classification
+
+### Mandatory inputs
+
+- Task mode: draft, refine, compare, or review.
+- Project/product/process/feature identity.
+- For a new BRD: business problem or opportunity, desired business outcome, and known scope.
+- For refinement or review: the complete BRD or document under review.
+
+### Conditional inputs
+
+- Stakeholder decisions, measurable targets, policy rules, legal/compliance constraints, operational procedures, integrations, and release commitments are mandatory when they affect the BRD; otherwise record `Not Applicable`.
+- Research or evidence is mandatory when a claim, objective, or metric depends on it; otherwise mark it `Not Provided` or `TBC`.
+- A change request is mandatory for change-focused work, but not for a greenfield BRD.
+
+### Optional context
+
+- Examples, screenshots, diagrams, writing preferences, and supplementary references may improve the result but never constitute approval.
+
 ## Workflow
 
 1. Identify whether the task is drafting, refining, or reviewing a BRD.

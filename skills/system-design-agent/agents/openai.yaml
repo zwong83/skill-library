@@ -1,0 +1,6 @@
+interface:
+  display_name: "System Design Agent"
+  short_description: "Design architecture and technical realization"
+  default_prompt: "Use $system-design-agent to create or review a System Design from the approved System Analysis."
+policy:
+  allow_implicit_invocation: true

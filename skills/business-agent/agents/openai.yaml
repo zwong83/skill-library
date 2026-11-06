@@ -1,0 +1,6 @@
+interface:
+  display_name: "Business Agent"
+  short_description: "Create and review decision-ready BRDs"
+  default_prompt: "Use $business-agent to create or review a Business Requirements Document with brd-standard."
+policy:
+  allow_implicit_invocation: true

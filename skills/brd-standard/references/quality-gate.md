@@ -2,6 +2,12 @@
 
 Use this checklist when reviewing or finalizing a BRD. Report `Pass`, `Gap`, or `Needs decision`; do not convert a gap into an invented answer.
 
+## Input readiness
+
+- Mandatory task, project identity, and mode-specific source inputs are present.
+- Applicable conditional inputs are supplied or explicitly marked `Not Applicable`.
+- Optional context is not treated as a blocker or as stakeholder approval.
+
 ## Structure
 
 - Document control identifies project, version, status, date, owner, and reviewers.

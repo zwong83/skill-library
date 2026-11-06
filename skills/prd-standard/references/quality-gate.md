@@ -2,6 +2,12 @@
 
 Report each check as `Pass`, `Gap`, or `Needs decision`.
 
+## Input readiness
+
+- Mandatory task, product identity, and mode-specific source inputs are present.
+- Applicable conditional inputs are supplied or explicitly marked `Not Applicable`.
+- Optional context is not treated as a blocker or as product approval.
+
 ## Product clarity
 
 - Overview identifies the product/feature, target release, and value proposition.

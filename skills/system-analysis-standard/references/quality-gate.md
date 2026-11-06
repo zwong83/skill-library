@@ -2,6 +2,12 @@
 
 Report each check as `Pass`, `Gap`, or `Needs decision`. Do not convert a gap into an invented design choice.
 
+## Input readiness
+
+- Mandatory task, system identity, and requirements baseline are present.
+- Applicable FRS, Change Request, security/privacy, performance, integration, data-retention, availability, recovery, and operational inputs are supplied or explicitly marked `Not Applicable`.
+- Optional research, examples, diagrams, logs, and benchmarks are not treated as blockers or approvals.
+
 ## Source and scope
 
 - Governing source documents are identified with version/status.

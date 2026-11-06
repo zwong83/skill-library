@@ -1,0 +1,6 @@
+interface:
+  display_name: "System Analysis Agent"
+  short_description: "Analyze logical system behavior and boundaries"
+  default_prompt: "Use $system-analysis-agent to create or review a logical System Analysis from the requirements baseline."
+policy:
+  allow_implicit_invocation: true

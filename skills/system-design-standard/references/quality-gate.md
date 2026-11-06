@@ -2,6 +2,12 @@
 
 Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design gap behind an unapproved technology choice.
 
+## Input readiness
+
+- Mandatory task, system identity, and System Analysis baseline are present, or a provisional design is explicitly authorized.
+- Applicable SRS/FRS, PRD/BRD, Change Request, security/privacy, performance, availability, recovery, observability, deployment, operational, integration, vendor, platform, migration, compatibility, and capacity inputs are supplied or explicitly marked `Not Applicable`.
+- Optional benchmarks, prototypes, reference architectures, cost estimates, diagrams, and preferred technologies are not treated as blockers or approvals.
+
 ## Source and architecture
 
 - Governing System Analysis and requirements are identified with version/status.

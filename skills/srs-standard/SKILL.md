@@ -18,6 +18,26 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 - Do not silently resolve source conflicts. Record them as open decisions and identify the required owner.
 - Do not generate API contracts, database DDL, class designs, framework instructions, deployment topology, or code unless the user separately requests that artifact.
 
+## Input classification
+
+### Mandatory inputs
+
+- Task mode: draft, refine, compare, or review.
+- System, product, project, or feature identity and target release/scope when known.
+- A governing requirements baseline for new work, such as an approved/accepted BRD, PRD, or equivalent requirements statement.
+- The complete existing SRS for refinement or review.
+
+### Conditional inputs
+
+- FRS is mandatory when the SRS must cover detailed feature behavior or when an accepted FRS already governs the feature; it is not required for a high-level SRS that explicitly records the limitation.
+- Security/privacy, performance, compatibility, availability, recovery, operational, integration, and data-retention constraints are mandatory when applicable; if not applicable, record `Not Applicable`, not silence.
+- A Change Request is mandatory for change-focused SRS work, but not for greenfield work.
+- Wireframes, interface examples, research, and test evidence are mandatory only when the requested SRS decision depends on them.
+
+### Optional context
+
+- Examples, diagrams, preferred notation, supplementary references, and implementation suggestions are optional and must be labeled if used.
+
 ## Source and readiness gate
 
 1. Classify the request as drafting, refining, comparing, or reviewing an SRS.

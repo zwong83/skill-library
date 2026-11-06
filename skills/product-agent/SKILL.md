@@ -1,13 +1,19 @@
 ---
-name: prd-agent
+name: product-agent
 description: Orchestrate product-lifecycle requirements from BRD to PRD, SRS, and FRS using prd-standard, srs-standard, and frs-standard, with mandatory BRD intake and resolution gates.
 ---
 
-# PRD Agent
+# Product Agent
 
 The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow them together with this Skill manifest.
 
 Create, refine, or review product-lifecycle requirements only after completing both the BRD intake gate and the BRD resolution gate below. After both gates pass, use the sibling `prd-standard`, `srs-standard`, and `frs-standard` skills for the relevant lifecycle stages.
+
+## Input classification
+
+- **Mandatory:** task mode, product/feature identity, a complete BRD or explicit user waiver, and the complete PRD for refinement/review.
+- **Conditional:** research, analytics baselines, UX references, legal/compliance constraints, technical constraints, SRS/FRS inputs, and Change Requests when the requested stage depends on them. If not applicable, record `Not Applicable`; if applicable but missing, block or mark the limitation explicitly.
+- **Optional:** competitive examples, screenshots, wireframes, preferred wording, and supplementary references.
 
 ## Mandatory BRD intake gate
 

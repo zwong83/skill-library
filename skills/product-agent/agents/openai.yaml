@@ -1,0 +1,6 @@
+interface:
+  display_name: "Product Agent"
+  short_description: "Orchestrate BRD-to-PRD-SRS-FRS lifecycle"
+  default_prompt: "Use $product-agent to create the PRD, SRS, and FRS from my BRD, applying the required decision gates."
+policy:
+  allow_implicit_invocation: true

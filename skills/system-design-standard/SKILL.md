@@ -20,6 +20,27 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
 
+## Input classification
+
+### Mandatory inputs
+
+- Task mode: draft, refine, compare, or review.
+- System/product/feature identity and target release/scope when known.
+- A complete System Analysis for new design work, unless the user explicitly authorizes a provisional design.
+- The complete existing System Design for refinement or review.
+
+### Conditional inputs
+
+- SRS and FRS are mandatory when their requirements affect the design; otherwise record the limitation.
+- PRD/BRD is mandatory when product scope, business rules, or acceptance constraints affect a design decision.
+- A Change Request is mandatory for change-focused design, but not for greenfield design.
+- Security/privacy, performance, availability, recovery, observability, deployment, operational, integration, vendor, and platform constraints are mandatory when applicable; if not applicable, record `Not Applicable`.
+- Existing architecture, migration constraints, compatibility requirements, and capacity baselines are mandatory when the design decision depends on them.
+
+### Optional context
+
+- Benchmarks, prototypes, reference architectures, cost estimates, diagrams, and preferred technologies are optional unless a decision depends on them.
+
 ## Source and readiness gate
 
 1. Classify the task as drafting, refining, comparing, or reviewing System Design.

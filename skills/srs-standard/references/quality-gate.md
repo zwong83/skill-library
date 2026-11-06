@@ -2,6 +2,12 @@
 
 Report each check as `Pass`, `Gap`, or `Needs decision`. Do not convert gaps into invented requirements.
 
+## Input readiness
+
+- Mandatory task, system identity, requirements baseline, and mode-specific source inputs are present.
+- Applicable FRS, security/privacy, performance, operational, integration, data-retention, and Change Request inputs are supplied or explicitly marked `Not Applicable`.
+- Optional examples, diagrams, and implementation suggestions are not treated as blockers or approvals.
+
 ## Source and scope
 
 - Source BRD/PRD or source waiver is identified with version/status.

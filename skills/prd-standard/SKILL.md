@@ -19,6 +19,25 @@ The PRD is the product source of truth: why the product exists, who it serves, w
 - Do not silently resolve conflicts. Capture them as open questions or decisions.
 - Do not generate code, API contracts, database schemas, or system architecture unless the user separately asks for those deliverables.
 
+## Input classification
+
+### Mandatory inputs
+
+- Task mode: draft, refine, compare, or review.
+- Product or feature identity and requested release/scope when known.
+- For a new PRD: the product problem/opportunity, target outcome, and known users or scope.
+- For refinement or review: the complete PRD or document under review.
+
+### Conditional inputs
+
+- A BRD is mandatory when one exists or when the product work is governed by business requirements; if no BRD is required, record an explicit user waiver.
+- Research, analytics baselines, UX references, legal/compliance constraints, technical constraints, integrations, and Change Requests are mandatory when the requested decision depends on them; otherwise record `Not Provided`, `TBC`, or `Not Applicable`.
+- SRS and FRS are conditional downstream artifacts and are not required for a PRD-only request.
+
+### Optional context
+
+- Competitive examples, screenshots, wireframes, preferred wording, and supplementary references may improve the PRD but never constitute approval.
+
 ## Workflow
 
 1. Classify the task as drafting, refining, or reviewing a PRD.

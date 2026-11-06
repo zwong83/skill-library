@@ -19,6 +19,26 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Do not silently resolve contradictions. Record the conflict, impact, decision owner, and required resolution.
 - Use stable IDs and maintain traceability from source requirements through analysis decisions and verification scenarios.
 
+## Input classification
+
+### Mandatory inputs
+
+- Task mode: draft, refine, compare, or review.
+- System/product/feature identity and target release/scope when known.
+- A complete requirements baseline for new analysis: at least an SRS, PRD, BRD, or equivalent accepted requirements statement.
+- The complete existing System Analysis for refinement or review.
+
+### Conditional inputs
+
+- FRS is mandatory when detailed feature behavior affects the analysis; otherwise record the limitation.
+- A Change Request is mandatory for change-focused analysis, but not for greenfield analysis.
+- Security/privacy, performance, integration, data-retention, availability, recovery, and operational constraints are mandatory when applicable; if not applicable, record `Not Applicable`.
+- PRD, BRD, SRS, approved technical constraints, and integration decisions are mandatory when the analysis decision depends on them.
+
+### Optional context
+
+- Research, screenshots, examples, diagrams, logs, benchmarks, and preferred notation are optional unless a requested decision depends on them.
+
 ## Source and readiness gate
 
 1. Classify the task as drafting, refining, comparing, or reviewing System Analysis.
