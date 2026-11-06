@@ -1,0 +1,6 @@
+interface:
+  display_name: "SRS Standard"
+  short_description: "Create and audit software requirements"
+  default_prompt: "Use $srs-standard to create or review a complete Software Requirements Specification."
+policy:
+  allow_implicit_invocation: true

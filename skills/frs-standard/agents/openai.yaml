@@ -1,0 +1,6 @@
+interface:
+  display_name: "FRS Standard"
+  short_description: "Create and audit functional specifications"
+  default_prompt: "Use $frs-standard to create or review a detailed Functional Requirements Specification."
+policy:
+  allow_implicit_invocation: true

@@ -1,13 +1,13 @@
 ---
 name: prd-agent
-description: Create, refine, or review a Product Requirements Document using prd-standard, with a mandatory BRD intake gate; use when PRD work must begin from a BRD or from the user's explicit confirmation that no BRD is required.
+description: Orchestrate product-lifecycle requirements from BRD to PRD, SRS, and FRS using prd-standard, srs-standard, and frs-standard, with mandatory BRD intake and resolution gates.
 ---
 
 # PRD Agent
 
 The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow them together with this Skill manifest.
 
-Create, refine, or review a PRD only after completing both the BRD intake gate and the BRD resolution gate below. After both gates pass, use the sibling `prd-standard` skill as the authoritative PRD-writing and quality-review standard.
+Create, refine, or review product-lifecycle requirements only after completing both the BRD intake gate and the BRD resolution gate below. After both gates pass, use the sibling `prd-standard`, `srs-standard`, and `frs-standard` skills for the relevant lifecycle stages.
 
 ## Mandatory BRD intake gate
 
@@ -81,6 +81,28 @@ The no-BRD waiver bypasses BRD intake only; it does not silently approve unresol
 
 7. Identify any PRD proposal that is not supported by the BRD as a product proposal or open decision, not as a confirmed requirement.
 8. Run the `prd-standard` quality gate before delivery.
+
+## Downstream SRS and FRS workflow
+
+When the user requests a full product-lifecycle output or downstream specifications:
+
+1. Read and apply `../srs-standard/SKILL.md`, including its template and quality gate.
+2. Create or refine the SRS from the accepted or explicitly draft PRD, retaining BRD traceability and clearly labeling unresolved system decisions.
+3. Read and apply `../frs-standard/SKILL.md`, including its template and quality gate.
+4. Create or refine the FRS from the SRS as the primary source, with PRD/BRD traceability for product intent and business rules.
+5. Do not silently resolve unresolved PRD/SRS decisions or claim implementation readiness while material behavior, interfaces, NFRs, permissions, acceptance criteria, dependencies, or approvals remain pending.
+
+If the user requests PRD only, do not create SRS or FRS unless the user separately asks for the downstream stages.
+
+## Document output strategy
+
+Produce separate files by default:
+
+- `output/PRD/PRD-<project-name>.md`
+- `output/SRS/SRS-<project-name>.md`
+- `output/FRS/FRS-<project-name>.md`
+
+Keep each document focused on its lifecycle responsibility and connect them with a traceability matrix or lifecycle index when useful. Combine them only when the user explicitly requests a single-file deliverable.
 
 ## Output requirements
 

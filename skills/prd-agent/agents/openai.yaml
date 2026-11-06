@@ -1,6 +1,6 @@
 interface:
   display_name: "PRD Agent"
-  short_description: "Create PRDs only after BRD intake or waiver"
-  default_prompt: "Use $prd-agent to create a PRD from my BRD, or ask for an explicit BRD waiver before proceeding."
+  short_description: "Orchestrate BRD-to-PRD-SRS-FRS lifecycle"
+  default_prompt: "Use $prd-agent to create the PRD, SRS, and FRS from my BRD, applying the required decision gates."
 policy:
   allow_implicit_invocation: true
