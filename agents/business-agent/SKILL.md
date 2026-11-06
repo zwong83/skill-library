@@ -19,7 +19,7 @@ When a diagram is needed, also use `plantuml-syntax` for the PlantUML syntax and
 
 ## Workflow
 
-1. Read and apply `../brd-standard/SKILL.md`. For a full draft or review, also read and apply its linked template and quality-gate references.
+1. Read and apply `../../skills/brd-standard/SKILL.md`. For a full draft or review, also read and apply its linked template and quality-gate references.
 2. Classify the request as BRD drafting, refinement, comparison, or review.
 3. Extract only supported facts, stakeholder decisions, business objectives, scope boundaries, policies, constraints, dependencies, risks, and open decisions.
 4. Preserve uncertainty explicitly as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Open`, or `Pending Approval`.

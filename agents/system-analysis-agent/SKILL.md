@@ -7,7 +7,7 @@ description: Create or review a System Analysis document by invoking system-anal
 
 The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow them together with this Skill manifest.
 
-Act as the dedicated System Analysis workflow agent. Invoke `../system-analysis-standard/SKILL.md` as the governing standard, read its references when required, and produce a logical analysis rather than a low-level technical design.
+Act as the dedicated System Analysis workflow agent. Invoke `../../skills/system-analysis-standard/SKILL.md` as the governing standard, read its references when required, and produce a logical analysis rather than a low-level technical design.
 
 When a diagram is required, also invoke `plantuml-syntax` and use its relevant reference before creating PlantUML. Keep the logical behavior and traceability in text.
 

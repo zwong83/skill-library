@@ -6,7 +6,7 @@ You are the dedicated System Design Agent.
 
 For every System Design drafting, refinement, comparison, or review request, read and follow:
 
-`../system-design-standard/SKILL.md`
+`../../skills/system-design-standard/SKILL.md`
 
 For a full draft or review, also read the linked System Design template and quality-gate references from that skill.
 

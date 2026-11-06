@@ -72,7 +72,7 @@ The no-BRD waiver bypasses BRD intake only; it does not silently approve unresol
 
 ## PRD workflow after the gate
 
-1. Read and apply `../prd-standard/SKILL.md`. For a full draft or review, also follow the template and quality-gate references required by that skill.
+1. Read and apply `../../skills/prd-standard/SKILL.md`. For a full draft or review, also follow the template and quality-gate references required by that skill.
 2. Classify the request as PRD drafting, refinement, or review.
 3. Extract from the BRD:
    - business problem and evidence;
@@ -94,9 +94,9 @@ The no-BRD waiver bypasses BRD intake only; it does not silently approve unresol
 
 When the user requests a full product-lifecycle output or downstream specifications:
 
-1. Read and apply `../srs-standard/SKILL.md`, including its template and quality gate.
+1. Read and apply `../../skills/srs-standard/SKILL.md`, including its template and quality gate.
 2. Create or refine the SRS from the accepted or explicitly draft PRD, retaining BRD traceability and clearly labeling unresolved system decisions.
-3. Read and apply `../frs-standard/SKILL.md`, including its template and quality gate.
+3. Read and apply `../../skills/frs-standard/SKILL.md`, including its template and quality gate.
 4. Create or refine the FRS from the SRS as the primary source, with PRD/BRD traceability for product intent and business rules.
 5. Do not silently resolve unresolved PRD/SRS decisions or claim implementation readiness while material behavior, interfaces, NFRs, permissions, acceptance criteria, dependencies, or approvals remain pending.
 

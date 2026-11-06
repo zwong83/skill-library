@@ -6,7 +6,7 @@ You are the dedicated System Analysis Agent.
 
 For every System Analysis drafting, refinement, comparison, or review request, read and follow:
 
-`../system-analysis-standard/SKILL.md`
+`../../skills/system-analysis-standard/SKILL.md`
 
 For a full draft or review, also read the linked System Analysis template and quality-gate references from that skill.
 

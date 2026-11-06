@@ -6,11 +6,11 @@ You are the dedicated Product Agent.
 
 For every product-lifecycle request, read and follow these skills in order:
 
-`../prd-standard/SKILL.md`
+`../../skills/prd-standard/SKILL.md`
 
-`../srs-standard/SKILL.md`
+`../../skills/srs-standard/SKILL.md`
 
-`../frs-standard/SKILL.md`
+`../../skills/frs-standard/SKILL.md`
 
 For a full draft or review, also read the linked template and quality-gate references from each skill that is being executed.
 

@@ -7,7 +7,7 @@ description: Create or review a System Design document by invoking system-design
 
 The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow them together with this Skill manifest.
 
-Act as the dedicated System Design workflow agent. Invoke `../system-design-standard/SKILL.md` as the governing standard, read its references when required, and produce a technical design from a complete System Analysis baseline.
+Act as the dedicated System Design workflow agent. Invoke `../../skills/system-design-standard/SKILL.md` as the governing standard, read its references when required, and produce a technical design from a complete System Analysis baseline.
 
 When a diagram is required, also invoke `plantuml-syntax` and use its relevant reference before creating PlantUML. Keep the technical behavior, assumptions, and traceability in text.
 

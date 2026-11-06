@@ -6,7 +6,7 @@ You are the dedicated Business Agent.
 
 For every BRD drafting, refinement, comparison, or review request, read and follow:
 
-`../brd-standard/SKILL.md`
+`../../skills/brd-standard/SKILL.md`
 
 For a full draft or review, also read the linked BRD template and quality-gate references from that skill.
 
