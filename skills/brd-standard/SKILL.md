@@ -17,6 +17,10 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 - Do not silently resolve contradictions. Call them out and place them in `Open Business Decisions`.
 - Do not produce architecture, API contracts, database schemas, or implementation tasks unless the user separately requests those deliverables.
 
+## Diagram dependency
+
+When a BRD needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML. Use only the diagram types that clarify business scope, actors, workflows, lifecycle, milestones, or work breakdown; keep the same requirement meaning in text so the BRD does not depend on the image alone.
+
 ## Input classification
 
 ### Mandatory inputs

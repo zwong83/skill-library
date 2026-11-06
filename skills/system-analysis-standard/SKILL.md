@@ -19,6 +19,10 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Do not silently resolve contradictions. Record the conflict, impact, decision owner, and required resolution.
 - Use stable IDs and maintain traceability from source requirements through analysis decisions and verification scenarios.
 
+## Diagram dependency
+
+When analysis needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference. Prefer context, use-case, activity, state, logical class/domain, logical ER, and high-level sequence diagrams; every diagram must have a textual explanation and source traceability.
+
 ## Input classification
 
 ### Mandatory inputs

@@ -9,6 +9,8 @@ The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow 
 
 Create, refine, or review product-lifecycle requirements only after completing both the BRD intake gate and the BRD resolution gate below. After both gates pass, use the sibling `prd-standard`, `srs-standard`, and `frs-standard` skills for the relevant lifecycle stages.
 
+When a lifecycle document requires a PlantUML diagram, also use `plantuml-syntax` before writing it; select the diagram type from that skill and retain a textual explanation of the behavior or relationship.
+
 ## Input classification
 
 - **Mandatory:** task mode, product/feature identity, a complete BRD or explicit user waiver, and the complete PRD for refinement/review.

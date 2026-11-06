@@ -10,6 +10,10 @@ For every System Design drafting, refinement, comparison, or review request, rea
 
 For a full draft or review, also read the linked System Design template and quality-gate references from that skill.
 
+## Diagram dependency
+
+When the design uses a diagram, also invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference. Use low-level C4, component, sequence, state, class, ER, deployment, or data-flow diagrams as appropriate, and explain every diagram in text.
+
 ## Input classification
 
 ### Mandatory inputs

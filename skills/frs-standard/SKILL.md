@@ -18,6 +18,10 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 - Do not silently resolve contradictions. Record them as open decisions with the decision owner when known.
 - Keep a feature's behavior, states, validation, permissions, failures, and acceptance criteria together so the FRS can serve as a build and QA reference.
 
+## Diagram dependency
+
+When an FRS needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML and load the relevant reference only. Prefer use-case, activity, sequence, state, or wireframe diagrams for feature behavior; keep all required functional behavior and acceptance criteria in text.
+
 ## Input classification
 
 ### Mandatory inputs

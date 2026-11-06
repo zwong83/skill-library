@@ -14,6 +14,10 @@ For every product-lifecycle request, read and follow these skills in order:
 
 For a full draft or review, also read the linked template and quality-gate references from each skill that is being executed.
 
+## Diagram dependency
+
+When any lifecycle document needs a PlantUML diagram, also invoke/read `plantuml-syntax` and load only the relevant syntax reference. Do not use a diagram as a substitute for product, system, or acceptance requirements written in text.
+
 ## Input classification
 
 ### Mandatory inputs

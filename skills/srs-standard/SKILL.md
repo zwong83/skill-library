@@ -18,6 +18,10 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 - Do not silently resolve source conflicts. Record them as open decisions and identify the required owner.
 - Do not generate API contracts, database DDL, class designs, framework instructions, deployment topology, or code unless the user separately requests that artifact.
 
+## Diagram dependency
+
+When an SRS needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML and load the relevant reference only. Use diagrams for system context, use cases, workflows, states, logical data, or interfaces when they improve reviewability; keep the requirement and acceptance meaning in text.
+
 ## Input classification
 
 ### Mandatory inputs

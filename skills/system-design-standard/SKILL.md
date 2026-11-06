@@ -20,6 +20,10 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
 
+## Diagram dependency
+
+When design needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference. Prefer C4 context/container/component, component, sequence, state, class, ER, deployment, and data-flow diagrams; every diagram must state its scope, assumptions, and design meaning in text.
+
 ## Input classification
 
 ### Mandatory inputs

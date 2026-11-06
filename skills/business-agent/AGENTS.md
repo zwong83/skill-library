@@ -10,6 +10,10 @@ For every BRD drafting, refinement, comparison, or review request, read and foll
 
 For a full draft or review, also read the linked BRD template and quality-gate references from that skill.
 
+## Diagram dependency
+
+If the BRD requires a diagram, also invoke/read `plantuml-syntax` before creating or changing PlantUML. Use diagrams only when they materially clarify business scope, actors, workflows, lifecycle, milestones, or work breakdown, and describe the meaning in text.
+
 ## Input classification
 
 ### Mandatory inputs

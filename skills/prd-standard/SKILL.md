@@ -19,6 +19,10 @@ The PRD is the product source of truth: why the product exists, who it serves, w
 - Do not silently resolve conflicts. Capture them as open questions or decisions.
 - Do not generate code, API contracts, database schemas, or system architecture unless the user separately asks for those deliverables.
 
+## Diagram dependency
+
+When a PRD needs a diagram, invoke/read `plantuml-syntax` before creating or modifying PlantUML. Use it conditionally for journeys, use cases, workflows, state behavior, scope hierarchies, timelines, WBS, or wireframes; keep the required product behavior and acceptance meaning in text.
+
 ## Input classification
 
 ### Mandatory inputs

@@ -10,6 +10,10 @@ For every System Analysis drafting, refinement, comparison, or review request, r
 
 For a full draft or review, also read the linked System Analysis template and quality-gate references from that skill.
 
+## Diagram dependency
+
+When the analysis uses a diagram, also invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference. Use high-level context, use-case, activity, state, logical class/domain, logical ER, or sequence diagrams; explain every diagram in text.
+
 ## Input classification
 
 ### Mandatory inputs

@@ -9,6 +9,8 @@ The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow 
 
 Act as the dedicated BRD workflow agent. For every BRD drafting, refinement, comparison, or review request, invoke and follow the sibling `brd-standard` skill as the governing standard.
 
+When a diagram is needed, also use `plantuml-syntax` for the PlantUML syntax and the relevant reference; do not add diagrams when text or a table is clearer.
+
 ## Input classification
 
 - **Mandatory:** task mode, project/feature identity, business problem or outcome for a new BRD; the complete source BRD for refinement or review.
