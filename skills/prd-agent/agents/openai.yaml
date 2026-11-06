@@ -1,0 +1,6 @@
+interface:
+  display_name: "PRD Agent"
+  short_description: "Create PRDs only after BRD intake or waiver"
+  default_prompt: "Use $prd-agent to create a PRD from my BRD, or ask for an explicit BRD waiver before proceeding."
+policy:
+  allow_implicit_invocation: true
