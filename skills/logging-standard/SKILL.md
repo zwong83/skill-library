@@ -22,22 +22,25 @@ Do not log every function entry/exit, every loop item, successful hot-path detai
 1. Identify the diagnostic, security, audit, or operational question the log must answer.
 2. Choose the owning event boundary and avoid duplicate recording across layers.
 3. Define a stable event name, severity, outcome, error classification, and structured attributes.
-4. Add request/job/message and trace context through supported instrumentation rather than manually inventing correlation identifiers.
-5. Apply data classification, minimization, redaction, sanitization, access, retention, and deletion rules.
-6. Estimate event rate, payload size, cardinality, cost, and alerting implications.
-7. Ensure logging failure or backend unavailability does not corrupt the primary business operation unless an approved audit requirement explicitly demands fail-closed behavior.
-8. Test event emission, fields, correlation, redaction, injection safety, duplicate suppression, and failure behavior.
+4. Define logical sinks and routing by severity, event category, access, retention, integrity, and volume requirements.
+5. Add request/job/message and trace context through supported instrumentation rather than manually inventing correlation identifiers.
+6. Apply data classification, minimization, redaction, sanitization, access, retention, and deletion rules.
+7. Estimate event rate, payload size, cardinality, cost, and alerting implications.
+8. Ensure logging failure or backend unavailability does not corrupt the primary business operation unless an approved audit requirement explicitly demands fail-closed behavior.
+9. Test event emission, fields, routing, correlation, redaction, injection safety, duplicate suppression, rotation, and failure behavior.
 
 ## Reference routing
 
 - Read [references/event-schema.md](references/event-schema.md) when defining structured fields, event names, outcomes, or trace correlation.
 - Read [references/severity-and-noise.md](references/severity-and-noise.md) when choosing levels, reducing duplicates, or controlling volume.
+- Read [references/sink-routing-and-files.md](references/sink-routing-and-files.md) when defining default, error, audit, security, access, debug, or other log destinations and file lifecycle controls.
 - Read [references/security-and-privacy.md](references/security-and-privacy.md) for sensitive-data exclusion, sanitization, audit integrity, access, and retention.
 - Read [references/review-checklist.md](references/review-checklist.md) during code review or convergence verification.
 
 ## Core rules
 
 - Prefer structured, parameterized events with stable field names and types.
+- Classify business events with a stable, low-cardinality `feature` attribute when it improves operational ownership or search. A renderer may show it as `[feature]`, but the prefix must not replace the structured field.
 - Record what happened, where, outcome, relevant bounded context, and a safe error classification; do not depend on free-form messages alone.
 - Keep event names and templates stable. Put per-request values in attributes, not event names.
 - Correlate logs with active `TraceId`/`SpanId` or equivalent context when available. Do not use trace context as authentication or authorization evidence.
@@ -46,6 +49,8 @@ Do not log every function entry/exit, every loop item, successful hot-path detai
 - Never record secrets, passwords, access/refresh tokens, private keys, connection strings, raw session identifiers, or unapproved sensitive personal/payment/health data.
 - Sanitize untrusted values for control characters and output delimiters to prevent log injection.
 - Avoid unbounded collections, request/response bodies, SQL text with values, file contents, or arbitrary object serialization.
+- For file-based deployments, define a default operational sink and an error-only sink. Create additional files only when access, integrity, retention, volume, or operational ownership requires isolation; do not create one file per feature.
+- Treat files as one possible sink implementation. In containers, serverless, or centrally collected platforms, prefer structured `stdout`/`stderr` or the platform-native collector and apply equivalent routing downstream.
 - Separate operational logs from immutable audit requirements when their integrity, retention, access, or fail-closed rules differ.
 - Make logging observable: dropped records, exporter failures, queue saturation, and storage pressure need bounded operational signals.
 
@@ -61,8 +66,9 @@ For implementation or review, provide:
 2. event name, severity, outcome, and structured field schema;
 3. correlation and trace-context behavior;
 4. sensitive-data and sanitization decisions;
-5. expected volume, retention/access implications, and duplicate/noise controls;
-6. failure behavior and verification evidence;
-7. actionable findings with source locations when reviewing code.
+5. sink/file routing, rotation, retention/access implications, and duplicate/noise controls;
+6. expected volume and storage/cost implications;
+7. failure behavior and verification evidence;
+8. actionable findings with source locations when reviewing code.
 
 Follow the target language's established logging library and project conventions; do not introduce a new framework without a demonstrated need.
