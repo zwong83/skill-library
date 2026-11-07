@@ -164,6 +164,8 @@ When asynchronous messaging is used, apply `messaging-standard` to define messag
 
 Translate approved security and privacy requirements into enforceable design controls and review evidence.
 
+Use `software-security-standard` in System Design mode. Include a security context and trust/data-flow view, threat and abuse-case register, control-ownership matrix, access-control matrix, data-protection and key/secret decisions, safe failure/audit behavior, operational controls, verification matrix, and residual risks where applicable. Do not invent policy, compliance, algorithms, vendors, or approval.
+
 ### Identity and authentication
 
 ### Authorization and tenant/data isolation

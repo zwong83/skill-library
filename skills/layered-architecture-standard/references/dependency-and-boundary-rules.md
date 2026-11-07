@@ -60,6 +60,16 @@ Reuse a type when these meanings genuinely coincide and coupling is accepted. Ma
 
 Authentication context, authorization, validation, transactions, logging, tracing, metrics, retries, and caching may cross layers, but ownership remains explicit. Prefer composition around use cases or adapters. Do not let observability or framework annotations become a hidden dependency from policy code to infrastructure.
 
+## Security control placement
+
+- Interface/Delivery validates credential presentation and protocol shape, establishes a trusted principal through approved identity integration, and maps failures safely; it is not the sole authorization boundary.
+- Application/Use Cases authorize protected operations, object/tenant scope, and workflow-level abuse controls because they know the requested action and complete operation.
+- Domain/Policy enforces business security invariants and protected state transitions that must remain true across all interfaces.
+- Infrastructure/Adapters implement identity providers, policy engines, cryptographic/key/secret services, encrypted storage/transport, and audit sinks without redefining inward policy.
+- Composition/Operations binds approved implementations, credentials, keys, certificates, secure configuration, runtime identity, and rotation/recovery procedures.
+
+Use `software-security-standard` to define the required security outcome, threat/risk basis, control details, and verification. This reference only assigns architectural responsibility and dependency direction.
+
 ## Enforcement
 
 Use language-appropriate module visibility, package boundaries, lint/import rules, architecture tests, dependency graphs, and CI checks. A diagram alone does not enforce a dependency rule.

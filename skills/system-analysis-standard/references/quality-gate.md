@@ -38,6 +38,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not convert a gap in
 ## Quality and risk analysis
 
 - Performance, capacity, availability, reliability, security, privacy, accessibility, compatibility, observability, recovery, and compliance impacts are considered where applicable.
+- Applicable assets, human/workload actors, trust boundaries, sensitive data, abuse cases, permission and isolation needs, audit expectations, and security acceptance outcomes are explicit enough for System Design; implementation mechanisms are not prematurely selected.
 - Risks, dependencies, alternatives, trade-offs, and open decisions have owners or next actions when known.
 
 ## Traceability and boundary

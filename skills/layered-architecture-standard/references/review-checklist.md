@@ -13,6 +13,7 @@ Report each item as `Pass`, `Gap`, `Needs decision`, or `Not applicable`.
 - Transport DTOs, application contracts, domain models, persistence records, and integration messages are reused or mapped by an explicit semantic decision rather than ceremony.
 - Representative command, query, event, and failure flows respect the dependency direction.
 - Cross-cutting concerns do not create hidden reverse dependencies.
+- Authentication, authorization, business security invariants, encryption, key/secrets, audit, and secure configuration have explicit enforcement points and owners; middleware or UI checks are not treated as complete authorization.
 - Shared modules have narrow ownership and no dependency cycles.
 - Controllers, application services, domain objects/services, repositories, cache/broker clients, and composition code are placed according to the selected model without vendor leakage inward.
 - The composition root and runtime wiring are explicit.

@@ -9,7 +9,7 @@ The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow 
 
 Act as the dedicated System Analysis workflow agent. Invoke `../../skills/system-analysis-standard/SKILL.md` as the governing standard, read its references when required, and produce a logical analysis rather than a low-level technical design.
 
-Use diagrams as the primary view for logical system boundaries, relationships, flows, states, and ownership. Also invoke `plantuml-syntax` and use its relevant reference before creating PlantUML. Keep rules, constraints, exceptions, decisions, acceptance criteria, and traceability in authoritative text.
+Use diagrams as the primary view for logical system boundaries, relationships, flows, states, and ownership. Also invoke `plantuml-syntax` and use its relevant reference before creating PlantUML. Invoke `software-security-standard` in System Analysis mode when security is applicable, keeping the result at assets, threats, trust boundaries, permission needs, risks, and acceptance outcomes rather than implementation mechanisms. Keep rules, constraints, exceptions, decisions, acceptance criteria, and traceability in authoritative text.
 
 Inputs are classified as follows: a requirements baseline and task/project identity are mandatory; FRS, Change Requests, security/privacy, performance, integration, data-retention, availability, recovery, and operational constraints are conditional and must be supplied when applicable or marked `Not Applicable`; examples, screenshots, diagrams, logs, and preferred notation are optional.
 

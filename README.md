@@ -22,6 +22,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
 - `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
 - `layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
+- `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
 - `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
 - `caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
 - `messaging-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and RabbitMQ/RocketMQ/Kafka behavior.
@@ -116,6 +117,7 @@ skills/
 ├── plantuml-syntax/
 ├── prd-standard/
 ├── sdd-standard/
+├── software-security-standard/
 ├── solid-principles/
 ├── srs-standard/
 ├── system-analysis-standard/
@@ -174,5 +176,6 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Apply object-oriented design, SOLID, and design patterns conditionally according to the selected language, paradigm, problem, and lifecycle stage.
 - Use `clean-code-standard` as the implementation/refactoring review entrypoint; keep naming and function/control-flow guidance in it while routing structural concerns to the specialized Skills.
 - Make layer/dependency, error, caching, and messaging behavior explicit at SD level and concrete/testable at SDD level; do not introduce infrastructure without a requirement.
+- Treat software security as a lifecycle concern: identify assets, threats, trust boundaries, and security requirements in SA; design owned controls in SD; make them concrete and verifiable in SDD and implementation.
 - Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
 - Prefer simple, reviewable documents over unnecessary detail or duplicated content.

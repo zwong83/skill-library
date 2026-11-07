@@ -1,0 +1,4 @@
+interface:
+  display_name: "Software Security Standard"
+  short_description: "Design and verify software security controls"
+  default_prompt: "Use $software-security-standard to identify, design, implement, or review risk-based software security controls and verification evidence."

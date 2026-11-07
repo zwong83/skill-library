@@ -7,7 +7,7 @@ description: Create or audit implementation-oriented system analysis documents t
 
 Use this skill when the user wants to create, refine, compare, or quality-check a System Analysis document. The output explains how the required system behavior is decomposed and allocated at a logical level so that technical design can begin from a consistent analysis baseline.
 
-This skill is self-contained. Do not invoke or inherit instructions from other skills unless the user explicitly asks for a separate artifact.
+This skill governs the System Analysis artifact. Invoke conditional companion skills only where this standard directs; they provide focused analysis guidance without replacing SA ownership.
 
 ## Core operating rules
 
@@ -18,6 +18,7 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Separate logical analysis from technical design. Describe responsibilities, behavior, boundaries, flows, and decisions; leave framework, deployment, class, schema, and protocol choices to System Design.
 - Do not silently resolve contradictions. Record the conflict, impact, decision owner, and required resolution.
 - Use stable IDs and maintain traceability from source requirements through analysis decisions and verification scenarios.
+- Invoke/read `software-security-standard` in System Analysis mode when protected assets, identities, permissions, trust boundaries, sensitive data, abuse, privacy, compliance, or security risk are applicable. Identify requirements and unresolved policy decisions without choosing cryptographic algorithms, identity products, key platforms, or other implementation mechanisms.
 
 ## Diagram-first policy
 
@@ -62,7 +63,7 @@ Use diagrams as the primary representation when the analysis explains relationsh
 
 1. Read [references/system-analysis-template.md](references/system-analysis-template.md) for a full draft or structural review.
 2. Establish the system context, boundaries, actors, capabilities, external dependencies, and assumptions.
-3. Decompose requirements into use cases, system responsibilities, logical components, domain concepts, states, workflows, and cross-cutting concerns.
+3. Decompose requirements into use cases, system responsibilities, logical components, domain concepts, states, workflows, and cross-cutting concerns. When security is applicable, identify assets, actors/workload identities, trust boundaries, sensitive data, abuse cases, permission needs, and security acceptance outcomes.
 4. Analyze each important flow for preconditions, main path, alternate path, failure path, authorization, idempotency, concurrency, recovery, audit, and observable outcomes.
 5. Define logical data ownership, lifecycle, consistency needs, retention/access implications, and source-of-truth responsibilities without writing physical schemas.
 6. Define integration responsibilities and business-level data exchange without writing endpoint contracts or protocol designs.

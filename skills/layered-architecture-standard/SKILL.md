@@ -17,6 +17,7 @@ Use this skill to select an appropriate layering model and turn its responsibili
 - A deployment unit, service, package, and layer are different concepts. State which boundary is being designed.
 - MVC is primarily an interface/presentation pattern; Controller-Service-Repository is an application layering convention; DDD, Clean, and Hexagonal architectures define broader policy and dependency boundaries. Do not treat these labels as interchangeable.
 - Cross-cutting concerns must enter through explicit composition, middleware/interceptors, decorators, policy modules, or platform instrumentation without reversing dependency direction.
+- Security controls may span layers, but authentication, authorization, business security invariants, encryption, key/secrets access, audit, and secure configuration need explicit enforcement points and owners. Invoke/read `software-security-standard` when these controls are material; this skill owns their architectural placement, not their full security specification.
 
 ## Default reference model
 
@@ -49,7 +50,7 @@ Not every system needs six physical directories. Merge layers only when responsi
 2. Identify capabilities, use cases, invariants, data owners, external actors, trust boundaries, and runtime/deployment constraints.
 3. Compare MVC/three-layer, DDD layered, Clean/Hexagonal, feature-modular, and simpler language-native alternatives; select the smallest model that addresses actual complexity.
 4. Define each selected layer/module's purpose, owned decisions, public contracts, models, allowed dependencies, forbidden dependencies, transaction/failure ownership, and mapping boundaries.
-5. Place external systems behind adapters where substitution, isolation, testing, or policy protection justifies the boundary.
+5. Place external systems and security mechanisms behind adapters where substitution, isolation, testing, policy protection, or approved platform integration justifies the boundary.
 6. Trace representative commands, queries, events, failures, and transactions across the layers.
 7. Define composition root, dependency injection/wiring, testing seams, and automated dependency checks where practical.
 8. Run the review checklist and report unresolved ownership or dependency cycles.
@@ -66,6 +67,7 @@ Require the target scope, governing requirements/analysis, capability boundaries
 - Read [references/clean-hexagonal.md](references/clean-hexagonal.md) for Clean Architecture, Onion, or Ports-and-Adapters boundaries.
 - Read [references/feature-modular.md](references/feature-modular.md) for package-by-feature, modular monolith, or capability-owned modules.
 - Read [references/dependency-and-boundary-rules.md](references/dependency-and-boundary-rules.md) when defining allowed imports, ports/adapters, transactions, cross-cutting concerns, or tests.
+- Invoke/read `software-security-standard` when the architecture must place or review identity, authorization, tenant isolation, encryption, key/secrets, audit, privacy, or security verification controls.
 - Read [references/review-checklist.md](references/review-checklist.md) before approving a design or refactor.
 
 ## SD and SDD boundary
@@ -76,4 +78,4 @@ For SDD/OpenSpec, convert the approved design into concrete packages/modules, pu
 
 ## Expected output
 
-Provide the selected model and rationale, layer/module and model-mapping tables, allowed/forbidden dependency matrix, boundary contracts, representative request/message flow, transaction and failure ownership, composition strategy, enforcement/test strategy, violations or risks, and traceability to requirements and design decisions.
+Provide the selected model and rationale, layer/module and model-mapping tables, allowed/forbidden dependency matrix, boundary contracts, representative request/message flow, transaction, failure, and security-control ownership, composition strategy, enforcement/test strategy, violations or risks, and traceability to requirements and design decisions.

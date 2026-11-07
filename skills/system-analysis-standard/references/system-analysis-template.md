@@ -132,6 +132,8 @@ Analyze how quality attributes affect system behavior and responsibilities witho
 
 ### Security, privacy, and authorization
 
+When applicable, use `software-security-standard` in System Analysis mode to identify protected assets, actors and workload identities, trust boundaries, sensitive data, abuse cases, permission/isolation needs, audit expectations, security acceptance outcomes, and unresolved policy decisions. Keep algorithms, products, key stores, and concrete controls for System Design.
+
 ### Observability and supportability
 
 ### Accessibility, compatibility, and compliance

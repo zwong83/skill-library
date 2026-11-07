@@ -45,6 +45,9 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Security, privacy, and operations
 
 - Identity, authentication, authorization, data isolation, secrets, encryption, audit, privacy, retention, and abuse controls are addressed.
+- Assets, trust boundaries, data classifications, threats/abuse cases, enforcement points, owners, failure behavior, verification evidence, exceptions, and residual risks are explicit for every material security control.
+- Authorization is server-side and covers use-case, object, tenant, field, state, privileged, batch/export, and workload access as applicable; interface or middleware checks are not treated as sufficient by themselves.
+- Encryption decisions include purpose and data scope plus approved key ownership, storage, access, rotation, revocation, recovery, destruction, audit, and dependency-failure behavior; custom cryptography and silent plaintext fallback are absent.
 - Logs, metrics, traces, alerts, dashboards, runbooks, ownership, deployment, rollback, configuration, backup, and restore are defined.
 - Logging defines useful structured event/audit contracts, correlation, sensitive-data exclusions, retention/access, and noise/volume controls where applicable.
 - Tracing defines meaningful operation boundaries, propagation, async/message causality, sampling, privacy, and cost without requiring a span for every function.

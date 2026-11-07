@@ -20,6 +20,7 @@ This skill is the governing System Design standard. Invoke conditional companion
 - When the system uses an object-oriented or hybrid implementation model, invoke/read `object-oriented-design` for high-level responsibilities, identity/value semantics, relationships, ownership, contracts, dependency direction, and class/object modeling. Do not force OOP onto a functional, data-oriented, Go, Rust, or other language-native design.
 - When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
 - Invoke/read `layered-architecture-standard` when defining or reviewing logical layers, module boundaries, dependency direction, ports/adapters, transaction ownership, or test seams.
+- Invoke/read `software-security-standard` in System Design mode when protected assets, identity/authentication, authorization, tenant/data isolation, cryptography, key/secrets, privacy, audit, abuse resistance, supply-chain, deployment, or security verification is applicable. Define control architecture and evidence without inventing policy or approval.
 - Invoke/read `error-handling-standard` when defining error taxonomy, propagation, boundary mapping, timeout/retry/recovery, message failure, or public error behavior.
 - Invoke/read `caching-standard` when a cache is proposed or changed; require a source of truth, measurable purpose, staleness/invalidation contract, failure behavior, and security decision before approving it.
 - Invoke/read `messaging-standard` when asynchronous messaging or event streaming is proposed or changed; load only the selected RabbitMQ, RocketMQ, or Kafka reference after the technology decision is justified.
@@ -79,7 +80,7 @@ Use diagrams as the primary representation when the design explains architecture
 6. Specify interfaces, contracts, error behavior, sequencing, timeouts, retries, idempotency, consistency, and versioning at the level needed for implementation review.
 7. Define cache and messaging decisions only when justified, including source/authority, consistency, delivery, ordering, invalidation, acknowledgement, retry, dead-letter, and recovery semantics as applicable.
 8. Define logical and physical data design as appropriate, including schema ownership, indexes/constraints, migrations, retention, privacy, and backup/recovery.
-9. Design security, authorization, secrets handling, observability, availability, scalability, performance, disaster recovery, deployment, and operations.
+9. Apply `software-security-standard` to design applicable identity/authentication, authorization and isolation, data protection, encryption, key/secrets lifecycle, validation, secure failure, audit, privacy, dependency/runtime, abuse, incident/recovery, and verification controls; assign every material enforcement point and owner.
 10. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
 11. Maintain traceability:
 

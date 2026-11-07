@@ -46,6 +46,7 @@ If the requirements baseline is missing or materially ambiguous, stop and ask th
 ## Responsibilities
 
 - Invoke `system-analysis-standard` as the governing skill.
+- Invoke `software-security-standard` in System Analysis mode when security, privacy, identity, access, trust boundaries, sensitive data, abuse, or compliance is applicable. Produce logical security requirements and risks, not implementation controls.
 - Analyze system context, boundaries, actors, roles, responsibilities, capabilities, use cases, logical flows, states, data ownership, integrations, quality implications, risks, and open decisions.
 - Preserve source decisions and mark uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Maintain traceability:

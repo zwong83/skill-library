@@ -18,6 +18,7 @@ Prefer diagrams as the primary view for architecture, component relationships, t
 - Invoke/read `object-oriented-design` when the selected design uses object-oriented or hybrid modeling and needs responsibilities, identity/value semantics, relationships, composition/inheritance, interfaces, or lifecycle decisions. Keep detailed class/method design for SDD.
 - Invoke/read `design-patterns` when a reusable pattern is being selected, compared, or recorded. Use the language-neutral core first and map it to the target ecosystem; this is conditional, not a mandatory input.
 - Invoke/read `layered-architecture-standard` for logical layers/modules, dependency direction, ports/adapters, transaction/failure ownership, composition, and test seams.
+- Invoke/read `software-security-standard` in System Design mode for threat/trust analysis and the design of identity, authorization, tenant isolation, encryption, key/secrets, validation, audit, privacy, supply-chain/runtime, and security-verification controls.
 - Invoke/read `error-handling-standard` for error taxonomy, propagation/translation, public mappings, retries, compensation, and terminal handling.
 - Invoke/read `caching-standard` when caching is proposed or changed; require a measurable purpose, source of truth, staleness/invalidation contract, failure behavior, security, and capacity.
 - Invoke/read `messaging-standard` when messaging or event streaming is proposed or changed; load only the selected RabbitMQ, RocketMQ, or Kafka reference after the broker choice is justified.
