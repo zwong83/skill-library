@@ -21,6 +21,11 @@ Prefer diagrams as the primary view for architecture, component relationships, t
 - Invoke/read `api-design-standard` for HTTP, gRPC, GraphQL, and internal service protocol choices, operation and schema contracts, authorization boundaries, idempotency, pagination, compatibility, limits, and deprecation.
 - Invoke/read `database-persistence-standard` for datastore selection, durable-data ownership, schemas, constraints, queries, indexes, transactions, isolation, migrations, backfills, retention, backup, and restore.
 - Invoke/read `resilience-standard` for dependency time budgets, cancellation, retries, circuit breakers, bulkheads, overload protection, degradation, health semantics, reconciliation, failover, and recovery.
+- Invoke/read `configuration-management-standard` for configuration schemas, sources, precedence, validation, refresh, environment/tenant scope, secret boundaries, feature controls, change governance, and failure behavior.
+- Invoke/read `performance-capacity-standard` for measurable performance objectives, workload and data models, budgets, capacity, bottlenecks, headroom, scaling, quotas, and performance evidence.
+- Invoke/read `deployment-release-standard` for immutable artifacts, promotion, compatibility, rollout, feature exposure, migrations, recovery, approvals, and release evidence.
+- Invoke/read `operability-standard` for service ownership, SLIs/SLOs, telemetry, dashboards, alerts, diagnostics, runbooks, incidents, maintenance, support, and operational readiness.
+- Invoke/read `testing-strategy-standard` for risk-based test levels/types, environments, data, automation, non-functional verification, gates, traceability, and evidence.
 - Invoke/read `software-security-standard` in System Design mode for threat/trust analysis and the design of identity, authorization, tenant isolation, encryption, key/secrets, validation, audit, privacy, supply-chain/runtime, and security-verification controls.
 - Invoke/read `error-handling-standard` for error taxonomy, propagation/translation, public mappings, retries, compensation, and terminal handling.
 - Invoke/read `caching-standard` when caching is proposed or changed; require a measurable purpose, source of truth, staleness/invalidation contract, failure behavior, security, and capacity.
@@ -58,7 +63,7 @@ If System Analysis is missing, materially ambiguous, or inconsistent with the re
 ## Responsibilities
 
 - Invoke `system-design-standard` as the governing skill.
-- Design architecture boundaries, layers/modules, dependency direction, components, responsibilities, API/interface contracts, error behavior, persistence and cache models, transactions, messaging, sequences, state behavior, security controls, resilience, scalability, observability, deployment, operations, technology decisions, alternatives, and verification.
+- Design architecture boundaries, layers/modules, dependency direction, components, responsibilities, API/interface contracts, error behavior, persistence and cache models, transactions, messaging, sequences, state behavior, configuration, security, resilience, performance/capacity, deployment/release, operability, testing strategy, technology decisions, alternatives, and verification.
 - Preserve source decisions and mark uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Maintain traceability:
 
@@ -84,9 +89,11 @@ The output must include, as applicable:
 - logical/physical data architecture and persistence behavior;
 - caching and messaging design when selected;
 - critical sequence, state, data-flow, and concurrency design;
+- configuration ownership, schema, lifecycle, secret boundaries, and failure behavior;
 - security and privacy controls;
 - performance, scalability, reliability, and recovery design;
-- observability and operations design;
+- deployment/release, observability, operability, support, and incident-readiness design;
+- risk-based testing strategy, environments, data, non-functional verification, gates, and evidence;
 - technology choices, alternatives, trade-offs, and ADRs;
 - verification, implementation prerequisites, risks, dependencies, approval status, and change control.
 

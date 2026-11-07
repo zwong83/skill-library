@@ -23,6 +23,11 @@ This skill is the governing System Design standard. Invoke conditional companion
 - Invoke/read `api-design-standard` when defining or changing HTTP, gRPC, GraphQL, or internal service contracts, including protocol semantics, schemas, authorization boundaries, idempotency, compatibility, pagination, limits, and deprecation.
 - Invoke/read `database-persistence-standard` when defining or changing durable-state ownership, datastore selection, schemas, constraints, access paths, indexes, transactions, isolation, migrations, retention, backup, or restore.
 - Invoke/read `resilience-standard` when dependencies, deadlines, retries, circuit breakers, isolation, overload protection, degradation, health semantics, reconciliation, failover, or recovery must be designed.
+- Invoke/read `configuration-management-standard` when defining configuration schemas, sources, precedence, refresh, environment/tenant scope, secrets boundaries, feature controls, change governance, or provider failure.
+- Invoke/read `performance-capacity-standard` when defining latency/throughput objectives, workload models, resource budgets, bottlenecks, headroom, scaling, dependency quotas, or required performance evidence.
+- Invoke/read `deployment-release-standard` when defining artifacts, promotion, environments, compatibility, rollout, feature exposure, migrations, rollback/roll-forward, or release evidence.
+- Invoke/read `operability-standard` when defining ownership, SLIs/SLOs, dashboards, alerts, diagnostics, runbooks, incidents, maintenance, support, or operational readiness.
+- Invoke/read `testing-strategy-standard` when defining risk coverage, test levels/types, environments, data, automation, non-functional verification, release gates, or evidence.
 - Invoke/read `software-security-standard` in System Design mode when protected assets, identity/authentication, authorization, tenant/data isolation, cryptography, key/secrets, privacy, audit, abuse resistance, supply-chain, deployment, or security verification is applicable. Define control architecture and evidence without inventing policy or approval.
 - Invoke/read `error-handling-standard` when defining error taxonomy, propagation, boundary mapping, timeout/retry/recovery, message failure, or public error behavior.
 - Invoke/read `caching-standard` when a cache is proposed or changed; require a source of truth, measurable purpose, staleness/invalidation contract, failure behavior, and security decision before approving it.
@@ -84,14 +89,18 @@ Use diagrams as the primary representation when the design explains architecture
 7. Define cache and messaging decisions only when justified, including source/authority, consistency, delivery, ordering, invalidation, acknowledgement, retry, dead-letter, and recovery semantics as applicable.
 8. Apply `database-persistence-standard` to applicable durable state and define ownership, datastore, logical/physical model, constraints, access paths, indexes, transactions, isolation, migrations, retention, privacy, capacity, backup, and restore.
 9. Apply `resilience-standard` to define end-to-end time budgets, retry ownership, idempotency, dependency isolation, overload behavior, degraded modes, health, reconciliation, failover, failback, and recovery where applicable.
-10. Apply `software-security-standard` to design applicable identity/authentication, authorization and isolation, data protection, encryption, key/secrets lifecycle, validation, secure failure, audit, privacy, dependency/runtime, abuse, incident/recovery, and verification controls; assign every material enforcement point and owner.
-11. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
-12. Maintain traceability:
+10. Apply `performance-capacity-standard` to define measurable objectives, workload/data assumptions, end-to-end budgets, capacity, headroom, scaling, quotas, regression gates, and required evidence.
+11. Apply `configuration-management-standard` to define configuration schema, source/precedence, validation, environment/tenant scope, dynamic refresh, secret boundaries, change governance, drift, and failure behavior.
+12. Apply `software-security-standard` to design applicable identity/authentication, authorization and isolation, data protection, encryption, key/secrets lifecycle, validation, secure failure, audit, privacy, dependency/runtime, abuse, incident/recovery, and verification controls; assign every material enforcement point and owner.
+13. Apply `deployment-release-standard` and `operability-standard` to define artifact and promotion design, rollout/release/recovery, ownership, SLIs/SLOs, alerts, diagnostics, runbooks, incidents, maintenance, and operational readiness.
+14. Apply `testing-strategy-standard` to define risk-based test levels/types, environments, data, automation, non-functional verification, traceability, gates, and evidence.
+15. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
+16. Maintain traceability:
 
    `Analysis requirement/flow -> Design decision/component/interface/data model -> Verification evidence`
 
-13. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
-14. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
+17. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
+18. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
 
 ## Design artifact boundaries
 

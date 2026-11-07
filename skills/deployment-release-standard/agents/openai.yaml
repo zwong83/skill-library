@@ -1,0 +1,6 @@
+interface:
+  display_name: "Deployment and Release Standard"
+  short_description: "Design safe repeatable software releases"
+  default_prompt: "Use $deployment-release-standard to design or review build, deployment, rollout, rollback, feature release, and release evidence."
+policy:
+  allow_implicit_invocation: true

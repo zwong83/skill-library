@@ -1,0 +1,6 @@
+interface:
+  display_name: "Testing Strategy Standard"
+  short_description: "Design risk-based software test portfolios"
+  default_prompt: "Use $testing-strategy-standard to design or review a risk-based test strategy, test levels, environments, data, gates, and evidence."
+policy:
+  allow_implicit_invocation: true

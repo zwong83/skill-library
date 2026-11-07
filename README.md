@@ -25,6 +25,11 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
 - `database-persistence-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
 - `resilience-standard` — Design bounded deadlines, retries, isolation, overload protection, degradation, health, reconciliation, and recovery.
+- `configuration-management-standard` — Design configuration schemas, sources, precedence, validation, refresh, secrets boundaries, drift, and change lifecycle.
+- `performance-capacity-standard` — Design measurable performance objectives, workload models, capacity, headroom, scaling, and regression evidence.
+- `deployment-release-standard` — Design immutable artifacts, promotion, rollout, feature release, migration sequencing, recovery, and release evidence.
+- `operability-standard` — Design service ownership, SLIs/SLOs, telemetry, alerts, diagnostics, runbooks, incidents, maintenance, and readiness.
+- `testing-strategy-standard` — Design risk-based test portfolios, environments, data, automation, non-functional tests, gates, and evidence.
 - `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
 - `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
 - `caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
@@ -113,14 +118,18 @@ skills/
 ├── caching-standard/
 ├── clean-code-standard/
 ├── code-comments/
+├── configuration-management-standard/
 ├── design-patterns/
 ├── database-persistence-standard/
+├── deployment-release-standard/
 ├── error-handling-standard/
 ├── frs-standard/
 ├── layered-architecture-standard/
 ├── logging-standard/
 ├── messaging-standard/
 ├── object-oriented-design/
+├── operability-standard/
+├── performance-capacity-standard/
 ├── plantuml-syntax/
 ├── prd-standard/
 ├── resilience-standard/
@@ -130,6 +139,7 @@ skills/
 ├── srs-standard/
 ├── system-analysis-standard/
 ├── system-design-standard/
+├── testing-strategy-standard/
 └── tracing-standard/
 ```
 

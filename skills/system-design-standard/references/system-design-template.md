@@ -188,6 +188,8 @@ Show how the design meets quality targets under normal load, degraded operation,
 
 Use `resilience-standard` to define end-to-end deadlines, retry ownership and budgets, idempotency dependencies, isolation, overload controls, degraded modes, health semantics, reconciliation, failover, failback, and recovery. Keep thresholds tied to approved targets or clearly labeled assumptions.
 
+Use `performance-capacity-standard` to define measurable latency/throughput objectives, workload and data models, end-to-end budgets, bottleneck evidence, headroom, quotas, scaling, failover capacity, and required performance tests.
+
 ### Performance model and capacity assumptions
 
 ### Availability and failure domains
@@ -202,6 +204,8 @@ Use `resilience-standard` to define end-to-end deadlines, retry ownership and bu
 
 Define how the system will be monitored, operated, supported, diagnosed, and changed safely.
 
+Use `operability-standard` for ownership, SLIs/SLOs, operational questions, dashboards, alerts, diagnostics, runbooks, incidents, maintenance, support, drills, and readiness evidence.
+
 ### Logs, metrics, traces, and audit events
 
 Define the operational questions, event/span ownership, cross-service or asynchronous trace topology, context propagation, correlation, security/audit requirements, sensitive-data exclusions, sampling, retention, access, and cost controls. Use `logging-standard` and `tracing-standard` when these concerns are material. Keep code-level log statements and custom span placement in SDD/implementation.
@@ -213,6 +217,8 @@ Define the operational questions, event/span ownership, cross-service or asynchr
 ### Deployment, rollback, and configuration management
 
 Prefer a deployment diagram for nodes, environments, trust boundaries, and dependencies. Define rollback, configuration ownership, and operational procedures in text.
+
+Use `configuration-management-standard` for configuration schemas, source/precedence, validation, refresh, secret boundaries, feature controls, drift, change rollout, and failure behavior. Use `deployment-release-standard` for artifact provenance and promotion, environment gates, compatibility, rollout/release strategy, database/configuration sequencing, rollback/roll-forward, approvals, and evidence.
 
 ### Backup/restore and continuity validation
 
@@ -231,6 +237,8 @@ Document approved or proposed technology choices with decision criteria and cons
 ## 11. Verification and Implementation Handoff
 
 Define how the design will be verified and what implementation teams need before coding or deployment begins.
+
+Use `testing-strategy-standard` to map requirements, design decisions, risks, and failure modes to the appropriate static, unit/component, integration, contract, system/end-to-end, acceptance, security, performance, resilience, migration, compatibility, and operational evidence.
 
 ### Design acceptance criteria
 

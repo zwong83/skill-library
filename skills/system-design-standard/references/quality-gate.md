@@ -44,6 +44,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - End-to-end deadlines and cancellation, single-owner bounded retries, circuit/isolation behavior, queue and concurrency limits, overload/load-shed policy, degraded modes, health semantics, reconciliation, failover, and failback are explicit where applicable.
 - Cache loss/staleness/stampede and message duplication/delay/reordering/poison/failover behavior are covered when those technologies are used.
 - Performance, availability, scalability, reliability, and disaster-recovery choices map to explicit targets or assumptions.
+- Critical journeys define percentile latency/throughput objectives, representative workload/data assumptions, budgets, bottleneck evidence, capacity/headroom, scaling limits, dependency quotas, and regression verification where applicable.
 
 ## Security, privacy, and operations
 
@@ -52,6 +53,9 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - Authorization is server-side and covers use-case, object, tenant, field, state, privileged, batch/export, and workload access as applicable; interface or middleware checks are not treated as sufficient by themselves.
 - Encryption decisions include purpose and data scope plus approved key ownership, storage, access, rotation, revocation, recovery, destruction, audit, and dependency-failure behavior; custom cryptography and silent plaintext fallback are absent.
 - Logs, metrics, traces, alerts, dashboards, runbooks, ownership, deployment, rollback, configuration, backup, and restore are defined.
+- Configuration defines key ownership/schema, source and precedence, validation, environment/tenant scope, refresh/stale behavior, secret boundaries, audit, drift, rollout, rollback, and provider-failure behavior where applicable.
+- Deployment/release defines immutable artifact identity and promotion, mixed-version compatibility, migration order, rollout/exposure gates, health/drain behavior, rollback or roll-forward, approvals, and post-release evidence.
+- Operability defines service/dependency ownership, SLIs/SLOs, actionable alerts, safe diagnostics, escalation, runbooks, incident handling, maintenance, drills, support expectations, and readiness evidence.
 - Logging defines useful structured event/audit contracts, correlation, sensitive-data exclusions, retention/access, and noise/volume controls where applicable.
 - Tracing defines meaningful operation boundaries, propagation, async/message causality, sampling, privacy, and cost without requiring a span for every function.
 - Operational and support responsibilities are explicit and feasible.
@@ -60,6 +64,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 - Technology choices and ADRs include alternatives, rationale, trade-offs, consequences, and approval status.
 - Critical analysis requirements trace to design decisions, components/interfaces/data models, and verification evidence.
+- Testing uses a risk-based portfolio with explicit levels/types, scenarios, environments, data, dependency strategy, non-functional evidence, flaky-test control, gates, results, and visible residual risk.
 - Risks, dependencies, open decisions, and design limitations have owners or next actions when known.
 
 ## Boundary and readiness
