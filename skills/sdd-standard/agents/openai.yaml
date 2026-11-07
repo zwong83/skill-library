@@ -1,0 +1,6 @@
+interface:
+  display_name: "OpenSpec SDD Standard"
+  short_description: "Run gated OpenSpec spec-driven delivery"
+  default_prompt: "Use $sdd-standard to turn an approved System Design into a gated OpenSpec change and verify it through convergence."
+policy:
+  allow_implicit_invocation: true

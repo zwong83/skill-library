@@ -15,6 +15,7 @@ For a full draft or review, also read the linked System Design template and qual
 Prefer diagrams as the primary view for architecture, component relationships, technical flows, states, data ownership, trust boundaries, and deployment. Use low-level C4, component, sequence, state, class, ER, deployment, and data-flow diagrams as appropriate.
 
 - Invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference.
+- Invoke/read `object-oriented-design` when the selected design uses object-oriented or hybrid modeling and needs responsibilities, identity/value semantics, relationships, composition/inheritance, interfaces, or lifecycle decisions. Keep detailed class/method design for SDD.
 - Invoke/read `design-patterns` when a reusable pattern is being selected, compared, or recorded. Use the language-neutral core first and map it to the target ecosystem; this is conditional, not a mandatory input.
 - Keep contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures in authoritative text.
 - Give every diagram a title, scope, design explanation, traceability, and required legend/assumptions.

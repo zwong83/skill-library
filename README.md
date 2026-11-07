@@ -1,6 +1,6 @@
-# Requirements and System Design Skill Library
+# Requirements, System Design, and SDD Skill Library
 
-Reusable, tool-agnostic workflows for AI agents that create and review business, product, software-requirement, functional-requirement, system-analysis, and system-design documents.
+Reusable workflows for AI agents that create and review business, product, software-requirement, functional-requirement, system-analysis, and system-design documents, then drive approved changes through OpenSpec-backed Spec-Driven Development.
 
 This library is not limited to Codex. Its core content is Markdown-based and can be used by any AI agent or runtime that can read `SKILL.md` and follow Markdown instructions. Codex-specific metadata is included where useful, but it is optional to other runtimes.
 
@@ -18,6 +18,9 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `system-design-standard` — Design architecture, components, interfaces, data, sequences, security, reliability, operations, deployment, and verification.
 - `plantuml-syntax` — Reference PlantUML syntax and diagram types for requirements and system documentation.
 - `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
+- `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
+- `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
+- `sdd-standard` — Turn an approved requirements, SA, and SD baseline into an OpenSpec change, implementation tasks, verification evidence, convergence, and archive.
 
 ### Agents
 
@@ -30,7 +33,7 @@ Agents are focused workflows that gather the correct inputs, invoke the correspo
 
 ## Product lifecycle
 
-The library supports a traceable requirements-to-design flow:
+The library supports a traceable requirements-to-delivery flow:
 
 ```text
 Business Requirements
@@ -44,6 +47,10 @@ Functional Requirements
 System Analysis
         ↓
 System Design
+        ↓
+Spec-Driven Development / OpenSpec
+        ↓
+Implementation and Convergence
 ```
 
 The default outputs are separate documents because each artifact has a different audience, purpose, change cadence, and approval gate:
@@ -55,6 +62,13 @@ output/SRS/SRS-<project-name>.md
 output/FRS/FRS-<project-name>.md
 output/SA/SA-<project-name>.md
 output/SD/SD-<project-name>.md
+
+openspec/changes/<change-name>/
+├── proposal.md
+├── specs/<capability>/spec.md
+├── design.md
+├── tasks.md
+└── verification.md    # optional sdd-standard extension
 ```
 
 Critical paths should remain traceable:
@@ -66,7 +80,8 @@ BRD objective/requirement
   → FRS feature/functional requirement
   → SA logical responsibility/flow
   → SD design decision/component/interface/data model
-  → Acceptance criteria / UAT / test evidence
+  → OpenSpec proposal/capability requirement/design delta/task
+  → Code change / acceptance criteria / test evidence / convergence
 ```
 
 ## Portable structure
@@ -82,8 +97,11 @@ skills/
 ├── brd-standard/
 ├── design-patterns/
 ├── frs-standard/
+├── object-oriented-design/
 ├── plantuml-syntax/
 ├── prd-standard/
+├── sdd-standard/
+├── solid-principles/
 ├── srs-standard/
 ├── system-analysis-standard/
 └── system-design-standard/
@@ -123,6 +141,8 @@ Each Agent contains its own `AGENTS.md` and a Skill entrypoint that points to th
 
 The core workflows do not require a specific model, framework, programming language, vendor, or deployment platform.
 
+`sdd-standard` uses the OpenSpec CLI and the active project schema as the authority for change artifacts, templates, paths, status, and archive behavior. Its readiness and convergence gates add lifecycle controls around OpenSpec without replacing upstream BRD, PRD, SRS/FRS, SA, or SD sources.
+
 ## Diagram policy
 
 Use `plantuml-syntax` when a diagram materially improves understanding. System Analysis and System Design are Diagram-first for boundaries, relationships, flows, states, data ownership, and deployment; text remains authoritative for rules, constraints, exceptions, decisions, acceptance criteria, and unresolved items.
@@ -135,4 +155,5 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Make mandatory, conditional, and optional inputs explicit.
 - Resolve or visibly record unresolved decisions; do not silently invent answers.
 - Keep requirements and design artifacts testable and traceable.
+- Apply object-oriented design, SOLID, and design patterns conditionally according to the selected language, paradigm, problem, and lifecycle stage.
 - Prefer simple, reviewable documents over unnecessary detail or duplicated content.

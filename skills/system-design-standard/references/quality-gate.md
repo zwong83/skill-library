@@ -13,6 +13,8 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - Governing System Analysis and requirements are identified with version/status.
 - Architecture drivers, constraints, design principles, scope, and system boundaries are explicit.
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
+- When OOP or a hybrid paradigm is selected, high-level object responsibilities, identities/values, relationships, ownership, lifecycle, dependency direction, and stable contracts are explicit without duplicating detailed SDD class/method design.
+- Object-oriented abstractions, SOLID guidance, and design patterns are not forced onto a language or problem where simpler native constructs are clearer.
 - The design does not add components or complexity without a requirement or operational rationale.
 
 ## Diagram quality

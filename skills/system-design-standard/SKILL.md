@@ -7,7 +7,7 @@ description: Create or audit implementation-ready System Design documents coveri
 
 Use this skill when the user wants to create, refine, compare, or quality-check a System Design document. The output turns an approved System Analysis and requirements baseline into an explicit, reviewable technical design that implementation and operations can follow.
 
-This skill is self-contained. Do not invoke or inherit instructions from other skills unless the user explicitly asks for a separate artifact.
+This skill is the governing System Design standard. Invoke conditional companion skills only where this standard directs and only when they fit the selected paradigm or design problem.
 
 ## Core operating rules
 
@@ -17,6 +17,7 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 - Label uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Make design decisions explicit: state the decision, context, alternatives, trade-offs, consequences, owner, and approval status.
 - Prefer simple, explainable designs that satisfy the requirements. Do not add components, patterns, or infrastructure without a reason tied to a requirement or operational need.
+- When the system uses an object-oriented or hybrid implementation model, invoke/read `object-oriented-design` for high-level responsibilities, identity/value semantics, relationships, ownership, contracts, dependency direction, and class/object modeling. Do not force OOP onto a functional, data-oriented, Go, Rust, or other language-native design.
 - When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
@@ -26,6 +27,7 @@ This skill is self-contained. Do not invoke or inherit instructions from other s
 Use diagrams as the primary representation when the design explains architecture, relationships, boundaries, flows, hierarchy, state, timing, deployment, or data ownership. Prefer C4 context/container/component, component, sequence, state, class, ER, deployment, and data-flow diagrams.
 
 - Invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference.
+- Invoke/read `object-oriented-design` before producing a class/object model or making a material inheritance, composition, interface, or object-lifecycle decision.
 - Invoke/read `design-patterns` only when the design contains a pattern choice, pattern comparison, or reusable collaboration whose trade-offs need to be documented.
 - Use one focused diagram per design question; do not combine unrelated architecture views into an unreadable diagram.
 - Keep text as the authoritative source for contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures.
@@ -67,16 +69,17 @@ Use diagrams as the primary representation when the design explains architecture
 1. Read [references/system-design-template.md](references/system-design-template.md) for a full draft or structural review.
 2. Establish architecture drivers, constraints, quality attributes, design principles, and decision criteria.
 3. Define system context, containers/modules/components, responsibilities, trust boundaries, data flows, and ownership.
-4. Specify interfaces, contracts, error behavior, sequencing, timeouts, retries, idempotency, consistency, and versioning at the level needed for implementation review.
-5. Define logical and physical data design as appropriate, including schema ownership, indexes/constraints, migrations, retention, privacy, and backup/recovery.
-6. Design security, authorization, secrets handling, observability, availability, scalability, performance, disaster recovery, deployment, and operations.
-7. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
-8. Maintain traceability:
+4. When OOP is selected, define only the high-level domain/object responsibilities, identities, values, relationships, dependency direction, and contracts needed for architecture review; defer detailed class/method design to SDD.
+5. Specify interfaces, contracts, error behavior, sequencing, timeouts, retries, idempotency, consistency, and versioning at the level needed for implementation review.
+6. Define logical and physical data design as appropriate, including schema ownership, indexes/constraints, migrations, retention, privacy, and backup/recovery.
+7. Design security, authorization, secrets handling, observability, availability, scalability, performance, disaster recovery, deployment, and operations.
+8. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
+9. Maintain traceability:
 
    `Analysis requirement/flow -> Design decision/component/interface/data model -> Verification evidence`
 
-9. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
-10. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
+10. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
+11. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
 
 ## Design artifact boundaries
 

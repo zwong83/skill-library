@@ -48,6 +48,10 @@ Use a component or responsibility diagram when relationships are complex; use te
 
 Define components or modules, their responsibilities, dependencies, ownership, lifecycle, and communication patterns.
 
+### Object-oriented design view (conditional)
+
+When the selected implementation paradigm is object-oriented or hybrid, identify the high-level domain objects/modules, responsibilities, identities versus values, ownership, lifecycle, major relationships, dependency direction, and stable contracts needed for architecture review. Use `object-oriented-design` for this view. Keep detailed classes, methods, constructors, fields, and framework wiring in the downstream SDD/OpenSpec design.
+
 ### Component register
 
 Prefer a C4 component or component diagram to show dependencies and boundaries. Keep each component's contract and rationale in text.

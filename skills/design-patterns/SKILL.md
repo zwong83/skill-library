@@ -79,6 +79,12 @@ For each proposed pattern, answer:
 - **Inheritance trap:** using Template Method or subclassing where composition, functions, traits, or data-driven rules are safer.
 - **Unbounded event coupling:** using Observer or event buses without ownership, delivery, ordering, failure, and lifecycle rules.
 
+## Related conditional skills
+
+- Use `object-oriented-design` when the broader problem is object identity, responsibilities, invariants, relationships, ownership, lifecycle, composition, or inheritance.
+- Use `solid-principles` when reviewing the quality of an object/module design after its intended responsibilities and contracts are known.
+- Keep this skill focused on whether a recurring design problem justifies a named pattern; do not use pattern selection as a substitute for object modeling or SOLID review.
+
 ## Expected output
 
 When this skill is used, produce a concise pattern decision that includes:
