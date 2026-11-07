@@ -48,6 +48,10 @@ Use a component or responsibility diagram when relationships are complex; use te
 
 Define components or modules, their responsibilities, dependencies, ownership, lifecycle, and communication patterns.
 
+### Layer, module, and dependency design
+
+When internal boundaries are material, define logical layers or feature modules, allowed and forbidden dependencies, ports/adapters, composition root, transaction and failure ownership, and enforcement strategy. Use `layered-architecture-standard`; do not force a fixed number of layers.
+
 ### Object-oriented design view (conditional)
 
 When the selected implementation paradigm is object-oriented or hybrid, identify the high-level domain objects/modules, responsibilities, identities versus values, ownership, lifecycle, major relationships, dependency direction, and stable contracts needed for architecture review. Use `object-oriented-design` for this view. Keep detailed classes, methods, constructors, fields, and framework wiring in the downstream SDD/OpenSpec design.
@@ -100,6 +104,8 @@ Use an interface or component view to show ownership and relationship. Keep the 
 
 ##### Validation and error model
 
+Define stable error categories/codes, throw-or-return expectations, translation boundaries, safe public exposure, retryability, terminal handling, and logging ownership. Use `error-handling-standard` when errors cross components or protocols.
+
 ##### Idempotency, retries, timeouts, and rate limits
 
 ##### Versioning and compatibility
@@ -126,6 +132,10 @@ Prefer an ER or class diagram for entities, relationships, cardinality, and owne
 
 ### Migration, backup, restore, and recovery
 
+### Caching design (conditional)
+
+When caching is justified, use `caching-standard` to define the measurable objective, source of truth, placement/pattern, key/value contract, tolerated staleness, TTL/refresh, invalidation ownership, failure/fallback behavior, tenant/security boundary, capacity, and observability. Keep concrete keys and configuration in SDD.
+
 ## 6. Interaction, Sequence, and State Design
 
 Show how components collaborate across critical flows, including success, failure, retry, timeout, and recovery paths.
@@ -141,6 +151,10 @@ Use state diagrams as the primary view for lifecycle states and transition guard
 ### Data-flow and event-flow design
 
 Use data-flow or sequence diagrams to show movement, transformation, and ownership of data. Keep schemas, retention, privacy, and consistency rules in text.
+
+### Messaging and event-stream design (conditional)
+
+When asynchronous messaging is used, apply `messaging-standard` to define message purpose/ownership, contract/versioning, broker choice, topology, delivery and ordering scope, publish coordination, consumer idempotency, acknowledgement/offset point, retry, dead-letter/quarantine, replay, security, capacity, and operations. Load only the selected broker reference.
 
 ### Concurrency and ordering behavior
 

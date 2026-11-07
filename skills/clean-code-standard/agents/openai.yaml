@@ -1,0 +1,6 @@
+interface:
+  display_name: "Clean Code Standard"
+  short_description: "Write and review clear maintainable code"
+  default_prompt: "Use $clean-code-standard to write, refactor, or review this code for naming, function structure, control flow, side effects, duplication, failures, comments, and appropriate design boundaries."
+policy:
+  allow_implicit_invocation: true

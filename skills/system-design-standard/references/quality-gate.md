@@ -13,6 +13,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - Governing System Analysis and requirements are identified with version/status.
 - Architecture drivers, constraints, design principles, scope, and system boundaries are explicit.
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
+- Logical layers/modules have explicit responsibilities, allowed/forbidden dependencies, transaction/failure ownership, composition, and enforceable boundaries when applicable.
 - When OOP or a hybrid paradigm is selected, high-level object responsibilities, identities/values, relationships, ownership, lifecycle, dependency direction, and stable contracts are explicit without duplicating detailed SDD class/method design.
 - Object-oriented abstractions, SOLID guidance, and design patterns are not forced onto a language or problem where simpler native constructs are clearer.
 - The design does not add components or complexity without a requirement or operational rationale.
@@ -28,13 +29,17 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Interfaces and data
 
 - Interfaces define purpose, ownership, operations/messages, contracts, authentication/authorization, validation, errors, retries, timeouts, idempotency, versioning, and monitoring as applicable.
+- Error handling defines taxonomy/codes, throw-or-return and translation boundaries, public mappings, retryability, terminal handling, cause preservation, and single-owner logging where applicable.
 - Data has a source of truth, owner, lifecycle, consistency boundary, access policy, retention/deletion rule, capacity assumption, and backup/recovery behavior.
+- Every cache has a measurable purpose, source of truth, staleness/invalidation contract, key/value/TTL model, failure behavior, tenant/security controls, capacity, and observability; feature-specific cache use is not assumed.
+- Messaging defines owner, contract/versioning, scoped delivery/ordering guarantees, publish consistency, consumer idempotency, acknowledgement/offset point, retries, DLQ/replay, security, capacity, and broker-version assumptions.
 - Migrations, compatibility, and rollback implications are addressed when data or contracts change.
 
 ## Critical behavior and resilience
 
 - Critical flows have sequence/state/data-flow views or equivalent text.
 - Success, failure, timeout, retry, duplicate, concurrency, fallback, compensation, and recovery behavior are covered where relevant.
+- Cache loss/staleness/stampede and message duplication/delay/reordering/poison/failover behavior are covered when those technologies are used.
 - Performance, availability, scalability, reliability, and disaster-recovery choices map to explicit targets or assumptions.
 
 ## Security, privacy, and operations

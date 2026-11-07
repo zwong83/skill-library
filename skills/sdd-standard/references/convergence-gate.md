@@ -37,7 +37,7 @@ Every in-scope requirement and scenario must have implementation and evidence. E
 
 ### 4. Design conformance
 
-- Verify component boundaries, interfaces, data ownership, state transitions, error handling, consistency, concurrency, security, privacy, observability, deployment, migration, rollback, and compatibility against the design delta and approved SD.
+- Verify component/layer boundaries, dependency direction, interfaces, data and transaction ownership, state transitions, error handling, consistency, concurrency, caching, messaging, security, privacy, observability, deployment, migration, rollback, and compatibility against the design delta and approved SD.
 - Record any implementation-driven design change in the design artifact and revalidate before accepting it.
 
 ### 5. Task authenticity
@@ -55,6 +55,10 @@ Run the checks required by the project and change, which may include:
 - manual acceptance, observability, rollout, rollback, or operational-readiness checks.
 
 When applicable, verify structured log fields/severity/correlation/redaction/noise behavior, trace topology/propagation/status/sampling, and the accuracy/actionability of comments and docstrings. Do not accept sensitive telemetry, orphan spans, repeated error logs, stale comments, or TODOs that hide required work.
+
+When applicable, verify architecture dependency rules; error translation, retry, and terminal behavior; cache keys/TTL/invalidation/failure/concurrency; and message contract/delivery/idempotency/ordering/acknowledgement/retry/DLQ/replay behavior. Do not accept vendor exceptions leaking through inward contracts, correctness that depends on cache survival, unbounded retry, acknowledgement before required durable effects, or unsupported exactly-once claims.
+
+Verify `clean-code-standard` conformance for changed production code: intention-revealing and consistent names, cohesive functions/modules, clear normal flow, explicit dependencies/side effects/nullability/resource ownership, justified duplication/abstraction, language-idiomatic failure handling, and project formatter/linter/type/static/test evidence. Do not force arbitrary size limits, patterns, SOLID interfaces, exceptions, or Java conventions onto languages where they reduce clarity.
 
 Record exact commands or review actions, results, failures, environment limitations, and skipped checks. Do not represent an unexecuted check as passing.
 

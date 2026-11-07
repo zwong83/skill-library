@@ -17,6 +17,10 @@ Prefer diagrams as the primary view for architecture, component relationships, t
 - Invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference.
 - Invoke/read `object-oriented-design` when the selected design uses object-oriented or hybrid modeling and needs responsibilities, identity/value semantics, relationships, composition/inheritance, interfaces, or lifecycle decisions. Keep detailed class/method design for SDD.
 - Invoke/read `design-patterns` when a reusable pattern is being selected, compared, or recorded. Use the language-neutral core first and map it to the target ecosystem; this is conditional, not a mandatory input.
+- Invoke/read `layered-architecture-standard` for logical layers/modules, dependency direction, ports/adapters, transaction/failure ownership, composition, and test seams.
+- Invoke/read `error-handling-standard` for error taxonomy, propagation/translation, public mappings, retries, compensation, and terminal handling.
+- Invoke/read `caching-standard` when caching is proposed or changed; require a measurable purpose, source of truth, staleness/invalidation contract, failure behavior, security, and capacity.
+- Invoke/read `messaging-standard` when messaging or event streaming is proposed or changed; load only the selected RabbitMQ, RocketMQ, or Kafka reference after the broker choice is justified.
 - Invoke/read `logging-standard` for system-level log/audit/security event contracts and `tracing-standard` for cross-service/async trace topology, propagation, and sampling when observability design is in scope. Defer code-level instrumentation placement to SDD.
 - Keep contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures in authoritative text.
 - Give every diagram a title, scope, design explanation, traceability, and required legend/assumptions.
@@ -50,7 +54,7 @@ If System Analysis is missing, materially ambiguous, or inconsistent with the re
 ## Responsibilities
 
 - Invoke `system-design-standard` as the governing skill.
-- Design architecture boundaries, components, responsibilities, interfaces, data models, sequences, state behavior, security controls, reliability, scalability, observability, deployment, operations, technology decisions, alternatives, and verification.
+- Design architecture boundaries, layers/modules, dependency direction, components, responsibilities, interfaces, error behavior, data/cache models, messaging, sequences, state behavior, security controls, reliability, scalability, observability, deployment, operations, technology decisions, alternatives, and verification.
 - Preserve source decisions and mark uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Maintain traceability:
 
@@ -70,8 +74,11 @@ The output must include, as applicable:
 - document control and source baseline;
 - architecture drivers, constraints, and design principles;
 - system context, containers, components, ownership, and trust boundaries;
+- layer/module responsibilities, dependency rules, composition, transaction boundaries, and test seams where applicable;
 - interface and contract design;
+- error taxonomy, propagation, recovery, and boundary mappings;
 - logical/physical data architecture and persistence behavior;
+- caching and messaging design when selected;
 - critical sequence, state, data-flow, and concurrency design;
 - security and privacy controls;
 - performance, scalability, reliability, and recovery design;

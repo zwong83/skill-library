@@ -17,9 +17,14 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `system-analysis-standard` — Analyze system boundaries, actors, logical flows, responsibilities, data behavior, integrations, risks, and design inputs.
 - `system-design-standard` — Design architecture, components, interfaces, data, sequences, security, reliability, operations, deployment, and verification.
 - `plantuml-syntax` — Reference PlantUML syntax and diagram types for requirements and system documentation.
+- `clean-code-standard` — Write, refactor, and review maintainable code using language-neutral naming, function, control-flow, failure, nullability, side-effect, and verification guidance.
 - `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
 - `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
 - `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
+- `layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
+- `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
+- `caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
+- `messaging-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and RabbitMQ/RocketMQ/Kafka behavior.
 - `logging-standard` — Design and review structured, correlated, secure, and operationally useful application logging.
 - `tracing-standard` — Design and review distributed tracing, context propagation, span boundaries, sampling, correlation, and trace quality.
 - `code-comments` — Write and review maintainable comments and docstrings that explain intent, contracts, invariants, risks, and non-obvious constraints.
@@ -98,10 +103,15 @@ agents/
 
 skills/
 ├── brd-standard/
+├── caching-standard/
+├── clean-code-standard/
 ├── code-comments/
 ├── design-patterns/
+├── error-handling-standard/
 ├── frs-standard/
+├── layered-architecture-standard/
 ├── logging-standard/
+├── messaging-standard/
 ├── object-oriented-design/
 ├── plantuml-syntax/
 ├── prd-standard/
@@ -162,5 +172,7 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Resolve or visibly record unresolved decisions; do not silently invent answers.
 - Keep requirements and design artifacts testable and traceable.
 - Apply object-oriented design, SOLID, and design patterns conditionally according to the selected language, paradigm, problem, and lifecycle stage.
+- Use `clean-code-standard` as the implementation/refactoring review entrypoint; keep naming and function/control-flow guidance in it while routing structural concerns to the specialized Skills.
+- Make layer/dependency, error, caching, and messaging behavior explicit at SD level and concrete/testable at SDD level; do not introduce infrastructure without a requirement.
 - Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
 - Prefer simple, reviewable documents over unnecessary detail or duplicated content.

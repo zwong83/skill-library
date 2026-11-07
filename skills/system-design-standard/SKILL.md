@@ -19,6 +19,10 @@ This skill is the governing System Design standard. Invoke conditional companion
 - Prefer simple, explainable designs that satisfy the requirements. Do not add components, patterns, or infrastructure without a reason tied to a requirement or operational need.
 - When the system uses an object-oriented or hybrid implementation model, invoke/read `object-oriented-design` for high-level responsibilities, identity/value semantics, relationships, ownership, contracts, dependency direction, and class/object modeling. Do not force OOP onto a functional, data-oriented, Go, Rust, or other language-native design.
 - When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
+- Invoke/read `layered-architecture-standard` when defining or reviewing logical layers, module boundaries, dependency direction, ports/adapters, transaction ownership, or test seams.
+- Invoke/read `error-handling-standard` when defining error taxonomy, propagation, boundary mapping, timeout/retry/recovery, message failure, or public error behavior.
+- Invoke/read `caching-standard` when a cache is proposed or changed; require a source of truth, measurable purpose, staleness/invalidation contract, failure behavior, and security decision before approving it.
+- Invoke/read `messaging-standard` when asynchronous messaging or event streaming is proposed or changed; load only the selected RabbitMQ, RocketMQ, or Kafka reference after the technology decision is justified.
 - Invoke/read `logging-standard` when the design must define structured operational, audit, security, or diagnostic events. Invoke/read `tracing-standard` when cross-boundary causality, latency, asynchronous execution, context propagation, or sampling must be designed. Keep these at system-contract level; defer statement-level instrumentation to SDD/implementation.
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
@@ -70,17 +74,19 @@ Use diagrams as the primary representation when the design explains architecture
 1. Read [references/system-design-template.md](references/system-design-template.md) for a full draft or structural review.
 2. Establish architecture drivers, constraints, quality attributes, design principles, and decision criteria.
 3. Define system context, containers/modules/components, responsibilities, trust boundaries, data flows, and ownership.
-4. When OOP is selected, define only the high-level domain/object responsibilities, identities, values, relationships, dependency direction, and contracts needed for architecture review; defer detailed class/method design to SDD.
-5. Specify interfaces, contracts, error behavior, sequencing, timeouts, retries, idempotency, consistency, and versioning at the level needed for implementation review.
-6. Define logical and physical data design as appropriate, including schema ownership, indexes/constraints, migrations, retention, privacy, and backup/recovery.
-7. Design security, authorization, secrets handling, observability, availability, scalability, performance, disaster recovery, deployment, and operations.
-8. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
-9. Maintain traceability:
+4. Define logical layers/module boundaries, allowed dependency direction, transaction and failure ownership, ports/adapters, and composition strategy when the design requires internal structure.
+5. When OOP is selected, define only the high-level domain/object responsibilities, identities, values, relationships, dependency direction, and contracts needed for architecture review; defer detailed class/method design to SDD.
+6. Specify interfaces, contracts, error behavior, sequencing, timeouts, retries, idempotency, consistency, and versioning at the level needed for implementation review.
+7. Define cache and messaging decisions only when justified, including source/authority, consistency, delivery, ordering, invalidation, acknowledgement, retry, dead-letter, and recovery semantics as applicable.
+8. Define logical and physical data design as appropriate, including schema ownership, indexes/constraints, migrations, retention, privacy, and backup/recovery.
+9. Design security, authorization, secrets handling, observability, availability, scalability, performance, disaster recovery, deployment, and operations.
+10. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
+11. Maintain traceability:
 
    `Analysis requirement/flow -> Design decision/component/interface/data model -> Verification evidence`
 
-10. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
-11. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
+12. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
+13. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
 
 ## Design artifact boundaries
 

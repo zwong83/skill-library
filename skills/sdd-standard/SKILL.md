@@ -161,6 +161,9 @@ openspec instructions apply --change "<change-name>" --json
 - Read every path returned in `contextFiles` before changing code.
 - Implement one bounded task at a time and keep changes within the approved scope.
 - Add or update tests as required by the related scenarios and design.
+- Invoke `clean-code-standard` as the implementation-quality entrypoint when a task writes, refactors, or reviews production code. It owns naming and function/control-flow review and conditionally invokes `layered-architecture-standard`, `error-handling-standard`, `code-comments`, `solid-principles`, and `design-patterns` only when their specific concerns are present.
+- Invoke `caching-standard` when a task creates or changes cache keys, value schemas, TTL/refresh, invalidation, consistency, fallback, Redis integration, or cache observability.
+- Invoke `messaging-standard` when a task creates or changes message contracts, topics/exchanges/queues/groups, producer/consumer behavior, acknowledgements/offsets, idempotency, ordering, retries, dead letters, or replay. Load only the selected broker reference.
 - Invoke `logging-standard` and `tracing-standard` conditionally when the task changes diagnosability, runtime events, audit/security evidence, cross-boundary causality, propagation, or latency visibility. Invoke `code-comments` only where intent, contracts, invariants, concurrency, security, compatibility, algorithms, or workarounds are not clear from code alone.
 - Mark a task complete only after its code and required verification pass.
 - Pause on ambiguity, failing prerequisites, design drift, out-of-scope impact, or unresolved security/operational concerns.
