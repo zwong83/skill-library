@@ -1,0 +1,6 @@
+interface:
+  display_name: "Database Persistence Standard"
+  short_description: "Design reliable persistence and migrations"
+  default_prompt: "Use $database-persistence-standard to design or review database models, access paths, transactions, migrations, and operations."
+policy:
+  allow_implicit_invocation: true

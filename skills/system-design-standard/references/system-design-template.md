@@ -86,6 +86,8 @@ Use a focused component, sequence, or data-flow diagram when interactions are co
 
 Specify the interfaces required for implementation and integration review. Keep contracts consistent with the source requirements and business behavior.
 
+Use `api-design-standard` for applicable HTTP, gRPC, GraphQL, or internal service APIs. The System Design owns protocol and operation semantics, schemas, authorization boundaries, idempotency, compatibility, limits, deprecation, and failure behavior; SDD owns concrete framework mappings.
+
 ### Interface inventory
 
 Use an interface or component view to show ownership and relationship. Keep the detailed contract, validation, errors, and compatibility rules in text.
@@ -115,6 +117,8 @@ Define stable error categories/codes, throw-or-return expectations, translation 
 ## 5. Data Architecture and Persistence Design
 
 Define data ownership, logical/physical structures, consistency, lifecycle, privacy, retention, migration, backup, and recovery.
+
+Use `database-persistence-standard` when durable state is introduced or changed. The System Design owns datastore and data ownership, invariants, schemas, access paths, transactions, isolation, migration strategy, retention, and recovery objectives; SDD owns concrete mappings, migrations, queries, settings, and tests.
 
 ### Data ownership and source of truth
 
@@ -181,6 +185,8 @@ Use `software-security-standard` in System Design mode. Include a security conte
 ## 8. Reliability, Performance, and Scalability Design
 
 Show how the design meets quality targets under normal load, degraded operation, and recovery conditions.
+
+Use `resilience-standard` to define end-to-end deadlines, retry ownership and budgets, idempotency dependencies, isolation, overload controls, degraded modes, health semantics, reconciliation, failover, failback, and recovery. Keep thresholds tied to approved targets or clearly labeled assumptions.
 
 ### Performance model and capacity assumptions
 

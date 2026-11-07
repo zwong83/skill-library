@@ -22,6 +22,9 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
 - `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
 - `layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
+- `api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
+- `database-persistence-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
+- `resilience-standard` — Design bounded deadlines, retries, isolation, overload protection, degradation, health, reconciliation, and recovery.
 - `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
 - `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
 - `caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
@@ -105,11 +108,13 @@ agents/
 └── spec-driven-development-agent/
 
 skills/
+├── api-design-standard/
 ├── brd-standard/
 ├── caching-standard/
 ├── clean-code-standard/
 ├── code-comments/
 ├── design-patterns/
+├── database-persistence-standard/
 ├── error-handling-standard/
 ├── frs-standard/
 ├── layered-architecture-standard/
@@ -118,6 +123,7 @@ skills/
 ├── object-oriented-design/
 ├── plantuml-syntax/
 ├── prd-standard/
+├── resilience-standard/
 ├── sdd-standard/
 ├── software-security-standard/
 ├── solid-principles/

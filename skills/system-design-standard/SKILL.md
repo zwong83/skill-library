@@ -20,6 +20,9 @@ This skill is the governing System Design standard. Invoke conditional companion
 - When the system uses an object-oriented or hybrid implementation model, invoke/read `object-oriented-design` for high-level responsibilities, identity/value semantics, relationships, ownership, contracts, dependency direction, and class/object modeling. Do not force OOP onto a functional, data-oriented, Go, Rust, or other language-native design.
 - When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
 - Invoke/read `layered-architecture-standard` when defining or reviewing logical layers, module boundaries, dependency direction, ports/adapters, transaction ownership, or test seams.
+- Invoke/read `api-design-standard` when defining or changing HTTP, gRPC, GraphQL, or internal service contracts, including protocol semantics, schemas, authorization boundaries, idempotency, compatibility, pagination, limits, and deprecation.
+- Invoke/read `database-persistence-standard` when defining or changing durable-state ownership, datastore selection, schemas, constraints, access paths, indexes, transactions, isolation, migrations, retention, backup, or restore.
+- Invoke/read `resilience-standard` when dependencies, deadlines, retries, circuit breakers, isolation, overload protection, degradation, health semantics, reconciliation, failover, or recovery must be designed.
 - Invoke/read `software-security-standard` in System Design mode when protected assets, identity/authentication, authorization, tenant/data isolation, cryptography, key/secrets, privacy, audit, abuse resistance, supply-chain, deployment, or security verification is applicable. Define control architecture and evidence without inventing policy or approval.
 - Invoke/read `error-handling-standard` when defining error taxonomy, propagation, boundary mapping, timeout/retry/recovery, message failure, or public error behavior.
 - Invoke/read `caching-standard` when a cache is proposed or changed; require a source of truth, measurable purpose, staleness/invalidation contract, failure behavior, and security decision before approving it.
@@ -77,17 +80,18 @@ Use diagrams as the primary representation when the design explains architecture
 3. Define system context, containers/modules/components, responsibilities, trust boundaries, data flows, and ownership.
 4. Define logical layers/module boundaries, allowed dependency direction, transaction and failure ownership, ports/adapters, and composition strategy when the design requires internal structure.
 5. When OOP is selected, define only the high-level domain/object responsibilities, identities, values, relationships, dependency direction, and contracts needed for architecture review; defer detailed class/method design to SDD.
-6. Specify interfaces, contracts, error behavior, sequencing, timeouts, retries, idempotency, consistency, and versioning at the level needed for implementation review.
+6. Apply `api-design-standard` to applicable interfaces and define protocol, operations, schemas, authorization boundaries, validation, errors, idempotency, concurrency, pagination, limits, compatibility, deprecation, and verification at the level needed for implementation review.
 7. Define cache and messaging decisions only when justified, including source/authority, consistency, delivery, ordering, invalidation, acknowledgement, retry, dead-letter, and recovery semantics as applicable.
-8. Define logical and physical data design as appropriate, including schema ownership, indexes/constraints, migrations, retention, privacy, and backup/recovery.
-9. Apply `software-security-standard` to design applicable identity/authentication, authorization and isolation, data protection, encryption, key/secrets lifecycle, validation, secure failure, audit, privacy, dependency/runtime, abuse, incident/recovery, and verification controls; assign every material enforcement point and owner.
-10. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
-11. Maintain traceability:
+8. Apply `database-persistence-standard` to applicable durable state and define ownership, datastore, logical/physical model, constraints, access paths, indexes, transactions, isolation, migrations, retention, privacy, capacity, backup, and restore.
+9. Apply `resilience-standard` to define end-to-end time budgets, retry ownership, idempotency, dependency isolation, overload behavior, degraded modes, health, reconciliation, failover, failback, and recovery where applicable.
+10. Apply `software-security-standard` to design applicable identity/authentication, authorization and isolation, data protection, encryption, key/secrets lifecycle, validation, secure failure, audit, privacy, dependency/runtime, abuse, incident/recovery, and verification controls; assign every material enforcement point and owner.
+11. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
+12. Maintain traceability:
 
    `Analysis requirement/flow -> Design decision/component/interface/data model -> Verification evidence`
 
-12. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
-13. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
+13. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
+14. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
 
 ## Design artifact boundaries
 

@@ -29,8 +29,10 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Interfaces and data
 
 - Interfaces define purpose, ownership, operations/messages, contracts, authentication/authorization, validation, errors, retries, timeouts, idempotency, versioning, and monitoring as applicable.
+- API protocol semantics, field presence/nullability/defaults, duplicate and concurrent behavior, pagination, payload/rate limits, compatibility, deprecation, and contract verification are explicit where applicable.
 - Error handling defines taxonomy/codes, throw-or-return and translation boundaries, public mappings, retryability, terminal handling, cause preservation, and single-owner logging where applicable.
 - Data has a source of truth, owner, lifecycle, consistency boundary, access policy, retention/deletion rule, capacity assumption, and backup/recovery behavior.
+- Persistent data defines datastore rationale, keys and constraints, bounded access paths, index evidence, transaction/isolation and conflict behavior, migration/backfill compatibility, connection capacity, and tested restore expectations where applicable.
 - Every cache has a measurable purpose, source of truth, staleness/invalidation contract, key/value/TTL model, failure behavior, tenant/security controls, capacity, and observability; feature-specific cache use is not assumed.
 - Messaging defines owner, contract/versioning, scoped delivery/ordering guarantees, publish consistency, consumer idempotency, acknowledgement/offset point, retries, DLQ/replay, security, capacity, and broker-version assumptions.
 - Migrations, compatibility, and rollback implications are addressed when data or contracts change.
@@ -39,6 +41,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 - Critical flows have sequence/state/data-flow views or equivalent text.
 - Success, failure, timeout, retry, duplicate, concurrency, fallback, compensation, and recovery behavior are covered where relevant.
+- End-to-end deadlines and cancellation, single-owner bounded retries, circuit/isolation behavior, queue and concurrency limits, overload/load-shed policy, degraded modes, health semantics, reconciliation, failover, and failback are explicit where applicable.
 - Cache loss/staleness/stampede and message duplication/delay/reordering/poison/failover behavior are covered when those technologies are used.
 - Performance, availability, scalability, reliability, and disaster-recovery choices map to explicit targets or assumptions.
 

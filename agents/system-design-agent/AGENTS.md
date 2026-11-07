@@ -18,6 +18,9 @@ Prefer diagrams as the primary view for architecture, component relationships, t
 - Invoke/read `object-oriented-design` when the selected design uses object-oriented or hybrid modeling and needs responsibilities, identity/value semantics, relationships, composition/inheritance, interfaces, or lifecycle decisions. Keep detailed class/method design for SDD.
 - Invoke/read `design-patterns` when a reusable pattern is being selected, compared, or recorded. Use the language-neutral core first and map it to the target ecosystem; this is conditional, not a mandatory input.
 - Invoke/read `layered-architecture-standard` for logical layers/modules, dependency direction, ports/adapters, transaction/failure ownership, composition, and test seams.
+- Invoke/read `api-design-standard` for HTTP, gRPC, GraphQL, and internal service protocol choices, operation and schema contracts, authorization boundaries, idempotency, pagination, compatibility, limits, and deprecation.
+- Invoke/read `database-persistence-standard` for datastore selection, durable-data ownership, schemas, constraints, queries, indexes, transactions, isolation, migrations, backfills, retention, backup, and restore.
+- Invoke/read `resilience-standard` for dependency time budgets, cancellation, retries, circuit breakers, bulkheads, overload protection, degradation, health semantics, reconciliation, failover, and recovery.
 - Invoke/read `software-security-standard` in System Design mode for threat/trust analysis and the design of identity, authorization, tenant isolation, encryption, key/secrets, validation, audit, privacy, supply-chain/runtime, and security-verification controls.
 - Invoke/read `error-handling-standard` for error taxonomy, propagation/translation, public mappings, retries, compensation, and terminal handling.
 - Invoke/read `caching-standard` when caching is proposed or changed; require a measurable purpose, source of truth, staleness/invalidation contract, failure behavior, security, and capacity.
@@ -55,7 +58,7 @@ If System Analysis is missing, materially ambiguous, or inconsistent with the re
 ## Responsibilities
 
 - Invoke `system-design-standard` as the governing skill.
-- Design architecture boundaries, layers/modules, dependency direction, components, responsibilities, interfaces, error behavior, data/cache models, messaging, sequences, state behavior, security controls, reliability, scalability, observability, deployment, operations, technology decisions, alternatives, and verification.
+- Design architecture boundaries, layers/modules, dependency direction, components, responsibilities, API/interface contracts, error behavior, persistence and cache models, transactions, messaging, sequences, state behavior, security controls, resilience, scalability, observability, deployment, operations, technology decisions, alternatives, and verification.
 - Preserve source decisions and mark uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Maintain traceability:
 
