@@ -1,11 +1,11 @@
 ---
 name: layered-architecture-standard
-description: Design or review language-neutral software layers, module boundaries, dependency direction, ports and adapters, ownership, transaction boundaries, and test seams for System Design, SDD, implementation, or refactoring; do not force a fixed layer count or object-oriented style.
+description: Select, design, implement, or review language-neutral MVC/three-layer, DDD layered, Clean/Hexagonal, feature-modular, or hybrid architectures, including layer responsibilities, dependency direction, DTO/domain/persistence mapping, ports/adapters, transactions, failures, infrastructure, and test seams; do not force one model onto every system.
 ---
 
 # Layered Architecture Standard
 
-Use this skill to turn system responsibilities into enforceable boundaries. Layers are dependency and ownership rules, not folders added for ceremony.
+Use this skill to select an appropriate layering model and turn its responsibilities into enforceable boundaries. Layers are dependency and ownership rules, not folders added for ceremony.
 
 ## Core rules
 
@@ -15,14 +15,40 @@ Use this skill to turn system responsibilities into enforceable boundaries. Laye
 - Keep a responsibility in one authoritative layer. Avoid pass-through services, duplicate models, and interfaces with only one speculative implementation unless they protect a real boundary or test seam.
 - Do not force OOP, repositories, domain entities, or ports onto data-oriented, functional, pipeline, event-sourced, or language-native designs that have clearer boundaries.
 - A deployment unit, service, package, and layer are different concepts. State which boundary is being designed.
+- MVC is primarily an interface/presentation pattern; Controller-Service-Repository is an application layering convention; DDD, Clean, and Hexagonal architectures define broader policy and dependency boundaries. Do not treat these labels as interchangeable.
 - Cross-cutting concerns must enter through explicit composition, middleware/interceptors, decorators, policy modules, or platform instrumentation without reversing dependency direction.
+
+## Default reference model
+
+Use this model when a concrete baseline is needed, then merge or rename layers to fit the language and system:
+
+```text
+Interface / Delivery
+        ↓
+Application / Use Cases
+        ↓
+Domain / Business Policy
+        ↑
+Ports ← Infrastructure / Adapters
+
+Composition / Bootstrap wires the system.
+```
+
+- **Interface/Delivery:** HTTP/UI/controller, message consumer, CLI, scheduler, transport validation, and protocol mapping.
+- **Application:** use-case orchestration, transaction intent, authorization coordination, idempotency, and application outcomes.
+- **Domain:** business invariants, decisions, calculations, state transitions, entities/values where appropriate, and domain errors.
+- **Ports:** inward-owned contracts for persistence, cache, messaging, clock, files, and external services.
+- **Infrastructure/Adapters:** database, Redis, broker, HTTP client, filesystem, framework, and vendor SDK implementations.
+- **Composition/Bootstrap:** concrete wiring, configuration binding, startup validation, and process lifecycle.
+
+Not every system needs six physical directories. Merge layers only when responsibilities, dependency direction, and testability remain clear.
 
 ## Workflow
 
 1. Classify the task as System Design, SDD/implementation design, refactoring, or review.
 2. Identify capabilities, use cases, invariants, data owners, external actors, trust boundaries, and runtime/deployment constraints.
-3. Choose the smallest architecture model that makes responsibilities and dependency direction clear.
-4. Define each layer/module's purpose, owned decisions, public contracts, allowed dependencies, forbidden dependencies, and transaction responsibility.
+3. Compare MVC/three-layer, DDD layered, Clean/Hexagonal, feature-modular, and simpler language-native alternatives; select the smallest model that addresses actual complexity.
+4. Define each selected layer/module's purpose, owned decisions, public contracts, models, allowed dependencies, forbidden dependencies, transaction/failure ownership, and mapping boundaries.
 5. Place external systems behind adapters where substitution, isolation, testing, or policy protection justifies the boundary.
 6. Trace representative commands, queries, events, failures, and transactions across the layers.
 7. Define composition root, dependency injection/wiring, testing seams, and automated dependency checks where practical.
@@ -34,7 +60,11 @@ Require the target scope, governing requirements/analysis, capability boundaries
 
 ## Reference routing
 
-- Read [references/architecture-models.md](references/architecture-models.md) when selecting layered, feature-modular, clean, hexagonal, or hybrid boundaries.
+- Read [references/architecture-selection.md](references/architecture-selection.md) first when the architecture model has not already been approved.
+- Read [references/mvc-layered.md](references/mvc-layered.md) for MVC or Controller-Service-Repository systems.
+- Read [references/ddd-layered.md](references/ddd-layered.md) for domain-centric systems with substantial business invariants and bounded contexts.
+- Read [references/clean-hexagonal.md](references/clean-hexagonal.md) for Clean Architecture, Onion, or Ports-and-Adapters boundaries.
+- Read [references/feature-modular.md](references/feature-modular.md) for package-by-feature, modular monolith, or capability-owned modules.
 - Read [references/dependency-and-boundary-rules.md](references/dependency-and-boundary-rules.md) when defining allowed imports, ports/adapters, transactions, cross-cutting concerns, or tests.
 - Read [references/review-checklist.md](references/review-checklist.md) before approving a design or refactor.
 
@@ -46,4 +76,4 @@ For SDD/OpenSpec, convert the approved design into concrete packages/modules, pu
 
 ## Expected output
 
-Provide the selected model and rationale, a responsibility/dependency matrix, boundary contracts, representative flow, transaction and failure ownership, composition strategy, test strategy, violations or risks, and traceability to requirements and design decisions.
+Provide the selected model and rationale, layer/module and model-mapping tables, allowed/forbidden dependency matrix, boundary contracts, representative request/message flow, transaction and failure ownership, composition strategy, enforcement/test strategy, violations or risks, and traceability to requirements and design decisions.

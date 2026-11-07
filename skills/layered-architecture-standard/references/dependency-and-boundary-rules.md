@@ -26,6 +26,36 @@ For every layer or module record:
 - Message consumers and scheduled jobs are delivery adapters; they invoke application behavior and map completion/failure to broker or scheduler semantics.
 - Shared libraries must have a narrow, stable purpose. A generic `common` module must not become an unowned dependency hub.
 
+## Default dependency matrix
+
+| Source | May depend on | Must not depend on directly |
+|---|---|---|
+| Interface/Delivery | Application input contracts and approved presentation primitives | Database/cache/broker SDKs, persistence records, unrelated feature internals |
+| Application | Domain policy, inward ports, application contracts | Controllers/views, concrete adapters, ORM sessions, vendor clients |
+| Domain | Domain-owned types and minimal approved language primitives | Application orchestration, transport/framework, database/cache/broker/vendor types |
+| Infrastructure/Adapters | The inward port it implements and required vendor libraries | Other adapter internals or authority to redefine business rules |
+| Composition/Bootstrap | All concrete modules required for wiring | Business behavior beyond startup/lifecycle policy |
+
+Dependencies may be compile-time imports, runtime calls, schema ownership, annotations, code generation, configuration, or shared data. Check all forms, not imports alone.
+
+## Model and mapping boundaries
+
+- Transport DTOs represent external protocol/version/trust contracts.
+- Application commands/queries/results represent use-case contracts.
+- Domain models represent business meaning and invariants.
+- Persistence records represent storage schema and ORM/query concerns.
+- Integration messages represent cross-capability compatibility contracts.
+
+Reuse a type when these meanings genuinely coincide and coupling is accepted. Map when trust, semantics, lifecycle, ownership, versioning, nullability, or security differs. Mapping belongs at the boundary that understands both sides.
+
+## Transaction and failure ownership
+
+- The application/use-case boundary normally owns a local transaction because it knows the complete atomic operation; domain policy defines invariants but should not open database transactions.
+- Adapters translate database/cache/broker/network failures into inward error contracts. Interface adapters map application outcomes to HTTP, message acknowledgement/retry, CLI, or scheduler semantics.
+- Multi-resource work requires an explicit consistency pattern; a layer diagram does not make database, Redis, and broker actions atomic.
+- Logging records the final owned outcome once. Tracing and metrics may cross boundaries through instrumentation without leaking vendor APIs into domain policy.
+- Cache and message brokers are infrastructure adapters unless the approved architecture gives them a distinct authoritative role.
+
 ## Cross-cutting concerns
 
 Authentication context, authorization, validation, transactions, logging, tracing, metrics, retries, and caching may cross layers, but ownership remains explicit. Prefer composition around use cases or adapters. Do not let observability or framework annotations become a hidden dependency from policy code to infrastructure.
