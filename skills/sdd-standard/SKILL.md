@@ -161,6 +161,7 @@ openspec instructions apply --change "<change-name>" --json
 - Read every path returned in `contextFiles` before changing code.
 - Implement one bounded task at a time and keep changes within the approved scope.
 - Add or update tests as required by the related scenarios and design.
+- Invoke `logging-standard` and `tracing-standard` conditionally when the task changes diagnosability, runtime events, audit/security evidence, cross-boundary causality, propagation, or latency visibility. Invoke `code-comments` only where intent, contracts, invariants, concurrency, security, compatibility, algorithms, or workarounds are not clear from code alone.
 - Mark a task complete only after its code and required verification pass.
 - Pause on ambiguity, failing prerequisites, design drift, out-of-scope impact, or unresolved security/operational concerns.
 - Keep proposal, specs, design, tasks, code, and tests synchronized by correcting the owning artifact first.

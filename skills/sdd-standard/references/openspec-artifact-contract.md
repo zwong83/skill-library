@@ -75,6 +75,8 @@ For each material decision, state:
 
 Invoke `object-oriented-design` conditionally when an object-oriented or hybrid implementation needs detailed class/interface/protocol responsibilities, identities, values, relationships, ownership, lifecycle, dependency direction, or collaboration design. Invoke `solid-principles` conditionally to review that object/module design for responsibility, substitutability, consumer contracts, and dependency direction. Invoke `design-patterns` conditionally when a reusable pattern is selected or compared. Invoke `plantuml-syntax` before creating PlantUML diagrams. Do not force OOP, SOLID abstractions, patterns, or diagrams when a simpler language-native representation is clearer.
 
+Invoke `logging-standard` when the change needs concrete structured events, severity, correlation, audit/security records, redaction, volume, or logging tests. Invoke `tracing-standard` when it needs span boundaries, propagation, async/message causality, sampling, trace/log correlation, or tracing tests. Record event/span contracts and verification intent in design; keep statement-level placement in implementation tasks.
+
 ### Risks / Trade-offs
 
 Identify failure modes, technical debt, operational risk, dependency risk, mitigations, owners, and verification evidence. Material unresolved risks block apply readiness.
@@ -94,6 +96,7 @@ Every task must:
 - name the expected implementation or artifact outcome without inventing file paths that have not been verified;
 - include required tests or other evidence;
 - include migration, documentation, observability, rollout, rollback, and cleanup work when applicable;
+- include `code-comments` work only for public contracts or non-obvious intent, invariants, concurrency, security, compatibility, algorithms, and workarounds; do not add a task to narrate obvious code;
 - be small enough to implement and verify without hiding unrelated changes;
 - respect dependency order.
 

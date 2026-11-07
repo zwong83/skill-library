@@ -20,6 +20,9 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
 - `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
 - `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
+- `logging-standard` — Design and review structured, correlated, secure, and operationally useful application logging.
+- `tracing-standard` — Design and review distributed tracing, context propagation, span boundaries, sampling, correlation, and trace quality.
+- `code-comments` — Write and review maintainable comments and docstrings that explain intent, contracts, invariants, risks, and non-obvious constraints.
 - `sdd-standard` — Turn an approved requirements, SA, and SD baseline into an OpenSpec change, implementation tasks, verification evidence, convergence, and archive.
 
 ### Agents
@@ -95,8 +98,10 @@ agents/
 
 skills/
 ├── brd-standard/
+├── code-comments/
 ├── design-patterns/
 ├── frs-standard/
+├── logging-standard/
 ├── object-oriented-design/
 ├── plantuml-syntax/
 ├── prd-standard/
@@ -104,7 +109,8 @@ skills/
 ├── solid-principles/
 ├── srs-standard/
 ├── system-analysis-standard/
-└── system-design-standard/
+├── system-design-standard/
+└── tracing-standard/
 ```
 
 Each Skill contains a required `SKILL.md` plus optional references and metadata:
@@ -156,4 +162,5 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Resolve or visibly record unresolved decisions; do not silently invent answers.
 - Keep requirements and design artifacts testable and traceable.
 - Apply object-oriented design, SOLID, and design patterns conditionally according to the selected language, paradigm, problem, and lifecycle stage.
+- Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
 - Prefer simple, reviewable documents over unnecessary detail or duplicated content.

@@ -182,6 +182,8 @@ Define how the system will be monitored, operated, supported, diagnosed, and cha
 
 ### Logs, metrics, traces, and audit events
 
+Define the operational questions, event/span ownership, cross-service or asynchronous trace topology, context propagation, correlation, security/audit requirements, sensitive-data exclusions, sampling, retention, access, and cost controls. Use `logging-standard` and `tracing-standard` when these concerns are material. Keep code-level log statements and custom span placement in SDD/implementation.
+
 ### Alerts, dashboards, and escalation
 
 ### Runbooks and operational ownership

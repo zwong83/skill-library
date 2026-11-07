@@ -19,6 +19,7 @@ This skill is the governing System Design standard. Invoke conditional companion
 - Prefer simple, explainable designs that satisfy the requirements. Do not add components, patterns, or infrastructure without a reason tied to a requirement or operational need.
 - When the system uses an object-oriented or hybrid implementation model, invoke/read `object-oriented-design` for high-level responsibilities, identity/value semantics, relationships, ownership, contracts, dependency direction, and class/object modeling. Do not force OOP onto a functional, data-oriented, Go, Rust, or other language-native design.
 - When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
+- Invoke/read `logging-standard` when the design must define structured operational, audit, security, or diagnostic events. Invoke/read `tracing-standard` when cross-boundary causality, latency, asynchronous execution, context propagation, or sampling must be designed. Keep these at system-contract level; defer statement-level instrumentation to SDD/implementation.
 - Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
 - Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
 

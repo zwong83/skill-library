@@ -1,0 +1,6 @@
+interface:
+  display_name: "Logging Standard"
+  short_description: "Design safe, useful structured logging"
+  default_prompt: "Use $logging-standard to design or review structured production logging for this change."
+policy:
+  allow_implicit_invocation: true

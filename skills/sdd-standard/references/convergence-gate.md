@@ -54,6 +54,8 @@ Run the checks required by the project and change, which may include:
 - build, lint, static analysis, type checks, schema validation, and dependency checks;
 - manual acceptance, observability, rollout, rollback, or operational-readiness checks.
 
+When applicable, verify structured log fields/severity/correlation/redaction/noise behavior, trace topology/propagation/status/sampling, and the accuracy/actionability of comments and docstrings. Do not accept sensitive telemetry, orphan spans, repeated error logs, stale comments, or TODOs that hide required work.
+
 Record exact commands or review actions, results, failures, environment limitations, and skipped checks. Do not represent an unexecuted check as passing.
 
 ### 7. Unresolved and approval review

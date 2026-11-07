@@ -41,6 +41,8 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 - Identity, authentication, authorization, data isolation, secrets, encryption, audit, privacy, retention, and abuse controls are addressed.
 - Logs, metrics, traces, alerts, dashboards, runbooks, ownership, deployment, rollback, configuration, backup, and restore are defined.
+- Logging defines useful structured event/audit contracts, correlation, sensitive-data exclusions, retention/access, and noise/volume controls where applicable.
+- Tracing defines meaningful operation boundaries, propagation, async/message causality, sampling, privacy, and cost without requiring a span for every function.
 - Operational and support responsibilities are explicit and feasible.
 
 ## Decisions and traceability
