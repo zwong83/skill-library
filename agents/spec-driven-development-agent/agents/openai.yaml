@@ -1,0 +1,6 @@
+interface:
+  display_name: "Spec-Driven Development Agent"
+  short_description: "Implement approved specs with OpenSpec"
+  default_prompt: "Use $spec-driven-development-agent to turn approved SA and SD artifacts into an OpenSpec change, production code, tests, and convergence evidence."
+policy:
+  allow_implicit_invocation: true

@@ -52,6 +52,18 @@ For modified requirements, preserve the complete intended requirement after the 
 
 The OpenSpec design is subordinate to and traceable to the approved System Design. It records how this change will be realized, not a replacement architecture document.
 
+### System Design inheritance and escalation gate
+
+Classify every implementation-design item before recording it:
+
+| Classification | SDD action |
+|---|---|
+| Approved SD decision | Inherit it as a constraint, cite the decision, and map it to concrete implementation and verification without reopening the choice. |
+| Implementation detail within approved SD boundaries | Refine it in the OpenSpec design delta, explain the mapping, and keep it consistent with the approved architecture and project conventions. |
+| Material design change | Stop. Update and approve the governing System Design first, then revise the OpenSpec design and affected tasks before implementation. |
+
+A material design change includes selecting or changing architecture/paradigm, module or layer boundaries, dependency direction, public interfaces, data ownership, transaction/consistency boundaries, security posture or control architecture, cache/messaging strategy, major error/recovery behavior, deployment topology, or observability strategy. Do not disguise such a change as implementation detail.
+
 ### Context
 
 Summarize the relevant current state, affected SD decisions, constraints, and existing implementation boundaries.
@@ -73,11 +85,15 @@ For each material decision, state:
 - performance, reliability, observability, deployment, migration, rollback, and compatibility implications as applicable;
 - approval status.
 
-Invoke `object-oriented-design` conditionally when an object-oriented or hybrid implementation needs detailed class/interface/protocol responsibilities, identities, values, relationships, ownership, lifecycle, dependency direction, or collaboration design. Invoke `solid-principles` conditionally to review that object/module design for responsibility, substitutability, consumer contracts, and dependency direction. Invoke `design-patterns` conditionally when a reusable pattern is selected or compared. Invoke `plantuml-syntax` before creating PlantUML diagrams. Do not force OOP, SOLID abstractions, patterns, or diagrams when a simpler language-native representation is clearer.
+Use specialized skills in SDD as implementation-mapping and conformance references, not as permission to reselect the approved System Design. If a required material decision is absent or the implementation cannot conform, block and escalate to SD.
 
-Invoke `layered-architecture-standard` when the design delta changes modules, dependency direction, ports/adapters, transactions, composition, or test seams. Invoke `software-security-standard` when it changes identity/authentication, authorization or isolation, sensitive-data handling, cryptography, key/secrets, validation, audit/privacy, dependencies/runtime security, abuse controls, or security evidence. Invoke `error-handling-standard` when it changes typed errors/results, throw/catch/translation, public mappings, retries, compensation, or terminal handling. Invoke `caching-standard` when it changes cache keys, schemas, TTL/refresh, invalidation, consistency, fallback, or Redis behavior. Invoke `messaging-standard` when it changes message contracts, topology, producers/consumers, acknowledgements/offsets, idempotency, ordering, retries, dead letters, or replay; load only the selected broker reference.
+- Invoke `object-oriented-design`, `solid-principles`, and `design-patterns` only to map or verify an approved object/module/pattern direction into concrete class, interface, protocol, responsibility, identity/value, relationship, ownership, lifecycle, dependency, and collaboration details. A new material paradigm or pattern decision belongs in SD. Do not force these abstractions onto a clearer language-native implementation.
+- Invoke `layered-architecture-standard` only to map or verify approved module/layer boundaries, dependency direction, ports/adapters, transactions, composition, and test seams. Any material boundary or ownership change belongs in SD.
+- Invoke `software-security-standard`, `error-handling-standard`, `caching-standard`, and `messaging-standard` only to implement and verify approved security, failure, cache, and messaging decisions. Concrete types, keys, schemas, TTLs, mappings, retry parameters, topics/queues, acknowledgements, idempotency, dead-letter, replay, and test behavior may be refined within approved constraints; a strategy or posture change belongs in SD.
+- Invoke `logging-standard` and `tracing-standard` only to convert approved observability contracts into concrete events, fields, severity, redaction, span boundaries, propagation, sampling, correlation, and tests. A material change to observability strategy belongs in SD.
+- Invoke `plantuml-syntax` before creating PlantUML only when an implementation-delta diagram materially clarifies the approved design mapping. Do not duplicate SD diagrams without a change-specific reason.
 
-Invoke `logging-standard` when the change needs concrete structured events, severity, correlation, audit/security records, redaction, volume, or logging tests. Invoke `tracing-standard` when it needs span boundaries, propagation, async/message causality, sampling, trace/log correlation, or tracing tests. Record event/span contracts and verification intent in design; keep statement-level placement in implementation tasks.
+Record concrete implementation contracts and verification intent in the design delta; keep statement-level placement and code edits in implementation tasks.
 
 ### Risks / Trade-offs
 

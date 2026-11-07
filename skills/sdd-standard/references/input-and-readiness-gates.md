@@ -10,6 +10,7 @@ For every mode:
 
 - task mode: Explore, Propose, Review, Apply, Converge, or Archive;
 - project root and feature/change identity;
+- OpenSpec CLI state, resolved executable, locally detected version, install scope/method when discoverable, and compatibility status; if unavailable, record the proposed official/project-approved installation source, version, scope, and authorization state;
 - OpenSpec context state; when initialized, include the active schema and change status; when uninitialized, record `Active schema: None` and separately identify any intended schema as proposed;
 - source-document locations, versions, statuses, and owners;
 - applicable project instructions, coding standards, test commands, and validation commands.

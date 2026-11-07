@@ -34,6 +34,8 @@ Do not use this skill for unconstrained ideation, upstream business/product defi
 
 Use the installed OpenSpec CLI as the authority for the active schema, artifact graph, templates, output paths, status, and apply context. Never assume that every project uses the default file set.
 
+The CLI must be installed and executable before any project context, schema, or change command runs. Read [references/openspec-bootstrap.md](references/openspec-bootstrap.md) when OpenSpec availability, installation, version, PATH, or initialization is unknown. CLI installation and project initialization are separate state-changing operations with separate authorization gates.
+
 When available, route work through these companion skills:
 
 - `openspec-explore` for exploration and clarification without implementation;
@@ -46,13 +48,15 @@ If a companion skill is unavailable, follow the equivalent OpenSpec CLI instruct
 ## Non-negotiable rules
 
 - Read [references/input-and-readiness-gates.md](references/input-and-readiness-gates.md) before proposing, applying, converging, or archiving a change.
+- Do not silently install, upgrade, or switch the OpenSpec CLI. Detect the local version without a network update check; if unavailable or incompatible, report the exact state and follow the bootstrap gate.
 - Block implementation readiness when a material `Assumption`, `TBC`, `TBD`, `Open Question`, `Pending Approval`, unresolved conflict, missing acceptance criterion, or missing owner remains in an applicable source.
 - Do not invent scope, behavior, interface contracts, data ownership, security controls, NFR targets, migration policy, operational ownership, or approval status.
 - Invoke/read `software-security-standard` in SDD/implementation mode when a change affects identity, authentication, authorization, tenant/data isolation, sensitive data, cryptography, key/secrets, validation, audit, privacy, dependencies, deployment security, abuse resistance, or security evidence. Preserve approved SD decisions and update the owning upstream artifact before changing security architecture.
 - No production implementation may begin until all apply-required artifacts are complete, strict validation passes, the unresolved gate passes, and the user explicitly authorizes implementation.
+- Explicit Apply authorization includes the approved code/tests plus routine task-status and verification-evidence updates inside the selected change that are necessary to keep execution traceable. It does not include upstream requirement/spec/design changes, new scope, main-spec synchronization, archive, Git operations, deployment, or unrelated artifacts.
 - Task completion is not convergence. Do not archive solely because every checkbox is marked complete.
 - If implementation exposes a specification or design defect, pause implementation, update the artifact that owns the decision, revalidate, update affected tasks, and then resume.
-- OpenSpec initialization, artifact creation, code modification, commits, pushes, specification synchronization, and archive operations are state-changing actions; obtain the authorization required by the active environment immediately before performing them.
+- OpenSpec CLI installation/update, shell or PATH modification, project initialization, artifact creation, code modification, commits, pushes, specification synchronization, and archive operations are state-changing actions; obtain the authorization required by the active environment immediately before performing them.
 
 ## Task modes
 
@@ -81,14 +85,15 @@ If a material source is missing or unresolved, set the delivery state to `Blocke
 
 ### 2. Establish OpenSpec context
 
-1. Verify that the OpenSpec CLI is available.
-2. Run `openspec list --json` as a read-only context check.
-3. Interpret the result without guessing:
-   - command unavailable -> `Blocked: OpenSpec CLI unavailable`;
+1. Detect the OpenSpec executable and local version without requesting an online update check. Prefer `openspec version --json` when supported and fall back to `openspec --version`; validate structured output before relying on it.
+2. If the command is unavailable, report `Blocked: OpenSpec CLI unavailable`, read [references/openspec-bootstrap.md](references/openspec-bootstrap.md), identify an official/project-approved installation source and proposed version/scope, and obtain authorization before installing. After installation, verify the resolved executable and version before continuing.
+3. Record the executable, version, install scope/method when discoverable, and any project compatibility constraint. Do not silently upgrade an installed version.
+4. Run `openspec list --json` as a read-only project-context check.
+5. Interpret the result without guessing:
    - explicit missing-project/change-directory result -> `OpenSpec state: Uninitialized`;
    - other non-success result -> `Blocked: OpenSpec context error` with the exact error;
    - successful result -> record active changes and continue.
-4. Before initialization, report:
+6. Before initialization, report:
 
    ```text
    OpenSpec state: Uninitialized
@@ -97,14 +102,14 @@ If a material source is missing or unresolved, set the delivery state to `Blocke
    ```
 
    An intended schema is not an active schema and must not be reported as selected or validated.
-5. For an existing change, run:
+7. For an existing change, run:
 
    ```bash
    openspec status --change "<change-name>" --json
    ```
 
-6. Read `schemaName`, `applyRequires`, artifact dependencies, and statuses from a successful response. Missing fields or invalid JSON are an OpenSpec context error, not permission to assume defaults.
-7. If the project is not initialized and the source-readiness gate has passed, explain the state and obtain authorization before running `openspec init`. Do not initialize implicitly.
+8. Read `schemaName`, `applyRequires`, artifact dependencies, and statuses from a successful response. Missing fields or invalid JSON are an OpenSpec context error, not permission to assume defaults.
+9. If the project is not initialized and the source-readiness gate has passed, explain the state and obtain separate authorization before running `openspec init` from the intended project root. Do not treat CLI installation as authorization to initialize a project.
 
 ### 3. Complete the source-readiness gate
 
@@ -162,12 +167,14 @@ openspec instructions apply --change "<change-name>" --json
 - Read every path returned in `contextFiles` before changing code.
 - Implement one bounded task at a time and keep changes within the approved scope.
 - Add or update tests as required by the related scenarios and design.
+- Treat the approved System Design as authoritative. Use specialized skills below to map approved decisions into implementation and verify conformance, not to reopen architecture or strategy. If a task requires a material change to architecture/paradigm, module/layer boundaries, dependency direction, public interfaces, data or transaction ownership, security posture, cache/messaging strategy, major failure behavior, deployment, or observability strategy, stop and update/approve SD before continuing.
 - Invoke `clean-code-standard` as the implementation-quality entrypoint when a task writes, refactors, or reviews production code. It owns naming and function/control-flow review and conditionally invokes `layered-architecture-standard`, `error-handling-standard`, `code-comments`, `solid-principles`, and `design-patterns` only when their specific concerns are present.
-- Invoke `caching-standard` when a task creates or changes cache keys, value schemas, TTL/refresh, invalidation, consistency, fallback, Redis integration, or cache observability.
-- Invoke `messaging-standard` when a task creates or changes message contracts, topics/exchanges/queues/groups, producer/consumer behavior, acknowledgements/offsets, idempotency, ordering, retries, dead letters, or replay. Load only the selected broker reference.
-- Invoke `software-security-standard` when a task implements or changes a material security control. Include negative authorization/isolation scenarios with authoritative tenant/context binding, forbidden-side-effect assertions, replay/duplicate/concurrency behavior, key/secret and control-failure behavior, safe errors/telemetry, dependency/configuration checks, and the verification evidence required by the approved design.
-- Invoke `logging-standard` and `tracing-standard` conditionally when the task changes diagnosability, runtime events, audit/security evidence, cross-boundary causality, propagation, or latency visibility. Invoke `code-comments` only where intent, contracts, invariants, concurrency, security, compatibility, algorithms, or workarounds are not clear from code alone.
+- Invoke `caching-standard` when implementing approved cache keys, value schemas, TTL/refresh, invalidation, consistency, fallback, Redis integration, or cache observability; do not introduce or change cache strategy in SDD.
+- Invoke `messaging-standard` when implementing approved message contracts, topics/exchanges/queues/groups, producer/consumer behavior, acknowledgements/offsets, idempotency, ordering, retries, dead letters, or replay. Load only the selected broker reference and do not change messaging strategy in SDD.
+- Invoke `software-security-standard` to implement and verify approved security controls. Include negative authorization/isolation scenarios with authoritative tenant/context binding, forbidden-side-effect assertions, replay/duplicate/concurrency behavior, key/secret and control-failure behavior, safe errors/telemetry, dependency/configuration checks, and required evidence; do not change security posture in SDD.
+- Invoke `logging-standard` and `tracing-standard` to map approved observability contracts to concrete runtime events, audit/security evidence, span boundaries, propagation, sampling, correlation, and tests. Invoke `code-comments` only where approved intent, contracts, invariants, concurrency, security, compatibility, algorithms, or workarounds are not clear from code alone.
 - Mark a task complete only after its code and required verification pass.
+- Persist routine implementation and verification evidence within the selected change as part of authorized Apply work. If evidence reveals a requirements, capability-spec, or design defect, stop and correct the owning artifact through its separately authorized mode before continuing.
 - Pause on ambiguity, failing prerequisites, design drift, out-of-scope impact, or unresolved security/operational concerns.
 - Keep proposal, specs, design, tasks, code, and tests synchronized by correcting the owning artifact first.
 
@@ -185,6 +192,8 @@ Source requirement
 ```
 
 Record the result as `Converged` or `Not Converged`. If the active schema has no verification artifact, store evidence in a project-approved change-local or review artifact and clearly label it as an SDD extension rather than a built-in OpenSpec artifact.
+
+An explicitly authorized Converge mode includes routine persistence of convergence evidence for the selected change, but not code corrections, upstream artifact changes, main-spec synchronization, or archive.
 
 ### 8. Sync and archive
 

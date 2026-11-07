@@ -39,6 +39,7 @@ Agents are focused workflows that gather the correct inputs, invoke the correspo
 - `product-agent` — Uses `prd-standard`, `srs-standard`, and `frs-standard`; enforces the BRD intake and unresolved-decision gates.
 - `system-analysis-agent` — Uses `system-analysis-standard` and produces logical System Analysis documents.
 - `system-design-agent` — Uses `system-design-standard` and produces technical System Design documents.
+- `spec-driven-development-agent` — Uses `sdd-standard` to create OpenSpec artifacts, implement approved production code and tests, verify convergence, and archive completed changes.
 
 ## Product lifecycle
 
@@ -100,7 +101,8 @@ agents/
 ├── business-agent/
 ├── product-agent/
 ├── system-analysis-agent/
-└── system-design-agent/
+├── system-design-agent/
+└── spec-driven-development-agent/
 
 skills/
 ├── brd-standard/
