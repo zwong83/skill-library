@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Security Standard"
+  short_description: "Design browser and web-client security controls"
+  default_prompt: "Use $frontend-security-standard to design the browser and client security controls for this approved change."
+policy:
+  allow_implicit_invocation: true

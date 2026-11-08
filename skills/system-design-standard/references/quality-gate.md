@@ -5,13 +5,13 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Input readiness
 
 - Mandatory task, system identity, and System Analysis baseline are present, or a provisional design is explicitly authorized.
-- Applicable SRS/FRS, PRD/BRD, Change Request, security/privacy, performance, availability, recovery, observability, deployment, operational, integration, vendor, platform, migration, compatibility, and capacity inputs are supplied or explicitly marked `Not Applicable`.
+- Applicable SRS/FRS, PRD/BRD, Change Request, UX/user-flow/wireframe/design-system, browser/device/locale/accessibility, security/privacy, performance, availability, recovery, observability, deployment, operational, integration, vendor, platform, migration, compatibility, and capacity inputs are supplied or explicitly marked `Not Applicable`.
 - Optional benchmarks, prototypes, reference architectures, cost estimates, diagrams, and preferred technologies are not treated as blockers or approvals.
 
 ## Source and architecture
 
 - Governing System Analysis and requirements are identified with version/status.
-- The specialist routing matrix classifies architecture, interface/data, quality attributes, delivery/operations, and independent review as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
+- The specialist routing matrix classifies architecture, interface/data, frontend design, quality attributes, delivery/operations, and independent review as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
 - Only routed concerns were loaded; accepted specialist packets, cross-packet dependencies, conflicts, and unresolved decisions are reconciled or visibly registered before final readiness.
 - Architecture drivers, constraints, design principles, scope, and system boundaries are explicit.
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
@@ -38,6 +38,9 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - Every cache has a measurable purpose, source of truth, staleness/invalidation contract, key/value/TTL model, failure behavior, tenant/security controls, capacity, and observability; feature-specific cache use is not assumed.
 - Messaging defines owner, contract/versioning, scoped delivery/ordering guarantees, publish consistency, consumer idempotency, acknowledgement/offset point, retries, DLQ/replay, security, capacity, and broker-version assumptions.
 - Migrations, compatibility, and rollback implications are addressed when data or contracts change.
+- When frontend scope exists, backend domain/data/transaction/security ownership is explicit; the versioned frontend/backend contract has joint journey-driven review and `Contract-Ready` status before parallel detail or implementation readiness.
+- The frontend design covers applicable rendering/routing/modules, server/client and trust boundaries, components/design system, complete UI states, state/data ownership, responsive/accessibility/localization, performance, client security, observability, build/delivery, and test evidence without duplicating authoritative backend rules.
+- Contract feedback resolves or registers request fan-out, client joins, field/error semantics, pagination/filter/sort, idempotency/concurrency, deadlines/cancellation, compatibility, mocks/examples, and unsupported UX needs.
 
 ## Critical behavior and resilience
 

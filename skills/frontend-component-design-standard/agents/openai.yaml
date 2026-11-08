@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Component Design Standard"
+  short_description: "Design component contracts states and composition"
+  default_prompt: "Use $frontend-component-design-standard to define the component contracts and UI state matrix for this feature."
+policy:
+  allow_implicit_invocation: true

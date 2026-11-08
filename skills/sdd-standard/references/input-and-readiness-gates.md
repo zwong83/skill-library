@@ -30,6 +30,7 @@ For Apply mode:
 - complete apply-required artifacts;
 - passing strict OpenSpec validation;
 - applicable `TA-Ready` Test Analysis with complete case-to-task-to-specialist allocation, or a recorded and approved `Not Applicable` rationale;
+- for frontend work, approved frontend SD decisions and the applicable versioned frontend/backend interface recorded as `Contract-Ready`;
 - explicit implementation authorization.
 
 For Regression mode:

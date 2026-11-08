@@ -24,6 +24,7 @@ Pass only the selected change's relevant context:
 - governing source paths, versions, statuses, and unresolved-item result;
 - artifact status, strict-validation result, and dynamic instruction/context paths;
 - approved scope and System Design decisions;
+- for frontend scope, approved frontend decision IDs, versioned `Contract-Ready` interface, support/experience/quality commitments, and frontend task boundaries;
 - TA artifact/status, complete case matrix, case-task-specialist mapping, and test-level/type allocation when applicable;
 - specialist prerequisites, expected reports/evidence, and current unit/integration/contract/UI/system-E2E/performance/security/regression status;
 - routing matrix for implementation concerns;

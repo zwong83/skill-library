@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend State and Data Standard"
+  short_description: "Design frontend state ownership and data flow"
+  default_prompt: "Use $frontend-state-data-standard to design state ownership, API data flow, caching, and recovery for this feature."
+policy:
+  allow_implicit_invocation: true

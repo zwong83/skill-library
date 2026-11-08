@@ -10,7 +10,7 @@ Read ../../skills/sdd-standard/SKILL.md and [references/mode-coordination.md](re
 
 - Explore, Propose, Review -> openspec-planning-agent.
 - Test Analysis after complete artifacts -> test-analysis-agent; required for behavior-changing Apply unless explicitly justified `Not Applicable`.
-- Apply -> implementation-agent, only after Apply-Ready and explicit implementation authorization; it routes non-TDD test work to unit, integration, contract, UI, system/E2E, performance, and authorized security specialists.
+- Apply -> implementation-agent, only after Apply-Ready and explicit implementation authorization; it conditionally routes material frontend tasks to frontend-implementation-agent and non-TDD tests to the assigned specialists.
 - Regression -> regression-testing-agent after an implementation/testable target and impact baseline exist, when TA/release/convergence requires it.
 - Converge -> convergence-review-agent after required specialist and regression evidence is available.
 - Archive -> Coordinator only after Converged and explicit archive authorization.

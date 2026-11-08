@@ -84,6 +84,12 @@ Use a focused component, sequence, or data-flow diagram when interactions are co
 
 ##### Alternatives and rationale
 
+### Frontend application design (conditional)
+
+When a web frontend is in scope, use the accepted `frontend-design-agent` packet. Define rendering/hosting, routes/layouts/navigation, feature/module and server/client boundaries, component/design-system contracts, state/data ownership, responsive/accessibility/localization behavior, frontend performance/security/observability, build/delivery, and verification. Preserve backend authority for domain rules, durable data, transactions, consistency, and server authorization.
+
+Use focused component, route/navigation, state, data-flow, sequence, or deployment diagrams when they clarify a material decision. Keep detailed framework code and statement-level instrumentation in SDD.
+
 ## 4. Interface and Contract Design
 
 Specify the interfaces required for implementation and integration review. Keep contracts consistent with the source requirements and business behavior.
@@ -115,6 +121,10 @@ Define stable error categories/codes, throw-or-return expectations, translation 
 ##### Versioning and compatibility
 
 ##### Monitoring and reconciliation
+
+### Frontend/backend contract readiness (conditional)
+
+For frontend scope, record the backend domain/data/transaction/security ownership baseline, versioned draft contract, frontend feedback, accepted resolutions, owners, compatibility policy, examples/mocks/fixtures, contract-test intent, and `Contract-Ready` status. Resolve excessive request fan-out, unstable client joins, duplicated business rules, ambiguous errors, unsafe retries, and missing pagination/filter/sort or UI-state support before parallel detailed design.
 
 ## 5. Data Architecture and Persistence Design
 

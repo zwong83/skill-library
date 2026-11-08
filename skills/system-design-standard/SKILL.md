@@ -31,7 +31,7 @@ Mandatory:
 - complete approved System Analysis for new design work, unless a provisional design is explicitly requested;
 - complete existing SD for refinement/review.
 
-BRD/PRD/SRS/FRS, Change Request, security/privacy, performance, availability, recovery, observability, deployment, operations, integration, migration, compatibility, vendor, platform, and capacity inputs become mandatory only when a decision depends on them.
+BRD/PRD/SRS/FRS, Change Request, UX/user flows/wireframes/design system, browser/device/locale/accessibility, security/privacy, performance, availability, recovery, observability, deployment, operations, integration, migration, compatibility, vendor, platform, and capacity inputs become mandatory only when a decision depends on them.
 
 Read identified sources completely. Block an implementation-ready conclusion when material behavior, ownership, interface, data, security, performance, reliability, deployment, operational, acceptance, or approval decisions remain unresolved.
 
@@ -47,16 +47,17 @@ Text remains normative for contracts, rules, constraints, exceptions, targets, d
 2. Establish source baseline, architecture drivers, constraints, quality attributes, scope, and decision criteria.
 3. Build the specialist routing matrix and provide each selected concern only the relevant sources.
 4. Define context, components, responsibilities, boundaries, flows, ownership, and approved topology.
-5. Incorporate selected specialist decisions for interfaces/data, quality attributes, and delivery/operations.
-6. Reconcile cross-concern dependencies and conflicts; do not silently choose between unresolved material proposals.
-7. Record alternatives, risks, assumptions, dependencies, open decisions, implementation prerequisites, and approval status.
-8. Maintain: Analysis requirement/flow -> design decision/component/interface/data model -> verification evidence.
-9. Run [references/quality-gate.md](references/quality-gate.md) and resolve blocker/major gaps through the owning source or specialty.
-10. End with readiness status and the next authorized action.
+5. Incorporate selected specialist decisions for interfaces/data, frontend, quality attributes, and delivery/operations.
+6. For frontend scope, establish backend authority and a draft contract, reconcile frontend contract feedback, record `Contract-Ready`, then allow backend/frontend detail to proceed in parallel from the versioned contract.
+7. Reconcile cross-concern dependencies and conflicts; do not silently choose between unresolved material proposals.
+8. Record alternatives, risks, assumptions, dependencies, open decisions, implementation prerequisites, and approval status.
+9. Maintain: Analysis requirement/flow -> design decision/component/interface/data model -> verification evidence.
+10. Run [references/quality-gate.md](references/quality-gate.md) and resolve blocker/major gaps through the owning source or specialty.
+11. End with readiness status and the next authorized action.
 
 ## Artifact boundaries
 
-The SD may contain architecture, components, layers/modules, interfaces, data, sequences/states, security, resilience, performance/capacity, configuration, deployment/release, observability/operability, verification, ADRs, risks, and trade-offs.
+The SD may contain architecture, components, layers/modules, interfaces, data, sequences/states, frontend rendering/routing/components/state/data/experience, security, resilience, performance/capacity, configuration, deployment/release, observability/operability, verification, ADRs, risks, and trade-offs.
 
 Keep production code, live mutations, migration execution, secrets, private production configuration, and unapproved vendor commitments out unless separately requested and authorized.
 

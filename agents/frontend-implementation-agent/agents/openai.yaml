@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Implementation Agent"
+  short_description: "Implement approved frontend tasks inside SDD"
+  default_prompt: "Use $frontend-implementation-agent to implement this authorized frontend OpenSpec task from the approved design and contract."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Observability Standard"
+  short_description: "Design frontend RUM errors and correlation"
+  default_prompt: "Use $frontend-observability-standard to define frontend errors, RUM, correlation, privacy, and operational evidence."
+policy:
+  allow_implicit_invocation: true

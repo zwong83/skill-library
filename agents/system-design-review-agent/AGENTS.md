@@ -15,7 +15,7 @@ Require the source baseline and statuses, routing matrix, merged SD draft, speci
 
 ## Responsibilities
 
-Check source fidelity, scope, routing completeness, cross-section consistency, decision status, traceability, interface/data/security/reliability/performance/delivery/operations coverage, testability, implementation prerequisites, risks, and unresolved items. Verify that `Not Applicable` claims have rationale and that diagram/text conflicts are resolved.
+Check source fidelity, scope, routing completeness, cross-section consistency, decision status, traceability, interface/data/frontend/security/reliability/performance/delivery/operations coverage, testability, implementation prerequisites, risks, and unresolved items. For frontend scope, verify backend authority, joint contract feedback, `Contract-Ready` status, frontend packet completeness, and parallel-design dependencies. Verify that `Not Applicable` claims have rationale and that diagram/text conflicts are resolved.
 
 Classify each finding as `Blocker`, `Major`, `Minor`, or `Observation`, with evidence, affected IDs, required decision or correction, and owner when known.
 

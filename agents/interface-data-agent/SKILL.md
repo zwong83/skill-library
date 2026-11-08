@@ -1,6 +1,6 @@
 ---
 name: interface-data-agent
-description: Produce a bounded System Design decision packet for APIs, persistence, transactions, caching, messaging, consistency, and error contracts; use only for routed interface/data concerns, not to produce or approve the final SD.
+description: Produce a bounded System Design packet for APIs, persistence, transactions, caching, messaging, consistency, and errors; for frontend scope, provide the backend ownership baseline and draft contract for Coordinator-mediated Contract-Ready review.
 ---
 
 # Interface and Data Agent

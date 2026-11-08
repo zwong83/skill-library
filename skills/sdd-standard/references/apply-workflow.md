@@ -31,6 +31,14 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 | Errors | `error-handling-standard` |
 | Cache | `caching-standard` |
 | Messaging | `messaging-standard` with only the selected broker reference |
+| Frontend rendering/routing/modules | `frontend-architecture-standard` |
+| Frontend components/forms/design system | `frontend-component-design-standard` |
+| Frontend state/API data/cache/optimistic/offline | `frontend-state-data-standard` |
+| Responsive/accessibility/localization/theme/motion | `frontend-experience-standard` |
+| Frontend loading/render/interaction/assets/memory | `frontend-performance-standard` |
+| Browser/client security | `frontend-security-standard` |
+| Frontend errors/RUM/correlation/analytics | `frontend-observability-standard` |
+| Frontend build/config/assets/CDN/release | `frontend-build-delivery-standard` |
 | Test portfolio/evidence | `testing-strategy-standard` |
 | Test analysis | `test-analysis-standard` |
 | Unit/component tests | `unit-testing-standard` |
@@ -48,6 +56,8 @@ These skills map and verify approved decisions; they do not authorize a new stra
 ## Verification and evidence
 
 Run project-required formatting, lint, type/static analysis, build, tests, and task-specific checks. Record exact commands, versions where relevant, results, failures, retries, skips, and limitations. Never report an unexecuted check as passing.
+
+Select one implementation execution owner. A TDD-routed frontend behavior remains wholly owned by `tdd-agent`, which receives only the approved task-selected frontend standards/context. Otherwise route a material frontend task to `frontend-implementation-agent` after approved frontend SD decisions and the relevant versioned contract are `Contract-Ready`. Small non-TDD frontend changes may remain with `implementation-agent`. Frontend execution remains inside Apply and does not create a separate lifecycle.
 
 For non-TDD work, route assigned cases to the applicable unit, integration, contract, UI, system/E2E, performance, or security testing Agent after its prerequisites and authorization gates pass. Route required cross-level regression to `regression-testing-agent` after a testable target and specialist evidence exist.
 

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Experience Standard"
+  short_description: "Design responsive accessible localized UI behavior"
+  default_prompt: "Use $frontend-experience-standard to translate the approved UX into responsive, accessible, and localized engineering contracts."
+policy:
+  allow_implicit_invocation: true

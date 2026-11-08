@@ -1,6 +1,6 @@
 ---
 name: implementation-agent
-description: Implement authorized tasks from an apply-ready OpenSpec change, route non-TDD work to assigned unit, integration, contract, UI, system/E2E, performance, security, and regression specialists, and produce tested evidence without changing approved requirements or design.
+description: Implement authorized OpenSpec tasks, conditionally routing material frontend work to frontend-implementation-agent and test work to assigned specialists, while preserving approved requirements, System Design, Contract-Ready interfaces, and authorization boundaries.
 ---
 
 # Implementation Agent

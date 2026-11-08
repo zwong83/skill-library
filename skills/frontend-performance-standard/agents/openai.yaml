@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Performance Standard"
+  short_description: "Design frontend performance budgets and evidence"
+  default_prompt: "Use $frontend-performance-standard to define measurable frontend performance budgets and regression evidence."
+policy:
+  allow_implicit_invocation: true

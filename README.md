@@ -16,6 +16,14 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `frs-standard` — Create or audit detailed Functional Requirements Specifications.
 - `system-analysis-standard` — Analyze system boundaries, actors, logical flows, responsibilities, data behavior, integrations, risks, and design inputs.
 - `system-design-standard` — Design architecture, components, interfaces, data, sequences, security, reliability, operations, deployment, and verification.
+- `frontend-architecture-standard` — Design frontend rendering, routing, module, server/client, dependency, composition, and failure boundaries.
+- `frontend-component-design-standard` — Design component responsibilities, APIs, composition, UI states, forms, and design-system integration.
+- `frontend-state-data-standard` — Design frontend state ownership, API data flow, cache, optimistic updates, URL/form/session/storage, and recovery.
+- `frontend-experience-standard` — Define responsive, accessible, localized, themed, motion-aware, browser/device UI behavior.
+- `frontend-performance-standard` — Define route, asset, rendering, interaction, memory, RUM, and regression budgets.
+- `frontend-security-standard` — Design browser/client controls for content, sessions, storage, origins, policies, dependencies, and sensitive data.
+- `frontend-observability-standard` — Define client errors, RUM, journey events, correlation, release/source-map, privacy, dashboards, and alerts.
+- `frontend-build-delivery-standard` — Define reproducible frontend builds, artifacts, public configuration, caching, promotion, rollout, and rollback.
 - `plantuml-syntax` — Reference PlantUML syntax and diagram types for requirements and system documentation.
 - `clean-code-standard` — Write, refactor, and review maintainable code using language-neutral naming, function, control-flow, failure, nullability, side-effect, and verification guidance.
 - `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
@@ -61,6 +69,7 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
 - `system-design-agent` — Coordinates specialist decision packets and owns the final SD.
   - `architecture-agent` — Architecture, modules, layers, dependencies, composition, and topology.
   - `interface-data-agent` — APIs, persistence, transactions, caching, messaging, consistency, and errors.
+  - `frontend-design-agent` — Reviews the shared contract and produces the frontend decision packet after backend ownership is known.
   - `quality-attributes-agent` — Security, resilience, performance, capacity, scalability, and recovery.
   - `delivery-operations-agent` — Configuration, deployment/release, observability, operability, and support.
   - `system-design-review-agent` — Independent SD quality, traceability, testability, and readiness review.
@@ -76,6 +85,7 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
     - `security-testing-agent` — Runs authorized, non-destructive verification of approved controls.
     - `regression-testing-agent` — Selects and verifies cross-level regression coverage and verdicts.
   - `implementation-agent` — Applies authorized, apply-ready tasks with tests and evidence.
+    - `frontend-implementation-agent` — Implements bounded approved frontend tasks inside SDD from the frontend packet and Contract-Ready interface.
   - `tdd-agent` — Implements TDD-routed tasks through Red-Green-Refactor.
   - `convergence-review-agent` — Independently verifies code/artifact/evidence convergence.
 
@@ -96,7 +106,11 @@ Functional Requirements
         ↓
 System Analysis
         ↓
-System Design
+System Design: Backend ownership baseline
+        ↓
+Joint frontend/backend Contract-Ready gate
+        ↓
+Backend and frontend detailed design in parallel
         ↓
 Spec-Driven Development / OpenSpec
         ↓
@@ -144,7 +158,7 @@ BRD objective/requirement
   → SRS requirement
   → FRS feature/functional requirement
   → SA logical responsibility/flow
-  → SD design decision/component/interface/data model
+  → SD backend authority / Contract-Ready interface / frontend and backend decisions
   → OpenSpec proposal/capability requirement/design delta/task
   → TA risk / complete case matrix / specialist allocation
   → TDD cycle / code change / unit, integration, contract, UI, system-E2E, performance, and security evidence
@@ -162,6 +176,8 @@ agents/
 ├── contract-testing-agent/
 ├── delivery-operations-agent/
 ├── functional-requirements-agent/
+├── frontend-design-agent/
+├── frontend-implementation-agent/
 ├── implementation-agent/
 ├── integration-testing-agent/
 ├── interface-data-agent/
@@ -195,6 +211,14 @@ skills/
 ├── database-persistence-standard/
 ├── deployment-release-standard/
 ├── error-handling-standard/
+├── frontend-architecture-standard/
+├── frontend-build-delivery-standard/
+├── frontend-component-design-standard/
+├── frontend-experience-standard/
+├── frontend-observability-standard/
+├── frontend-performance-standard/
+├── frontend-security-standard/
+├── frontend-state-data-standard/
 ├── frs-standard/
 ├── integration-testing-standard/
 ├── layered-architecture-standard/
@@ -274,6 +298,8 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Apply object-oriented design, SOLID, and design patterns conditionally according to the selected language, paradigm, problem, and lifecycle stage.
 - Use `clean-code-standard` as the implementation/refactoring review entrypoint; keep naming and function/control-flow guidance in it while routing structural concerns to the specialized Skills.
 - Make layer/dependency, error, caching, and messaging behavior explicit at SD level and concrete/testable at SDD level; do not introduce infrastructure without a requirement.
+- For frontend scope, establish backend domain/data/transaction/security authority first, jointly reach a versioned `Contract-Ready` interface, then allow backend and frontend detailed design and implementation tasks to proceed in parallel through the shared SD/SDD lifecycle.
+- Keep authoritative business rules and authorization on the server; frontend architecture, components, state/data, experience, performance, security, observability, and delivery map approved outcomes without creating a competing source of truth.
 - Treat software security as a lifecycle concern: identify assets, threats, trust boundaries, and security requirements in SA; design owned controls in SD; make them concrete and verifiable in SDD and implementation.
 - Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
 - Prefer simple, reviewable documents over unnecessary detail or duplicated content.

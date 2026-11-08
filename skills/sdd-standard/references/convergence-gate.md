@@ -39,6 +39,7 @@ Every in-scope requirement and scenario must have implementation and evidence. E
 ### 4. Design conformance
 
 - Verify component/layer boundaries, dependency direction, interfaces, data and transaction ownership, state transitions, error handling, consistency, concurrency, caching, messaging, security, privacy, observability, deployment, migration, rollback, and compatibility against the design delta and approved SD.
+- For frontend scope, verify the approved rendering/routing/module and server/client boundaries; versioned `Contract-Ready` interface; component/design-system contracts; complete UI states; state/data/cache/optimistic/offline behavior; responsive/accessibility/localization support; frontend performance/security/observability/build-delivery decisions; and preservation of authoritative server rules.
 - Record any implementation-driven design change in the design artifact and revalidate before accepting it.
 
 ### 5. Task authenticity
@@ -55,6 +56,7 @@ Every in-scope requirement and scenario must have implementation and evidence. E
 Run the checks required by the project and change, which may include:
 
 - unit, integration, contract, end-to-end, regression, security, performance, migration, compatibility, and recovery tests;
+- frontend format/lint/type/build checks plus component, UI interaction, visual, accessibility, browser/device, contract, journey, performance, security, bundle/artifact, and release-attribution evidence where applicable;
 - build, lint, static analysis, type checks, schema validation, and dependency checks;
 - manual acceptance, observability, rollout, rollback, or operational-readiness checks.
 

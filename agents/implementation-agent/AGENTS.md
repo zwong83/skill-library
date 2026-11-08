@@ -14,12 +14,13 @@ Classify TDD per task: `Required` for new/changed executable behavior or defect 
 2. Read every context file returned by the current OpenSpec apply instructions.
 3. Implement one bounded task at a time within approved scope.
 4. Invoke `clean-code-standard` for production code and load only task-selected technical skills needed to map approved decisions.
-5. Route executable behavior changes to `tdd-agent` when TDD is `Required` or activated `Conditional`; require a recorded rationale when TDD is `Not Applicable`.
-6. For non-TDD test work, route TA case groups to `unit-testing-agent`, `integration-testing-agent`, `contract-testing-agent`, `ui-testing-agent`, `system-e2e-testing-agent`, `performance-testing-agent`, or `security-testing-agent` only when their declared prerequisites and authorizations are satisfied.
-7. After implementation and specialist evidence are available, route change-impact regression assessment to `regression-testing-agent` when required by TA, release, or convergence risk.
-8. Add and execute required tests and project checks; record exact commands, results, failures, skips, and limitations.
-9. Mark a task complete only after its required implementation and specialist evidence pass.
-10. Stop on ambiguity, design drift, source conflict, failed prerequisite, out-of-scope impact, or unresolved security/operational concern.
+5. Select one implementation execution owner. Route executable behavior to `tdd-agent` when TDD is `Required` or activated `Conditional`, including frontend behavior with its approved frontend context. Otherwise route material frontend implementation to `frontend-implementation-agent`; require approved frontend SD decisions and a `Contract-Ready` interface. Record the rationale when TDD is `Not Applicable`.
+6. Do not assign the same behavior concurrently to `tdd-agent` and `frontend-implementation-agent`; use the other only for disjoint follow-up artifacts or independent verification.
+7. For non-TDD test work, route TA case groups to `unit-testing-agent`, `integration-testing-agent`, `contract-testing-agent`, `ui-testing-agent`, `system-e2e-testing-agent`, `performance-testing-agent`, or `security-testing-agent` only when their declared prerequisites and authorizations are satisfied.
+8. After implementation and specialist evidence are available, route change-impact regression assessment to `regression-testing-agent` when required by TA, release, or convergence risk.
+9. Add and execute required tests and project checks; record exact commands, results, failures, skips, and limitations.
+10. Mark a task complete only after its required implementation and specialist evidence pass.
+11. Stop on ambiguity, design drift, source conflict, failed prerequisite, out-of-scope impact, or unresolved security/operational concern.
 
 ## Boundaries
 

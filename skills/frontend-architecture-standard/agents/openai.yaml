@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frontend Architecture Standard"
+  short_description: "Design frontend rendering routing and boundaries"
+  default_prompt: "Use $frontend-architecture-standard to design the frontend architecture for this approved system change."
+policy:
+  allow_implicit_invocation: true
