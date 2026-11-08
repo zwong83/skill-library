@@ -8,7 +8,7 @@ Use this reference before proposing, analyzing tests, applying, converging, or a
 
 For every mode:
 
-- task mode: Explore, Propose, Review, Test Analysis, Apply, Converge, or Archive;
+- task mode: Explore, Propose, Review, Test Analysis, Apply, Regression, Converge, or Archive;
 - project root and feature/change identity;
 - OpenSpec CLI state, resolved executable, locally detected version, install scope/method when discoverable, and compatibility status; if unavailable, record the proposed official/project-approved installation source, version, scope, and authorization state;
 - OpenSpec context state; when initialized, include the active schema and change status; when uninitialized, record `Active schema: None` and separately identify any intended schema as proposed;
@@ -29,15 +29,23 @@ For Apply mode:
 - a selected OpenSpec change;
 - complete apply-required artifacts;
 - passing strict OpenSpec validation;
-- applicable `TA-Ready` Test Analysis, or a recorded and approved `Not Applicable` rationale;
+- applicable `TA-Ready` Test Analysis with complete case-to-task-to-specialist allocation, or a recorded and approved `Not Applicable` rationale;
 - explicit implementation authorization.
+
+For Regression mode:
+
+- the selected change and approved TA matrix;
+- known base and target revisions plus the actual changed-file/diff scope;
+- available suite inventory, historical baseline, required environments/data/dependencies, and known flaky/quarantined tests;
+- completed specialist evidence required before the regression verdict;
+- authorization for any test execution or environment use not already covered.
 
 For Converge mode:
 
 - the complete approved OpenSpec artifact set;
 - implementation diff or exact changed-file set;
 - task completion state;
-- test, static-analysis, build, security, migration, and operational evidence required by the change.
+- unit, integration, contract, UI, system/E2E, performance, security, regression, static-analysis, build, migration, and operational evidence required by the change.
 
 For Archive mode:
 
@@ -103,7 +111,7 @@ Before `Apply-Ready`, verify:
 - each requirement is unambiguous, testable, and represented by at least one scenario;
 - design decisions satisfy the requirements and do not contradict the approved SD;
 - tasks cover every in-scope requirement, design change, test, migration, documentation, and operational action;
-- applicable TA scenarios allocate material risks to justified test levels and map to implementation tasks;
+- applicable TA cases cover positive and applicable negative/boundary partitions, allocate material risks to justified test levels/specialists, and map to implementation tasks and expected evidence;
 - no task introduces behavior absent from the approved specs;
 - removals and renames include compatibility and migration handling where applicable;
 - traceability identifiers are stable and complete;

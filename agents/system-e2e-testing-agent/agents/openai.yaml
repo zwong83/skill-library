@@ -1,0 +1,6 @@
+interface:
+  display_name: "System E2E Testing Agent"
+  short_description: "Verify critical multi-component system journeys"
+  default_prompt: "Use $system-e2e-testing-agent to execute the TA-assigned critical system journey."
+policy:
+  allow_implicit_invocation: true

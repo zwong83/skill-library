@@ -52,9 +52,13 @@ A test strategy is ready only when:
 - Invoke `test-analysis-standard` after approved requirements/design to derive change-specific scenarios, level allocation, task mapping, and the pre-Apply TA gate.
 - Invoke `unit-testing-standard` for deterministic unit/component test design and review.
 - Invoke `integration-testing-standard` for real adapter, datastore, broker, cache, framework, serialization, and service-boundary tests.
+- Invoke `contract-testing-standard` for provider/consumer schema, protocol, semantic, version, and compatibility verification.
+- Invoke `ui-testing-standard` for UI component/interaction, visual, accessibility, compatibility, and critical UI journey tests.
+- Invoke `system-e2e-testing-standard` for critical multi-component business and operational journeys in a representative deployed environment.
+- Invoke `regression-testing-standard` for change-impact suite selection, cross-level regression execution, and a unified regression verdict.
 - Invoke `tdd-standard` only when implementation is authorized and the task will follow Red-Green-Refactor.
-- Invoke `software-security-standard` for threat-driven security verification and required evidence.
-- Invoke `performance-capacity-standard` for workload, performance, capacity, stress, spike, soak, and regression tests.
+- Invoke `software-security-standard` for authoritative threat/control design and `security-testing-standard` for authorized, bounded verification of those controls.
+- Invoke `performance-capacity-standard` for workload, performance, capacity, benchmark, load, stress, spike, soak, scalability, and performance-regression tests.
 - Invoke `resilience-standard` for timeout, retry, overload, degradation, dependency-loss, failover, and recovery scenarios.
 - Invoke `api-design-standard`, `database-persistence-standard`, `caching-standard`, and `messaging-standard` for contract-, migration-, consistency-, and technology-specific tests.
 - Invoke `deployment-release-standard` and `operability-standard` for pipeline gates, production verification, drills, telemetry, and operational readiness evidence.

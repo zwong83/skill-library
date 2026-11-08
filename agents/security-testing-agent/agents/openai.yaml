@@ -1,0 +1,6 @@
+interface:
+  display_name: "Security Testing Agent"
+  short_description: "Verify approved controls within strict safety limits"
+  default_prompt: "Use $security-testing-agent to verify the approved controls within the authorized target and safety limits."
+policy:
+  allow_implicit_invocation: true

@@ -50,6 +50,7 @@ An API is implementation-ready only when:
 - Read [contracts-and-protocols.md](references/contracts-and-protocols.md) for protocol selection and concrete HTTP, gRPC, GraphQL, schema, security, and DTO rules.
 - Read [evolution-and-operations.md](references/evolution-and-operations.md) for compatibility, pagination, limits, observability, deprecation, and review checks.
 - Invoke `software-security-standard` for identity, authorization, isolation, sensitive data, validation, secrets, cryptography, audit, abuse controls, and security evidence.
+- Invoke `contract-testing-standard` for provider/consumer conformance and compatibility verification of the approved contract.
 - Invoke `error-handling-standard` for the internal error model and public error translation.
 - Invoke `resilience-standard` for deadlines, retries, circuit breakers, overload control, degradation, and recovery.
 - Invoke `logging-standard` and `tracing-standard` when event and span contracts are needed.

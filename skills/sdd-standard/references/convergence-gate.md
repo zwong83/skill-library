@@ -31,8 +31,8 @@ Run this gate after implementation and before syncing or archiving an OpenSpec c
 
 Build a coverage matrix:
 
-| Requirement / Scenario | Design decision | TA scenario/level | Task | Test | Implementation | Evidence | Result |
-|---|---|---|---|---|---|---|---|
+| Requirement / Scenario | Design decision | TA case/category/level | Task | Specialist | Test | Implementation | Evidence | Result |
+|---|---|---|---|---|---|---|---|---|
 
 Every in-scope requirement and scenario must have implementation and evidence. Every externally visible implementation behavior must trace back to an approved requirement.
 
@@ -45,6 +45,8 @@ Every in-scope requirement and scenario must have implementation and evidence. E
 
 - Confirm each checked task's deliverables and evidence actually exist.
 - For TDD-routed tasks, confirm each claimed cycle has an intended Red failure, Green result, and refactor/broader-suite evidence; test-after implementation is not TDD.
+- Confirm every applicable TA case is `Passed`, `Failed`, `Blocked`, or explicitly accepted/excluded with owner and rationale; silent omission is not coverage.
+- Verify required unit, integration, contract, UI, system/E2E, performance, security, and regression evidence. Regression cannot pass over a failed required specialist case.
 - Reject placeholder implementations, dead code, unexplained TODOs, skipped required tests, and incomplete cleanup.
 - Confirm incomplete work remains unchecked and is not hidden in comments or follow-up notes.
 
@@ -80,7 +82,7 @@ Use only when:
 
 - strict validation passes;
 - all in-scope requirements and scenarios have passing evidence;
-- applicable TA scenarios are mapped to executed unit, integration, contract, system, or non-functional evidence, with residual gaps explicitly accepted;
+- applicable TA cases are mapped to executed unit, integration, contract, UI, system/E2E, performance, security, regression, or other non-functional evidence, with residual gaps explicitly accepted;
 - implementation conforms to the approved design or approved artifact updates;
 - all required tasks are genuinely complete;
 - no material unresolved item or unexplained drift remains.

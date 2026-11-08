@@ -12,16 +12,16 @@ List affected journeys, components, APIs/events, data/schema, permissions, confi
 
 For each risk capture ID, source, failure, likelihood, impact, detectability, exposure, priority, mitigation, and owner.
 
-## 4. Scenario matrix
+## 4. Test Case Matrix
 
-| Scenario ID | Source/risk IDs | Preconditions | Action/event | Expected outcome and forbidden effects | Level/type | Priority | Data/environment/dependencies | Automation | Evidence |
-|---|---|---|---|---|---|---|---|---|---|
+| Case ID | Source/risk IDs | Category | Preconditions | Exact input/action | Expected outcome and forbidden effects | Level/type | Governing specialist | Execution owner / TDD route | Priority | Data/environment/dependencies | Automation | Expected output/evidence | Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 
-Include positive, negative, boundary, state, authorization, concurrency, duplicate, timeout, failure, recovery, migration, compatibility, and non-functional scenarios when applicable.
+Give every material behavior at least one positive case. Include negative and exact boundary partitions (for example below/at/above a threshold) whenever applicable, plus state, authorization, concurrency, duplicate, timeout, failure, recovery, migration, compatibility, UI, performance, regression, and other non-functional cases. Record `Not Applicable` with rationale instead of silently omitting an expected category.
 
 ## 5. Coverage and task mapping
 
-Map each material source requirement, OpenSpec scenario, design decision, and implementation task to one or more scenarios. Record intentional exclusions and duplicated coverage rationale.
+Map each material source requirement, OpenSpec scenario, design decision, and implementation task to one or more cases. Show positive/negative/boundary completeness, governing specialist, execution owner/TDD route, expected output, intentional exclusions, and duplicated coverage rationale.
 
 ## 6. Data, environment, and dependencies
 

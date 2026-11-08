@@ -14,8 +14,9 @@ Use this governing skill to preserve the chain from approved intent to artifacts
 | Explore | Clarify sources, code, constraints, and decisions | openspec-planning-agent | No |
 | Propose | Create/complete apply-required OpenSpec artifacts | openspec-planning-agent | No |
 | Review | Evaluate readiness, artifacts, traceability, validation | openspec-planning-agent | No |
-| Test Analysis | Derive traceable risk/scenario/level/task coverage before Apply | test-analysis-agent | No |
+| Test Analysis | Derive the traceable Test Case Matrix and specialist allocation before Apply | test-analysis-agent | No |
 | Apply | Implement authorized tasks with tests/evidence | implementation-agent | Yes, after explicit authorization |
+| Regression | Select and verify impacted behavior across required test levels | regression-testing-agent | No production corrections |
 | Converge | Compare implementation and evidence to all governing artifacts | convergence-review-agent | Corrections require authorization |
 | Archive | Synchronize as applicable and archive a converged change | SDD Coordinator | No |
 
@@ -23,7 +24,7 @@ Mode and delivery state are independent. Valid states include Blocked, Drafting,
 
 ## Non-negotiable gates
 
-- Read [references/input-and-readiness-gates.md](references/input-and-readiness-gates.md) before Propose, Test Analysis, Apply, Converge, or Archive.
+- Read [references/input-and-readiness-gates.md](references/input-and-readiness-gates.md) before Propose, Test Analysis, Apply, Regression, Converge, or Archive.
 - Block when mandatory sources are missing, unapproved, contradictory, or contain material assumptions, TBC/TBD, open questions, pending approvals, unresolved proposals, missing acceptance criteria, or missing owners.
 - For behavior-changing implementation, require approved System Analysis and System Design plus applicable requirements and Change Request.
 - Detect the local OpenSpec executable/version without an online update check. Read [references/openspec-bootstrap.md](references/openspec-bootstrap.md) only when installation, compatibility, PATH, or project initialization is unresolved.
@@ -42,7 +43,7 @@ A normal spec-driven flow may be proposal -> capability specs -> design -> tasks
 
 ### Test Analysis
 
-After apply-required artifacts are complete and before behavior-changing Apply, invoke `test-analysis-agent`. Store `test-analysis.md` in the project-approved evidence location and label it supplemental when the active OpenSpec schema does not define it. TA readiness is not implementation authorization.
+After apply-required artifacts are complete and before behavior-changing Apply, invoke `test-analysis-agent`. Store `test-analysis.md` in the project-approved evidence location and label it supplemental when the active OpenSpec schema does not define it. The TA must contain a complete Test Case Matrix, case-to-task-to-specialist routing, and each specialist's prerequisites/output expectations. TA readiness is not implementation authorization.
 
 ### Apply
 
@@ -52,7 +53,7 @@ Read [references/apply-workflow.md](references/apply-workflow.md). Use the curre
 
 Read and execute [references/convergence-gate.md](references/convergence-gate.md). Verify:
 
-Source requirement -> capability requirement/scenario -> design decision -> TA scenario -> task -> test -> code/evidence.
+Source requirement -> capability requirement/scenario -> design decision -> TA case -> task -> specialist test -> code/evidence -> regression result.
 
 Checked tasks or passing unit tests alone do not prove convergence.
 

@@ -17,6 +17,8 @@ Require Apply readiness, explicit implementation authorization, selected OpenSpe
 
 For each smallest behavior: observe the intended Red, implement minimal Green, refactor while green, then run affected tests. Keep source -> TA/OpenSpec scenario -> task -> test -> code -> evidence traceability.
 
+This Agent owns the complete Red-Green-Refactor cycle, including its unit or focused integration test. Do not split an active cycle across `unit-testing-agent` or `integration-testing-agent`; those specialists handle non-TDD test work, independent verification, or gaps after the cycle.
+
 Do not add a passing test after implementation and label it TDD. Preserve Red evidence and first-failure diagnostics. Stop and escalate material design drift or out-of-scope behavior.
 
 ## Output

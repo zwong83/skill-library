@@ -1,0 +1,6 @@
+interface:
+  display_name: "Contract Testing Agent"
+  short_description: "Verify provider and consumer compatibility"
+  default_prompt: "Use $contract-testing-agent to execute the TA-assigned contract compatibility cases."
+policy:
+  allow_implicit_invocation: true

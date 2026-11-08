@@ -15,7 +15,7 @@ Use this skill when behavior can be verified within one unit or component withou
 4. Do not mock the subject under test, value types, or every internal call. Overspecified interaction tests obstruct safe refactoring.
 5. Control time, randomness, identifiers, locale, scheduling, environment, and global state through explicit seams.
 6. Assert returned values, state, emitted effects, collaborator contracts, and absence of forbidden effects as required by the scenario.
-7. Cover boundary values, invalid input, error propagation, duplicate/concurrent behavior, and resource cleanup where applicable.
+7. Implement every TA case assigned to unit/component level. For each assigned behavior cover positive, negative, and boundary partitions where applicable, plus error propagation, duplicate/concurrent behavior, forbidden effects, and resource cleanup; record explicit `Not Applicable` or blocked dispositions instead of silent gaps.
 8. Use parameterized/property-based cases when they clarify broad input behavior; keep individual failures understandable.
 9. Coverage numbers expose untested code but do not prove meaningful assertions.
 10. Follow project test conventions unless they weaken correctness or evidence; never invent a framework API without checking the project.
@@ -26,7 +26,7 @@ Use this skill when behavior can be verified within one unit or component withou
 2. Identify the behavior boundary, collaborators, inputs, outputs, state, and effects.
 3. Choose real collaborators, fakes, stubs, spies, or mocks deliberately.
 4. Arrange minimal data, act once on the behavior, and assert the complete oracle.
-5. Add negative/boundary/state cases without duplicating equivalent coverage.
+5. Confirm positive, negative, and boundary completeness for every assigned behavior, then add state/error/duplicate/concurrency cases where applicable without duplicating equivalent coverage.
 6. Run focused tests, then the required broader suite and quality checks.
 7. Review readability, determinism, diagnostic value, mutation sensitivity where used, and maintenance cost.
 

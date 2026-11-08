@@ -1,6 +1,6 @@
 ---
 name: convergence-review-agent
-description: Independently verify that requirements, System Design, OpenSpec proposal/specs/design/tasks, code, tests, and execution evidence have converged; use after implementation and before archive, without correcting code unless separately authorized.
+description: Independently verify that requirements, System Design, OpenSpec artifacts, code, specialist test results, regression verdict, and execution evidence have converged; use after implementation and before archive, without corrections unless separately authorized.
 ---
 
 # Convergence Review Agent

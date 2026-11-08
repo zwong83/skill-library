@@ -146,6 +146,14 @@ Do not claim that this supplemental file is a built-in OpenSpec artifact, and do
 
 OpenSpec's active schema may not define a Test Analysis artifact. For behavior-changing work, `test-analysis-agent` may add `test-analysis.md` within the change directory or another project-approved evidence location after apply-required artifacts are complete.
 
-The TA should contain source/change baseline, change-impact and risk registers, traceable scenarios and oracles, unit/integration/contract/system/non-functional allocation, data/environment/dependency needs, scenario-to-task mapping, coverage gaps, residual risk, and `TA-Ready` or `TA-Blocked` status.
+The TA should contain source/change baseline, change-impact and risk registers, a complete Test Case Matrix with positive/negative/boundary and other applicable categories, exact oracles, unit/integration/contract/UI/system-E2E/performance/security/regression allocation, specialist prerequisites and expected outputs, data/environment/dependency/authorization needs, case-to-task-to-specialist mapping, coverage gaps, residual risk, and `TA-Ready` or `TA-Blocked` status.
 
 Label this file as a supplemental extension when it is not part of the active OpenSpec schema. Do not include it in `applyRequires` or claim OpenSpec validation covers it unless the observed schema explicitly does so.
+
+## Supplemental specialist test evidence
+
+When the project has no established evidence system, the applicable test specialists may place `unit-test-evidence.md`, `integration-test-evidence.md`, `contract-test-report.md`, `ui-test-report.md`, `system-e2e-test-report.md`, `performance-test-report.md`, `security-test-report.md`, or `regression-test-report.md` in the change directory or another approved location. Create only the reports required by the TA and project; retained CI/tool artifacts may be referenced instead of duplicating them.
+
+Each report must identify source/TA case IDs, baseline and environment, exact execution or review evidence, results, failures/skips/flakiness, limitations, residual risk, and owning specialist. UI and performance reports additionally retain their governed visual/accessibility or workload/capacity evidence; the regression report records selected/excluded suites and its unified verdict.
+
+Treat these files as supplemental extensions unless the observed schema defines them. Do not include them in `applyRequires`, claim OpenSpec validation covers their contents, or use them to override failed underlying evidence.

@@ -25,7 +25,7 @@ Use this skill when correctness depends on the behavior of at least one real int
 1. Select TA/OpenSpec scenarios assigned to integration level and define the boundary matrix.
 2. Choose environment, dependency lifecycle, data, isolation, and cleanup.
 3. Establish prerequisites and observable oracles across the boundary.
-4. Implement success and material negative/failure/recovery scenarios.
+4. Implement assigned positive, negative, and boundary cases plus material transaction, failure, recovery, compatibility, and cleanup cases for the selected boundary.
 5. Run focused tests repeatedly to detect isolation/flakiness, then required suites.
 6. Record fidelity gaps, evidence, residual risk, and ownership.
 
@@ -34,6 +34,7 @@ Use this skill when correctness depends on the behavior of at least one real int
 - Read [integration-boundary-matrix.md](references/integration-boundary-matrix.md) to select real boundaries and scenarios.
 - Read [environment-data-and-reliability.md](references/environment-data-and-reliability.md) for environments, data, isolation, cleanup, async waits, and flakiness.
 - Invoke the corresponding API, database, cache, messaging, security, resilience, or configuration Skill only for the selected real boundary.
+- Invoke `contract-testing-standard` when the primary risk is provider/consumer compatibility rather than real-boundary behavior.
 - Invoke `unit-testing-standard` for behavior that does not require real infrastructure.
 - Invoke `tdd-standard` when an integration test intentionally drives a boundary implementation.
 

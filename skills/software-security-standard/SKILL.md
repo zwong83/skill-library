@@ -32,7 +32,7 @@ Use this skill to make software security explicit, owned, testable, and traceabl
 | SIEM/security analytics | Conditional collection, correlation, alerting, investigation, retention, and access capability; it does not automatically satisfy authoritative audit-record requirements. |
 | Patch management | Required ownership for supported software, dependencies, runtime/platform components, remediation decisions, rollout, rollback, exceptions, and end-of-life risk. |
 | Security training and awareness | Organizational governance dependency. Record applicable requirements, owners, and gaps, but do not treat training as a software control or design a training program here. |
-| SAST, DAST, and vulnerability scanning | Security-verification techniques. Preserve their future integration point, but defer detailed tool selection, execution workflow, and testing policy when security testing is not in current scope. |
+| SAST, DAST, software-composition/dependency analysis, secret/configuration scanning, and vulnerability scanning | Security-verification techniques governed by `security-testing-standard` when in scope; require authorized targets, safe execution, finding validation, evidence handling, and ownership. |
 
 ## Lifecycle modes
 
@@ -65,6 +65,7 @@ Do not invent a missing security policy or mark security `Not Applicable` merely
 
 - Read [references/security-control-architecture.md](references/security-control-architecture.md) when placing or designing authentication, authorization, encryption, secrets, validation, audit, privacy, dependency, or operational controls.
 - Read [references/security-verification-gate.md](references/security-verification-gate.md) before approving a security design, implementation, or release-readiness claim.
+- Invoke `security-testing-standard` when approved controls require concrete static, dependency, configuration, dynamic, or control-specific negative verification.
 
 ## Relationship to other skills
 

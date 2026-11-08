@@ -30,9 +30,14 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `deployment-release-standard` — Design immutable artifacts, promotion, rollout, feature release, migration sequencing, recovery, and release evidence.
 - `operability-standard` — Design service ownership, SLIs/SLOs, telemetry, alerts, diagnostics, runbooks, incidents, maintenance, and readiness.
 - `testing-strategy-standard` — Design risk-based test portfolios, environments, data, automation, non-functional tests, gates, and evidence.
-- `test-analysis-standard` — Derive change-specific risks, scenarios, level allocation, data/environments, task mapping, and the pre-Apply TA gate.
+- `test-analysis-standard` — Derive the complete change-specific Test Case Matrix, specialist allocation, prerequisites, evidence, and pre-Apply TA gate.
 - `unit-testing-standard` — Design and implement deterministic behavior-focused unit and component tests.
 - `integration-testing-standard` — Verify real databases, brokers, caches, services, frameworks, and other integration boundaries.
+- `contract-testing-standard` — Verify provider/consumer API, event, message, schema, version, and semantic compatibility.
+- `ui-testing-standard` — Verify UI rendering, interaction, visual behavior, accessibility, compatibility, and critical journeys.
+- `system-e2e-testing-standard` — Verify critical multi-component journeys in a representative deployed environment.
+- `security-testing-standard` — Verify approved security controls within explicit target authorization and safety limits.
+- `regression-testing-standard` — Select and verify risk-based regression coverage across test levels from actual change impact.
 - `tdd-standard` — Implement approved behavior through traceable Red-Green-Refactor cycles.
 - `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
 - `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
@@ -61,7 +66,15 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
   - `system-design-review-agent` — Independent SD quality, traceability, testability, and readiness review.
 - `spec-driven-development-agent` — Coordinates OpenSpec modes and authorization boundaries.
   - `openspec-planning-agent` — Explore, Propose, and Review without production code.
-  - `test-analysis-agent` — Produces pre-Apply TA and unit/integration/non-functional scenario allocation.
+  - `test-analysis-agent` — Owns the pre-Apply Test Case Matrix, readiness gate, and specialist allocation.
+    - `unit-testing-agent` — Implements and verifies assigned unit/component cases outside end-to-end TDD tasks.
+    - `integration-testing-agent` — Implements and verifies assigned real-boundary cases.
+    - `contract-testing-agent` — Verifies provider/consumer contract and compatibility cases.
+    - `ui-testing-agent` — Verifies UI behavior, visuals, accessibility, compatibility, and journeys.
+    - `system-e2e-testing-agent` — Verifies critical multi-component deployed-system journeys.
+    - `performance-testing-agent` — Runs governed benchmark/load/stress/spike/soak/capacity testing.
+    - `security-testing-agent` — Runs authorized, non-destructive verification of approved controls.
+    - `regression-testing-agent` — Selects and verifies cross-level regression coverage and verdicts.
   - `implementation-agent` — Applies authorized, apply-ready tasks with tests and evidence.
   - `tdd-agent` — Implements TDD-routed tasks through Red-Green-Refactor.
   - `convergence-review-agent` — Independently verifies code/artifact/evidence convergence.
@@ -89,7 +102,11 @@ Spec-Driven Development / OpenSpec
         ↓
 Test Analysis (TA)
         ↓
-TDD / Implementation
+TDD / Implementation + Test Specialists
+        ↓
+Unit / Integration / Contract / UI / System E2E / Performance / Security Evidence
+        ↓
+Regression Verification
         ↓
 Convergence
 ```
@@ -110,6 +127,12 @@ openspec/changes/<change-name>/
 ├── design.md
 ├── tasks.md
 ├── test-analysis.md   # optional supplemental TA extension
+├── contract-test-report.md # when compatibility evidence is required
+├── ui-test-report.md  # when UI evidence is required
+├── system-e2e-test-report.md # when system journey evidence is required
+├── performance-test-report.md # when performance evidence is required
+├── security-test-report.md # when security evidence is required
+├── regression-test-report.md  # when regression evidence is required
 └── verification.md    # optional supplemental evidence extension
 ```
 
@@ -123,8 +146,9 @@ BRD objective/requirement
   → SA logical responsibility/flow
   → SD design decision/component/interface/data model
   → OpenSpec proposal/capability requirement/design delta/task
-  → TA risk/scenario/level allocation
-  → TDD cycle / code change / unit and integration evidence
+  → TA risk / complete case matrix / specialist allocation
+  → TDD cycle / code change / unit, integration, contract, UI, system-E2E, performance, and security evidence
+  → regression scope / execution / verdict
   → convergence
 ```
 
@@ -135,21 +159,29 @@ agents/
 ├── architecture-agent/
 ├── business-agent/
 ├── convergence-review-agent/
+├── contract-testing-agent/
 ├── delivery-operations-agent/
 ├── functional-requirements-agent/
 ├── implementation-agent/
+├── integration-testing-agent/
 ├── interface-data-agent/
 ├── openspec-planning-agent/
+├── performance-testing-agent/
 ├── prd-agent/
 ├── product-agent/
 ├── quality-attributes-agent/
+├── regression-testing-agent/
+├── security-testing-agent/
 ├── software-requirements-agent/
 ├── system-analysis-agent/
 ├── system-design-agent/
 ├── system-design-review-agent/
+├── system-e2e-testing-agent/
 ├── spec-driven-development-agent/
 ├── tdd-agent/
-└── test-analysis-agent/
+├── test-analysis-agent/
+├── ui-testing-agent/
+└── unit-testing-agent/
 
 skills/
 ├── api-design-standard/
@@ -158,6 +190,7 @@ skills/
 ├── clean-code-standard/
 ├── code-comments/
 ├── configuration-management-standard/
+├── contract-testing-standard/
 ├── design-patterns/
 ├── database-persistence-standard/
 ├── deployment-release-standard/
@@ -172,17 +205,21 @@ skills/
 ├── performance-capacity-standard/
 ├── plantuml-syntax/
 ├── prd-standard/
+├── regression-testing-standard/
 ├── resilience-standard/
 ├── sdd-standard/
+├── security-testing-standard/
 ├── software-security-standard/
 ├── solid-principles/
 ├── srs-standard/
 ├── system-analysis-standard/
 ├── system-design-standard/
+├── system-e2e-testing-standard/
 ├── tdd-standard/
 ├── test-analysis-standard/
 ├── testing-strategy-standard/
 ├── unit-testing-standard/
+├── ui-testing-standard/
 └── tracing-standard/
 ```
 

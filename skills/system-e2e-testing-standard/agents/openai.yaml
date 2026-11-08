@@ -1,0 +1,6 @@
+interface:
+  display_name: "System E2E Testing Standard"
+  short_description: "Verify critical multi-component system journeys"
+  default_prompt: "Use $system-e2e-testing-standard to verify this critical multi-component journey."
+policy:
+  allow_implicit_invocation: true

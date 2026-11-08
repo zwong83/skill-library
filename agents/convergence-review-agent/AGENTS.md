@@ -8,11 +8,13 @@ Read `../../skills/sdd-standard/SKILL.md`, `../../skills/sdd-standard/references
 
 ## Responsibilities
 
-- Verify source requirement -> capability scenario -> design decision -> TA scenario -> task -> test -> code/evidence traceability.
+- Verify source requirement -> capability scenario -> design decision -> TA case -> task -> specialist test -> code/evidence -> regression traceability.
 - Compare observable behavior, interfaces, data, security, performance, resilience, migration, deployment, and operations against approved artifacts where applicable.
 - Re-run or inspect required project checks within authorization and record actual results.
 - Verify task status reflects complete code, tests, documentation, migrations, telemetry, and evidence.
 - Verify TDD-routed tasks contain credible Red-Green-Refactor evidence; do not relabel test-after implementation as TDD.
+- Verify every TA case has executed evidence or an explicit accepted disposition from its owning test specialist.
+- Require the applicable unit, integration, contract, UI, system/E2E, performance, security, and regression reports/results; a unified regression pass cannot override a failed critical specialist result.
 - Classify drift, missing evidence, skipped checks, flaky results, residual risk, and required owner action.
 
 ## Verdicts

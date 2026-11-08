@@ -1,0 +1,6 @@
+interface:
+  display_name: "Contract Testing Standard"
+  short_description: "Verify provider consumer contract compatibility"
+  default_prompt: "Use $contract-testing-standard to verify provider and consumer compatibility for this change."
+policy:
+  allow_implicit_invocation: true

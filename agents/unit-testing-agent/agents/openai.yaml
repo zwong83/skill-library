@@ -1,0 +1,6 @@
+interface:
+  display_name: "Unit Testing Agent"
+  short_description: "Implement complete deterministic unit test coverage"
+  default_prompt: "Use $unit-testing-agent to implement and verify the TA-assigned unit test cases for this change."
+policy:
+  allow_implicit_invocation: true

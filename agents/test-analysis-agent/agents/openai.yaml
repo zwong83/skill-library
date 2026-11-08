@@ -1,6 +1,6 @@
 interface:
   display_name: "Test Analysis Agent"
-  short_description: "Analyze unit integration and quality coverage"
-  default_prompt: "Use $test-analysis-agent to produce a traceable test analysis for this apply-ready OpenSpec change."
+  short_description: "Build and route a complete test case matrix"
+  default_prompt: "Use $test-analysis-agent to build and route the complete Test Case Matrix for this apply-ready OpenSpec change."
 policy:
   allow_implicit_invocation: true

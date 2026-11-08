@@ -10,8 +10,9 @@ Read ../../skills/sdd-standard/SKILL.md and [references/mode-coordination.md](re
 
 - Explore, Propose, Review -> openspec-planning-agent.
 - Test Analysis after complete artifacts -> test-analysis-agent; required for behavior-changing Apply unless explicitly justified `Not Applicable`.
-- Apply -> implementation-agent, only after Apply-Ready and explicit implementation authorization.
-- Converge -> convergence-review-agent.
+- Apply -> implementation-agent, only after Apply-Ready and explicit implementation authorization; it routes non-TDD test work to unit, integration, contract, UI, system/E2E, performance, and authorized security specialists.
+- Regression -> regression-testing-agent after an implementation/testable target and impact baseline exist, when TA/release/convergence requires it.
+- Converge -> convergence-review-agent after required specialist and regression evidence is available.
 - Archive -> Coordinator only after Converged and explicit archive authorization.
 
 Do not load coding skills during planning. Do not load all implementation specialties during Apply; pass a task-level routing matrix.
@@ -27,7 +28,7 @@ For behavior-changing implementation, require approved System Analysis and Syste
 1. Classify mode and current delivery state.
 2. Perform read-only OpenSpec/context and source-readiness checks.
 3. Build the handoff packet defined in the mode coordination contract.
-4. Route exactly one current mode to its specialist. Before behavior-changing Apply, require a `TA-Ready` handoff with scenario-to-task mapping.
+4. Route exactly one current mode to its specialist. Before behavior-changing Apply, require a `TA-Ready` handoff with case-to-task-to-specialist mapping.
 5. Validate returned artifacts, files, evidence, status, drift, and authorization boundaries.
 6. Update lifecycle status without claiming unobserved validation, tests, convergence, or approval.
 7. Route the next mode only when requested or authorized; completion of one mode does not authorize the next.
