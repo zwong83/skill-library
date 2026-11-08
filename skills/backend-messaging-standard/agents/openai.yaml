@@ -1,0 +1,6 @@
+interface:
+  display_name: "Backend Messaging Standard"
+  short_description: "Design reliable broker-independent messaging"
+  default_prompt: "Use $backend-messaging-standard to design or review message contracts, delivery, idempotency, ordering, retries, dead letters, and broker-specific behavior."
+policy:
+  allow_implicit_invocation: true

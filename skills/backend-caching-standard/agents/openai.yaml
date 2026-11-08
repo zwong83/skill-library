@@ -1,0 +1,6 @@
+interface:
+  display_name: "Backend Caching Standard"
+  short_description: "Design correct and resilient caching"
+  default_prompt: "Use $backend-caching-standard to design or review cache necessity, keys, TTL, consistency, invalidation, resilience, security, and tests."
+policy:
+  allow_implicit_invocation: true

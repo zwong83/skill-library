@@ -1,6 +1,0 @@
-interface:
-  display_name: "Error Handling Standard"
-  short_description: "Design safe failure propagation and recovery"
-  default_prompt: "Use $error-handling-standard to design or review error taxonomy, propagation, boundary mapping, retries, recovery, and tests."
-policy:
-  allow_implicit_invocation: true

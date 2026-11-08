@@ -28,7 +28,7 @@
 - Define the normal flow and failure contract before adding `try/catch/finally`. Catch only when the current boundary can recover, translate, add meaningful context, clean up, or produce the terminal result.
 - Preserve the original cause and add safe operation context. Define error types from caller decisions rather than vendor class hierarchies.
 - Use language-native deterministic cleanup (`finally`, context managers, `defer`, RAII, `using`, structured concurrency, or equivalents). Cleanup must not silently hide the primary failure.
-- Invoke `error-handling-standard` for complete taxonomy, propagation, retry, recovery, and boundary rules.
+- Invoke `backend-error-handling-standard` for complete taxonomy, propagation, retry, recovery, and boundary rules.
 
 ## Absence and nullability
 

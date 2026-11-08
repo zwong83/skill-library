@@ -29,14 +29,14 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
 - `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
 - `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
-- `layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
-- `api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
-- `database-persistence-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
-- `resilience-standard` — Design bounded deadlines, retries, isolation, overload protection, degradation, health, reconciliation, and recovery.
-- `configuration-management-standard` — Design configuration schemas, sources, precedence, validation, refresh, secrets boundaries, drift, and change lifecycle.
-- `performance-capacity-standard` — Design measurable performance objectives, workload models, capacity, headroom, scaling, and regression evidence.
+- `backend-layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
+- `backend-api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
+- `backend-database-persistence-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
+- `backend-resilience-standard` — Design bounded deadlines, retries, isolation, overload protection, degradation, health, reconciliation, and recovery.
+- `backend-configuration-management-standard` — Design configuration schemas, sources, precedence, validation, refresh, secrets boundaries, drift, and change lifecycle.
+- `backend-performance-capacity-standard` — Design measurable performance objectives, workload models, capacity, headroom, scaling, and regression evidence.
 - `deployment-release-standard` — Design immutable artifacts, promotion, rollout, feature release, migration sequencing, recovery, and release evidence.
-- `operability-standard` — Design service ownership, SLIs/SLOs, telemetry, alerts, diagnostics, runbooks, incidents, maintenance, and readiness.
+- `backend-operability-standard` — Design service ownership, SLIs/SLOs, telemetry, alerts, diagnostics, runbooks, incidents, maintenance, and readiness.
 - `testing-strategy-standard` — Design risk-based test portfolios, environments, data, automation, non-functional tests, gates, and evidence.
 - `test-analysis-standard` — Derive the complete change-specific Test Case Matrix, specialist allocation, prerequisites, evidence, and pre-Apply TA gate.
 - `unit-testing-standard` — Design and implement deterministic behavior-focused unit and component tests.
@@ -48,9 +48,9 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `regression-testing-standard` — Select and verify risk-based regression coverage across test levels from actual change impact.
 - `tdd-standard` — Implement approved behavior through traceable Red-Green-Refactor cycles.
 - `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
-- `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
-- `caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
-- `messaging-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and RabbitMQ/RocketMQ/Kafka behavior.
+- `backend-error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
+- `backend-caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
+- `backend-messaging-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and RabbitMQ/RocketMQ/Kafka behavior.
 - `logging-standard` — Design and review structured, correlated, secure, and operationally useful application logging.
 - `tracing-standard` — Design and review distributed tracing, context propagation, span boundaries, sampling, correlation, and trace quality.
 - `code-comments` — Write and review maintainable comments and docstrings that explain intent, contracts, invariants, risks, and non-obvious constraints.
@@ -204,17 +204,17 @@ agents/
 └── unit-testing-agent/
 
 skills/
-├── api-design-standard/
+├── backend-api-design-standard/
 ├── brd-standard/
-├── caching-standard/
+├── backend-caching-standard/
 ├── clean-code-standard/
 ├── code-comments/
-├── configuration-management-standard/
+├── backend-configuration-management-standard/
 ├── contract-testing-standard/
 ├── design-patterns/
-├── database-persistence-standard/
+├── backend-database-persistence-standard/
 ├── deployment-release-standard/
-├── error-handling-standard/
+├── backend-error-handling-standard/
 ├── frontend-architecture-standard/
 ├── frontend-build-delivery-standard/
 ├── frontend-component-design-standard/
@@ -225,16 +225,16 @@ skills/
 ├── frontend-state-data-standard/
 ├── frs-standard/
 ├── integration-testing-standard/
-├── layered-architecture-standard/
+├── backend-layered-architecture-standard/
 ├── logging-standard/
-├── messaging-standard/
+├── backend-messaging-standard/
 ├── object-oriented-design/
-├── operability-standard/
-├── performance-capacity-standard/
+├── backend-operability-standard/
+├── backend-performance-capacity-standard/
 ├── plantuml-syntax/
 ├── prd-standard/
 ├── regression-testing-standard/
-├── resilience-standard/
+├── backend-resilience-standard/
 ├── sdd-standard/
 ├── security-testing-standard/
 ├── software-security-standard/

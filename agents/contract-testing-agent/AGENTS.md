@@ -11,7 +11,7 @@ Optional inputs include registry/broker history, consumer usage telemetry, depre
 ## Governing skills
 
 - Read `../../skills/contract-testing-standard/SKILL.md` and its applicable references.
-- Use `api-design-standard` for HTTP/gRPC/GraphQL/internal API contracts and `messaging-standard` for event/message contracts.
+- Use `backend-api-design-standard` for HTTP/gRPC/GraphQL/internal API contracts and `backend-messaging-standard` for event/message contracts.
 - Use `integration-testing-standard` only when real framework/transport/registry/broker semantics are the risk.
 
 ## Responsibilities

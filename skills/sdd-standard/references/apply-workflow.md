@@ -19,18 +19,18 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 
 | Changed concern | Conditional skill |
 |---|---|
-| Module/layer/object/pattern | `layered-architecture-standard`, conditional OOD/SOLID/patterns |
-| API/service contract mapping | `api-design-standard` |
-| Persistence/transactions/migrations | `database-persistence-standard` |
-| Resilience behavior | `resilience-standard` |
-| Configuration/secrets/flags | `configuration-management-standard` |
-| Performance/capacity implementation | `performance-capacity-standard` |
+| Module/layer/object/pattern | `backend-layered-architecture-standard`, conditional OOD/SOLID/patterns |
+| API/service contract mapping | `backend-api-design-standard` |
+| Persistence/transactions/migrations | `backend-database-persistence-standard` |
+| Resilience behavior | `backend-resilience-standard` |
+| Configuration/secrets/flags | `backend-configuration-management-standard` |
+| Performance/capacity implementation | `backend-performance-capacity-standard` |
 | Deployment/release artifacts | `deployment-release-standard` |
-| Operability/telemetry/runbooks | `operability-standard`, conditional logging/tracing |
+| Operability/telemetry/runbooks | `backend-operability-standard`, conditional logging/tracing |
 | Security controls | `software-security-standard` |
-| Errors | `error-handling-standard` |
-| Cache | `caching-standard` |
-| Messaging | `messaging-standard` with only the selected broker reference |
+| Errors | `backend-error-handling-standard` |
+| Cache | `backend-caching-standard` |
+| Messaging | `backend-messaging-standard` with only the selected broker reference |
 | Frontend rendering/routing/modules | `frontend-architecture-standard` |
 | Frontend components/forms/design system | `frontend-component-design-standard` |
 | Frontend state/API data/cache/optimistic/offline | `frontend-state-data-standard` |

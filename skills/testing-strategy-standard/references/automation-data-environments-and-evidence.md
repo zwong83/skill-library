@@ -34,4 +34,4 @@ Exit criteria may include required scenario pass, no open defects above an appro
 
 ## Production Verification
 
-Post-deployment smoke, synthetic, canary, telemetry, business, audit, and reconciliation checks complement pre-production testing. They do not justify skipping safe pre-production evidence. Define automatic abort and operator escalation with `deployment-release-standard` and `operability-standard`.
+Post-deployment smoke, synthetic, canary, telemetry, business, audit, and reconciliation checks complement pre-production testing. They do not justify skipping safe pre-production evidence. Define automatic abort and operator escalation with `deployment-release-standard` and `backend-operability-standard`.

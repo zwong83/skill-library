@@ -34,7 +34,7 @@ Use this skill to determine what existing behavior must be re-proven after code,
 - Read [impact-selection-and-suites.md](references/impact-selection-and-suites.md) to select coverage from change impact.
 - Read [regression-evidence-and-gates.md](references/regression-evidence-and-gates.md) for result classification, evidence, and verdict rules.
 - Invoke `unit-testing-standard`, `integration-testing-standard`, `contract-testing-standard`, `ui-testing-standard`, `system-e2e-testing-standard`, or `security-testing-standard` only for gaps or failures owned by that level/type.
-- Invoke `performance-capacity-standard` for performance baselines and load/stress/spike/soak regression.
+- Invoke `backend-performance-capacity-standard` for performance baselines and load/stress/spike/soak regression.
 - Invoke the relevant security, resilience, migration, deployment, or operability Skill only when that regression risk is in scope.
 
 ## Output

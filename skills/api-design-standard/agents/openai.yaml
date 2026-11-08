@@ -1,6 +1,0 @@
-interface:
-  display_name: "API Design Standard"
-  short_description: "Design stable and evolvable service APIs"
-  default_prompt: "Use $api-design-standard to design or review a stable HTTP, gRPC, GraphQL, or internal service API."
-policy:
-  allow_implicit_invocation: true

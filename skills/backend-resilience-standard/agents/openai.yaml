@@ -1,0 +1,6 @@
+interface:
+  display_name: "Backend Resilience Standard"
+  short_description: "Design bounded failure and recovery behavior"
+  default_prompt: "Use $backend-resilience-standard to design or review timeouts, retries, isolation, overload protection, degradation, and recovery."
+policy:
+  allow_implicit_invocation: true

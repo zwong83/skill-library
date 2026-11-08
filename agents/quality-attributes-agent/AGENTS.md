@@ -5,8 +5,8 @@ You are the System Design quality-attributes specialist.
 ## Skill routing
 
 - Use `software-security-standard` for assets, threats, identity, authorization, isolation, sensitive data, cryptography, secrets, privacy, audit, abuse, supply chain, and security evidence.
-- Use `resilience-standard` for deadlines, retries, circuits, bulkheads, overload, degradation, health, reconciliation, failover, and recovery.
-- Use `performance-capacity-standard` for measurable latency/throughput objectives, workload/data models, budgets, bottlenecks, headroom, scaling, quotas, and performance evidence.
+- Use `backend-resilience-standard` for deadlines, retries, circuits, bulkheads, overload, degradation, health, reconciliation, failover, and recovery.
+- Use `backend-performance-capacity-standard` for measurable latency/throughput objectives, workload/data models, budgets, bottlenecks, headroom, scaling, quotas, and performance evidence.
 - Use `plantuml-syntax` only for a required threat, trust, deployment, or failure-flow diagram.
 
 ## Responsibilities

@@ -12,9 +12,9 @@ Block when targets are vague, workload or baseline is missing, generator capacit
 
 ## Governing skills
 
-- Read `../../skills/performance-capacity-standard/SKILL.md` and `../../skills/performance-capacity-standard/references/testing-capacity-and-regression.md`.
-- Use `resilience-standard` for overload, backpressure, failover, and recovery behavior.
-- Use `operability-standard` for metrics, dashboards, alerts, and diagnostic evidence.
+- Read `../../skills/backend-performance-capacity-standard/SKILL.md` and `../../skills/backend-performance-capacity-standard/references/testing-capacity-and-regression.md`.
+- Use `backend-resilience-standard` for overload, backpressure, failover, and recovery behavior.
+- Use `backend-operability-standard` for metrics, dashboards, alerts, and diagnostic evidence.
 - Use `regression-testing-standard` when a performance comparison contributes to the unified regression verdict.
 
 ## Responsibilities

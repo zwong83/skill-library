@@ -14,13 +14,13 @@ Define functional and quality drivers, design principles, system boundary, neigh
 
 Define responsibilities, ownership, lifecycle, allowed/forbidden dependencies, composition root, ports/adapters where selected, transaction/failure ownership, and test seams. Do not force a layer count or OOP model.
 
-Use `layered-architecture-standard` when boundaries or dependency direction are material. Use `object-oriented-design`, `solid-principles`, or `design-patterns` only when the selected implementation paradigm and real design decision require them.
+Use `backend-layered-architecture-standard` when boundaries or dependency direction are material. Use `object-oriented-design`, `solid-principles`, or `design-patterns` only when the selected implementation paradigm and real design decision require them.
 
 ## 3. Domain, data, and persistence
 
 Define authoritative domain rules, source of truth, logical/physical data model, keys/constraints, access paths, transactions/isolation/conflict behavior, lifecycle, privacy, retention/deletion, migration/backfill compatibility, indexing/partitioning/capacity assumptions, backup/restore, and recovery.
 
-Use `database-persistence-standard` when durable state changes. Diagrams may show entities, relationships, cardinality, ownership, and data flow; text owns invariants and consistency rules.
+Use `backend-database-persistence-standard` when durable state changes. Diagrams may show entities, relationships, cardinality, ownership, and data flow; text owns invariants and consistency rules.
 
 ## 4. Internal behavior and flows
 
@@ -30,7 +30,7 @@ Define critical backend sequences, state machines, concurrency/ordering, timeout
 
 When applicable, define cache purpose/source of truth/key-value/TTL/invalidation/staleness/fallback/security/capacity/observability and message ownership/contract reference/topology/delivery/ordering/publish coordination/idempotency/acknowledgement/retry/dead-letter/replay/security/capacity/operations.
 
-Use `caching-standard` and `messaging-standard` only when those technologies are selected. Load only the selected broker reference.
+Use `backend-caching-standard` and `backend-messaging-standard` only when those technologies are selected. Load only the selected broker reference.
 
 ## 6. Server security and privacy
 

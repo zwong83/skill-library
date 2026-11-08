@@ -29,8 +29,8 @@ Use this skill after backend data ownership and the shared interface contract ar
 ## Reference routing
 
 - Read [state-ownership-and-data-flow.md](references/state-ownership-and-data-flow.md) for the design matrix.
-- Invoke `api-design-standard` and `contract-testing-standard` for shared request/response/error compatibility.
-- Invoke `caching-standard` only for principles shared with browser/client cache; this skill owns frontend state placement and UX behavior.
+- Invoke `backend-api-design-standard` and `contract-testing-standard` for shared request/response/error compatibility.
+- Invoke `backend-caching-standard` only for principles shared with browser/client cache; this skill owns frontend state placement and UX behavior.
 - Invoke `frontend-security-standard` for storage, identity, and sensitive-data boundaries.
 
 ## Output

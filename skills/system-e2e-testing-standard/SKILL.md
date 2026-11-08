@@ -35,7 +35,7 @@ Use this skill when a business or operational outcome can be proven only through
 - Invoke `ui-testing-standard` when the journey enters through a UI and UI behavior is part of the oracle.
 - Invoke `contract-testing-standard` for provider/consumer compatibility that does not require the whole journey.
 - Invoke `integration-testing-standard` for a focused real boundary rather than the complete system outcome.
-- Invoke `resilience-standard`, `deployment-release-standard`, or `operability-standard` only when the journey includes their approved concerns.
+- Invoke `backend-resilience-standard`, `deployment-release-standard`, or `backend-operability-standard` only when the journey includes their approved concerns.
 
 ## Output
 

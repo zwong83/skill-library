@@ -28,7 +28,7 @@ Use this skill when user-perceived loading, rendering, interaction, memory, or a
 ## Reference routing
 
 - Read [budgets-and-evidence.md](references/budgets-and-evidence.md) for the performance decisions, budgets, and evidence mapping written into Frontend SD.
-- Invoke `performance-capacity-standard` for end-to-end/backend capacity or load/stress concerns.
+- Invoke `backend-performance-capacity-standard` for end-to-end/backend capacity or load/stress concerns.
 - Invoke `frontend-architecture-standard` for rendering/code-split boundaries, `frontend-build-delivery-standard` for artifact/CDN behavior, and `frontend-observability-standard` for RUM.
 
 ## Output

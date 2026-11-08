@@ -39,7 +39,7 @@ Stop when authorization, ownership, target boundaries, safety controls, expected
 - Read [security-verification-matrix.md](references/security-verification-matrix.md) to map controls and threats to safe techniques and evidence.
 - Read [authorization-evidence-and-verdicts.md](references/authorization-evidence-and-verdicts.md) before dynamic execution or release-readiness reporting.
 - Invoke `software-security-standard` for the authoritative threat/control architecture and upstream gaps.
-- Invoke `api-design-standard`, `database-persistence-standard`, `configuration-management-standard`, `logging-standard`, or `deployment-release-standard` only for the selected control surface.
+- Invoke `backend-api-design-standard`, `backend-database-persistence-standard`, `backend-configuration-management-standard`, `logging-standard`, or `deployment-release-standard` only for the selected control surface.
 - Invoke `contract-testing-standard`, `integration-testing-standard`, or `system-e2e-testing-standard` when security behavior must be verified at that boundary or journey.
 
 ## Output

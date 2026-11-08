@@ -1,6 +1,0 @@
-interface:
-  display_name: "Operability Standard"
-  short_description: "Design observable and supportable services"
-  default_prompt: "Use $operability-standard to design or review service ownership, telemetry, alerts, runbooks, incidents, maintenance, and operational readiness."
-policy:
-  allow_implicit_invocation: true
