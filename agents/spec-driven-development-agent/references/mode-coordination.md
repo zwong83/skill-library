@@ -32,3 +32,9 @@ Pass only the selected change's relevant context. Prefer path/version/ID/section
 - evidence destination and known risks.
 
 Specialists return only updated status, artifacts/files changed, exact verification, limitations, drift/conflicts, evidence, and next action. Omit repeated source summaries, unchanged decisions, generic explanation, and internal reasoning. Handoffs are transient unless project audit rules require retention. Specialists must not broaden authorization or silently modify upstream decisions.
+
+## Runtime delegation
+
+Delegated Agents do not change lifecycle ordering, ownership, or authorization. The Coordinator starts at most the selected current mode for a change and validates its returned handoff before advancing. `convergence_review` is the optional Codex-native adapter for the Converge specialist; other modes may use runtime-generic delegation or sequential execution without changing this contract.
+
+Pass explicit paths, versions, IDs, bounded tasks/cases, write ownership, expected evidence, and granted authorization because delegated Agents must not depend on hidden parent conversation. Run write-heavy work concurrently only when file/module ownership is disjoint or the runtime provides isolated worktrees; otherwise keep one writer and execute sequentially.

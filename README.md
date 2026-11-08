@@ -91,6 +91,24 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
 
 Agent-capable runtimes may execute independent specialists concurrently from the same validated baseline. Runtimes without sub-Agent support can execute the same routing sequentially; the Coordinator and handoff contracts remain authoritative in either case.
 
+### Optional Codex Custom Agent adapter
+
+The portable `agents/` and `skills/` directories remain the only workflow source of truth. `adapters/codex/agents/*.toml` adds thin Codex-native Custom Agent definitions that invoke selected existing Agent Skills without copying their full instructions or fixing a model:
+
+| Codex Agent | Portable Agent Skill | Intended coordinator |
+|---|---|---|
+| `architecture` | `architecture-agent` | `system-design-agent` |
+| `interface_data` | `interface-data-agent` | `system-design-agent` |
+| `frontend_design` | `frontend-design-agent` | `system-design-agent` |
+| `quality_attributes` | `quality-attributes-agent` | `system-design-agent` |
+| `delivery_operations` | `delivery-operations-agent` | `system-design-agent` |
+| `system_design_review` | `system-design-review-agent` | `system-design-agent` |
+| `security_testing` | `security-testing-agent` | `test-analysis-agent` / `implementation-agent` |
+| `performance_testing` | `performance-testing-agent` | `test-analysis-agent` / `implementation-agent` |
+| `convergence_review` | `convergence-review-agent` | `spec-driven-development-agent` |
+
+To enable selected wrappers in Codex, copy their TOML files to a project's `.codex/agents/` directory or the user's `~/.codex/agents/` directory. They inherit the parent session's model, permissions, Skills, and MCP configuration unless the runtime configuration overrides them. The coordinators still own routing, compact context, authoritative artifacts, gates, and final status.
+
 ## Product lifecycle
 
 The library supports a traceable requirements-to-delivery flow:
@@ -249,6 +267,19 @@ skills/
 ├── unit-testing-standard/
 ├── ui-testing-standard/
 └── tracing-standard/
+
+adapters/
+└── codex/
+    └── agents/
+        ├── architecture.toml
+        ├── convergence_review.toml
+        ├── delivery_operations.toml
+        ├── frontend_design.toml
+        ├── interface_data.toml
+        ├── performance_testing.toml
+        ├── quality_attributes.toml
+        ├── security_testing.toml
+        └── system_design_review.toml
 ```
 
 Each Skill contains a required `SKILL.md` plus optional references and metadata:

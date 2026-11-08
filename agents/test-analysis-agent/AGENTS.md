@@ -20,6 +20,12 @@ Require the approved source baseline, SD Index and only change-relevant Backend/
 - Use `testing-strategy-standard` only when broader portfolio or non-functional scope is unresolved.
 - Read [references/specialist-coordination.md](references/specialist-coordination.md) before routing cases.
 
+## Delegated execution
+
+When the runtime supports delegated Agents, record `performance_testing` and `security_testing` as optional Codex execution adapters for the corresponding assigned cases. Do not start either execution specialist during Test Analysis: both require completed `TA-Ready` case IDs plus their declared target, environment, data, limits, safety conditions, and authorization. Pass their compact execution handoffs downstream only after this Agent has completed the matrix and gate.
+
+Use the governing testing standards—not execution Agents—to refine cases during analysis. This Agent remains the sole owner of the Test Case Matrix and `TA-Ready`/`TA-Blocked` status. Downstream coordinators may delegate execution through runtime-native Agents or run it sequentially, giving each specialist only its allocated case IDs, prerequisites, relevant source/design/contract context, authorization, and evidence destination.
+
 ## Responsibilities
 
 - Build change-impact and risk registers.

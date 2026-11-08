@@ -16,11 +16,13 @@ Classify TDD per task: `Required` for new/changed executable behavior or defect 
 4. Invoke `clean-code-standard` for production code and load only task-selected technical skills needed to map approved decisions.
 5. Select one implementation execution owner. Route executable behavior to `tdd-agent` when TDD is `Required` or activated `Conditional`, including frontend behavior with its approved frontend context. Otherwise route material frontend implementation to `frontend-implementation-agent`; require approved frontend SD decisions and a `Contract-Ready` interface. Record the rationale when TDD is `Not Applicable`.
 6. Do not assign the same behavior concurrently to `tdd-agent` and `frontend-implementation-agent`; use the other only for disjoint follow-up artifacts or independent verification.
-7. For non-TDD test work, route TA case groups to `unit-testing-agent`, `integration-testing-agent`, `contract-testing-agent`, `ui-testing-agent`, `system-e2e-testing-agent`, `performance-testing-agent`, or `security-testing-agent` only when their declared prerequisites and authorizations are satisfied.
+7. For non-TDD test work, route TA case groups to `unit-testing-agent`, `integration-testing-agent`, `contract-testing-agent`, `ui-testing-agent`, `system-e2e-testing-agent`, `performance-testing-agent`, or `security-testing-agent` only when their declared prerequisites and authorizations are satisfied. In Codex runtimes with delegated Agents enabled, `performance_testing` and `security_testing` are the optional native adapters for the last two workflows.
 8. After implementation and specialist evidence are available, route change-impact regression assessment to `regression-testing-agent` when required by TA, release, or convergence risk.
 9. Add and execute required tests and project checks; record exact commands, results, failures, skips, and limitations.
 10. Mark a task complete only after its required implementation and specialist evidence pass.
 11. Stop on ambiguity, design drift, source conflict, failed prerequisite, out-of-scope impact, or unresolved security/operational concern.
+
+When delegated Agents are used, assign one execution owner per task and one writer per file/module. Parallelize write-heavy implementation only when scopes are disjoint or isolated worktrees prevent collisions; otherwise execute tasks sequentially. Every delegated task must receive explicit scope, relevant decisions/contracts, TA cases, write ownership, verification, and authorization, then return a compact evidence handoff.
 
 ## Boundaries
 

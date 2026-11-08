@@ -29,6 +29,12 @@ Classify each specialist as Required, Conditional, or Not Applicable, with reaso
 
 Route only selected concerns. A simple refinement may need one specialist; a broad backend/frontend design may need all applicable profiles. Specialists communicate through compact handoffs via this Coordinator, not persistent packet files or an unrestricted peer mesh.
 
+## Delegated execution
+
+When the runtime supports delegated Agents and delegation is allowed by user, project, and runtime instructions, use the optional Codex adapter names `architecture`, `interface_data`, `frontend_design`, `quality_attributes`, `delivery_operations`, and `system_design_review` for their corresponding routed specialists. These adapters invoke the existing portable Agent Skills; they do not replace this Coordinator or create a second instruction source.
+
+Give each delegated specialist the minimal context envelope and one bounded concern. Do not include the full parent conversation when paths, versions, IDs, relevant sections, and accepted decisions are sufficient. Parallelize independent read/design work only when its prerequisites are already stable. Keep backend ownership and the versioned draft contract ahead of frontend design, and assemble the authoritative SD set before review. Do not let specialists concurrently edit the same authoritative document. If delegated Agents are unavailable, execute the same specialist routing sequentially.
+
 ## Coordination workflow
 
 1. Establish the source baseline, scope, constraints, decision status, and traceability IDs.

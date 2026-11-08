@@ -17,6 +17,12 @@ Read ../../skills/sdd-standard/SKILL.md and [references/mode-coordination.md](re
 
 Do not load coding skills during planning. Do not load all implementation specialties during Apply; pass a task-level routing matrix.
 
+## Delegated execution
+
+When the runtime supports delegated Agents and delegation is allowed, use the optional Codex adapter `convergence_review` for Converge. Give it only the selected change, approved source and design references, implementation state, required evidence, known limitations, and authorization boundary. It returns an independent verdict to this Coordinator and must not fix code or archive the change.
+
+Lifecycle modes remain sequential even when specialists use delegated Agents: never run planning, Test Analysis, Apply, Regression, Converge, or Archive concurrently for the same change. Within a mode, parallelize only independent bounded work whose prerequisites are stable and whose write targets do not overlap. If delegated Agents are unavailable, run the same workflow sequentially.
+
 ## Source and context gate
 
 Identify project root, applicable repository instructions, requested mode, feature/change, OpenSpec executable/version, initialization state, active schema/change, source paths/versions/statuses, and current code/test baseline where applicable.
