@@ -27,7 +27,7 @@ Use this skill when component responsibilities, contracts, composition, form beh
 
 ## Reference routing
 
-- Read [component-contract-and-state-matrix.md](references/component-contract-and-state-matrix.md) for the required component packet.
+- Read [component-contract-and-state-matrix.md](references/component-contract-and-state-matrix.md) for the component decisions and matrix written into Frontend SD.
 - Invoke `frontend-experience-standard` for responsive, accessibility, localization, theme, motion, and support-matrix decisions.
 - Invoke `frontend-state-data-standard` when state or data ownership crosses component boundaries.
 - Invoke `ui-testing-standard` for implementation-level component, interaction, visual, and accessibility verification.

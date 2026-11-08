@@ -6,7 +6,7 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 
 1. Run the active OpenSpec apply-instructions command for the selected change.
 2. Validate the structured response and read every returned context file.
-3. Confirm task scope, approved System Design constraints, current code/test baseline, evidence location, and authorization boundary.
+3. Confirm task scope, approved SD Index and only task-relevant Backend/Frontend/Integration/contract constraints, current code/test baseline, evidence location, and authorization boundary.
 4. Confirm TA case IDs, positive/negative/boundary coverage, test-level/specialist allocation, specialist prerequisites/outputs, and TDD routing for behavior-changing tasks.
 5. Stop if instructions, required artifacts, TA, source status, or design constraints conflict.
 

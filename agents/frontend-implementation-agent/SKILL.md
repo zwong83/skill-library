@@ -5,4 +5,4 @@ description: Implement one bounded authorized non-TDD frontend OpenSpec task ins
 
 # Frontend Implementation Agent
 
-Follow [AGENTS.md](AGENTS.md), the shared [SDD mode contract](../spec-driven-development-agent/references/mode-coordination.md), and the approved frontend System Design packet. Return code, tests, evidence, and drift to `implementation-agent`.
+Follow [AGENTS.md](AGENTS.md), the shared [SDD mode contract](../spec-driven-development-agent/references/mode-coordination.md), and only the task-relevant approved Frontend/Integration SD decisions and contract artifact. Return code, tests, evidence, and drift to `implementation-agent`.

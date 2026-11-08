@@ -18,4 +18,4 @@ Do not execute deployment, mutate infrastructure, invent support commitments, or
 
 ## Output
 
-Return one decision packet with configuration, delivery, release, observability and operations decisions, diagrams, ownership, dependencies, risks, unresolved items, and verification intent. Do not write the final SD.
+Return the compact handoff required by the shared coordination contract. Target backend operations to Backend SD, frontend build/delivery/RUM to Frontend SD, and mixed-version or cross-boundary rollout behavior to Integration SD. Include only accepted decisions, changed dependencies/impacts, blockers, and verification; do not persist a specialist packet or claim final readiness.

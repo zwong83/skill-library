@@ -14,10 +14,10 @@ Classify each profile as `Required`, `Conditional`, or `Not Applicable`. Record 
 ## Routing rules
 
 - A profile may be `Not Applicable` only with a reason tied to scope and sources.
-- Cross-profile dependencies are passed as decision IDs or packet summaries, not by loading another profile's full skills.
+- Cross-profile dependencies are passed as changed decision IDs or compact handoffs, not by loading another profile's full skills or full reasoning.
 - Error semantics belong primarily to Interface/Data; retry and recovery policy belongs primarily to Quality Attributes.
 - For frontend scope, Interface/Data supplies backend authority and the draft contract; Frontend Design supplies journey-driven contract feedback and client design. The Coordinator owns `Contract-Ready` reconciliation before parallel detail.
 - Security posture belongs to Quality Attributes; concrete secret/config delivery belongs to Delivery/Operations.
-- The Review profile consumes packets and the merged draft. It does not reload every specialist skill.
+- The Review profile consumes the Index, applicable Backend/Frontend/Integration documents, machine-readable contracts, and unresolved open decisions. It does not require specialist handoffs or reload every specialist skill.
 - For a small change, route only the affected profile plus review when readiness is claimed.
-- For a broad design, profiles may run independently from the same baseline; the Coordinator resolves conflicts before merge.
+- For a broad design, profiles may run independently from the same minimal baseline; the Coordinator writes accepted decisions directly to their authoritative target and resolves conflicts before readiness.

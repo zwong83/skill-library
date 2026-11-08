@@ -27,7 +27,7 @@ Use this skill when frontend behavior must be diagnosed, measured, correlated, o
 
 ## Reference routing
 
-- Read [events-rum-and-privacy.md](references/events-rum-and-privacy.md) for the observability packet.
+- Read [events-rum-and-privacy.md](references/events-rum-and-privacy.md) for the event/RUM/privacy decisions written into Frontend SD.
 - Invoke `logging-standard`, `tracing-standard`, and `operability-standard` for shared event/correlation/operations principles.
 - Invoke `frontend-performance-standard` for user-performance metrics and `frontend-security-standard` for sensitive-data exclusions.
 

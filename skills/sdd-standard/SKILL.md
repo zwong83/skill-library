@@ -1,6 +1,6 @@
 ---
 name: sdd-standard
-description: Run OpenSpec-backed Spec-Driven Development from an approved requirements, System Analysis, and System Design baseline through proposal, delta specs, design delta, tasks, implementation, convergence, and archive. Use for implementation-bound feature changes; do not use to create upstream BRD, PRD, SA, or SD artifacts.
+description: Run OpenSpec-backed Spec-Driven Development from approved requirements, System Analysis, and the applicable System Design document set through proposal, delta specs, design delta, tasks, implementation, convergence, and archive.
 ---
 
 # OpenSpec-Backed Spec-Driven Development
@@ -26,7 +26,7 @@ Mode and delivery state are independent. Valid states include Blocked, Drafting,
 
 - Read [references/input-and-readiness-gates.md](references/input-and-readiness-gates.md) before Propose, Test Analysis, Apply, Regression, Converge, or Archive.
 - Block when mandatory sources are missing, unapproved, contradictory, or contain material assumptions, TBC/TBD, open questions, pending approvals, unresolved proposals, missing acceptance criteria, or missing owners.
-- For behavior-changing implementation, require approved System Analysis and System Design plus applicable requirements and Change Request.
+- For behavior-changing implementation, require approved System Analysis, an `SD-Ready` Index, and the applicable Backend/Frontend/Integration/contract authorities plus requirements and Change Request.
 - Detect the local OpenSpec executable/version without an online update check. Read [references/openspec-bootstrap.md](references/openspec-bootstrap.md) only when installation, compatibility, PATH, or project initialization is unresolved.
 - Do not silently install/upgrade OpenSpec, edit PATH, initialize a project, create scope, write code, synchronize specs, archive, commit, push, or deploy.
 - Before behavior-changing Apply, require selected change/schema, complete apply-required artifacts, strict validation, `TA-Ready` analysis or justified `Not Applicable`, complete traceability, resolved material implementation concerns, and explicit user authorization.
@@ -69,6 +69,6 @@ Apply authorization covers approved code/tests and routine task/evidence updates
 
 ## Handoff
 
-Every handoff reports mode, delivery state, project/OpenSpec context, selected change/schema, source baseline and unresolved result, artifact/validation status, tasks/files changed when applicable, exact verification, convergence verdict, risks/limitations, evidence location, and the next action with its authorization requirement.
+Every compact handoff reports mode, delivery state, project/OpenSpec context, selected change/schema, source and affected SD IDs/versions, unresolved result, artifact/validation status, tasks/files changed when applicable, exact verification, convergence verdict, risks/limitations, evidence location, and the next action with its authorization requirement. Reference authoritative paths/sections rather than copying full source or design content, and do not retain internal handoffs unless audit rules require it.
 
 Do not replace BRD, PRD, SRS/FRS, SA, or SD with OpenSpec artifacts. Do not include secrets or private production data, and never report checks or approval that were not observed.

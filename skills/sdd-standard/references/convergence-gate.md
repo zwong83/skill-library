@@ -38,7 +38,7 @@ Every in-scope requirement and scenario must have implementation and evidence. E
 
 ### 4. Design conformance
 
-- Verify component/layer boundaries, dependency direction, interfaces, data and transaction ownership, state transitions, error handling, consistency, concurrency, caching, messaging, security, privacy, observability, deployment, migration, rollback, and compatibility against the design delta and approved SD.
+- Verify component/layer boundaries, dependency direction, interfaces, data and transaction ownership, state transitions, error handling, consistency, concurrency, caching, messaging, security, privacy, observability, deployment, migration, rollback, and compatibility against the design delta and applicable approved Backend/Frontend/Integration/contract authorities.
 - For frontend scope, verify the approved rendering/routing/module and server/client boundaries; versioned `Contract-Ready` interface; component/design-system contracts; complete UI states; state/data/cache/optimistic/offline behavior; responsive/accessibility/localization support; frontend performance/security/observability/build-delivery decisions; and preservation of authoritative server rules.
 - Record any implementation-driven design change in the design artifact and revalidate before accepting it.
 

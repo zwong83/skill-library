@@ -1,6 +1,6 @@
 interface:
   display_name: "System Design Standard"
   short_description: "Create and audit system design"
-  default_prompt: "Use $system-design-standard to create or review an implementation-ready System Design document."
+  default_prompt: "Use $system-design-standard to create or review an implementation-ready Backend, Frontend, Integration, and Index System Design set."
 policy:
   allow_implicit_invocation: true

@@ -21,13 +21,13 @@ Do not load coding skills during planning. Do not load all implementation specia
 
 Identify project root, applicable repository instructions, requested mode, feature/change, OpenSpec executable/version, initialization state, active schema/change, source paths/versions/statuses, and current code/test baseline where applicable.
 
-For behavior-changing implementation, require approved System Analysis and System Design plus applicable BRD/PRD/SRS/FRS and Change Request. Block on material unresolved items, contradictions, missing acceptance, ownership, security, migration, compatibility, deployment, or operational decisions.
+For behavior-changing implementation, require approved System Analysis and the applicable `SD-Ready` document set plus applicable BRD/PRD/SRS/FRS and Change Request. Load the SD Index and only the task-relevant Backend, Frontend, Integration sections and contract artifacts. Block on material unresolved items, contradictions, missing acceptance, ownership, security, migration, compatibility, deployment, or operational decisions.
 
 ## Coordination workflow
 
 1. Classify mode and current delivery state.
 2. Perform read-only OpenSpec/context and source-readiness checks.
-3. Build the handoff packet defined in the mode coordination contract.
+3. Build the compact handoff envelope defined in the mode coordination contract; reference paths, versions, IDs, and relevant sections instead of copying source documents.
 4. Route exactly one current mode to its specialist. Before behavior-changing Apply, require a `TA-Ready` handoff with case-to-task-to-specialist mapping.
 5. Validate returned artifacts, files, evidence, status, drift, and authorization boundaries.
 6. Update lifecycle status without claiming unobserved validation, tests, convergence, or approval.
@@ -42,6 +42,6 @@ Implementation authorization covers approved code/tests plus routine task/eviden
 
 ## Handoff and output
 
-Report requested mode, delivery state, project/OpenSpec context, selected change/schema, source and unresolved result, artifact/validation status, specialist used, tasks/files changed, exact verification, convergence verdict, evidence, risks/limitations, and next action with authorization needs.
+Report requested mode, delivery state, project/OpenSpec context, selected change/schema, source and unresolved result, artifact/validation status, specialist used, tasks/files changed, exact verification, convergence verdict, evidence, risks/limitations, and next action with authorization needs. Do not persist internal handoffs unless the project requires audit evidence.
 
 Do not replace upstream lifecycle documents, silently redesign approved decisions, include secrets/private production data, or report unexecuted checks as passing.

@@ -4,7 +4,7 @@ You are the SDD specialist for Test Analysis before Apply.
 
 ## Required inputs
 
-Require the approved source baseline, System Design, selected OpenSpec change/schema, complete apply-required artifacts, strict-validation result, current code/test impact, and unresolved-item result. For an existing change, read all relevant proposal, specs, design, and tasks.
+Require the approved source baseline, SD Index and only change-relevant Backend/Frontend/Integration decisions and contracts, selected OpenSpec change/schema, complete apply-required artifacts, strict-validation result, current code/test impact, and unresolved-item result. For an existing change, read all relevant proposal, specs, design, and tasks.
 
 ## Governing skills and coordination
 

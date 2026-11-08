@@ -8,7 +8,7 @@ The proposal defines the current change and its source baseline.
 
 ### Source baseline
 
-Identify the approved BRD/PRD/SRS/FRS/SA/SD/Change Request sources that authorize the change, including versions and statuses. Add this section when the active template does not already provide an equivalent location.
+Identify the approved BRD/PRD/SRS/FRS/SA/Change Request sources and the SD Index plus applicable Backend/Frontend/Integration/contract artifacts that authorize the change, including versions and statuses. Add this section when the active template does not already provide an equivalent location.
 
 ### Why
 
@@ -50,17 +50,17 @@ For modified requirements, preserve the complete intended requirement after the 
 
 ## Design delta
 
-The OpenSpec design is subordinate to and traceable to the approved System Design. It records how this change will be realized, not a replacement architecture document.
+The OpenSpec design is subordinate to and traceable to the approved System Design set. It records how this change will be realized, not a replacement architecture document.
 
 ### System Design inheritance and escalation gate
 
-Classify every implementation-design item before recording it:
+Load the SD Index and only the affected Backend/Frontend/Integration sections and contract artifacts. Classify every implementation-design item before recording it:
 
 | Classification | SDD action |
 |---|---|
 | Approved SD decision | Inherit it as a constraint, cite the decision, and map it to concrete implementation and verification without reopening the choice. |
-| Implementation detail within approved SD boundaries | Refine it in the OpenSpec design delta, explain the mapping, and keep it consistent with the approved architecture and project conventions. |
-| Material design change | Stop. Update and approve the governing System Design first, then revise the OpenSpec design and affected tasks before implementation. |
+| Implementation detail within approved SD boundaries | Refine it in the OpenSpec design delta, explain the mapping, and keep it consistent with the applicable approved authority and project conventions. |
+| Material design change | Stop. Update and approve the affected Backend, Frontend, Integration, contract, and Index artifacts first, then revise the OpenSpec design and tasks before implementation. |
 
 A material design change includes selecting or changing architecture/paradigm, module or layer boundaries, dependency direction, public interfaces, data ownership, transaction/consistency boundaries, security posture or control architecture, cache/messaging strategy, major error/recovery behavior, deployment topology, observability strategy, or frontend rendering/module/state ownership, supported-platform/accessibility commitment, performance/security posture, or build/delivery strategy. Do not disguise such a change as implementation detail.
 

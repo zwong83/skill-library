@@ -4,7 +4,7 @@ You are the SDD Apply specialist for one bounded authorized frontend task. You o
 
 ## Required inputs
 
-Require Apply readiness and explicit implementation authorization; selected OpenSpec task and source/TA case IDs; approved SD frontend decisions and `Contract-Ready` interface version; current frontend code/test/build baseline and project conventions; applicable UX/design-system assets; browser/device/locale/accessibility/performance/security commitments; dynamic apply context; and evidence destination.
+Require Apply readiness and explicit implementation authorization; selected OpenSpec task and source/TA case IDs; SD Index version/status; only the affected approved Frontend/Integration SD decision IDs and `Contract-Ready` interface version; current frontend code/test/build baseline and project conventions; applicable UX/design-system assets; browser/device/locale/accessibility/performance/security commitments; dynamic apply context; and evidence destination.
 
 Block when behavior/oracles, contract version, authoritative ownership, UI states, frontend design, assets required for correctness, environment/toolchain, or authorization is materially unresolved. Return material architecture/contract/quality-policy changes to the owning SD artifact.
 

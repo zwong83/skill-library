@@ -66,10 +66,10 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
   - `software-requirements-agent` — Produces SRS documents with `srs-standard`.
   - `functional-requirements-agent` — Produces FRS documents with `frs-standard`.
 - `system-analysis-agent` — Produces logical System Analysis documents with `system-analysis-standard`.
-- `system-design-agent` — Coordinates specialist decision packets and owns the final SD.
+- `system-design-agent` — Coordinates compact specialist handoffs and owns the authoritative SD document set and readiness index.
   - `architecture-agent` — Architecture, modules, layers, dependencies, composition, and topology.
   - `interface-data-agent` — APIs, persistence, transactions, caching, messaging, consistency, and errors.
-  - `frontend-design-agent` — Reviews the shared contract and produces the frontend decision packet after backend ownership is known.
+  - `frontend-design-agent` — Reviews the shared contract and returns only accepted frontend decisions, contract changes, impacts, blockers, and verification.
   - `quality-attributes-agent` — Security, resilience, performance, capacity, scalability, and recovery.
   - `delivery-operations-agent` — Configuration, deployment/release, observability, operability, and support.
   - `system-design-review-agent` — Independent SD quality, traceability, testability, and readiness review.
@@ -85,7 +85,7 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
     - `security-testing-agent` — Runs authorized, non-destructive verification of approved controls.
     - `regression-testing-agent` — Selects and verifies cross-level regression coverage and verdicts.
   - `implementation-agent` — Applies authorized, apply-ready tasks with tests and evidence.
-    - `frontend-implementation-agent` — Implements bounded approved frontend tasks inside SDD from the frontend packet and Contract-Ready interface.
+    - `frontend-implementation-agent` — Implements bounded approved frontend tasks from task-relevant Frontend/Integration SD decisions and the Contract-Ready interface.
   - `tdd-agent` — Implements TDD-routed tasks through Red-Green-Refactor.
   - `convergence-review-agent` — Independently verifies code/artifact/evidence convergence.
 
@@ -133,7 +133,11 @@ output/PRD/PRD-<project-name>.md
 output/SRS/SRS-<project-name>.md
 output/FRS/FRS-<project-name>.md
 output/SA/SA-<project-name>.md
-output/SD/SD-<project-name>.md
+output/SD/SD-<project-name>-index.md
+output/SD/SD-<project-name>-backend.md       # when backend scope exists
+output/SD/SD-<project-name>-frontend.md      # when frontend scope exists
+output/SD/SD-<project-name>-integration.md   # when a cross-boundary contract exists
+output/SD/contracts/                          # only applicable machine-readable contracts
 
 openspec/changes/<change-name>/
 ├── proposal.md
@@ -158,7 +162,7 @@ BRD objective/requirement
   → SRS requirement
   → FRS feature/functional requirement
   → SA logical responsibility/flow
-  → SD backend authority / Contract-Ready interface / frontend and backend decisions
+  → SD Index / Backend SD / Frontend SD / Integration SD / Contract-Ready interface
   → OpenSpec proposal/capability requirement/design delta/task
   → TA risk / complete case matrix / specialist allocation
   → TDD cycle / code change / unit, integration, contract, UI, system-E2E, performance, and security evidence
@@ -302,5 +306,6 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Keep authoritative business rules and authorization on the server; frontend architecture, components, state/data, experience, performance, security, observability, and delivery map approved outcomes without creating a competing source of truth.
 - Treat software security as a lifecycle concern: identify assets, threats, trust boundaries, and security requirements in SA; design owned controls in SD; make them concrete and verifiable in SDD and implementation.
 - Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
-- Prefer simple, reviewable documents over unnecessary detail or duplicated content.
-- Use coordinator-to-specialist handoff packets instead of unrestricted peer-to-peer Agent communication; only the lifecycle Coordinator merges final artifacts and reports overall readiness.
+- Prefer small authoritative documents over unnecessary detail or duplicated content. Machine-readable contracts own field/protocol structure; Integration SD owns cross-boundary semantics; Backend and Frontend SD own their respective internals; the Index owns status and readiness.
+- Use transient compact coordinator-to-specialist handoffs containing only accepted decisions, contract changes, dependencies/impacts, blockers, and verification. Do not persist full specialist packets, repeated source summaries, internal reasoning, or rejected-option histories by default.
+- Keep at most one temporary SD coordination file, `open-decisions.md`, for unresolved material cross-document decisions; record the final review verdict and routing/status table in the Index.

@@ -12,7 +12,10 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 - Governing System Analysis and requirements are identified with version/status.
 - The specialist routing matrix classifies architecture, interface/data, frontend design, quality attributes, delivery/operations, and independent review as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
-- Only routed concerns were loaded; accepted specialist packets, cross-packet dependencies, conflicts, and unresolved decisions are reconciled or visibly registered before final readiness.
+- Only routed concerns and document templates were loaded; accepted compact handoffs are written once to their authoritative targets, and material conflicts or unresolved decisions are reconciled or present in `open-decisions.md` before readiness.
+- The Index links the applicable Backend, Frontend, Integration, and contract artifacts with versions/statuses and contains the routing/status table and review verdict.
+- Backend, Frontend, and Integration documents respect their authority boundaries; full schemas and normative rules are not duplicated across documents.
+- Machine-readable contract structure, Integration semantics, Backend internals, and Frontend internals agree; any authority conflict blocks readiness.
 - Architecture drivers, constraints, design principles, scope, and system boundaries are explicit.
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
 - Logical layers/modules have explicit responsibilities, allowed/forbidden dependencies, transaction/failure ownership, composition, and enforceable boundaries when applicable.
@@ -74,6 +77,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 ## Boundary and readiness
 
-- The document contains design, not production implementation or unauthorized external mutations.
+- The applicable document set contains design, not production implementation or unauthorized external mutations.
 - No secrets, credentials, or private production configuration are embedded.
-- The design is not called approved or implementation-ready while material requirements, decisions, controls, operational ownership, or sign-offs remain pending.
+- No persistent specialist packets, duplicate decision/conflict/routing registers, or separate review report exist unless a project/audit convention explicitly requires retention.
+- `Contract-Ready`, Backend/Frontend/Integration readiness, and overall `SD-Ready` are recorded in the Index and are not called approved or implementation-ready while material requirements, decisions, controls, operational ownership, or sign-offs remain pending.

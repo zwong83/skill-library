@@ -21,4 +21,4 @@ Do not choose the overall architecture, security posture, capacity target, deplo
 
 ## Output
 
-Return one decision packet with stable interface/data decision IDs, contracts, models, diagrams, dependencies, conflicts, unresolved items, and verification intent. Do not write the final SD.
+Return the compact handoff required by the shared coordination contract. Target backend data/persistence/transaction internals to Backend SD and cross-boundary interface semantics to Integration SD plus the applicable machine-readable contract. Report contract changes exactly and avoid copying full schemas into Markdown. Do not persist a specialist packet or claim final readiness.

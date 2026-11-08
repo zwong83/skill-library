@@ -17,4 +17,4 @@ Do not design detailed APIs, schemas, cache/message contracts, security controls
 
 ## Output
 
-Return the decision packet required by the shared coordination contract, including focused architecture diagrams when useful. Do not claim final approval or implementation readiness.
+Return the compact handoff required by the shared coordination contract. Target backend architecture content to Backend SD, cross-boundary topology only to Integration SD, and status/blockers only to the Index or `open-decisions.md`. Include a focused diagram only when it belongs in the target document. Do not persist a specialist packet or claim final approval/readiness.

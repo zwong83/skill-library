@@ -17,4 +17,4 @@ Do not redesign APIs, persistence, topology, delivery, or operations. Identify r
 
 ## Output
 
-Return one decision packet with security/resilience/performance decisions, targets, control ownership, risks, dependencies, unresolved items, and verification intent. Do not write the final SD.
+Return the compact handoff required by the shared coordination contract. Target backend runtime controls to Backend SD, client-specific controls to Frontend SD, and cross-boundary controls/targets to Integration SD. Include only accepted decisions, changed dependencies/impacts, blockers, and verification; do not persist a specialist packet or claim final readiness.

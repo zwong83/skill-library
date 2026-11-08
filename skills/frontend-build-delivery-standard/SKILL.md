@@ -28,7 +28,7 @@ Use this skill when frontend source must become reproducible, identifiable, safe
 
 ## Reference routing
 
-- Read [build-artifact-release-matrix.md](references/build-artifact-release-matrix.md) for the delivery packet.
+- Read [build-artifact-release-matrix.md](references/build-artifact-release-matrix.md) for the build/delivery decisions written into Frontend SD.
 - Invoke `configuration-management-standard` and `deployment-release-standard` for shared configuration/release governance.
 - Invoke `frontend-performance-standard` for asset budgets, `frontend-security-standard` for artifact/header/source-map security, and `frontend-observability-standard` for release attribution.
 

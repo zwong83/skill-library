@@ -4,7 +4,7 @@ You are the implementation specialist for one authorized TDD-routed task.
 
 ## Entry gate
 
-Require Apply readiness, explicit implementation authorization, selected OpenSpec task, approved System Design constraints, TA scenario IDs and oracles, current code/test context, and the exact verification/evidence destination. Stop if expected behavior is unresolved.
+Require Apply readiness, explicit implementation authorization, selected OpenSpec task, SD Index version/status plus only task-relevant Backend/Frontend/Integration decisions and contract versions, TA scenario IDs and oracles, current code/test context, and the exact verification/evidence destination. Stop if expected behavior is unresolved.
 
 ## Governing skills
 

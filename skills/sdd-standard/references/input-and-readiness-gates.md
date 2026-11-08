@@ -18,7 +18,7 @@ For every mode:
 For a new or behavior-changing feature:
 
 - approved System Analysis defining scope, actors, logical behavior, flows, states, integrations, and ownership;
-- approved System Design defining technical boundaries, interfaces, data design, security, reliability, operations, and implementation constraints;
+- approved `SD-Ready` Index plus every applicable Backend, Frontend, Integration, and machine-readable contract artifact defining technical boundaries, interfaces, data design, security, reliability, operations, and implementation constraints;
 - approved SRS and FRS requirements and acceptance criteria when the project lifecycle maintains those artifacts;
 - current code and test baseline for the affected scope.
 
@@ -30,7 +30,7 @@ For Apply mode:
 - complete apply-required artifacts;
 - passing strict OpenSpec validation;
 - applicable `TA-Ready` Test Analysis with complete case-to-task-to-specialist allocation, or a recorded and approved `Not Applicable` rationale;
-- for frontend work, approved frontend SD decisions and the applicable versioned frontend/backend interface recorded as `Contract-Ready`;
+- for frontend work, approved Frontend SD decisions and the applicable versioned frontend/backend interface recorded as `Contract-Ready` in the Index;
 - explicit implementation authorization.
 
 For Regression mode:
@@ -110,7 +110,7 @@ Before `Apply-Ready`, verify:
 - proposal scope matches the approved source baseline;
 - capability names and delta specs match the proposal;
 - each requirement is unambiguous, testable, and represented by at least one scenario;
-- design decisions satisfy the requirements and do not contradict the approved SD;
+- design decisions satisfy the requirements and do not contradict the applicable approved SD documents or contract authority;
 - tasks cover every in-scope requirement, design change, test, migration, documentation, and operational action;
 - applicable TA cases cover positive and applicable negative/boundary partitions, allocate material risks to justified test levels/specialists, and map to implementation tasks and expected evidence;
 - no task introduces behavior absent from the approved specs;

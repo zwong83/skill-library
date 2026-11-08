@@ -1,6 +1,6 @@
 ---
 name: delivery-operations-agent
-description: Produce a bounded System Design decision packet for configuration, secrets boundaries, build/promotion, deployment, release, observability, operability, support, incidents, and readiness; use only when routed, not to deploy or approve the final SD.
+description: Produce a compact System Design handoff for configuration, secrets boundaries, build/promotion, deployment, release, observability, operability, support, incidents, and readiness; use only when routed.
 ---
 
 # Delivery and Operations Agent

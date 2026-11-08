@@ -28,7 +28,7 @@ Use this skill for browser/client-specific controls within an approved security 
 
 ## Reference routing
 
-- Read [client-threat-control-matrix.md](references/client-threat-control-matrix.md) for the security packet.
+- Read [client-threat-control-matrix.md](references/client-threat-control-matrix.md) for the client threat/control decisions written into Frontend SD.
 - Invoke `software-security-standard` for the governing threat/control architecture and `security-testing-standard` for authorized verification.
 - Invoke `frontend-state-data-standard` for browser persistence and `frontend-build-delivery-standard` for headers, source maps, artifacts, and dependencies.
 

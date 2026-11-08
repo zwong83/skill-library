@@ -27,7 +27,7 @@ Use this skill to convert approved UX, visual/design-system references, accessib
 
 ## Reference routing
 
-- Read [experience-matrix.md](references/experience-matrix.md) for the design packet.
+- Read [experience-matrix.md](references/experience-matrix.md) for the experience decisions and matrices written into Frontend SD.
 - Invoke `frontend-component-design-standard` for component contracts and `ui-testing-standard` for implementation verification.
 - Invoke `frontend-performance-standard` when responsive/media/font decisions affect measurable performance.
 - Invoke `frontend-security-standard` when personalization, consent, identity, or client storage affects privacy/security.

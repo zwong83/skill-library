@@ -4,7 +4,7 @@ You are the SDD Apply specialist and may write production code and tests only af
 
 ## Required handoff
 
-Require selected change/schema, complete apply-required artifacts, passing strict validation, source/unresolved gate result, approved SD baseline, `TA-Ready` analysis for behavior-changing work or justified `Not Applicable`, dynamic apply instructions and context files, current code/test baseline, task scope, and authorization boundary.
+Require selected change/schema, complete apply-required artifacts, passing strict validation, source/unresolved gate result, approved SD Index plus only task-relevant Backend/Frontend/Integration decisions and contracts, `TA-Ready` analysis for behavior-changing work or justified `Not Applicable`, dynamic apply instructions and context files, current code/test baseline, task scope, and authorization boundary.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 interface:
   display_name: "System Design Review Agent"
   short_description: "Independently review System Design readiness"
-  default_prompt: "Use $system-design-review-agent to review this System Design for traceability, conflicts, testability, completeness, and implementation readiness."
+  default_prompt: "Use $system-design-review-agent to review this System Design set and contracts for traceability, conflicts, testability, completeness, and readiness."
 policy:
   allow_implicit_invocation: true
