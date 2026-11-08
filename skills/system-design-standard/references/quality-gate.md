@@ -11,6 +11,8 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Source and architecture
 
 - Governing System Analysis and requirements are identified with version/status.
+- The specialist routing matrix classifies architecture, interface/data, quality attributes, delivery/operations, and independent review as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
+- Only routed concerns were loaded; accepted specialist packets, cross-packet dependencies, conflicts, and unresolved decisions are reconciled or visibly registered before final readiness.
 - Architecture drivers, constraints, design principles, scope, and system boundaries are explicit.
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
 - Logical layers/modules have explicit responsibilities, allowed/forbidden dependencies, transaction/failure ownership, composition, and enforceable boundaries when applicable.

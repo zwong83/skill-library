@@ -1,0 +1,6 @@
+interface:
+  display_name: "Software Requirements Agent"
+  short_description: "Create and review software requirements"
+  default_prompt: "Use $software-requirements-agent to create or review an SRS from an accepted PRD baseline."
+policy:
+  allow_implicit_invocation: true

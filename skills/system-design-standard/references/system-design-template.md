@@ -2,6 +2,8 @@
 
 Adapt this structure to the system and release. Keep unknowns explicit as `TBC`, `Proposed`, `Assumption`, `Pending Approval`, `Open`, or `Deferred`; do not turn a design assumption into an approved decision.
 
+The presence of a section does not trigger its companion Skill. Apply the routing matrix first. In a multi-Agent workflow, populate applicable sections from accepted specialist decision packets; in a single-Agent workflow, load only the Skills selected as `Required` or activated `Conditional` concerns. Record irrelevant sections as `Not Applicable` with a short rationale instead of loading their Skills.
+
 ## Diagram-first rule
 
 Use focused PlantUML diagrams as the primary views for architecture, component relationships, technical flows, state, data ownership, trust boundaries, and deployment. Use text as the normative source for contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, operational procedures, and unresolved items. Every diagram must have a title, scope, design explanation, and traceability.

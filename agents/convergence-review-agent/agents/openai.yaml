@@ -1,0 +1,6 @@
+interface:
+  display_name: "Convergence Review Agent"
+  short_description: "Verify implementation convergence"
+  default_prompt: "Use $convergence-review-agent to verify that code, tests, evidence, requirements, design, and OpenSpec artifacts have converged."
+policy:
+  allow_implicit_invocation: true

@@ -5,130 +5,61 @@ description: Create or audit implementation-ready System Design documents coveri
 
 # Standard System Design
 
-Use this skill when the user wants to create, refine, compare, or quality-check a System Design document. The output turns an approved System Analysis and requirements baseline into an explicit, reviewable technical design that implementation and operations can follow.
+Use this skill to turn an approved System Analysis and requirements baseline into an explicit, reviewable technical design. It is the governing standard; specialized skills are lazy-loaded only when the routing decision says their concern is material.
 
-This skill is the governing System Design standard. Invoke conditional companion skills only where this standard directs and only when they fit the selected paradigm or design problem.
+## Core rules
 
-## Core operating rules
+- Treat approved requirements, System Analysis, confirmed constraints, and explicit decisions as the source of truth.
+- Never invent scope, approval, security/compliance policy, capacity targets, vendors, ownership, or operational commitments.
+- Label uncertainty as Confirmed, Proposed, Assumption, TBC, Pending Approval, Open, or Deferred.
+- State each material decision, driver, alternatives, rationale, trade-offs, consequences, owner, and status.
+- Prefer the simplest design that satisfies behavior and quality requirements.
+- Treat security, privacy, reliability, performance, operability, recovery, cost, and verification as first-class concerns.
+- Do not write production code or execute deployment, migration, infrastructure, or external changes.
 
-- Treat approved requirements, System Analysis, confirmed constraints, and explicit technical decisions as the source of truth.
-- Read identified source material completely before designing.
-- Never invent product scope, approval status, security policy, compliance obligation, capacity target, vendor approval, or operational ownership.
-- Label uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
-- Make design decisions explicit: state the decision, context, alternatives, trade-offs, consequences, owner, and approval status.
-- Prefer simple, explainable designs that satisfy the requirements. Do not add components, patterns, or infrastructure without a reason tied to a requirement or operational need.
-- When the system uses an object-oriented or hybrid implementation model, invoke/read `object-oriented-design` for high-level responsibilities, identity/value semantics, relationships, ownership, contracts, dependency direction, and class/object modeling. Do not force OOP onto a functional, data-oriented, Go, Rust, or other language-native design.
-- When a reusable design pattern is relevant, invoke/read `design-patterns` as a conditional reference. Use its language-neutral guidance first and load language-specific mapping only when the target language is known; never force a pattern into the design.
-- Invoke/read `layered-architecture-standard` when defining or reviewing logical layers, module boundaries, dependency direction, ports/adapters, transaction ownership, or test seams.
-- Invoke/read `api-design-standard` when defining or changing HTTP, gRPC, GraphQL, or internal service contracts, including protocol semantics, schemas, authorization boundaries, idempotency, compatibility, pagination, limits, and deprecation.
-- Invoke/read `database-persistence-standard` when defining or changing durable-state ownership, datastore selection, schemas, constraints, access paths, indexes, transactions, isolation, migrations, retention, backup, or restore.
-- Invoke/read `resilience-standard` when dependencies, deadlines, retries, circuit breakers, isolation, overload protection, degradation, health semantics, reconciliation, failover, or recovery must be designed.
-- Invoke/read `configuration-management-standard` when defining configuration schemas, sources, precedence, refresh, environment/tenant scope, secrets boundaries, feature controls, change governance, or provider failure.
-- Invoke/read `performance-capacity-standard` when defining latency/throughput objectives, workload models, resource budgets, bottlenecks, headroom, scaling, dependency quotas, or required performance evidence.
-- Invoke/read `deployment-release-standard` when defining artifacts, promotion, environments, compatibility, rollout, feature exposure, migrations, rollback/roll-forward, or release evidence.
-- Invoke/read `operability-standard` when defining ownership, SLIs/SLOs, dashboards, alerts, diagnostics, runbooks, incidents, maintenance, support, or operational readiness.
-- Invoke/read `testing-strategy-standard` when defining risk coverage, test levels/types, environments, data, automation, non-functional verification, release gates, or evidence.
-- Invoke/read `software-security-standard` in System Design mode when protected assets, identity/authentication, authorization, tenant/data isolation, cryptography, key/secrets, privacy, audit, abuse resistance, supply-chain, deployment, or security verification is applicable. Define control architecture and evidence without inventing policy or approval.
-- Invoke/read `error-handling-standard` when defining error taxonomy, propagation, boundary mapping, timeout/retry/recovery, message failure, or public error behavior.
-- Invoke/read `caching-standard` when a cache is proposed or changed; require a source of truth, measurable purpose, staleness/invalidation contract, failure behavior, and security decision before approving it.
-- Invoke/read `messaging-standard` when asynchronous messaging or event streaming is proposed or changed; load only the selected RabbitMQ, RocketMQ, or Kafka reference after the technology decision is justified.
-- Invoke/read `logging-standard` when the design must define structured operational, audit, security, or diagnostic events. Invoke/read `tracing-standard` when cross-boundary causality, latency, asynchronous execution, context propagation, or sampling must be designed. Keep these at system-contract level; defer statement-level instrumentation to SDD/implementation.
-- Treat security, privacy, reliability, observability, operability, cost, performance, and recovery as first-class design concerns.
-- Do not generate production code, migration execution, deployment commands, or live infrastructure changes unless the user separately requests and authorizes them.
+## Progressive skill routing
 
-## Diagram-first policy
+Before loading a companion skill, read [references/specialist-routing.md](references/specialist-routing.md) and classify each concern as Required, Conditional, or Not Applicable with evidence. Load only Required concerns and Conditional concerns activated by the actual design.
 
-Use diagrams as the primary representation when the design explains architecture, relationships, boundaries, flows, hierarchy, state, timing, deployment, or data ownership. Prefer C4 context/container/component, component, sequence, state, class, ER, deployment, and data-flow diagrams.
+In an agent-capable runtime, route bounded work to the matching specialist Agent and merge its decision packet. In a single-agent runtime, apply the same profiles sequentially. Do not load every specialized skill merely because it appears in the template.
 
-- Invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference.
-- Invoke/read `object-oriented-design` before producing a class/object model or making a material inheritance, composition, interface, or object-lifecycle decision.
-- Invoke/read `design-patterns` only when the design contains a pattern choice, pattern comparison, or reusable collaboration whose trade-offs need to be documented.
-- Use one focused diagram per design question; do not combine unrelated architecture views into an unreadable diagram.
-- Keep text as the authoritative source for contracts, rules, constraints, assumptions, exceptions, decisions, NFR targets, and operational procedures.
-- Every diagram must state its title, scope, assumptions, design meaning, source traceability, and required legend.
-- If a diagram and text conflict, the explicit text or ADR governs and the conflict must be fixed before approval.
-- Do not add a diagram when a table or short design explanation is clearer.
+## Inputs and readiness
 
-## Input classification
+Mandatory:
 
-### Mandatory inputs
+- task mode and system/feature scope;
+- complete approved System Analysis for new design work, unless a provisional design is explicitly requested;
+- complete existing SD for refinement/review.
 
-- Task mode: draft, refine, compare, or review.
-- System/product/feature identity and target release/scope when known.
-- A complete System Analysis for new design work, unless the user explicitly authorizes a provisional design.
-- The complete existing System Design for refinement or review.
+BRD/PRD/SRS/FRS, Change Request, security/privacy, performance, availability, recovery, observability, deployment, operations, integration, migration, compatibility, vendor, platform, and capacity inputs become mandatory only when a decision depends on them.
 
-### Conditional inputs
+Read identified sources completely. Block an implementation-ready conclusion when material behavior, ownership, interface, data, security, performance, reliability, deployment, operational, acceptance, or approval decisions remain unresolved.
 
-- SRS and FRS are mandatory when their requirements affect the design; otherwise record the limitation.
-- PRD/BRD is mandatory when product scope, business rules, or acceptance constraints affect a design decision.
-- A Change Request is mandatory for change-focused design, but not for greenfield design.
-- Security/privacy, performance, availability, recovery, observability, deployment, operational, integration, vendor, and platform constraints are mandatory when applicable; if not applicable, record `Not Applicable`.
-- Existing architecture, migration constraints, compatibility requirements, and capacity baselines are mandatory when the design decision depends on them.
+## Diagram policy
 
-### Optional context
+Use focused diagrams when they materially clarify boundaries, relationships, flows, state, timing, deployment, or ownership. Invoke plantuml-syntax only before creating or changing PlantUML and load only the relevant diagram reference. Use object-oriented-design or design-patterns only when the selected paradigm or a real pattern decision requires them.
 
-- Benchmarks, prototypes, reference architectures, cost estimates, diagrams, and preferred technologies are optional unless a decision depends on them.
-
-## Source and readiness gate
-
-1. Classify the task as drafting, refining, comparing, or reviewing System Design.
-2. Identify the governing System Analysis, requirements, approved constraints, and technical standards. Record versions/statuses.
-3. Read the source material completely and verify that scope, behavior, actors, states, data ownership, integrations, and quality expectations are sufficiently defined.
-4. If System Analysis is missing or material source decisions are unresolved, ask for the source or clearly mark the design as provisional. Do not conceal the gap with implementation assumptions.
-5. Block an implementation-ready conclusion when material architecture, interface, data, security, performance, reliability, deployment, or operational decisions remain unresolved.
+Text remains normative for contracts, rules, constraints, exceptions, targets, decisions, and procedures. Every diagram needs a title, scope, meaning, assumptions/legend, and source traceability. Resolve diagram/text conflicts before readiness.
 
 ## Workflow
 
 1. Read [references/system-design-template.md](references/system-design-template.md) for a full draft or structural review.
-2. Establish architecture drivers, constraints, quality attributes, design principles, and decision criteria.
-3. Define system context, containers/modules/components, responsibilities, trust boundaries, data flows, and ownership.
-4. Define logical layers/module boundaries, allowed dependency direction, transaction and failure ownership, ports/adapters, and composition strategy when the design requires internal structure.
-5. When OOP is selected, define only the high-level domain/object responsibilities, identities, values, relationships, dependency direction, and contracts needed for architecture review; defer detailed class/method design to SDD.
-6. Apply `api-design-standard` to applicable interfaces and define protocol, operations, schemas, authorization boundaries, validation, errors, idempotency, concurrency, pagination, limits, compatibility, deprecation, and verification at the level needed for implementation review.
-7. Define cache and messaging decisions only when justified, including source/authority, consistency, delivery, ordering, invalidation, acknowledgement, retry, dead-letter, and recovery semantics as applicable.
-8. Apply `database-persistence-standard` to applicable durable state and define ownership, datastore, logical/physical model, constraints, access paths, indexes, transactions, isolation, migrations, retention, privacy, capacity, backup, and restore.
-9. Apply `resilience-standard` to define end-to-end time budgets, retry ownership, idempotency, dependency isolation, overload behavior, degraded modes, health, reconciliation, failover, failback, and recovery where applicable.
-10. Apply `performance-capacity-standard` to define measurable objectives, workload/data assumptions, end-to-end budgets, capacity, headroom, scaling, quotas, regression gates, and required evidence.
-11. Apply `configuration-management-standard` to define configuration schema, source/precedence, validation, environment/tenant scope, dynamic refresh, secret boundaries, change governance, drift, and failure behavior.
-12. Apply `software-security-standard` to design applicable identity/authentication, authorization and isolation, data protection, encryption, key/secrets lifecycle, validation, secure failure, audit, privacy, dependency/runtime, abuse, incident/recovery, and verification controls; assign every material enforcement point and owner.
-13. Apply `deployment-release-standard` and `operability-standard` to define artifact and promotion design, rollout/release/recovery, ownership, SLIs/SLOs, alerts, diagnostics, runbooks, incidents, maintenance, and operational readiness.
-14. Apply `testing-strategy-standard` to define risk-based test levels/types, environments, data, automation, non-functional verification, traceability, gates, and evidence.
-15. Record alternatives, trade-offs, risks, dependencies, assumptions, and decisions.
-16. Maintain traceability:
+2. Establish source baseline, architecture drivers, constraints, quality attributes, scope, and decision criteria.
+3. Build the specialist routing matrix and provide each selected concern only the relevant sources.
+4. Define context, components, responsibilities, boundaries, flows, ownership, and approved topology.
+5. Incorporate selected specialist decisions for interfaces/data, quality attributes, and delivery/operations.
+6. Reconcile cross-concern dependencies and conflicts; do not silently choose between unresolved material proposals.
+7. Record alternatives, risks, assumptions, dependencies, open decisions, implementation prerequisites, and approval status.
+8. Maintain: Analysis requirement/flow -> design decision/component/interface/data model -> verification evidence.
+9. Run [references/quality-gate.md](references/quality-gate.md) and resolve blocker/major gaps through the owning source or specialty.
+10. End with readiness status and the next authorized action.
 
-   `Analysis requirement/flow -> Design decision/component/interface/data model -> Verification evidence`
+## Artifact boundaries
 
-17. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
-18. End with implementation prerequisites, open decisions, approval status, and the next design-review action.
+The SD may contain architecture, components, layers/modules, interfaces, data, sequences/states, security, resilience, performance/capacity, configuration, deployment/release, observability/operability, verification, ADRs, risks, and trade-offs.
 
-## Design artifact boundaries
+Keep production code, live mutations, migration execution, secrets, private production configuration, and unapproved vendor commitments out unless separately requested and authorized.
 
-System Design may include:
+Use stable IDs such as DES-ARCH-001, CMP-001, API-001, DATA-001, SEQ-001, SEC-001, NFR-001, ADR-001, and TEST-001. Preserve section numbering during refinement.
 
-- architecture context, container/component boundaries, responsibilities, and rationale;
-- logical and physical data models when required by the design;
-- API/interface contracts, protocols, authentication, versioning, and error models;
-- sequence, state, data-flow, and deployment views;
-- security, privacy, resilience, performance, scalability, observability, backup, recovery, and operations design;
-- technology choices, alternatives, trade-offs, risks, and decision records when approved or clearly proposed.
-
-Keep these out unless separately requested:
-
-- production code or generated implementation files;
-- live deployment, infrastructure mutation, database migration execution, or external system changes;
-- unapproved secrets, credentials, private configuration, or vendor commitments.
-
-## Design writing standard
-
-Use stable IDs such as `DES-ARCH-001`, `CMP-001`, `API-001`, `DATA-001`, `SEQ-001`, `SEC-001`, `NFR-001`, `ADR-001`, and `TEST-001`.
-
-For each design decision, state the requirement or analysis driver, selected approach, alternatives, rationale, consequences, assumptions, risks, and approval status. A diagram must have a textual explanation of its boundaries and behavior.
-
-## Deliverable conventions
-
-- Use Markdown headings, tables, PlantUML diagrams, and code blocks for schemas/contracts; diagrams should be the primary views for architecture and technical flows, while text remains normative.
-- Preserve section numbering when refining an existing design.
-- Include source traceability, decision records, risks, dependencies, approval status, version history, and change control.
-- When no destination is specified, use `output/SD/SD-<project-name>.md`.
-- Do not call the design approved or implementation-ready while material requirements, design decisions, interfaces, security controls, operational ownership, or sign-offs remain pending.
+When no destination is specified, use output/SD/SD-<project-name>.md. Never call the design approved or implementation-ready while material decisions, controls, ownership, evidence, or sign-offs remain pending.

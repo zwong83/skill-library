@@ -49,6 +49,10 @@ A test strategy is ready only when:
 
 - Read [risk-portfolio-and-techniques.md](references/risk-portfolio-and-techniques.md) for risk analysis, test levels/types, scenario design, techniques, and portfolio selection.
 - Read [automation-data-environments-and-evidence.md](references/automation-data-environments-and-evidence.md) for automation, isolation, doubles, environments, data, flakiness, gates, reporting, and evidence.
+- Invoke `test-analysis-standard` after approved requirements/design to derive change-specific scenarios, level allocation, task mapping, and the pre-Apply TA gate.
+- Invoke `unit-testing-standard` for deterministic unit/component test design and review.
+- Invoke `integration-testing-standard` for real adapter, datastore, broker, cache, framework, serialization, and service-boundary tests.
+- Invoke `tdd-standard` only when implementation is authorized and the task will follow Red-Green-Refactor.
 - Invoke `software-security-standard` for threat-driven security verification and required evidence.
 - Invoke `performance-capacity-standard` for workload, performance, capacity, stress, spike, soak, and regression tests.
 - Invoke `resilience-standard` for timeout, retry, overload, degradation, dependency-loss, failover, and recovery scenarios.

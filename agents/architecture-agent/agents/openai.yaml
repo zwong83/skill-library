@@ -1,0 +1,6 @@
+interface:
+  display_name: "Architecture Agent"
+  short_description: "Design architecture boundaries and modules"
+  default_prompt: "Use $architecture-agent to propose the architecture, module boundaries, dependencies, and technical views for this System Design."
+policy:
+  allow_implicit_invocation: true

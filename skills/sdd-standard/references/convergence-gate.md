@@ -9,6 +9,7 @@ Run this gate after implementation and before syncing or archiving an OpenSpec c
 - implementation is paused for verification;
 - the exact code/configuration/documentation diff is available;
 - task status and required test commands are known;
+- applicable Test Analysis is `TA-Ready`, or `Not Applicable` has a recorded rationale;
 - no secrets or private production data are included in the evidence.
 
 ## Checks
@@ -30,8 +31,8 @@ Run this gate after implementation and before syncing or archiving an OpenSpec c
 
 Build a coverage matrix:
 
-| Requirement / Scenario | Design decision | Task | Implementation | Evidence | Result |
-|---|---|---|---|---|---|
+| Requirement / Scenario | Design decision | TA scenario/level | Task | Test | Implementation | Evidence | Result |
+|---|---|---|---|---|---|---|---|
 
 Every in-scope requirement and scenario must have implementation and evidence. Every externally visible implementation behavior must trace back to an approved requirement.
 
@@ -43,6 +44,7 @@ Every in-scope requirement and scenario must have implementation and evidence. E
 ### 5. Task authenticity
 
 - Confirm each checked task's deliverables and evidence actually exist.
+- For TDD-routed tasks, confirm each claimed cycle has an intended Red failure, Green result, and refactor/broader-suite evidence; test-after implementation is not TDD.
 - Reject placeholder implementations, dead code, unexplained TODOs, skipped required tests, and incomplete cleanup.
 - Confirm incomplete work remains unchecked and is not hidden in comments or follow-up notes.
 
@@ -78,6 +80,7 @@ Use only when:
 
 - strict validation passes;
 - all in-scope requirements and scenarios have passing evidence;
+- applicable TA scenarios are mapped to executed unit, integration, contract, system, or non-functional evidence, with residual gaps explicitly accepted;
 - implementation conforms to the approved design or approved artifact updates;
 - all required tasks are genuinely complete;
 - no material unresolved item or unexplained drift remains.

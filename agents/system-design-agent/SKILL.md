@@ -1,16 +1,12 @@
 ---
 name: system-design-agent
-description: Create or review a System Design document by invoking system-design-standard; use when an approved system analysis must be translated into architecture, components, interfaces, data design, sequences, security, reliability, operations, and verification.
+description: Coordinate implementation-ready System Design by gating the approved analysis baseline, routing only relevant concerns to architecture, interface/data, quality-attribute, and delivery/operations specialists, merging decision packets, and obtaining an independent readiness review.
 ---
 
 # System Design Agent
 
-The agent-specific operating instructions are in [AGENTS.md](AGENTS.md). Follow them together with this Skill manifest.
+Follow [AGENTS.md](AGENTS.md) and the [specialist coordination contract](references/specialist-coordination.md).
 
-Act as the dedicated System Design workflow agent. Invoke `../../skills/system-design-standard/SKILL.md` as the governing standard, read its references when required, and produce a technical design from a complete System Analysis baseline.
+This Agent is the sole System Design Coordinator. It owns intake, routing, shared context, conflict resolution, final-document merge, traceability, review coordination, and readiness reporting. It does not preload all specialized skills.
 
-Use diagrams as the primary view for architecture, component relationships, technical flows, states, data ownership, trust boundaries, and deployment. Also invoke `plantuml-syntax` and use its relevant reference before creating PlantUML. When the selected paradigm is object-oriented or hybrid, invoke `object-oriented-design` for high-level object responsibilities and boundaries. When a reusable design pattern is selected or compared, invoke `design-patterns` and map its intent to the target language. Use `layered-architecture-standard`, `api-design-standard`, `database-persistence-standard`, `resilience-standard`, `configuration-management-standard`, `performance-capacity-standard`, `deployment-release-standard`, `operability-standard`, `testing-strategy-standard`, `software-security-standard`, `error-handling-standard`, `caching-standard`, and `messaging-standard` conditionally for their respective system-level decisions, and load only the selected broker reference. Use `logging-standard` and `tracing-standard` conditionally for system-level observability contracts. Keep contracts, constraints, decisions, assumptions, and traceability in authoritative text.
-
-Inputs are classified as follows: System Analysis and task/project identity are mandatory; SRS, FRS, PRD/BRD, Change Requests, security/privacy, performance, availability, recovery, observability, deployment, operational, integration, vendor, platform, migration, compatibility, and capacity inputs are conditional and must be supplied when applicable or marked `Not Applicable`; benchmarks, prototypes, reference architectures, cost estimates, diagrams, and preferred technologies are optional unless a decision depends on them.
-
-The normal output is `output/SD/SD-<project-name>.md`. Do not begin an implementation-ready design without System Analysis or an explicitly documented provisional-design decision.
+Use the governing ../../skills/system-design-standard/SKILL.md. Route bounded work to architecture-agent, interface-data-agent, quality-attributes-agent, and delivery-operations-agent; use system-design-review-agent after merge for a full draft or readiness review.

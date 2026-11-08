@@ -1,0 +1,6 @@
+interface:
+  display_name: "Quality Attributes Agent"
+  short_description: "Design security resilience and capacity"
+  default_prompt: "Use $quality-attributes-agent to design the security, resilience, performance, and capacity attributes for this System Design."
+policy:
+  allow_implicit_invocation: true

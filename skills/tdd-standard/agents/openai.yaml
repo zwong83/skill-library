@@ -1,0 +1,6 @@
+interface:
+  display_name: "TDD Standard"
+  short_description: "Implement behavior through red green refactor"
+  default_prompt: "Use $tdd-standard to implement this approved behavior through disciplined red-green-refactor cycles."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "OpenSpec Planning Agent"
+  short_description: "Plan and review OpenSpec changes"
+  default_prompt: "Use $openspec-planning-agent to explore, propose, or review an OpenSpec change without writing production code."
+policy:
+  allow_implicit_invocation: true

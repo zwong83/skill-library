@@ -1,0 +1,6 @@
+interface:
+  display_name: "Integration Testing Standard"
+  short_description: "Verify real component integration boundaries"
+  default_prompt: "Use $integration-testing-standard to design, write, or review integration tests across real adapters, data stores, brokers, caches, and services."
+policy:
+  allow_implicit_invocation: true

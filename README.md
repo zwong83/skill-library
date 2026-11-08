@@ -30,6 +30,10 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `deployment-release-standard` — Design immutable artifacts, promotion, rollout, feature release, migration sequencing, recovery, and release evidence.
 - `operability-standard` — Design service ownership, SLIs/SLOs, telemetry, alerts, diagnostics, runbooks, incidents, maintenance, and readiness.
 - `testing-strategy-standard` — Design risk-based test portfolios, environments, data, automation, non-functional tests, gates, and evidence.
+- `test-analysis-standard` — Derive change-specific risks, scenarios, level allocation, data/environments, task mapping, and the pre-Apply TA gate.
+- `unit-testing-standard` — Design and implement deterministic behavior-focused unit and component tests.
+- `integration-testing-standard` — Verify real databases, brokers, caches, services, frameworks, and other integration boundaries.
+- `tdd-standard` — Implement approved behavior through traceable Red-Green-Refactor cycles.
 - `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
 - `error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
 - `caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
@@ -41,13 +45,28 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 
 ### Agents
 
-Agents are focused workflows that gather the correct inputs, invoke the corresponding Skill, enforce readiness gates, and produce a defined deliverable.
+Agents are focused workflows. Coordinators own lifecycle gates, routing, handoffs, conflicts, and final status; specialists load only the standards needed for one stage or design concern.
 
-- `business-agent` — Uses `brd-standard` and produces BRDs.
-- `product-agent` — Uses `prd-standard`, `srs-standard`, and `frs-standard`; enforces the BRD intake and unresolved-decision gates.
-- `system-analysis-agent` — Uses `system-analysis-standard` and produces logical System Analysis documents.
-- `system-design-agent` — Uses `system-design-standard` and produces technical System Design documents.
-- `spec-driven-development-agent` — Uses `sdd-standard` to create OpenSpec artifacts, implement approved production code and tests, verify convergence, and archive completed changes.
+- `business-agent` — Produces BRDs with `brd-standard`.
+- `product-agent` — Coordinates BRD intake and PRD/SRS/FRS stage routing.
+  - `prd-agent` — Produces PRDs with `prd-standard`.
+  - `software-requirements-agent` — Produces SRS documents with `srs-standard`.
+  - `functional-requirements-agent` — Produces FRS documents with `frs-standard`.
+- `system-analysis-agent` — Produces logical System Analysis documents with `system-analysis-standard`.
+- `system-design-agent` — Coordinates specialist decision packets and owns the final SD.
+  - `architecture-agent` — Architecture, modules, layers, dependencies, composition, and topology.
+  - `interface-data-agent` — APIs, persistence, transactions, caching, messaging, consistency, and errors.
+  - `quality-attributes-agent` — Security, resilience, performance, capacity, scalability, and recovery.
+  - `delivery-operations-agent` — Configuration, deployment/release, observability, operability, and support.
+  - `system-design-review-agent` — Independent SD quality, traceability, testability, and readiness review.
+- `spec-driven-development-agent` — Coordinates OpenSpec modes and authorization boundaries.
+  - `openspec-planning-agent` — Explore, Propose, and Review without production code.
+  - `test-analysis-agent` — Produces pre-Apply TA and unit/integration/non-functional scenario allocation.
+  - `implementation-agent` — Applies authorized, apply-ready tasks with tests and evidence.
+  - `tdd-agent` — Implements TDD-routed tasks through Red-Green-Refactor.
+  - `convergence-review-agent` — Independently verifies code/artifact/evidence convergence.
+
+Agent-capable runtimes may execute independent specialists concurrently from the same validated baseline. Runtimes without sub-Agent support can execute the same routing sequentially; the Coordinator and handoff contracts remain authoritative in either case.
 
 ## Product lifecycle
 
@@ -68,7 +87,11 @@ System Design
         ↓
 Spec-Driven Development / OpenSpec
         ↓
-Implementation and Convergence
+Test Analysis (TA)
+        ↓
+TDD / Implementation
+        ↓
+Convergence
 ```
 
 The default outputs are separate documents because each artifact has a different audience, purpose, change cadence, and approval gate:
@@ -86,7 +109,8 @@ openspec/changes/<change-name>/
 ├── specs/<capability>/spec.md
 ├── design.md
 ├── tasks.md
-└── verification.md    # optional sdd-standard extension
+├── test-analysis.md   # optional supplemental TA extension
+└── verification.md    # optional supplemental evidence extension
 ```
 
 Critical paths should remain traceable:
@@ -99,18 +123,33 @@ BRD objective/requirement
   → SA logical responsibility/flow
   → SD design decision/component/interface/data model
   → OpenSpec proposal/capability requirement/design delta/task
-  → Code change / acceptance criteria / test evidence / convergence
+  → TA risk/scenario/level allocation
+  → TDD cycle / code change / unit and integration evidence
+  → convergence
 ```
 
 ## Portable structure
 
 ```text
 agents/
+├── architecture-agent/
 ├── business-agent/
+├── convergence-review-agent/
+├── delivery-operations-agent/
+├── functional-requirements-agent/
+├── implementation-agent/
+├── interface-data-agent/
+├── openspec-planning-agent/
+├── prd-agent/
 ├── product-agent/
+├── quality-attributes-agent/
+├── software-requirements-agent/
 ├── system-analysis-agent/
 ├── system-design-agent/
-└── spec-driven-development-agent/
+├── system-design-review-agent/
+├── spec-driven-development-agent/
+├── tdd-agent/
+└── test-analysis-agent/
 
 skills/
 ├── api-design-standard/
@@ -124,6 +163,7 @@ skills/
 ├── deployment-release-standard/
 ├── error-handling-standard/
 ├── frs-standard/
+├── integration-testing-standard/
 ├── layered-architecture-standard/
 ├── logging-standard/
 ├── messaging-standard/
@@ -139,7 +179,10 @@ skills/
 ├── srs-standard/
 ├── system-analysis-standard/
 ├── system-design-standard/
+├── tdd-standard/
+├── test-analysis-standard/
 ├── testing-strategy-standard/
+├── unit-testing-standard/
 └── tracing-standard/
 ```
 
@@ -152,7 +195,7 @@ Each Skill contains a required `SKILL.md` plus optional references and metadata:
 └── agents/openai.yaml
 ```
 
-Each Agent contains its own `AGENTS.md` and a Skill entrypoint that points to the governing standard Skill:
+Each Agent contains an authoritative `AGENTS.md` and a compact Skill entrypoint for discovery:
 
 ```text
 <agent-name>/
@@ -197,3 +240,4 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Treat software security as a lifecycle concern: identify assets, threats, trust boundaries, and security requirements in SA; design owned controls in SD; make them concrete and verifiable in SDD and implementation.
 - Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
 - Prefer simple, reviewable documents over unnecessary detail or duplicated content.
+- Use coordinator-to-specialist handoff packets instead of unrestricted peer-to-peer Agent communication; only the lifecycle Coordinator merges final artifacts and reports overall readiness.

@@ -1,6 +1,6 @@
 # SDD Inputs and Readiness Gates
 
-Use this reference before proposing, applying, converging, or archiving an OpenSpec change.
+Use this reference before proposing, analyzing tests, applying, converging, or archiving an OpenSpec change.
 
 ## Input classification
 
@@ -8,7 +8,7 @@ Use this reference before proposing, applying, converging, or archiving an OpenS
 
 For every mode:
 
-- task mode: Explore, Propose, Review, Apply, Converge, or Archive;
+- task mode: Explore, Propose, Review, Test Analysis, Apply, Converge, or Archive;
 - project root and feature/change identity;
 - OpenSpec CLI state, resolved executable, locally detected version, install scope/method when discoverable, and compatibility status; if unavailable, record the proposed official/project-approved installation source, version, scope, and authorization state;
 - OpenSpec context state; when initialized, include the active schema and change status; when uninitialized, record `Active schema: None` and separately identify any intended schema as proposed;
@@ -29,6 +29,7 @@ For Apply mode:
 - a selected OpenSpec change;
 - complete apply-required artifacts;
 - passing strict OpenSpec validation;
+- applicable `TA-Ready` Test Analysis, or a recorded and approved `Not Applicable` rationale;
 - explicit implementation authorization.
 
 For Converge mode:
@@ -102,6 +103,7 @@ Before `Apply-Ready`, verify:
 - each requirement is unambiguous, testable, and represented by at least one scenario;
 - design decisions satisfy the requirements and do not contradict the approved SD;
 - tasks cover every in-scope requirement, design change, test, migration, documentation, and operational action;
+- applicable TA scenarios allocate material risks to justified test levels and map to implementation tasks;
 - no task introduces behavior absent from the approved specs;
 - removals and renames include compatibility and migration handling where applicable;
 - traceability identifiers are stable and complete;

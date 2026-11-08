@@ -141,3 +141,11 @@ OpenSpec's default `spec-driven` schema may not define a verification artifact. 
 - convergence verdict, reviewer, and date.
 
 Do not claim that this supplemental file is a built-in OpenSpec artifact, and do not use it to bypass the active schema's validation or project approval process.
+
+## Supplemental Test Analysis
+
+OpenSpec's active schema may not define a Test Analysis artifact. For behavior-changing work, `test-analysis-agent` may add `test-analysis.md` within the change directory or another project-approved evidence location after apply-required artifacts are complete.
+
+The TA should contain source/change baseline, change-impact and risk registers, traceable scenarios and oracles, unit/integration/contract/system/non-functional allocation, data/environment/dependency needs, scenario-to-task mapping, coverage gaps, residual risk, and `TA-Ready` or `TA-Blocked` status.
+
+Label this file as a supplemental extension when it is not part of the active OpenSpec schema. Do not include it in `applyRequires` or claim OpenSpec validation covers it unless the observed schema explicitly does so.

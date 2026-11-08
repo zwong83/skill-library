@@ -1,0 +1,6 @@
+interface:
+  display_name: "Interface and Data Agent"
+  short_description: "Design interfaces data and consistency"
+  default_prompt: "Use $interface-data-agent to design the interfaces, persistence, caching, messaging, consistency, and error contracts for this System Design."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Functional Requirements Agent"
+  short_description: "Create detailed functional requirements"
+  default_prompt: "Use $functional-requirements-agent to create or review an FRS from an accepted SRS baseline."
+policy:
+  allow_implicit_invocation: true

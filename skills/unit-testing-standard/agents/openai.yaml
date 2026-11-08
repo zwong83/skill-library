@@ -1,0 +1,6 @@
+interface:
+  display_name: "Unit Testing Standard"
+  short_description: "Design deterministic unit and component tests"
+  default_prompt: "Use $unit-testing-standard to design, write, or review deterministic unit and component tests for this change."
+policy:
+  allow_implicit_invocation: true

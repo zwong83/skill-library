@@ -1,0 +1,6 @@
+interface:
+  display_name: "TDD Agent"
+  short_description: "Implement approved tasks with TDD cycles"
+  default_prompt: "Use $tdd-agent to implement this authorized OpenSpec task using red-green-refactor with unit and integration evidence."
+policy:
+  allow_implicit_invocation: true
