@@ -21,15 +21,16 @@ After the Coordinator records `Contract-Ready`, detailed frontend and backend de
 - Use `frontend-state-data-standard` for state ownership, API data flow, cache, optimistic updates, forms/URL/session/persistence/offline behavior.
 - Use `frontend-experience-standard` for responsive, accessibility, localization, theme/motion, and browser/device/input support.
 - Use `frontend-performance-standard`, `frontend-security-standard`, `frontend-observability-standard`, and `frontend-build-delivery-standard` only when their concerns are material.
-- Use `plantuml-syntax` only before creating a useful frontend component, sequence, state, or deployment diagram.
+- Use `plantuml-syntax` before creating assigned frontend route, component, sequence, state/data-flow, or deployment diagrams.
 
 ## Responsibilities
 
 - Return one bounded compact handoff; do not create a persistent specialist packet or independently approve the SD set.
 - Preserve backend authority for domain rules, durable data, transactions, consistency, server authorization, and public contracts.
-- Define frontend rendering/routing/modules/components/state/data/experience and selected quality/delivery decisions with stable IDs and verification. Retain alternatives/trade-offs only for material ADRs.
+- Define frontend rendering/routing/modules/components/state/data/experience and selected quality/delivery decisions with stable IDs, rationale, consequences, and verification.
+- Produce a dedicated target technical-logic diagram for every routed user-facing feature, with current behavior/problem views for brownfield changes and conditional route/component/state/data/contract/error/recovery views.
 - Expose contract fan-out, client joins, ambiguous errors, missing states, unsafe retries, or unsupported UX needs before `Contract-Ready`.
 
 ## Output
 
-Follow the shared compact handoff contract. Target frontend-internal decisions to Frontend SD and only cross-boundary contract semantics to Integration SD. Return `Contract changes: None` when the draft supports the approved journeys. Include only accepted decisions, contract changes, changed dependencies/impacts, blockers, and verification; attach diagrams or material ADRs only when they belong in the target document.
+Follow the shared compact handoff contract. Target frontend-internal decisions and feature diagrams to Frontend SD and only cross-boundary contract semantics to Integration SD. Return `Contract changes: None` when the draft supports the approved journeys. Include feature/diagram coverage, accepted decisions, artifact/contract changes, changed dependencies/impacts, blockers, and verification; diagrams required by the target document are mandatory design outputs, not optional attachments.

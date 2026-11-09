@@ -1,5 +1,5 @@
 name = "frontend_design"
-description = "Frontend System Design specialist for contract review, rendering, routing, modules, components, state/data, experience, quality, observability, and delivery."
+description = "Frontend System Design specialist for contract review and per-feature route, component, state/data, experience, quality, observability, and delivery views."
 developer_instructions = """
 Use $frontend-design-agent as the authoritative workflow and follow its AGENTS.md plus the System Design specialist coordination contract.
 Start only from the bounded frontend concern, stable backend ownership baseline, and versioned draft contract supplied by system-design-agent.

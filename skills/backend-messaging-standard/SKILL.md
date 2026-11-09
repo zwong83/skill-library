@@ -18,7 +18,7 @@ Use this skill to define reliable asynchronous boundaries. Start with business s
 - Use an ordering/partition/message-group key only for a real invariant; document its scope and throughput consequence.
 - Version schemas compatibly and treat message contracts as shared APIs. Never publish framework entities, database rows, or unrestricted internal objects as contracts.
 - Propagate trace context safely and design structured producer/consumer events without using correlation metadata for authorization.
-- Do not introduce RabbitMQ, RocketMQ, Kafka, or multiple brokers without requirements and trade-offs that justify them.
+- Do not introduce RabbitMQ, RocketMQ, Kafka, or multiple brokers without requirements and explicit operational rationale.
 
 ## Workflow
 
@@ -43,7 +43,7 @@ Require message purpose, producer owner, known consumer responsibilities, author
 
 ## SD and SDD boundary
 
-System Design defines interaction style, broker decision, ownership, topology, contract/versioning strategy, delivery and ordering guarantees, publish/consume consistency, retry/DLQ/replay, security, capacity, and operations. SDD/OpenSpec defines concrete topics/exchanges/queues/groups, schemas, keys, adapters, handlers, transaction/ack code paths, configuration, migration tasks, and tests.
+System Design defines interaction style, broker/product/version decision, ownership, deployable topology, concrete topic/exchange/queue/stream/group naming contract, message schema/version and key/partition/group strategy, delivery and ordering guarantees, publish/consume consistency, retry/DLQ/replay, security, capacity, observability, operations, migration, and per-feature producer/consumer sequences. SDD/OpenSpec implements the approved adapters, handlers, transaction/ack code paths, configuration, migration tasks, telemetry, and tests without silently redefining topology or contracts.
 
 ## Companion skills
 

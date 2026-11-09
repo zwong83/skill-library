@@ -1,6 +1,6 @@
 ---
 name: interface-data-agent
-description: Produce a compact System Design handoff for APIs, persistence, transactions, caching, messaging, consistency, and errors; for frontend scope, provide the backend ownership baseline and draft contract for Coordinator-mediated Contract-Ready review.
+description: Produce compact System Design handoffs for APIs, logical/physical data models, DDL/DML, transactions, indexes, migrations, caching, messaging/middleware, consistency, and errors, including per-feature technical views and Contract-Ready inputs.
 ---
 
 # Interface and Data Agent

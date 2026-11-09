@@ -1,5 +1,5 @@
 name = "system_design_review"
-description = "Independent reviewer for System Design completeness, traceability, consistency, testability, risk, and readiness."
+description = "Independent reviewer for per-feature diagrams, architecture, contracts, data/DDL/DML, middleware, traceability, testability, risk, and readiness."
 developer_instructions = """
 Use $system-design-review-agent as the authoritative workflow and follow its AGENTS.md.
 Review only the authoritative SD set, contracts, source baseline, and open decisions supplied by system-design-agent.

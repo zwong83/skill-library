@@ -1,6 +1,6 @@
 interface:
   display_name: "System Design Agent"
-  short_description: "Design architecture and technical realization"
-  default_prompt: "Use $system-design-agent to create or review the authoritative System Design document set from the approved System Analysis."
+  short_description: "Coordinate visual per-feature technical design"
+  default_prompt: "Use $system-design-agent to create or review the authoritative visual-first System Design set with per-feature logic, data/DDL/DML, and middleware design."
 policy:
   allow_implicit_invocation: true

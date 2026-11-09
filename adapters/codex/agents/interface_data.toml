@@ -1,5 +1,5 @@
 name = "interface_data"
-description = "System Design specialist for APIs, persistence, transactions, caching, messaging, consistency, and error contracts."
+description = "System Design specialist for APIs, physical data models, DDL/DML, transactions, migration, caching, messaging/middleware, consistency, and errors."
 developer_instructions = """
 Use $interface-data-agent as the authoritative workflow and follow its AGENTS.md plus the System Design specialist coordination contract.
 Work only on the bounded interface/data concern and minimal context supplied by system-design-agent.

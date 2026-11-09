@@ -18,8 +18,17 @@ List governing BRD/PRD/SRS/FRS/SA/Change Request or equivalent path, version, st
 | Frontend SD | | | Frontend-Ready / Blocked / N/A | |
 | Integration SD | | | Integration-Ready / Blocked / N/A | |
 | Contract artifact(s) | | | Draft / Contract-Ready / Blocked / N/A | |
+| Database design artifact(s) | | | Draft / Data-Ready / Blocked / N/A | |
 
 List only applicable contract formats, such as OpenAPI, AsyncAPI, GraphQL schema, or Protobuf. Do not create unused placeholders.
+
+## Feature and diagram coverage
+
+Use the matrix from [feature-diagram-coverage.md](feature-diagram-coverage.md). Include every in-scope feature, source/SA IDs, owning document, diagram IDs, current/problem coverage for brownfield changes, target technical-flow coverage, conditional component/data/state/middleware views, verification, and status. Keep diagrams in their authoritative Backend/Frontend/Integration documents; the Index stores links and readiness only.
+
+## Data and middleware artifact status
+
+When applicable, record versions/statuses for the physical model, data dictionary, proposed DDL, DML/query catalog, transaction/concurrency matrix, indexes/access paths, migration/backfill/recovery artifacts, and middleware register/topology. Use `Not Applicable` with a source-based rationale for unaffected categories.
 
 ## Specialist routing and status
 
@@ -34,6 +43,7 @@ Record:
 
 - `Contract-Ready`: status, contract version/hash, date, and unresolved impact;
 - `Backend-Ready`, `Frontend-Ready`, and `Integration-Ready` as applicable;
+- `Data-Ready` and `Middleware-Ready` when those scopes are applicable;
 - overall `SD-Ready`: Ready / Conditionally Ready / Blocked;
 - implementation prerequisites and next authorized lifecycle action.
 

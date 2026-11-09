@@ -1,6 +1,6 @@
 interface:
   display_name: "Frontend Design Agent"
-  short_description: "Design frontend after backend domain and shared contract"
-  default_prompt: "Use $frontend-design-agent to review the shared contract and return a compact frontend System Design handoff."
+  short_description: "Design every frontend feature visually"
+  default_prompt: "Use $frontend-design-agent to review the shared contract and produce per-feature route, component, state, data-flow, and technical-sequence views."
 policy:
   allow_implicit_invocation: true

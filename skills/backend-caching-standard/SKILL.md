@@ -43,7 +43,7 @@ Require a named source of truth, measurable cache objective, tolerated staleness
 
 ## SD and SDD boundary
 
-System Design defines why caching exists, placement, technology decision, source of truth, consistency/staleness contract, invalidation ownership, resilience, security, capacity, and operational model. SDD/OpenSpec defines concrete key formats, value schemas, TTL/jitter values, APIs/adapters, configuration, algorithms, rollout tasks, and tests for the approved change.
+System Design defines why caching exists, placement/topology, technology/version decision, source of truth, key namespace and schema pattern, value schema/version, TTL/jitter and refresh contract, consistency/staleness, invalidation ownership, failure/fallback, resilience, security, capacity, observability, operations, rollout, and per-feature read/write/invalidate sequences. SDD/OpenSpec implements the approved keys, values, adapters, configuration, algorithms, rollout tasks, telemetry, and tests without redefining the cache contract.
 
 ## Expected output
 

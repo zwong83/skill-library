@@ -1,6 +1,6 @@
 ---
 name: system-design-agent
-description: Coordinate an implementation-ready Backend, Frontend, Integration, and Index System Design set using compact specialist handoffs; establish backend ownership and Contract-Ready before parallel detail and review.
+description: Coordinate a visual-first, implementation-ready System Design set with system-level and per-feature technical diagrams, explicit data/DDL/DML/middleware artifacts, compact specialist handoffs, Contract-Ready reconciliation, and independent review.
 ---
 
 # System Design Agent

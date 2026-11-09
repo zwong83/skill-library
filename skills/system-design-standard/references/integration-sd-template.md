@@ -19,7 +19,7 @@ Use only applicable OpenAPI, AsyncAPI, GraphQL, Protobuf, schema, or equivalent 
 
 ## 3. Interaction semantics
 
-For each operation/message/flow, define purpose, participants, preconditions, business semantics, state effects, sync/async behavior, success/failure/partial outcomes, and ownership. Use focused sequence or event-flow diagrams when timing or causality matters.
+For each feature that crosses a boundary, provide a dedicated target sequence/event-flow diagram and define purpose, participants, preconditions, business semantics, state effects, transaction/middleware boundary, sync/async behavior, success/failure/partial outcomes, and ownership. Brownfield changes also show or link the current boundary flow and problem IDs. A generic contract inventory does not replace per-feature interaction logic.
 
 ## 4. Identity, session, authorization, and trust
 
@@ -31,7 +31,7 @@ Define validation ownership, stable public error categories/codes, safe details,
 
 ## 6. Idempotency, concurrency, and consistency
 
-Define idempotency scope/key/retention/result, duplicate and replay behavior, optimistic/pessimistic concurrency, version/conflict semantics, transaction boundaries, eventual consistency, reconciliation, compensation, and source of truth.
+Define idempotency scope/key/retention/result, duplicate and replay behavior, optimistic/pessimistic concurrency, version/conflict semantics, transaction boundaries, database/middleware participation, eventual consistency, reconciliation, compensation, and source of truth. Show material consistency and recovery paths in the applicable feature sequence.
 
 ## 7. Query, payload, and flow-control semantics
 
@@ -51,7 +51,7 @@ When frontend scope exists, record the backend domain/data/transaction/security 
 
 ## 11. Cross-boundary observability and operations
 
-Define correlation/trace propagation, async causality, audit identifiers, boundary SLIs/SLOs, dashboards/alerts, dependency ownership, diagnostics, incident handoff, reconciliation/runbooks, and support expectations.
+Define correlation/trace propagation, async/middleware causality, audit identifiers, boundary SLIs/SLOs, dashboards/alerts, dependency ownership, diagnostics, incident handoff, reconciliation/runbooks, and support expectations. Link the authoritative middleware register/topology rather than duplicating it.
 
 ## 12. Verification and readiness
 

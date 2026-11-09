@@ -151,11 +151,14 @@ output/PRD/PRD-<project-name>.md
 output/SRS/SRS-<project-name>.md
 output/FRS/FRS-<project-name>.md
 output/SA/SA-<project-name>.md
+output/SA/diagrams/                            # maintained logical PlantUML sources and optional rendered previews
 output/SD/SD-<project-name>-index.md
 output/SD/SD-<project-name>-backend.md       # when backend scope exists
 output/SD/SD-<project-name>-frontend.md      # when frontend scope exists
 output/SD/SD-<project-name>-integration.md   # when a cross-boundary contract exists
+output/SD/diagrams/                           # maintained technical PlantUML sources and optional rendered previews
 output/SD/contracts/                          # only applicable machine-readable contracts
+output/SD/database/                           # applicable physical model, proposed DDL/DML, access-path, transaction, and migration design
 
 openspec/changes/<change-name>/
 ├── proposal.md
@@ -337,6 +340,7 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Keep authoritative business rules and authorization on the server; frontend architecture, components, state/data, experience, performance, security, observability, and delivery map approved outcomes without creating a competing source of truth.
 - Treat software security as a lifecycle concern: identify assets, threats, trust boundaries, and security requirements in SA; design owned controls in SD; make them concrete and verifiable in SDD and implementation.
 - Treat logging and tracing as intentional observability contracts, and comments as maintained explanations of non-obvious intent—not as automatic code volume.
-- Prefer small authoritative documents over unnecessary detail or duplicated content. Machine-readable contracts own field/protocol structure; Integration SD owns cross-boundary semantics; Backend and Frontend SD own their respective internals; the Index owns status and readiness.
+- Make SA and SD visual-first: cover the system main flow plus every in-scope feature with a dedicated target logic diagram; show evidence-based current logic and problem points for brownfield changes, and add conditional state/data/integration/middleware views. Keep prose concise and normative rather than narrating diagrams.
+- Prefer small authoritative documents over unnecessary detail or duplicated content. Machine-readable contracts own field/protocol structure; database artifacts own affected physical models and proposed DDL/DML; Integration SD owns cross-boundary semantics; Backend and Frontend SD own their respective internals; the Index owns coverage, status, and readiness.
 - Use transient compact coordinator-to-specialist handoffs containing only accepted decisions, contract changes, dependencies/impacts, blockers, and verification. Do not persist full specialist packets, repeated source summaries, internal reasoning, or rejected-option histories by default.
 - Keep at most one temporary SD coordination file, `open-decisions.md`, for unresolved material cross-document decisions; record the final review verdict and routing/status table in the Index.

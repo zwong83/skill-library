@@ -1,6 +1,6 @@
 interface:
   display_name: "System Analysis Standard"
-  short_description: "Create and audit system analysis"
-  default_prompt: "Use $system-analysis-standard to create or review a logical System Analysis document."
+  short_description: "Create visual-first per-feature system analysis"
+  default_prompt: "Use $system-analysis-standard to create or review a visual-first System Analysis with current/problem/target and per-feature logical diagrams."
 policy:
   allow_implicit_invocation: true

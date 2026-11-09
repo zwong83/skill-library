@@ -26,7 +26,7 @@ Use this skill when a change introduces or modifies durable state, a datastore, 
 
 1. Identify the source of truth, owning component, data classification, invariants, lifecycle, and consumers.
 2. Capture read/write patterns, cardinality, volume, growth, hotspots, latency, availability, consistency, RPO, and RTO.
-3. Select the datastore and record rejected alternatives, operational dependencies, and portability assumptions.
+3. Select the datastore and record the requirement-based rationale, operational dependencies, consequences, and portability assumptions without requiring a solution-comparison table.
 4. Define the logical schema, relationships, constraints, keys, tenant boundary, retention, and deletion behavior.
 5. Define queries, access paths, indexes, pagination, batching, and plan-verification evidence.
 6. Define transaction boundaries, isolation, locks, conflict handling, idempotency, and multi-resource consistency.
@@ -61,8 +61,8 @@ Persistence design is implementation-ready only when:
 
 ## System Design and SDD Boundary
 
-- In System Design, decide ownership, datastore, schema, invariants, access paths, transaction and consistency strategy, migration approach, retention, and recovery objectives.
-- In SDD, implement approved entities or records, migrations, repositories, queries, indexes, transaction code, pool settings, backfills, telemetry, and tests.
+- In System Design, decide ownership, datastore, conceptual/logical/physical schema, invariants, access paths, transaction and consistency strategy, migration approach, retention, and recovery objectives. Produce dialect/version-specific proposed DDL for affected structures plus a parameterized DML/query catalog for state-changing operations and critical reads; these are reviewed design artifacts, not applied migrations.
+- In SDD, validate those artifacts against the actual datastore/toolchain and implement approved entities or records, executable migrations, repositories, queries, indexes, transaction code, pool settings, backfills, telemetry, and tests without silently changing the approved data contract.
 - If implementation reveals a material ownership, datastore, schema, invariant, transaction, consistency, migration, or recovery change, return it to System Design before coding proceeds.
 
 ## Standards Basis
@@ -71,4 +71,4 @@ Use the official documentation for the selected datastore and driver. The bundle
 
 ## Expected Output
 
-Return the datastore decision, ownership and data classification, logical schema, constraints, access patterns and indexes, transaction and concurrency model, migration and backfill plan, retention and deletion behavior, backup and restore plan, capacity and operations, security controls, verification evidence, assumptions, and unresolved decisions.
+Return the datastore decision, ownership and data classification, conceptual/logical/physical models, proposed DDL, parameterized DML/query catalog, constraints, access patterns and indexes, transaction and concurrency model, migration and backfill plan, retention and deletion behavior, backup and restore plan, capacity and operations, security controls, verification evidence, assumptions, and unresolved decisions.

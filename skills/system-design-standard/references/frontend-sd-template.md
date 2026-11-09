@@ -4,11 +4,11 @@ Use this document for frontend internals and client behavior. Reference Integrat
 
 ## Document control and scope
 
-Record version/status, owner, target release, source/journey IDs, in-scope surfaces, out-of-scope items, support commitments, assumptions, and linked Index/Integration/contract versions.
+Record version/status, owner, target release, source/journey/feature IDs, in-scope surfaces, out-of-scope items, support commitments, assumptions, linked Index/Integration/contract versions, and the feature/diagram coverage matrix location.
 
 ## 1. Frontend drivers and architecture
 
-Define rendering/hosting strategy, routes/layouts/navigation, feature/module boundaries, server/client boundaries, dependency direction, composition, trust/failure boundaries, and architecture rationale. Use focused route, component, or deployment diagrams when useful.
+Define rendering/hosting strategy, routes/layouts/navigation, feature/module boundaries, server/client boundaries, dependency direction, composition, trust/failure boundaries, and architecture rationale. Include current route/module/data-flow and problem views for brownfield changes plus target route/module/component architecture.
 
 ## 2. Components and design system
 
@@ -18,34 +18,40 @@ Define component responsibilities and contracts, composition, variants, slots/co
 
 Define ownership of server, client, URL, form, session, and persistent state; request/data flow; query/cache ownership; invalidation/refresh; optimistic update and rollback; concurrency/staleness; offline/degraded behavior; and recovery. Do not duplicate authoritative business rules or server authorization.
 
-## 4. Journeys and UI behavior
+## 4. Per-feature frontend technical logic
 
-Map approved journeys to routes, states, transitions, loading/empty/partial/error/retry/success behavior, navigation, cancellation, and recovery. Use sequence/state/data-flow diagrams when they clarify material behavior.
+Create one visual-first block for every user-facing feature using [feature-diagram-coverage.md](feature-diagram-coverage.md). Require a target route/component/state/data-flow or sequence diagram showing user action, UI state, component ownership, request/event behavior, loading/empty/partial/error/retry/success states, validation, authorization result handling, optimistic update/rollback, navigation, cancellation, recovery, telemetry, and backend contract references as applicable. Brownfield changes also include or link their current behavior and problem IDs.
 
-## 5. Responsive, accessibility, and localization
+Adapt the fixed feature construction from the coverage reference: focused UI technical sequence(s), engineering-constraint table, contract/state/data impact table, and error/result/UI-state table. Use compact tables for exact UI rules, support commitments, contract fields/errors, accessibility, performance, security, observability, and verification. Do not narrate the diagrams in long prose.
+
+## 5. Cross-feature journeys and UI behavior
+
+Map approved end-to-end journeys across features, routes, states, transitions, and recovery. Keep feature-specific logic in Section 4.
+
+## 6. Responsive, accessibility, and localization
 
 Define viewport/layout behavior, input modes, supported browsers/devices, keyboard/focus/semantic/assistive-technology behavior, localization/content expansion, time/number/currency handling, theme/contrast, reduced motion, and verification.
 
-## 6. Frontend performance
+## 7. Frontend performance
 
 Define route/asset budgets, rendering and interaction targets, network request/fan-out limits, image/font/code-splitting/caching strategy, memory/long-task controls, RUM measures, regression gates, and evidence. Tie targets to approved commitments or label assumptions.
 
-## 7. Frontend security and privacy
+## 8. Frontend security and privacy
 
 Define content/output handling, session/token boundaries, browser storage, origin/CORS/CSRF/CSP or equivalent policy responsibilities, sensitive-data exposure, dependency/supply-chain controls, abuse considerations, privacy/analytics boundaries, safe failure, and verification. Server security remains authoritative.
 
-## 8. Frontend observability
+## 9. Frontend observability
 
 Define client errors, RUM, journey events, release/source-map handling, correlation with backend traces/logs, privacy/redaction, sampling, dashboards/alerts, ownership, and volume/cost controls. Keep statement-level events/spans in SDD.
 
-## 9. Build, delivery, and rollback
+## 10. Build, delivery, and rollback
 
 Define reproducible build inputs, artifact identity, public runtime configuration, asset/CDN caching, environment promotion, compatibility, feature exposure, rollout, rollback/forward, source maps, release evidence, and operational ownership.
 
-## 10. Technology decisions and ADRs
+## 11. Technology decisions and ADRs
 
 Retain only material rendering, framework, module, state, component, experience, performance, security, observability, or delivery decisions whose rationale must survive review.
 
-## 11. Verification and handoff
+## 12. Verification and handoff
 
-Map requirement/journey IDs to frontend decisions and component/unit, contract, UI, accessibility, visual, browser/device, performance, security, observability, build, and release evidence. Record frontend implementation prerequisites, dependencies, residual limitations, and Frontend-Ready recommendation.
+Map requirement/journey/feature IDs through diagram, route, component, state/data, and contract decisions to component/unit, contract, UI, accessibility, visual, browser/device, performance, security, observability, build, and release evidence. Record frontend implementation prerequisites, dependencies, residual limitations, and Frontend-Ready recommendation.

@@ -12,6 +12,7 @@ Provide each specialist only what it needs:
 - confirmed constraints and applicable existing-system facts;
 - unresolved items that may affect the work;
 - expected verification evidence.
+- assigned feature IDs, required diagram IDs/views, current-system evidence, and artifact paths/versions.
 
 Do not send unrelated source documents, other specialists' full reasoning, or the complete SD set when a stable ID, section link, contract fragment, or short accepted-decision summary is sufficient.
 
@@ -19,13 +20,14 @@ Do not send unrelated source documents, other specialists' full reasoning, or th
 
 Return only these fields:
 
-1. **Accepted decisions** — stable ID, concise normative result, status, and target document/section.
-2. **Contract changes** — affected contract/version, exact semantic change, compatibility impact, and `None` when unchanged.
-3. **Dependencies and impacts** — only new or changed cross-boundary dependencies, affected decision IDs, and required follow-up.
-4. **Blockers** — unresolved decision, impact, owner when known, and target document; use `None` when clear.
-5. **Verification** — requirement/decision-to-evidence mapping and readiness recommendation.
+1. **Feature and diagram coverage** — feature IDs, required diagram IDs/views, As-Is/To-Be status, target document/section, and gaps.
+2. **Accepted decisions** — stable ID, concise normative result, status, and target document/section.
+3. **Artifact and contract changes** — affected contract/database/middleware artifact and version, exact semantic change, compatibility impact, and `None` when unchanged.
+4. **Dependencies and impacts** — only new or changed cross-boundary dependencies, affected decision IDs, and required follow-up.
+5. **Blockers** — unresolved decision, missing current evidence, impact, owner when known, and target document/artifact; use `None` when clear.
+6. **Verification** — requirement/feature/diagram/decision/artifact-to-evidence mapping and readiness recommendation.
 
-Attach a focused diagram, model fragment, or material ADR only when it is itself needed in the target SD. Preserve alternatives and trade-offs only for a material decision whose rationale must survive review. Omit repeated background, generic explanation, settled facts, unchanged content, obviously rejected options, duplicated schemas, and chain-of-thought.
+Return every assigned diagram/model fragment and authoritative DDL/DML/middleware artifact update needed by the target SD; these are design content, not optional packet decoration. Record material decisions with rationale and consequences, without solution-comparison tables. Omit repeated background, generic explanation, settled facts, unchanged content, rejected-option histories, duplicated schemas, and chain-of-thought.
 
 The handoff is transient unless an audit requires retention. The Coordinator writes accepted content once into its target document and discards redundant handoff prose.
 
@@ -61,8 +63,9 @@ Do not wait for every backend deployment detail before frontend design, and do n
 - Integration SD: cross-boundary ownership and behavior, contract references, authentication/session exchange, authorization context/results, errors, idempotency/concurrency, pagination/filter/sort, deadlines/cancellation/retries, compatibility, mixed versions, examples/mocks/fixtures, and contract tests.
 - SD Index: source and artifact versions, routing/status, readiness, unresolved decisions, review verdict, and approvals.
 - Machine-readable contract: authoritative field/protocol structure. Do not duplicate its full schema in Markdown.
+- Database artifacts: authoritative affected physical model, proposed DDL, parameterized DML/query catalog, transaction/concurrency, indexes/access paths, and migration/recovery design. Backend SD owns the meaning and links the artifacts.
 
-If documents disagree, the machine-readable contract owns field/protocol structure, Integration SD owns cross-boundary semantics, Backend SD owns backend internals, and Frontend SD owns frontend internals. The conflict blocks readiness until resolved.
+If artifacts disagree, the machine-readable contract owns field/protocol structure, database artifacts own affected physical schema/DDL and the critical DML/query catalog, Integration SD owns cross-boundary semantics, Backend SD owns backend/data semantics and internals, and Frontend SD owns frontend internals. The conflict blocks readiness until resolved.
 
 ## Review handoff
 

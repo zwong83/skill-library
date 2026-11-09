@@ -1,6 +1,6 @@
 ---
 name: frontend-design-agent
-description: Produce a compact frontend System Design handoff after backend domain/data/transaction/security ownership is known, jointly reviewing the frontend/backend contract before parallel detailed design; use as a system-design-agent specialist.
+description: Produce compact visual-first frontend System Design handoffs with per-feature route/component/state/data-flow diagrams after backend ownership is known and the shared contract is jointly reviewed.
 ---
 
 # Frontend Design Agent

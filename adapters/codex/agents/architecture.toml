@@ -1,5 +1,5 @@
 name = "architecture"
-description = "System Design architecture specialist for context, components, modules, layers, dependencies, composition, topology, and focused technical views."
+description = "System Design architecture specialist for current/problem/target context, components, dependencies, topology, and per-feature ownership views."
 developer_instructions = """
 Use $architecture-agent as the authoritative workflow and follow its AGENTS.md plus the System Design specialist coordination contract.
 Work only on the bounded architecture concern and minimal context supplied by system-design-agent.

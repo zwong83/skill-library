@@ -1,6 +1,6 @@
 ---
 name: system-analysis-standard
-description: Create or audit implementation-oriented system analysis documents that decompose approved requirements into system boundaries, actors, use cases, logical flows, responsibilities, data behavior, integrations, risks, and open decisions without becoming a detailed technical design.
+description: Create or audit visual-first, implementation-oriented System Analysis documents with system-level and per-feature As-Is, problem, To-Be, state, data, and integration views while preserving the boundary between logical analysis and technical design.
 ---
 
 # Standard System Analysis
@@ -20,16 +20,16 @@ This skill governs the System Analysis artifact. Invoke conditional companion sk
 - Use stable IDs and maintain traceability from source requirements through analysis decisions and verification scenarios.
 - Invoke/read `software-security-standard` in System Analysis mode when protected assets, identities, permissions, trust boundaries, sensitive data, abuse, privacy, compliance, or security risk are applicable. Identify requirements and unresolved policy decisions without choosing cryptographic algorithms, identity products, key platforms, or other implementation mechanisms.
 
-## Diagram-first policy
+## Visual-first and per-feature diagram policy
 
-Use diagrams as the primary representation when the analysis explains relationships, boundaries, flows, hierarchy, state, timing, or ownership. Prefer context, use-case, activity, state, logical class/domain, logical ER, and high-level sequence diagrams.
+Use diagrams as the primary representation for the system and for every in-scope feature. Read [references/feature-diagram-coverage.md](references/feature-diagram-coverage.md) for every full draft or review. A full SA must show the main flow, current system logic and problems for brownfield scope, target solution logic, conceptual data model, and a dedicated To-Be logical-flow diagram for every feature.
 
 - Invoke/read `plantuml-syntax` before creating or modifying PlantUML and load only the relevant reference.
 - Use one focused diagram per question; do not combine unrelated concerns into an unreadable diagram.
-- Keep text as the authoritative source for rules, constraints, assumptions, exceptions, decisions, acceptance criteria, and unresolved items.
+- Keep prose short. Use text and compact tables only for rules, constraints, assumptions, exceptions, decisions, acceptance criteria, traceability, and unresolved items that the visual cannot state precisely.
 - Every diagram must have a title, scope, textual explanation, source traceability, and any necessary legend or assumptions.
 - If a diagram and text conflict, the explicit text or Decision Register governs and the conflict must be fixed before approval.
-- Do not add a diagram when a table or short paragraph communicates the relationship more clearly.
+- A table may replace a conditional supporting diagram, but it may not replace the system main-flow views or the dedicated To-Be technical-logic diagram required for each feature.
 
 ## Input classification
 
@@ -61,18 +61,19 @@ Use diagrams as the primary representation when the analysis explains relationsh
 
 ## Workflow
 
-1. Read [references/system-analysis-template.md](references/system-analysis-template.md) for a full draft or structural review.
+1. Read [references/system-analysis-template.md](references/system-analysis-template.md) and [references/feature-diagram-coverage.md](references/feature-diagram-coverage.md) for a full draft or structural review.
 2. Establish the system context, boundaries, actors, capabilities, external dependencies, and assumptions.
-3. Decompose requirements into use cases, system responsibilities, logical components, domain concepts, states, workflows, and cross-cutting concerns. When security is applicable, identify assets, actors/workload identities, trust boundaries, sensitive data, abuse cases, permission needs, and security acceptance outcomes.
-4. Analyze each important flow for preconditions, main path, alternate path, failure path, authorization, idempotency, concurrency, recovery, audit, and observable outcomes.
-5. Define logical data ownership, lifecycle, consistency needs, retention/access implications, and source-of-truth responsibilities without writing physical schemas.
-6. Define integration responsibilities and business-level data exchange without writing endpoint contracts or protocol designs.
-7. Record analysis decisions, alternatives, risks, dependencies, and unresolved questions.
-8. Maintain traceability:
+3. Build the feature inventory, upstream feature-point reconciliation, and diagram coverage matrix. Classify each feature as `New`, `Contract`, `Logic`, `Deleted`, or `No Change`, including reuse/defer/other-domain disposition. For brownfield scope, identify evidence for the As-Is system and problem IDs before proposing To-Be behavior.
+4. Decompose requirements into use cases, system responsibilities, logical components, domain concepts, states, workflows, and cross-cutting concerns. When security is applicable, identify assets, actors/workload identities, trust boundaries, sensitive data, abuse cases, permission needs, and security acceptance outcomes.
+5. Create system-level As-Is/problem/To-Be views and a dedicated To-Be technical-logic view for every feature. Analyze preconditions, main path, alternate path, failure path, authorization, idempotency, concurrency, recovery, audit, and observable outcomes.
+6. Define conceptual/logical data models, ownership, lifecycle, logical create/read/update/delete/publish behavior, consistency needs, retention/access implications, and source-of-truth responsibilities without writing physical schemas, DDL, or concrete DML.
+7. Define integration and middleware capability needs at a logical level without selecting products, topology, cache keys, topics/queues, endpoint contracts, or protocol designs.
+8. Record analysis decisions, rationale, impacts, risks, dependencies, and unresolved questions.
+9. Maintain traceability:
 
    `Source requirement -> Analysis capability/use case -> Logical responsibility/flow -> Design input -> Verification scenario`
 
-9. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
+10. Run [references/quality-gate.md](references/quality-gate.md) before delivery.
 
 ## Analysis artifact boundaries
 
@@ -86,7 +87,7 @@ System Analysis may include:
 - logical data ownership and lifecycle;
 - integration purpose and business-level exchange;
 - cross-cutting security, reliability, observability, and recovery concerns;
-- alternatives, trade-offs, risks, dependencies, and open decisions.
+- decision rationale and impacts, risks, dependencies, and open decisions.
 
 Keep these out of System Analysis unless the user explicitly requests a combined artifact:
 
@@ -99,12 +100,14 @@ Keep these out of System Analysis unless the user explicitly requests a combined
 
 Use stable IDs such as `SA-CTX-001`, `UC-ORD-001`, `FLOW-CHK-001`, `DATA-001`, `INT-001`, and `DEC-001`.
 
-Each analysis statement should identify the source requirement, logical subject, responsibility, behavior or decision, status, and downstream design or verification impact. Use diagrams when they materially improve understanding, but describe the required meaning in text as well.
+Each analysis statement should identify the source requirement, logical subject, responsibility, behavior or decision, status, and downstream design or verification impact. Use the mandatory system/per-feature diagrams for technical logic and concise text only for exact meaning the visuals cannot safely carry.
 
 ## Deliverable conventions
 
-- Use Markdown headings, tables, and PlantUML diagrams as the primary views for logical relationships and flows; use text as the normative specification.
+- Use PlantUML diagrams as the primary navigation and explanation, with short Markdown tables/bullets as the normative supplement.
+- Include the feature/diagram coverage matrix and do not claim design readiness while an in-scope feature lacks its required visual logic.
 - Preserve section numbering when refining an existing analysis.
 - Include source traceability, assumptions, risks, open decisions, review status, and version history.
 - When no destination is specified, use `output/SA/SA-<project-name>.md`.
+- Keep reusable PlantUML sources under `output/SA/diagrams/` and link them by diagram ID. When rendering support exists, generate and embed SVG/PNG previews while retaining the `.puml` source; do not claim syntax/render validation unless it was executed.
 - Do not call the analysis approved or design-ready while material decisions, ownership, or source requirements remain unresolved.

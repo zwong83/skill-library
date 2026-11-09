@@ -1,6 +1,6 @@
 ---
 name: system-design-review-agent
-description: Independently review the authoritative System Design document set and contracts against its source baseline, routing, testing strategy, traceability, conflicts, and quality gate; report gaps without redesigning.
+description: Independently review visual and technical completeness across every feature plus architecture, contracts, data models, DDL/DML, transactions, middleware, operations, traceability, and readiness; report gaps without redesigning.
 ---
 
 # System Design Review Agent

@@ -1,6 +1,6 @@
 ---
 name: architecture-agent
-description: Produce a compact System Design handoff for architecture context, components, modules, layers, dependency direction, composition, transaction ownership, and technical diagrams; use only when routed by system-design-agent.
+description: Produce compact current/problem/target architecture, component, dependency, topology, and per-feature ownership views for System Design; use only when routed by system-design-agent.
 ---
 
 # Architecture Agent

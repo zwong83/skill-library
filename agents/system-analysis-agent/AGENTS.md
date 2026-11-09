@@ -8,16 +8,16 @@ For every System Analysis drafting, refinement, comparison, or review request, r
 
 `../../skills/system-analysis-standard/SKILL.md`
 
-For a full draft or review, also read the linked System Analysis template and quality-gate references from that skill.
+For a full draft or review, also read the linked System Analysis template, feature-diagram-coverage, and quality-gate references from that skill.
 
-## Diagram-first policy
+## Visual-first feature policy
 
-Prefer diagrams as the primary view for system boundaries, relationships, flows, hierarchy, state, timing, and ownership. Use high-level context, use-case, activity, state, logical class/domain, logical ER, and sequence diagrams as applicable.
+Use diagrams as the primary view for the system and every in-scope feature. Build the feature/diagram coverage matrix first. Require current system logic and problem views for brownfield changes, target system and main-flow views, a conceptual/logical data model where data is material, and a dedicated To-Be activity or high-level sequence diagram for every feature.
 
 - Invoke/read `plantuml-syntax` before writing PlantUML and load the relevant syntax reference.
-- Keep rules, constraints, exceptions, decisions, acceptance criteria, and unresolved items in authoritative text.
+- Keep text short and limited to rules, constraints, exceptions, decisions, acceptance criteria, evidence, traceability, and unresolved items that the diagrams cannot express precisely.
 - Give every diagram a title, scope, explanation, traceability, and required legend/assumptions.
-- Do not overload diagrams or add one when a table is clearer; resolve any diagram/text conflict before approval.
+- Do not overload diagrams; use conditional state/data/integration views only when applicable, but never omit the per-feature To-Be technical-logic view.
 
 ## Input classification
 
@@ -47,13 +47,15 @@ If the requirements baseline is missing or materially ambiguous, stop and ask th
 
 - Invoke `system-analysis-standard` as the governing skill.
 - Invoke `software-security-standard` in System Analysis mode when security, privacy, identity, access, trust boundaries, sensitive data, abuse, or compliance is applicable. Produce logical security requirements and risks, not implementation controls.
-- Analyze system context, boundaries, actors, roles, responsibilities, capabilities, use cases, logical flows, states, data ownership, integrations, quality implications, risks, and open decisions.
+- Analyze system context, boundaries, actors, roles, responsibilities, capabilities, use cases, logical flows, states, conceptual/logical data ownership, logical data operations, integration and middleware capability needs, quality implications, risks, and open decisions.
 - Preserve source decisions and mark uncertainty as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, `Open`, or `Deferred`.
 - Maintain traceability:
 
   `Source requirement -> Analysis capability/use case -> Logical responsibility/flow -> Design input -> Verification scenario`
 
-- Use high-level logical diagrams where useful: context, use case, activity, state, logical class/domain, logical ER, and high-level sequence diagrams.
+- Produce the required system-level and per-feature diagrams defined by the coverage reference; conditional views may be `Not Applicable` only with a source-based reason.
+- Reconcile every upstream feature point as `New`, `Contract`, `Logic`, `Deleted`, or `No Change`, including reused, deferred, and other-domain dispositions.
+- Split role use cases and complex feature sequences into focused diagrams, show material failure branches, and use labeled new/modified/removed notation consistently.
 - Run the `system-analysis-standard` quality gate before delivery.
 
 ## Output
@@ -62,24 +64,30 @@ By default, produce:
 
 `output/SA/SA-<project-name>.md`
 
+Store reusable diagram sources under `output/SA/diagrams/` and link/embed rendered views when supported. Do not replace the readable document with an unindexed dump of PlantUML files.
+
 The output must include, as applicable:
 
 - document control and source status;
+- feature and diagram coverage matrix;
 - system context and scope;
 - actor, role, and responsibility model;
 - capability decomposition;
+- upstream feature-point reconciliation with change type and disposition;
 - use-case and logical-flow analysis;
+- fixed per-feature logical analysis blocks with current/problem/target views and SD inputs;
 - domain concepts, logical data ownership, and state models;
 - integration and interface analysis;
 - cross-cutting quality analysis;
-- alternatives, decisions, risks, dependencies, and open questions;
+- decisions and impacts, risks, dependencies, and open questions;
 - verification traceability and System Design handoff checklist;
+- centralized open questions and readiness self-check;
 - approval status and version history.
 
 ## Boundary rules
 
 - Do not turn System Analysis into System Design.
-- Do not include framework choices, physical database schemas, endpoint contracts, deployment topology, detailed algorithms, production code, or live system changes.
+- Do not include framework choices, physical database schemas, DDL, concrete DML, endpoint contracts, middleware products/topology, detailed algorithms, production code, or live system changes. Hand those decisions to System Design with explicit feature/data/middleware inputs.
 - Do not invent ownership, security policy, performance targets, vendors, or approvals.
 - Do not call the analysis approved or design-ready while material source, scope, ownership, state, integration, security, or acceptance decisions remain unresolved.
 
