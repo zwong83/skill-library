@@ -40,7 +40,7 @@ Give each delegated specialist the minimal context envelope and one bounded conc
 ## Coordination workflow
 
 1. Establish the source baseline, scope, constraints, decision status, current-system evidence, and traceability IDs.
-2. Build the feature/diagram matrix from approved operation IDs and release dispositions. Check action-level coverage against the UI/system entry, service/interface, authorization, durable effects and acceptance. Escalate a missing product rule to its source. A generic architecture or feature diagram cannot close the row.
+2. Reconcile the complete approved BRD functional inventory or its authorized equivalent with PRD and SA before building the feature/diagram matrix. Link each applicable obligation to technical realization and verification and preserve approved scope dispositions. Return upstream omissions to the owning stage; a generic diagram cannot close the row.
 3. Record the routing/status and feature/diagram coverage tables in the SD Index; do not create separate routing or diagram-register documents.
 4. Route system-level As-Is/problem/To-Be architecture and every feature's target technical flow. Assign conditional component/state/data/transaction/middleware/frontend views to one owner and authoritative document.
 5. Give each selected specialist only relevant feature/source and operation/acceptance IDs, accepted decisions, contract/data-artifact version, constraints, current evidence, and unresolved items.

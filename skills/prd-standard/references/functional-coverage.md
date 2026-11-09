@@ -1,35 +1,35 @@
 # Functional Coverage Through the Delivery Lifecycle
 
-Use this reference for a full product/system draft or review, when an agreed capability may have disappeared between stages, or before declaring an increment ready for implementation. For a bounded refinement, reconcile the changed operations and their material dependencies. Reuse the project's authoritative catalogue or coverage table.
+Use this reference for a full PRD, SA, or SD draft/review, or before declaring a delivery scope ready. For a bounded refinement, reconcile the changed requirements and material dependencies against the same baseline. Reuse the project's existing traceability artifact.
 
 ## Set the unit of coverage
 
-A coverage row is an independently observable actor or system operation, a material state transition, or a separately verifiable business constraint. Split a broad capability when its children have different actors, permissions, decisions, outcomes, failure/recovery paths, or release timing. Group related rows by actor and journey. Use a page, task surface, API, or background trigger as appropriate to the product. A label such as “manage catalogue” cannot establish coverage of its constituent operations.
+A coverage row is an independently observable operation, state transition, or functional constraint. Split a broad requirement when its parts have different triggers, responsible actors or components, rules, outcomes, failure paths, or delivery timing. Derive roles and entry points from the actual system. A human actor, user interface, or particular channel is required only where the governing requirements call for one.
 
-Preserve existing source IDs. Add a stable operation ID when one source item contains several distinct actions. A useful compact catalogue records:
+Preserve each BRD source ID, including functional obligations in rules, policies and acceptance criteria. Add a stable child ID when one source item contains several distinct behaviors. Record the obligation once and link to evidence at each stage:
 
-| Source ID | Operation ID | Actor and entry/trigger | Business rule and observable result | Acceptance IDs | Delivery and decision status |
-| --- | --- | --- | --- | --- | --- |
+| BRD ID | Function ID | Trigger, owner and observable result | PRD requirement and acceptance | SA logical path | SD realization and verification | Scope/status |
+| --- | --- | --- | --- | --- | --- | --- |
 
 Define the normal result and applicable validation, permission denial, stale state, failure and recovery. Derive supporting actions from the approved journey. Record any addition that changes business behavior or phase as a decision for the responsible owner.
 
 ## Reconcile source and release scope
 
-1. Enumerate approved upstream actions and constraints before writing downstream rows. Map forward to the delivery artifact and backward to its authority. Cover operator setup, status/history, failure handling and handoffs when the source or flow requires them. Check both sides of a cross-role interaction.
-2. Record each operation's disposition for the selected increment: `Covered`, `Gap`, `Needs decision`, `Deferred`, or `Not Applicable`. Give deferred or inapplicable items a phase or rationale and source. A shared commercial release capability can be deferred from the current build while still required for launch.
-3. Inspect the referenced artifact, not just the existence of a link. A workflow, a diagram, an API field, or a task group title by itself does not prove the associated behavior is defined. For example, an existing attachment reference does not specify how an actor supplies, previews, replaces or removes a file. A configuration write does not cover a required view of affected records.
-4. On a mismatch, correct the owning source first or record the exact unresolved question. Preserve approved scope and versions. A candidate revision does not silently supersede a signed baseline, widen an approved increment, or authorize implementation.
+1. Establish the complete functional inventory from the approved BRD, or from the explicitly authorized equivalent if the project does not use a BRD. Record the source version and approved scope. Use this same inventory for the PRD, SA and SD checks. A downstream artifact may narrow its delivery scope, but omissions in an intermediate document must remain visible in the inventory.
+2. At each stage, reconcile every baseline row. Use `Covered`, `Gap`, `Needs decision`, `Deferred`, or `Not Applicable` with an evidence link, responsible owner or rationale as appropriate. A phase-limited artifact accounts for the rest of the baseline with the approved target phase or exclusion. Deferral does not count as designed coverage for that scope.
+3. Read the linked evidence and verify the required behavior, conditions, outcomes and meaningful failure paths. A section, diagram, schema field or task heading alone cannot close a row. Trace new downstream behaviors back to authority so the check catches scope additions as well as omissions.
+4. Resolve missing or contradictory requirements at their owning stage before the affected scope advances. Mark a stage ready only when all applicable functional obligations in its declared scope have evidence at that stage. Report full-BRD coverage separately from increment readiness. A candidate revision does not supersede approval or authorize implementation.
 
 ## Stage-specific evidence
 
 | Stage | Evidence that closes the coverage row |
 | --- | --- |
-| PRD or governing FRS | Actor/trigger, required behavior, visible outcome, applicable failure/recovery and acceptance criteria. Put detailed rows in the approved requirements artifact, with a compact index in the PRD if details are elsewhere. |
+| PRD | Every functional obligation maps to a product requirement and observable acceptance, including applicable failures and recovery. The PRD links to the governing detail when the project maintains it in another approved requirements artifact. |
 | SA | Logical owner, input and resulting state/effects, guards and exceptions, and the relevant path in a diagram and verification mapping. A focused diagram may cover related operations when each path is identifiable. |
 | SD | Page/component or system entry, owned service action, authorization, expected results/errors, interface and persistence effects where applicable, and verification. Check contract fields and operations, state and DDL/DML, and UI loading/empty/error/recovery states against each other. |
 | OpenSpec | Affected source/SD version, requirement and scenario IDs, and one or more tasks that implement and verify the behavior. Reconcile stale artifacts before test planning or Apply. |
 | Test Analysis | Each in-scope operation maps to cases and observable oracles, allocated to suitable levels and linked to the implementation tasks. Missing or contradictory behavior returns to the owning source. |
 
-Use versioned links and IDs to pass evidence forward. Keep acceptance rules and schemas in their owning documents. Do not add separate SRS/FRS deliverables automatically to compensate for a sparse catalogue. Where the lifecycle permits an equivalent baseline, record the authorized owner, rationale, scope and exact artifacts. Missing requirements or controls remain gaps even if a separate document was waived.
+Use versioned links and IDs to pass evidence forward. Keep rules and schemas in their owning artifacts. Additional SRS/FRS deliverables depend on the project's lifecycle. Where an equivalent is permitted, record the authorized owner, rationale, scope and exact artifacts. The coverage check still applies.
 
 Report **semantic coverage**, **artifact validation**, and **approval/readiness** separately. Counts, valid links, document structure and OpenSpec strict validation cannot establish that every approved behavior was specified.

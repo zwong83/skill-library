@@ -16,6 +16,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - The Index links the applicable Backend, Frontend, Integration, and contract artifacts with versions/statuses and contains the routing/status table and review verdict.
 - Backend, Frontend, and Integration documents respect their authority boundaries; full schemas and normative rules are not duplicated across documents.
 - Machine-readable contract structure, database physical artifacts, Integration semantics, Backend data/runtime semantics, and Frontend internals agree; any authority conflict blocks readiness.
+- The SD Index links to the reconciliation of the complete approved BRD functional inventory or its authorized equivalent against PRD, SA and SD evidence. Report unresolved omissions or contradictions separately from explicitly phased or excluded obligations.
 - Architecture drivers, constraints, design principles, scope, and system boundaries are explicit.
 - Major containers/components have clear responsibilities, ownership, dependencies, and trust boundaries.
 - Logical layers/modules have explicit responsibilities, allowed/forbidden dependencies, transaction/failure ownership, composition, and enforceable boundaries when applicable.
@@ -40,7 +41,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Interfaces and data
 
 - For each in-scope operation, compare approved behavior with the actual entry point, permitted action, contract operation, state/persistence effect and success/failure path. A schema field, screen label or generic feature sequence is not evidence of a complete workflow.
-- Cross-role journeys and configuration effects are reconciled in both directions. Review state, authorization, stale/concurrent changes and recovery against the authoritative contract and applicable UI, data and transaction design.
+- Reconcile cross-boundary operations in both directions. Review applicable state, authorization, concurrency and recovery against the governing technical authorities.
 
 - Interfaces define purpose, ownership, operations/messages, contracts, authentication/authorization, validation, errors, retries, timeouts, idempotency, versioning, and monitoring as applicable.
 - API protocol semantics, field presence/nullability/defaults, duplicate and concurrent behavior, pagination, payload/rate limits, compatibility, deprecation, and contract verification are explicit where applicable.

@@ -55,7 +55,7 @@ If the requirements baseline is missing or materially ambiguous, stop and ask th
 
 - Produce the required system-level and per-feature diagrams defined by the coverage reference; conditional views may be `Not Applicable` only with a source-based reason.
 - Reconcile every upstream feature point as `New`, `Contract`, `Logic`, `Deleted`, or `No Change`, including reused, deferred, and other-domain dispositions.
-- Check actor/system operations within each feature, not just its group ID. Map each to the logical owner, guard/effect, focused flow path and verification. Flag missing product behavior before technical design.
+- Reconcile the complete approved BRD functional inventory or its authorized equivalent, together with the PRD mappings. Trace each applicable obligation to logical ownership, guards, effects and verification. Keep approved scope dispositions visible and flag product omissions before technical design.
 - Split role use cases and complex feature sequences into focused diagrams, show material failure branches, and use labeled new/modified/removed notation consistently.
 - Run the `system-analysis-standard` quality gate before delivery.
 

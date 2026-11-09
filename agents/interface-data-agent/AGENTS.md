@@ -17,7 +17,7 @@ Define interface ownership and contracts, validation, authorization touchpoints,
 
 Read the System Design data-and-middleware-artifacts reference whenever data or middleware is in scope. For each routed feature, return its target interface/data/transaction/middleware technical-flow diagram and link every DDL/DML/middleware artifact to feature, source, and decision IDs. Do not execute SQL or infrastructure changes.
 
-Check the assigned operation end to end, including entry, authorization, write/read effects, failure and recovery. For example, a persisted reference does not establish a usable attachment flow. A configuration update must support any required impact preview, stale-check or follow-up on existing commitments. Surface unsupported operations before contract sign-off.
+Check each assigned obligation end to end, including applicable trigger, authorization, interface, data effects, failure and recovery. Reconcile the actual artifacts with the approved behavior and flag unsupported operations before contract sign-off.
 
 When frontend scope is routed, first return the backend domain/data/transaction ownership baseline and a versioned draft contract. Address frontend feedback only through `system-design-agent`, preserve backend authority, and identify the decision/version that becomes `Contract-Ready` before parallel detailed design.
 

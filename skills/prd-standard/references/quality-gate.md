@@ -21,7 +21,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`.
 - In-scope and out-of-scope boundaries are explicit.
 - Functional requirements map to user stories and a stated goal.
 - Dependencies, milestones, and release boundaries are visible.
-- Each approved source item has a documented operation-level mapping or a source-based deferred/inapplicable disposition for the selected release. Review coverage separately from document structure.
+- Compare the PRD with the complete approved BRD functional inventory. Every obligation has an acceptance mapping or an approved out-of-scope disposition. Treat unmapped applicable obligations as gaps, separately from document structure.
 
 ## Requirement quality
 

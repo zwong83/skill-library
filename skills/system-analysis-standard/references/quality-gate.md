@@ -20,6 +20,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not convert a gap in
 - Actors, roles, permissions, responsibilities, and operational handoffs are explicit.
 - Role-specific use-case diagrams are split by materially different responsibility boundaries rather than hidden in one panoramic diagram.
 - Every upstream feature point appears in the reconciliation table with change type, disposition, owner/domain, target SA location, and status, including reused, deferred, deleted, and out-of-domain items.
+- Check this reconciliation against the complete approved BRD functional inventory or its authorized equivalent. An obligation missing from the PRD is a source gap, not evidence of exclusion.
 - Within each feature, independently verifiable operations and constraints map to logical effects, permissions, failure paths and verification. A shared flow counts only if the required paths are identifiable.
 - Important use cases include preconditions, triggers, main flow, alternate/exception paths, postconditions, and verification scenarios.
 - Stateful concepts include logical permission/actor ownership, state diagram, and allowed-action/transition table. Validation, idempotency, concurrency, expiry, recovery, audit, and observability are analyzed where relevant.
