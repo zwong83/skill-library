@@ -42,7 +42,7 @@ Use diagrams as the primary representation for the system and for every in-scope
 
 ### Conditional inputs
 
-- FRS is mandatory when detailed feature behavior affects the analysis; otherwise record the limitation.
+- Where detailed feature behavior affects the analysis, require the governing FRS or an authorized equivalent requirements baseline with testable behavior and acceptance. Record its scope and authority; absence of a separate FRS is not a waiver.
 - A Change Request is mandatory for change-focused analysis, but not for greenfield analysis.
 - Security/privacy, performance, integration, data-retention, availability, recovery, and operational constraints are mandatory when applicable; if not applicable, record `Not Applicable`.
 - PRD, BRD, SRS, approved technical constraints, and integration decisions are mandatory when the analysis decision depends on them.
@@ -64,6 +64,7 @@ Use diagrams as the primary representation for the system and for every in-scope
 1. Read [references/system-analysis-template.md](references/system-analysis-template.md) and [references/feature-diagram-coverage.md](references/feature-diagram-coverage.md) for a full draft or structural review.
 2. Establish the system context, boundaries, actors, capabilities, external dependencies, and assumptions.
 3. Build the feature inventory, upstream feature-point reconciliation, and diagram coverage matrix. Classify each feature as `New`, `Contract`, `Logic`, `Deleted`, or `No Change`, including reuse/defer/other-domain disposition. For brownfield scope, identify evidence for the As-Is system and problem IDs before proposing To-Be behavior.
+   - Reconcile the individual actor/system operations under each feature against the approved requirements. Use the [shared functional coverage method](../prd-standard/references/functional-coverage.md) when available. Map each in-scope action to its logical owner, state/guard, normal and material failure path, and verification. Report omissions independently of diagram count.
 4. Decompose requirements into use cases, system responsibilities, logical components, domain concepts, states, workflows, and cross-cutting concerns. When security is applicable, identify assets, actors/workload identities, trust boundaries, sensitive data, abuse cases, permission needs, and security acceptance outcomes.
 5. Create system-level As-Is/problem/To-Be views and a dedicated To-Be technical-logic view for every feature. Analyze preconditions, main path, alternate path, failure path, authorization, idempotency, concurrency, recovery, audit, and observable outcomes.
 6. Define conceptual/logical data models, ownership, lifecycle, logical create/read/update/delete/publish behavior, consistency needs, retention/access implications, and source-of-truth responsibilities without writing physical schemas, DDL, or concrete DML.

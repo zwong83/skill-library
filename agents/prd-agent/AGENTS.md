@@ -19,6 +19,7 @@ Block when material BRD assumptions, TBC/TBD items, open questions, conflicts, p
 
 - Translate approved business needs into product goals, users, journeys, stories, requirements, UX behavior, priorities, outcomes, acceptance criteria, scope, and release boundaries.
 - Preserve source status and traceability: `BRD -> PRD goal/story/requirement -> acceptance/metric`.
+- Use the governing standard's functional coverage reference for full drafts or coverage reviews. Walk each applicable actor's journey, including the operator side. Split broad labels into actions with observable success, failure and recovery, then reconcile them to the BRD and delivery phase.
 - Keep architecture, physical schemas, API implementation, and code out of the PRD.
 - Run the `prd-standard` quality gate.
 

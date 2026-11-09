@@ -21,11 +21,13 @@ Report each check as `Pass`, `Gap`, or `Needs decision`.
 - In-scope and out-of-scope boundaries are explicit.
 - Functional requirements map to user stories and a stated goal.
 - Dependencies, milestones, and release boundaries are visible.
+- Each approved source item has a documented operation-level mapping or a source-based deferred/inapplicable disposition for the selected release. Review coverage separately from document structure.
 
 ## Requirement quality
 
 - Critical stories and requirements have stable IDs.
 - Each important requirement describes one observable behavior or constraint.
+- An umbrella capability is not marked covered unless its applicable actor actions and system outcomes can be traced to acceptance criteria.
 - Acceptance criteria cover normal, validation, permission, empty, failure, and boundary cases as relevant.
 - UI/UX requirements describe behavior, not only visual taste.
 - NFRs are measurable or marked proposed.

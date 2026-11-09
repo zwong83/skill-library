@@ -39,6 +39,9 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 ## Interfaces and data
 
+- For each in-scope operation, compare approved behavior with the actual entry point, permitted action, contract operation, state/persistence effect and success/failure path. A schema field, screen label or generic feature sequence is not evidence of a complete workflow.
+- Cross-role journeys and configuration effects are reconciled in both directions. Review state, authorization, stale/concurrent changes and recovery against the authoritative contract and applicable UI, data and transaction design.
+
 - Interfaces define purpose, ownership, operations/messages, contracts, authentication/authorization, validation, errors, retries, timeouts, idempotency, versioning, and monitoring as applicable.
 - API protocol semantics, field presence/nullability/defaults, duplicate and concurrent behavior, pagination, payload/rate limits, compatibility, deprecation, and contract verification are explicit where applicable.
 - Error handling defines taxonomy/codes, throw-or-return and translation boundaries, public mappings, retryability, terminal handling, cause preservation, and single-owner logging where applicable.

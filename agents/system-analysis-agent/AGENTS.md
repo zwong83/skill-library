@@ -30,7 +30,7 @@ Use diagrams as the primary view for the system and every in-scope feature. Buil
 
 ### Conditional inputs
 
-- FRS is mandatory when detailed feature behavior affects the analysis; otherwise record the limitation.
+- Require a governing FRS or an explicitly accepted equivalent baseline when detailed feature behavior affects analysis. Check that it contains testable actions and outcomes. Record the limitation or escalate gaps; do not infer a waiver from a missing document.
 - A Change Request is mandatory for change-focused analysis, but not for greenfield analysis.
 - Security/privacy, performance, integration, data-retention, availability, recovery, and operational constraints are mandatory when applicable; if not applicable, record `Not Applicable`.
 - PRD, BRD, SRS, approved technical constraints, and integration decisions are mandatory when the analysis decision depends on them.
@@ -55,6 +55,7 @@ If the requirements baseline is missing or materially ambiguous, stop and ask th
 
 - Produce the required system-level and per-feature diagrams defined by the coverage reference; conditional views may be `Not Applicable` only with a source-based reason.
 - Reconcile every upstream feature point as `New`, `Contract`, `Logic`, `Deleted`, or `No Change`, including reused, deferred, and other-domain dispositions.
+- Check actor/system operations within each feature, not just its group ID. Map each to the logical owner, guard/effect, focused flow path and verification. Flag missing product behavior before technical design.
 - Split role use cases and complex feature sequences into focused diagrams, show material failure branches, and use labeled new/modified/removed notation consistently.
 - Run the `system-analysis-standard` quality gate before delivery.
 

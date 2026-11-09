@@ -74,6 +74,8 @@ Group requirements by capability. Recommended fields: ID, user story, requiremen
 
 ### Capability overview
 
+Record a compact source-to-operation catalogue. For each independently testable action capture source/operation IDs, actor, entry or trigger, rules and observable success/failure, acceptance IDs, and delivery/decision status. Split actions with different permissions, outcomes or phases. Link to the [functional coverage reference](functional-coverage.md); use an existing governing catalogue rather than copying it.
+
 ### Capability module template
 
 Use the following subheadings for each major product capability:

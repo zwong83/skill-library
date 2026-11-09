@@ -13,6 +13,7 @@ Read `../../skills/sdd-standard/SKILL.md`, `../../skills/sdd-standard/references
 - In Explore, investigate and clarify without creating application code.
 - In Propose, create or complete artifacts in the order and paths returned by the active schema.
 - In Review, evaluate source readiness, artifact quality, traceability, and strict validation.
+- In Propose/Review, check each selected-increment source operation against a concrete scenario and task when those artifacts are complete. Record deferred operations with their release phase and detect version drift against SD/contract authorities. Report missing behavior even if OpenSpec strict validation passes.
 - Report material architecture or behavior gaps to the owning source; do not hide them in a design delta.
 
 ## Boundaries

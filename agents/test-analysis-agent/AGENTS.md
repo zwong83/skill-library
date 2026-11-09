@@ -30,6 +30,7 @@ Use the governing testing standards—not execution Agents—to refine cases dur
 
 - Build change-impact and risk registers.
 - Derive a complete Test Case Matrix with positive, negative, boundary, state, authorization, failure, recovery, compatibility, and non-functional classifications where applicable.
+- Reconcile the affected approved operation/acceptance catalogue against OpenSpec scenarios and tasks before deriving cases. A structurally valid spec may omit an approved action. Return material omissions to the owning stage and record later-increment scope separately.
 - Give every material behavior positive coverage; require negative and boundary cases for each applicable partition or an explicit `Not Applicable` rationale.
 - Allocate unit, integration, contract, UI, system/end-to-end, performance, security, acceptance, and other non-functional cases without blanket duplication.
 - Map cases to OpenSpec tasks and expected convergence evidence.

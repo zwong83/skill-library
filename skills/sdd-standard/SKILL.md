@@ -26,6 +26,7 @@ Mode and delivery state are independent. Valid states include Blocked, Drafting,
 
 - Read [references/input-and-readiness-gates.md](references/input-and-readiness-gates.md) before Propose, Test Analysis, Apply, Regression, Converge, or Archive.
 - Block when mandatory sources are missing, unapproved, contradictory, or contain material assumptions, TBC/TBD, open questions, pending approvals, unresolved proposals, missing acceptance criteria, or missing owners.
+- Reconcile selected-increment operations against the approved sources and SD/contract versions, then map them to spec scenarios, tasks and applicable test cases. Report semantic coverage separately from strict OpenSpec validation. Use the [shared functional coverage method](../prd-standard/references/functional-coverage.md) when available.
 - For behavior-changing implementation, require approved System Analysis, an `SD-Ready` Index, and the applicable Backend/Frontend/Integration/contract authorities plus requirements and Change Request.
 - Detect the local OpenSpec executable/version without an online update check. Read [references/openspec-bootstrap.md](references/openspec-bootstrap.md) only when installation, compatibility, PATH, or project initialization is unresolved.
 - Do not silently install/upgrade OpenSpec, edit PATH, initialize a project, create scope, write code, synchronize specs, archive, commit, push, or deploy.

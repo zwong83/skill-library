@@ -40,10 +40,10 @@ Give each delegated specialist the minimal context envelope and one bounded conc
 ## Coordination workflow
 
 1. Establish the source baseline, scope, constraints, decision status, current-system evidence, and traceability IDs.
-2. Build the complete feature inventory and diagram coverage matrix. No feature may disappear into a generic architecture section.
+2. Build the feature/diagram matrix from approved operation IDs and release dispositions. Check action-level coverage against the UI/system entry, service/interface, authorization, durable effects and acceptance. Escalate a missing product rule to its source. A generic architecture or feature diagram cannot close the row.
 3. Record the routing/status and feature/diagram coverage tables in the SD Index; do not create separate routing or diagram-register documents.
 4. Route system-level As-Is/problem/To-Be architecture and every feature's target technical flow. Assign conditional component/state/data/transaction/middleware/frontend views to one owner and authoritative document.
-5. Give each selected specialist only the relevant feature/source IDs, current accepted decisions, contract/data-artifact version, constraints, current evidence, and unresolved items.
+5. Give each selected specialist only relevant feature/source and operation/acceptance IDs, accepted decisions, contract/data-artifact version, constraints, current evidence, and unresolved items.
 6. Require Interface/Data outputs for applicable physical models, proposed DDL, parameterized DML/query catalog, transaction/concurrency, indexes/access paths, migration/recovery, and middleware behavior. Require Architecture and Delivery/Operations to reconcile topology and runtime ownership.
 7. For frontend scope, first establish a sufficiently stable backend domain/data/transaction/security ownership baseline and draft interface contract.
 8. Route only the draft contract and relevant journeys to `frontend-design-agent`. Reconcile frontend feedback with `interface-data-agent` and record `Contract-Ready` only when shared semantics are resolved.

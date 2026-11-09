@@ -105,6 +105,8 @@ If any material item is unresolved:
 
 ## Cross-artifact consistency gate
 
+Before Propose or Review, account for every approved operation or constraint in the selected increment. Before Test Analysis or Apply, verify each material in-scope row against the actual spec/scenario, affected contract version and task. Record other increments separately; stale approval or a valid OpenSpec schema cannot close a missing behavior.
+
 Before `Apply-Ready`, verify:
 
 - proposal scope matches the approved source baseline;

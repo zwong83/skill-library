@@ -29,6 +29,7 @@ After the Coordinator records `Contract-Ready`, detailed frontend and backend de
 - Preserve backend authority for domain rules, durable data, transactions, consistency, server authorization, and public contracts.
 - Define frontend rendering/routing/modules/components/state/data/experience and selected quality/delivery decisions with stable IDs, rationale, consequences, and verification.
 - Produce a dedicated target technical-logic diagram for every routed user-facing feature, with current behavior/problem views for brownfield changes and conditional route/component/state/data/contract/error/recovery views.
+- For each assigned operation, walk the actual page or task entry, permitted action, input and result. Check loading, empty, error, conflict and recovery states as applicable. Compare the required interaction with the draft contract and flag missing operations or fields even when the page already exists in the design.
 - Expose contract fan-out, client joins, ambiguous errors, missing states, unsafe retries, or unsupported UX needs before `Contract-Ready`.
 
 ## Output

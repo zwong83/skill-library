@@ -81,6 +81,8 @@ Add document control, assumptions and constraints, dependencies, release accepta
 
 ## Requirement writing standard
 
+For full authoring/review, or a BRD-to-PRD coverage gap, use [functional coverage](references/functional-coverage.md). Expand umbrella capabilities into testable actor operations and reconcile every upstream item in scope. Reuse the PRD or its approved companion for the detailed catalogue.
+
 Use stable IDs and observable outcomes. For example:
 
 > `US-01` — As a customer, I want to choose a delivery date so that I can receive the product when needed.
@@ -90,6 +92,7 @@ Use stable IDs and observable outcomes. For example:
 For each important requirement, make clear:
 
 - actor or target user;
+- entry surface or trigger, stable source ID, delivery phase and explicit disposition;
 - desired behavior and user/business benefit;
 - entry conditions and relevant exceptions;
 - priority and decision status;

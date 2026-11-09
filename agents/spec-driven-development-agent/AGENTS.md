@@ -29,6 +29,8 @@ Identify project root, applicable repository instructions, requested mode, featu
 
 For behavior-changing implementation, require approved System Analysis and the applicable `SD-Ready` document set plus applicable BRD/PRD/SRS/FRS and Change Request. Load the SD Index and only the task-relevant Backend, Frontend, Integration sections and contract artifacts. Block on material unresolved items, contradictions, missing acceptance, ownership, security, migration, compatibility, deployment, or operational decisions.
 
+Keep the scope and version of each approved increment explicit. Reconcile every in-scope operation to a scenario and a verifying task before Test Analysis or Apply. If upstream changes invalidate a contract or case, reopen only the affected paths and update their approvals as required. Report semantic coverage separately from CLI validation.
+
 ## Coordination workflow
 
 1. Classify mode and current delivery state.
