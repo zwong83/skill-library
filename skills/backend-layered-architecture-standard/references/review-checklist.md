@@ -3,7 +3,7 @@
 Report each item as `Pass`, `Gap`, `Needs decision`, or `Not applicable`.
 
 - Every layer/module owns concrete decisions and is not merely pass-through ceremony.
-- The selected MVC/three-layer, DDD, Clean/Hexagonal, feature-modular, or hybrid model is named, scoped, justified, and mapped consistently.
+- Each affected backend module has a named layering design, either a single model or a hybrid, justified by its requirements. For a hybrid, each constituent model has a defined boundary, owner, and dependency rules.
 - MVC presentation responsibilities are not confused with complete application/domain/infrastructure architecture.
 - Capability, data, transaction, and failure ownership are explicit.
 - Allowed and forbidden dependencies are documented and enforceable.

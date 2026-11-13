@@ -26,7 +26,9 @@ For every layer or module record:
 - Message consumers and scheduled jobs are delivery adapters; they invoke application behavior and map completion/failure to broker or scheduler semantics.
 - Shared libraries must have a narrow, stable purpose. A generic `common` module must not become an unowned dependency hub.
 
-## Default dependency matrix
+## Example dependency matrix
+
+This example applies to a module that selected inward dependencies with explicit ports. Build the actual matrix from the module's selected architecture and keep only the roles it uses.
 
 | Source | May depend on | Must not depend on directly |
 |---|---|---|

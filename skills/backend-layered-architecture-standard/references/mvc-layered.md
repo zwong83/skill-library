@@ -44,4 +44,4 @@ CreateOrderRequest
   → HTTP response
 ```
 
-Use MVC/three-layer as a practical default for straightforward applications. Evolve toward richer domain or port boundaries only when actual complexity justifies it.
+Select traditional layering when its boundaries satisfy the module's requirements for ownership, dependency isolation, and testing. Add richer domain or port boundaries when the requirements justify them.

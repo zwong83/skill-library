@@ -1,6 +1,6 @@
 # Feature-Modular Architecture
 
-Feature-modular architecture groups code by business capability or use case before technical layer. It can be used in a modular monolith, service, frontend, or library.
+Feature-modular architecture groups backend code by business capability or use case. Each module can choose its own internal layering based on its requirements.
 
 ```text
 orders/

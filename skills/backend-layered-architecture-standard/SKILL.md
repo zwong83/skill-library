@@ -1,11 +1,11 @@
 ---
 name: backend-layered-architecture-standard
-description: Select, design, implement, or review language-neutral MVC/three-layer, DDD layered, Clean/Hexagonal, feature-modular, or hybrid architectures, including layer responsibilities, dependency direction, DTO/domain/persistence mapping, ports/adapters, transactions, failures, infrastructure, and test seams; do not force one model onto every system.
+description: Select, design, implement, or review layering inside backend modules. Choose the model that fits the module's requirements and define layer responsibilities, allowed dependencies, contracts, mappings, adapters, and transaction ownership.
 ---
 
 # Backend Layered Architecture Standard
 
-Use this skill to select an appropriate layering model and turn its responsibilities into enforceable boundaries. Layers are dependency and ownership rules, not folders added for ceremony.
+Use this skill for the internal structure of backend modules. Cover responsibilities and dependencies within a module and the public contracts through which modules interact. Treat deployment topology, service decomposition, frontend architecture, and datastore or middleware selection as inputs owned by their respective designs.
 
 ## Core rules
 
@@ -19,56 +19,39 @@ Use this skill to select an appropriate layering model and turn its responsibili
 - Cross-cutting concerns must enter through explicit composition, middleware/interceptors, decorators, policy modules, or platform instrumentation without reversing dependency direction.
 - Security controls may span layers, but authentication, authorization, business security invariants, encryption, key/secrets access, audit, and secure configuration need explicit enforcement points and owners. Invoke/read `software-security-standard` when these controls are material; this skill owns their architectural placement, not their full security specification.
 
-## Default reference model
+## Mandatory workflow
 
-Use this model when a concrete baseline is needed, then merge or rename layers to fit the language and system:
+**Complete steps 1 through 8 in order for every backend module layering task.** Carry out each applicable step and record its outcome. For an existing module, confirm applicable decisions against its approved design and current dependencies. A focused task can make a step brief. Record a reason for any `Not applicable` step. If a required input or decision is missing, mark the affected step `Blocked` and stop dependent work.
 
-```text
-Interface / Delivery
-        ↓
-Application / Use Cases
-        ↓
-Domain / Business Policy
-        ↑
-Ports ← Infrastructure / Adapters
-
-Composition / Bootstrap wires the system.
-```
-
-- **Interface/Delivery:** HTTP/UI/controller, message consumer, CLI, scheduler, transport validation, and protocol mapping.
-- **Application:** use-case orchestration, transaction intent, authorization coordination, idempotency, and application outcomes.
-- **Domain:** business invariants, decisions, calculations, state transitions, entities/values where appropriate, and domain errors.
-- **Ports:** inward-owned contracts for persistence, cache, messaging, clock, files, and external services.
-- **Infrastructure/Adapters:** database, Redis, broker, HTTP client, filesystem, framework, and vendor SDK implementations.
-- **Composition/Bootstrap:** concrete wiring, configuration binding, startup validation, and process lifecycle.
-
-Not every system needs six physical directories. Merge layers only when responsibilities, dependency direction, and testability remain clear.
-
-## Workflow
-
-1. Classify the task as System Design, SDD/implementation design, refactoring, or review.
-2. Identify capabilities, use cases, invariants, data owners, external actors, trust boundaries, and runtime/deployment constraints.
-3. Compare MVC/three-layer, DDD layered, Clean/Hexagonal, feature-modular, and simpler language-native alternatives; select the smallest model that addresses actual complexity.
+1. Classify the task as System Design, SDD/implementation design, refactoring, or review. Identify the affected backend modules and the decision being made.
+2. Identify module use cases, business invariants, data ownership, integration boundaries, and requirements for change isolation and testability.
+3. **Select or confirm the best-fit layering for each affected module.** Use [architecture selection](references/architecture-selection.md) to compare plausible single-model and hybrid designs against the module's hard requirements and tradeoffs. Choose the simplest option that satisfies them and record the evidence. Select a hybrid when distinct requirements justify combining models at different boundaries. Record the requirement, responsibility, and allowed dependencies at each boundary. An approved model may be retained only when it still fits the current requirements. If it no longer fits, record the better option and take the change through the owning design decision before implementing it. Mark this step `Blocked` if a missing requirement prevents a defensible choice.
 4. Define each selected layer/module's purpose, owned decisions, public contracts, models, allowed dependencies, forbidden dependencies, transaction/failure ownership, and mapping boundaries.
 5. Place external systems and security mechanisms behind adapters where substitution, isolation, testing, policy protection, or approved platform integration justifies the boundary.
 6. Trace representative commands, queries, events, failures, and transactions across the layers.
 7. Define composition root, dependency injection/wiring, testing seams, and automated dependency checks where practical.
-8. Run the review checklist and report unresolved ownership or dependency cycles.
+8. Apply the relevant [review checklist](references/review-checklist.md) items and report unresolved ownership or dependency cycles. Record checks run, evidence reviewed, and any verification still pending.
 
 ## Readiness gate
 
 Require the target scope, governing requirements/analysis, capability boundaries, data ownership, and material deployment or integration constraints for an implementation-ready design. For SDD or refactoring, also require the approved System Design and current module/dependency structure. If ownership, transaction boundaries, or dependency direction remain materially unresolved, label the result provisional and block implementation-ready status.
 
+Claim completion only after all eight steps have a recorded outcome. A blocked applicable step prevents a readiness claim. Report planned checks as pending verification.
+
 ## Reference routing
 
-- Read [references/architecture-selection.md](references/architecture-selection.md) first when the architecture model has not already been approved.
-- Read [references/mvc-layered.md](references/mvc-layered.md) for MVC or Controller-Service-Repository systems.
-- Read [references/ddd-layered.md](references/ddd-layered.md) for domain-centric systems with substantial business invariants and bounded contexts.
-- Read [references/clean-hexagonal.md](references/clean-hexagonal.md) for Clean Architecture, Onion, or Ports-and-Adapters boundaries.
-- Read [references/feature-modular.md](references/feature-modular.md) for package-by-feature, modular monolith, or capability-owned modules.
-- Read [references/dependency-and-boundary-rules.md](references/dependency-and-boundary-rules.md) when defining allowed imports, ports/adapters, transactions, cross-cutting concerns, or tests.
-- Invoke/read `software-security-standard` when the architecture must place or review identity, authorization, tenant isolation, encryption, key/secrets, audit, privacy, or security verification controls.
-- Read [references/review-checklist.md](references/review-checklist.md) before approving a design or refactor.
+Start step 3 with [architecture selection](references/architecture-selection.md). Open a candidate reference during selection only to verify a capability that affects the choice. Once the model is selected or confirmed, load the reference that answers the current requirement. Add another only for a distinct requirement or finding. A hybrid loads only the references for the boundaries it actually combines.
+
+| Requirement | Reference |
+|---|---|
+| Controller, service, and repository responsibilities in a straightforward module | [Traditional layering and MVC](references/mvc-layered.md) |
+| Rich domain rules, invariants, or state transitions within a module | [DDD layering](references/ddd-layered.md) |
+| Ports and adapters, framework independence, or external dependency isolation | [Clean and Hexagonal layering](references/clean-hexagonal.md) |
+| Feature ownership, public module contracts, or cross-module dependencies | [Feature modules](references/feature-modular.md) |
+| A specific import, mapping, transaction, failure, security placement, or enforcement question | [Dependency and boundary rules](references/dependency-and-boundary-rules.md). Read the relevant section. |
+| Workflow step 8 | [Review checklist](references/review-checklist.md). Apply items within scope. |
+
+For example, an import cycle between existing feature modules starts with feature modules. Add dependency rules if the fix needs a specific enforcement mechanism. Use `software-security-standard` only when a material security control needs more than assigning it an owner and a layer.
 
 ## SD and SDD boundary
 
@@ -78,4 +61,6 @@ For SDD/OpenSpec, convert the approved design into concrete packages/modules, pu
 
 ## Expected output
 
-Provide the selected model and rationale, layer/module and model-mapping tables, allowed/forbidden dependency matrix, boundary contracts, representative request/message flow, transaction, failure, and security-control ownership, composition strategy, enforcement/test strategy, violations or risks, and traceability to requirements and design decisions.
+Include a brief numbered record of steps 1 through 8 with the outcome and evidence or next action for each step. Explain any `Not applicable` or `Blocked` outcomes.
+
+Report the selected or confirmed model, the requirements behind it, and the affected ownership, contracts, dependencies, and verification. For a full module design, include the layer and dependency matrix, representative flows, composition, and enforcement. Keep focused outputs to the affected boundaries.
