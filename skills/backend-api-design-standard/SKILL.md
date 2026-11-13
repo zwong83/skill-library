@@ -9,7 +9,7 @@ Use this skill when an API is introduced, changed, reviewed, or implemented. Pro
 
 ## Core Rules
 
-1. Select HTTP, gRPC, GraphQL, streaming, or messaging from caller needs, interaction shape, latency, compatibility, and operational constraints. Do not choose by habit.
+1. Select the API design from caller needs, interaction shape, latency, compatibility, and operational constraints. Step 2 governs the choice for each interaction.
 2. Define every operation's purpose, caller, authorization subject/action/resource, input, output, side effects, consistency, and completion semantics.
 3. For every field, specify type, format, constraints, required/optional status, nullable status, default behavior, omission semantics, repetition, and unknown-field behavior.
 4. Follow protocol semantics. For HTTP, use methods, status codes, headers, caching, and conditional requests consistently. For gRPC, define service methods, protobuf compatibility, status mapping, deadlines, and cancellation.
@@ -20,20 +20,22 @@ Use this skill when an API is introduced, changed, reviewed, or implemented. Pro
 9. Treat authentication, authorization, tenant isolation, input limits, sensitive-field handling, and audit requirements as contract properties.
 10. Make pagination, filtering, sorting, batching, and query limits deterministic and bounded.
 
-## Workflow
+## Mandatory Workflow
 
-1. Confirm consumers, use cases, trust boundaries, data classification, expected traffic, latency goals, and compatibility commitments.
-2. Choose the interaction style and protocol. Record alternatives and the reason for the selection.
+**Complete steps 1 through 8 in order for every API design, implementation, or review task.** Record the outcome of each step for the affected contract. A focused change may confirm existing decisions with evidence. Mark a step or check `Not applicable` with a reason when it falls outside the interaction or task scope. If a required input or decision is missing, mark the affected step `Blocked` and stop dependent work.
+
+1. Confirm consumers, use cases, trust boundaries, data classification, expected traffic, latency goals, and compatibility commitments. Distinguish hard requirements from preferences.
+2. **Select or confirm the best-fit API design for each interaction.** Use [API design selection](references/contracts-and-protocols.md#api-design-selection) to compare plausible interaction styles, protocols, and contract shapes against the requirements. Eliminate options that fail a hard requirement and select the simplest viable design that fits the remaining priorities. Record the deciding requirements and tradeoffs. Confirm an approved design against the current requirements and route material changes through System Design.
 3. Define resources or operations and their state transitions, side effects, consistency, and ownership.
 4. Specify request, response, event, and error schemas field by field.
 5. Define authentication, authorization, validation, idempotency, concurrency, pagination, limits, deadlines, and cancellation.
 6. Define compatibility, versioning, deprecation, and consumer migration behavior.
-7. Add observability and verification: metrics, structured logs, traces, contract tests, compatibility tests, and negative tests.
-8. Review against the readiness gate before implementation.
+7. Define the applicable metrics, structured logs, and traces. Plan contract, compatibility, and negative tests with evidence criteria.
+8. Apply the readiness gate and relevant review checks before starting affected implementation. Record evidence, gaps, and pending verification. For implementation and review tasks, also report the checks actually run and their results.
 
 ## Readiness Gate
 
-An API is implementation-ready only when:
+Claim implementation readiness only after all eight steps have a recorded outcome and every applicable criterion below is satisfied. Assign unresolved decisions to an owner. A blocked step prevents readiness for the affected work.
 
 - consumers and ownership are known;
 - operations, schemas, validation, and side effects are unambiguous;
@@ -42,13 +44,12 @@ An API is implementation-ready only when:
 - list operations are bounded and deterministic;
 - compatibility, versioning, and deprecation are defined;
 - rate and payload limits are specified;
-- observability and contract verification are planned;
-- unresolved decisions are assigned and block affected implementation.
+- observability and contract verification are planned.
 
 ## Reference Routing
 
-- Read [contracts-and-protocols.md](references/contracts-and-protocols.md) for protocol selection and concrete HTTP, gRPC, GraphQL, schema, security, and DTO rules.
-- Read [evolution-and-operations.md](references/evolution-and-operations.md) for compatibility, pagination, limits, observability, deprecation, and review checks.
+- Start step 2 with [API design selection](references/contracts-and-protocols.md#api-design-selection). Read and apply the rules listed for each selected candidate. Consult another candidate's rules during selection only when they resolve a decision. Read [operation contracts](references/contracts-and-protocols.md#operation-contract) or [shared security and data boundaries](references/contracts-and-protocols.md#shared-security-and-data-boundaries) for the contract question at hand.
+- Read the relevant sections of [evolution and operations](references/evolution-and-operations.md) for compatibility, pagination, limits, observability, or deprecation. Apply the relevant [review checklist](references/evolution-and-operations.md#review-checklist) items in step 8.
 - Invoke `software-security-standard` for identity, authorization, isolation, sensitive data, validation, secrets, cryptography, audit, abuse controls, and security evidence.
 - Invoke `contract-testing-standard` for provider/consumer conformance and compatibility verification of the approved contract.
 - Invoke `exception-error-standard` for the internal error model and public error translation.
@@ -67,4 +68,4 @@ Use the current official protocol specification and deployed framework documenta
 
 ## Expected Output
 
-Return the API decision, protocol rationale, operation catalogue, schema definitions, authorization matrix, validation and error contract, idempotency and concurrency behavior, pagination and limits, compatibility and deprecation plan, observability, verification plan, assumptions, and unresolved decisions.
+Return a brief numbered record of the eight steps with the outcome and evidence or next action for each. For a full design, include the selection rationale, operation catalogue, schemas, authorization matrix, validation and errors, idempotency and concurrency, pagination and limits, compatibility and deprecation, observability, and verification plan. For focused work, report the affected contract and cite existing decisions that still apply.

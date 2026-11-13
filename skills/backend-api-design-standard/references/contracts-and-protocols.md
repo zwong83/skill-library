@@ -1,15 +1,19 @@
 # Contracts and Protocols
 
-## Protocol Selection
+## API Design Selection
 
-| Style | Prefer when | Watch for |
-|---|---|---|
-| HTTP resource API | Broad interoperability, browser/public clients, cacheable resources, request-response workflows | Incorrect method semantics, chatty calls, weak schema discipline |
-| gRPC | Strongly typed internal calls, generated clients, low-latency unary or streaming interactions | Deadline propagation, protobuf evolution, browser reach, debugging tooling |
-| GraphQL | Consumers need flexible graph-shaped reads and an owned schema | Query cost, authorization depth, N+1 access, nullability, schema governance |
-| Messaging or streaming | Temporal decoupling, asynchronous completion, fan-out, replay, event-driven workflows | Delivery semantics, ordering, idempotency, schema evolution; use `message-standard` |
+1. Identify the consumers and what each interaction must do. Decide whether callers need an immediate result, an asynchronous completion status, a live stream, or independently consumed events. Note client and gateway support, trust boundaries, compatibility commitments, latency and traffic targets, and ownership.
+2. Compare plausible designs. Eliminate candidates that fail hard requirements. For the viable options, compare client and tooling support, contract evolution, operational cost, and the complexity of serving the required behavior.
+3. Select the simplest design that satisfies the requirements and record what decided the choice. Use multiple styles when different interactions justify them, with explicit ownership and a completion contract at each boundary. For example, an HTTP API can accept a long-running job and expose its status while a broker distributes completion events to independent consumers.
+4. **Follow the rules for every selected candidate.** Read the rules listed in its row and apply them to the contract, implementation, or review for that interaction. When a design combines candidates, apply each rule set at the boundary it governs. Use the applicable rules as verification criteria in workflow step 8.
 
-Document why the selected style fits the interaction. Multiple styles may coexist, but each adds governance and operational cost.
+| Candidate | Evaluate when | Watch for | Required rules when selected |
+|---|---|---|---|
+| HTTP resource or operation API | Browser or public clients, broad interoperability, cacheable reads, or commands with clear request and response semantics | Method semantics, chatty calls, schema discipline, and a status contract for long-running work | [HTTP rules](#http-rules) |
+| gRPC | Supported clients benefit from typed RPCs, generated bindings, or client or bidirectional streaming | Deadline propagation, protobuf evolution, browser reach, and tooling | [gRPC rules](#grpc-rules). For streaming methods, also apply [direct client streaming rules](#direct-client-streaming-rules). |
+| GraphQL | Consumers need flexible selections across related data and a team can own the shared schema | Query cost, authorization depth, N+1 access, nullability, and schema governance | [GraphQL rules](#graphql-rules) and the applicable transport rules. |
+| Direct client streaming, such as SSE, WebSocket, or gRPC streaming | A connected consumer needs ongoing updates or a bidirectional session | Client and proxy support, backpressure, cancellation, reconnect and resume behavior | [Direct client streaming rules](#direct-client-streaming-rules) and the rules for the selected protocol. |
+| Brokered messages or event streams | Producers and consumers need temporal decoupling, durable delivery, independent fan-out, or replay | Delivery semantics, ordering, idempotency, and schema evolution | Invoke `message-standard` and follow its applicable rules. |
 
 ## Operation Contract
 
@@ -56,6 +60,13 @@ For each operation define:
 - Bound depth, complexity, aliases, list sizes, and batching. Prevent N+1 access with measured loaders or query planning.
 - Define stable mutation payloads, typed errors, idempotency where needed, and pagination semantics.
 - Deprecate schema fields with migration guidance before removal.
+
+## Direct Client Streaming Rules
+
+- Define the message schema, stream direction, ordering, and how the stream reports errors and completion.
+- Define authentication and authorization at connection setup and for subscriptions or messages as applicable. Specify what happens when access expires or is revoked.
+- Bound message size, concurrent streams, and buffering. Define slow-consumer behavior, idle limits, cancellation, and resource cleanup.
+- Specify reconnect behavior, whether resume is supported, and how clients handle missed or duplicate messages.
 
 ## Shared Security and Data Boundaries
 
