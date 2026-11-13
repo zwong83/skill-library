@@ -14,7 +14,7 @@ Require the approved source baseline, SD Index and only change-relevant Backend/
 - Use `contract-testing-standard` for provider/consumer schema, protocol, semantic, version, and compatibility cases.
 - Use `ui-testing-standard` for UI state, visual, accessibility, compatibility, and browser/device allocation.
 - Use `system-e2e-testing-standard` for critical multi-component journeys that lower levels cannot prove.
-- Use `backend-performance-capacity-standard` for measurable benchmark/load/stress/spike/soak/capacity scenarios.
+- Derive measurable benchmark, load, stress, spike, soak, and capacity cases from approved objectives, workloads, and acceptance thresholds.
 - Use `security-testing-standard` for approved control verification and its authorization/safety prerequisites.
 - Use `regression-testing-standard` for change-impact regression scope and verdict inputs.
 - Use `testing-strategy-standard` only when broader portfolio or non-functional scope is unresolved.

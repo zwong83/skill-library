@@ -1,6 +1,0 @@
-interface:
-  display_name: "Backend Performance and Capacity Standard"
-  short_description: "Design measurable performance and capacity"
-  default_prompt: "Use $backend-performance-capacity-standard to design or review performance targets, workload models, capacity, bottlenecks, and verification."
-policy:
-  allow_implicit_invocation: true

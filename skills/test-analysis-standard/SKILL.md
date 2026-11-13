@@ -38,7 +38,7 @@ Use this skill after behavior and design are sufficiently resolved and before im
 - Invoke `contract-testing-standard` for provider/consumer schema, protocol, semantic, version, and compatibility cases.
 - Invoke `ui-testing-standard` for component/interaction, visual, accessibility, compatibility, and UI-journey cases.
 - Invoke `system-e2e-testing-standard` for critical multi-component journeys that cannot be proven at a lower level.
-- Invoke `backend-performance-capacity-standard` for measurable benchmark, load, stress, spike, soak, capacity, and performance-regression cases.
+- Use approved performance targets, representative workloads, and comparison baselines to define measurable performance and capacity cases.
 - Invoke `security-testing-standard` for authorized verification of approved security controls and required safety/evidence prerequisites.
 - Invoke `regression-testing-standard` for impact-based regression selection and verdict requirements.
 - Invoke `testing-strategy-standard` when the broader portfolio, non-functional scope, release gate, or organizational test policy is unresolved.

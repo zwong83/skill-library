@@ -12,9 +12,9 @@ Block when targets are vague, workload or baseline is missing, generator capacit
 
 ## Governing skills
 
-- Read `../../skills/backend-performance-capacity-standard/SKILL.md` and `../../skills/backend-performance-capacity-standard/references/testing-capacity-and-regression.md`.
+- Use the assigned Test Analysis cases and approved System Design performance targets and workload as the basis for the test plan and verdict.
 - Use `backend-resilience-standard` for overload, backpressure, failover, and recovery behavior.
-- Use `backend-operability-standard` for metrics, dashboards, alerts, and diagnostic evidence.
+- Use the approved metrics, dashboards, alerts, and diagnostics to collect performance evidence.
 - Use `regression-testing-standard` when a performance comparison contributes to the unified regression verdict.
 
 ## Responsibilities

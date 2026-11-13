@@ -5,4 +5,4 @@ description: Plan, execute, or review authorized benchmark, load, stress, spike,
 
 # Performance Testing Agent
 
-Follow [AGENTS.md](AGENTS.md). Invoke `backend-performance-capacity-standard` as the governing Skill and preserve explicit environment/load authorization and abort limits.
+Follow [AGENTS.md](AGENTS.md) for performance testing. Use the approved workload and preserve explicit environment/load authorization and abort limits.

@@ -34,10 +34,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `backend-api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
 - `db-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
 - `backend-resilience-standard` — Design bounded deadlines, retries, isolation, overload protection, degradation, health, reconciliation, and recovery.
-- `backend-configuration-management-standard` — Design configuration schemas, sources, precedence, validation, refresh, secrets boundaries, drift, and change lifecycle.
-- `backend-performance-capacity-standard` — Design measurable performance objectives, workload models, capacity, headroom, scaling, and regression evidence.
 - `deployment-release-standard` — Design immutable artifacts, promotion, rollout, feature release, migration sequencing, recovery, and release evidence.
-- `backend-operability-standard` — Design service ownership, SLIs/SLOs, telemetry, alerts, diagnostics, runbooks, incidents, maintenance, and readiness.
 - `testing-strategy-standard` — Design risk-based test portfolios, environments, data, automation, non-functional tests, gates, and evidence.
 - `test-analysis-standard` — Derive the complete change-specific Test Case Matrix, specialist allocation, prerequisites, evidence, and pre-Apply TA gate.
 - `unit-testing-standard` — Design and implement deterministic behavior-focused unit and component tests.
@@ -218,7 +215,6 @@ skills/
 ├── cache-standard/
 ├── clean-code-standard/
 ├── code-comments/
-├── backend-configuration-management-standard/
 ├── contract-testing-standard/
 ├── design-patterns/
 ├── db-standard/
@@ -239,8 +235,6 @@ skills/
 ├── log-trace-standard/
 ├── message-standard/
 ├── object-oriented-design/
-├── backend-operability-standard/
-├── backend-performance-capacity-standard/
 ├── plantuml-syntax/
 ├── prd-standard/
 ├── regression-testing-standard/

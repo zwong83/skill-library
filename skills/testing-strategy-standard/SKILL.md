@@ -58,10 +58,10 @@ A test strategy is ready only when:
 - Invoke `regression-testing-standard` for change-impact suite selection, cross-level regression execution, and a unified regression verdict.
 - Invoke `tdd-standard` only when implementation is authorized and the task will follow Red-Green-Refactor.
 - Invoke `software-security-standard` for authoritative threat/control design and `security-testing-standard` for authorized, bounded verification of those controls.
-- Invoke `backend-performance-capacity-standard` for workload, performance, capacity, benchmark, load, stress, spike, soak, scalability, and performance-regression tests.
+- Select performance and capacity tests from approved objectives, representative workloads, and the evidence each decision requires.
 - Invoke `backend-resilience-standard` for timeout, retry, overload, degradation, dependency-loss, failover, and recovery scenarios.
 - Invoke `backend-api-design-standard`, `db-standard`, `cache-standard`, and `message-standard` for contract-, migration-, consistency-, and technology-specific tests.
-- Invoke `deployment-release-standard` and `backend-operability-standard` for pipeline gates, production verification, drills, telemetry, and operational readiness evidence.
+- Invoke `deployment-release-standard` for pipeline gates and production verification. Use the approved operational design for drills and readiness evidence.
 
 ## System Design and SDD Boundary
 

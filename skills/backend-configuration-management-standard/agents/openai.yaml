@@ -1,6 +1,0 @@
-interface:
-  display_name: "Backend Configuration Management Standard"
-  short_description: "Design safe application configuration lifecycle"
-  default_prompt: "Use $backend-configuration-management-standard to design or review application configuration, secrets boundaries, validation, rollout, and recovery."
-policy:
-  allow_implicit_invocation: true

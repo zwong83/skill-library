@@ -23,10 +23,10 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 | API/service contract mapping | `backend-api-design-standard` |
 | Persistence/transactions/migrations | `db-standard` |
 | Resilience behavior | `backend-resilience-standard` |
-| Configuration/secrets/flags | `backend-configuration-management-standard` |
-| Performance/capacity implementation | `backend-performance-capacity-standard` |
+| Configuration/secrets/flags | `software-security-standard` for secret controls, `deployment-release-standard` for rollout and rollback |
+| Performance/capacity implementation | Approved SD budgets, capacity assumptions, and verification criteria |
 | Deployment/release artifacts | `deployment-release-standard` |
-| Operability/telemetry/runbooks | `backend-operability-standard`, conditional logging/tracing |
+| Operability/telemetry/runbooks | `log-trace-standard` for event/span contracts, `deployment-release-standard` for rollout and recovery |
 | Security controls | `software-security-standard` |
 | Errors | `exception-error-standard` |
 | Cache | `cache-standard` |

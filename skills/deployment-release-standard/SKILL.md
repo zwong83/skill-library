@@ -50,11 +50,9 @@ A release design is ready only when:
 
 - Read [artifacts-pipeline-and-environments.md](references/artifacts-pipeline-and-environments.md) for immutable artifacts, provenance, CI/CD controls, promotion, environments, and compatibility.
 - Read [rollout-release-and-recovery.md](references/rollout-release-and-recovery.md) for strategy selection, gates, feature controls, migrations, rollback, roll-forward, and evidence.
-- Invoke `backend-configuration-management-standard` for environment config, secrets boundaries, dynamic config, and drift.
 - Invoke `db-standard` for migration/backfill compatibility and recovery.
-- Invoke `backend-performance-capacity-standard` for rollout surge, canary representativeness, scaling, and failover headroom.
+- Check rollout surge, canary representativeness, scaling, and failover headroom against the approved capacity model.
 - Invoke `backend-resilience-standard` for drain, health, degraded behavior, dependency loss, and recovery.
-- Invoke `backend-operability-standard` for telemetry, alerts, runbooks, incidents, ownership, and launch readiness.
 - Invoke `software-security-standard` for pipeline, artifact, dependency, identity, secret, and supply-chain controls.
 
 ## System Design and SDD Boundary
