@@ -16,6 +16,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `frs-standard` — Create or audit detailed Functional Requirements Specifications.
 - `system-analysis-standard` — Analyze system boundaries, actors, logical flows, responsibilities, data behavior, integrations, risks, and design inputs.
 - `system-design-standard` — Design architecture, components, interfaces, data, sequences, security, reliability, operations, deployment, and verification.
+- `languages-engine-standard` — Choose frontend and backend languages and frameworks, database engines, and query languages or interfaces from project requirements.
 - `frontend-architecture-standard` — Design frontend rendering, routing, module, server/client, dependency, composition, and failure boundaries.
 - `frontend-component-design-standard` — Design component responsibilities, APIs, composition, UI states, forms, and design-system integration.
 - `frontend-state-data-standard` — Design frontend state ownership, API data flow, cache, optimistic updates, URL/form/session/storage, and recovery.
@@ -233,6 +234,7 @@ skills/
 ├── frontend-state-data-standard/
 ├── frs-standard/
 ├── integration-testing-standard/
+├── languages-engine-standard/
 ├── backend-layered-architecture-standard/
 ├── log-trace-standard/
 ├── message-standard/

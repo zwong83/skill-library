@@ -1,0 +1,4 @@
+interface:
+  display_name: "Languages and Database Engine Standard"
+  short_description: "Choose languages, frameworks, and database engines"
+  default_prompt: "Use $languages-engine-standard to choose the frontend and backend languages and frameworks, database engine, and query interface for this project."
