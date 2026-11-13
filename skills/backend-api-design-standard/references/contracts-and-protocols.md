@@ -7,7 +7,7 @@
 | HTTP resource API | Broad interoperability, browser/public clients, cacheable resources, request-response workflows | Incorrect method semantics, chatty calls, weak schema discipline |
 | gRPC | Strongly typed internal calls, generated clients, low-latency unary or streaming interactions | Deadline propagation, protobuf evolution, browser reach, debugging tooling |
 | GraphQL | Consumers need flexible graph-shaped reads and an owned schema | Query cost, authorization depth, N+1 access, nullability, schema governance |
-| Messaging or streaming | Temporal decoupling, asynchronous completion, fan-out, replay, event-driven workflows | Delivery semantics, ordering, idempotency, schema evolution; use `backend-messaging-standard` |
+| Messaging or streaming | Temporal decoupling, asynchronous completion, fan-out, replay, event-driven workflows | Delivery semantics, ordering, idempotency, schema evolution; use `message-standard` |
 
 Document why the selected style fits the interaction. Multiple styles may coexist, but each adds governance and operational cost.
 

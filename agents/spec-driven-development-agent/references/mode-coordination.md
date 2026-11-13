@@ -12,7 +12,7 @@ The SDD Coordinator owns mode selection, source/readiness state, authorization b
 | Test Analysis (TA) | `test-analysis-agent` | No |
 | Apply | `implementation-agent` | Yes, only after apply readiness and explicit authorization |
 | Regression | `regression-testing-agent` | No production corrections; test changes require Apply authorization and owning specialist |
-| Converge | `convergence-review-agent` | No corrections without separate authorization |
+| Converge | Coordinator applies the convergence gate | No corrections without separate authorization |
 | Archive | Coordinator after convergence and explicit archive authorization | No |
 
 ## Compact handoff envelope
@@ -35,6 +35,6 @@ Specialists return only updated status, artifacts/files changed, exact verificat
 
 ## Runtime delegation
 
-Delegated Agents do not change lifecycle ordering, ownership, or authorization. The Coordinator starts at most the selected current mode for a change and validates its returned handoff before advancing. `convergence_review` is the optional Codex-native adapter for the Converge specialist; other modes may use runtime-generic delegation or sequential execution without changing this contract.
+Delegated Agents do not change lifecycle ordering, ownership, or authorization. The Coordinator starts at most the selected current mode for a change and validates its returned handoff before advancing. The Coordinator runs Converge directly. Other modes with specialists may use runtime delegation or sequential execution.
 
 Pass explicit paths, versions, IDs, bounded tasks/cases, write ownership, expected evidence, and granted authorization because delegated Agents must not depend on hidden parent conversation. Run write-heavy work concurrently only when file/module ownership is disjoint or the runtime provides isolated worktrees; otherwise keep one writer and execute sequentially.

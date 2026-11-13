@@ -35,7 +35,7 @@ The handoff is transient unless an audit requires retention. The Coordinator wri
 
 Delegation is an execution mechanism, not a new artifact or ownership layer. A delegated specialist receives one minimal context envelope and returns one transient compact handoff. By default it must not edit the authoritative SD documents; the Coordinator remains their sole reconciler and writer.
 
-Independent read-heavy concerns may run concurrently from the same validated baseline. Dependent stages remain ordered: backend ownership and draft contract before frontend contract review, shared contract reconciliation before parallel detail, and authoritative SD assembly before independent review. Any write-enabled delegation must have exclusive file or section ownership; otherwise run it sequentially.
+Independent read-heavy concerns may run concurrently from the same validated baseline. Dependent stages remain ordered: backend ownership and draft contract before frontend contract review, shared contract reconciliation before parallel detail, and authoritative SD assembly before the Coordinator applies the quality gate. Any write-enabled delegation must have exclusive file or section ownership; otherwise run it sequentially.
 
 Do not rely on hidden conversation state between specialists. Put every necessary source ID, accepted decision, contract version, constraint, blocker, and expected evidence item in the handoff envelope. If delegated Agents are unsupported, preserve the same boundaries and execute the specialists sequentially.
 
@@ -67,6 +67,6 @@ Do not wait for every backend deployment detail before frontend design, and do n
 
 If artifacts disagree, the machine-readable contract owns field/protocol structure, database artifacts own affected physical schema/DDL and the critical DML/query catalog, Integration SD owns cross-boundary semantics, Backend SD owns backend/data semantics and internals, and Frontend SD owns frontend internals. The conflict blocks readiness until resolved.
 
-## Review handoff
+## Quality gate
 
-The Review Agent receives the applicable four-document SD set, machine-readable contracts, source baseline, and unresolved `open-decisions.md` entries. It does not need specialist handoffs. Its verdict and actionable findings return to the Coordinator; the final verdict is recorded in the Index, with a separate report only when audit retention is required.
+The Coordinator checks the assembled SD set, machine-readable contracts, source baseline, and unresolved `open-decisions.md` entries against the System Design quality gate. Record the verdict and actionable findings in the Index. Create a separate report only when audit retention is required.

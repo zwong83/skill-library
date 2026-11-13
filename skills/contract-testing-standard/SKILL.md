@@ -33,7 +33,7 @@ Use this skill when a provider and one or more consumers need machine-verifiable
 - Read [contract-matrix.md](references/contract-matrix.md) to define consumers, operations/messages, versions, and case allocation.
 - Read [compatibility-and-evidence.md](references/compatibility-and-evidence.md) for evolution rules, publication, verification, and verdicts.
 - Invoke `backend-api-design-standard` for the approved contract and evolution policy.
-- Invoke `backend-messaging-standard` for event/message delivery semantics beyond schema compatibility.
+- Invoke `message-standard` for event/message delivery semantics beyond schema compatibility.
 - Invoke `integration-testing-standard` when real framework, serializer, registry, broker, or transport behavior is the selected risk.
 - Invoke `system-e2e-testing-standard` only when the claim depends on a complete multi-component journey.
 

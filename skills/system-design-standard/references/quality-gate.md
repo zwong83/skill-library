@@ -11,7 +11,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Source and architecture
 
 - Governing System Analysis and requirements are identified with version/status.
-- The specialist routing matrix classifies architecture, interface/data, frontend design, quality attributes, delivery/operations, and independent review as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
+- The specialist routing matrix classifies architecture, interface/data, frontend design, quality attributes, and delivery/operations as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
 - Only routed concerns and document templates were loaded; accepted compact handoffs are written once to their authoritative targets, and material conflicts or unresolved decisions are reconciled or present in `open-decisions.md` before readiness.
 - The Index links the applicable Backend, Frontend, Integration, and contract artifacts with versions/statuses and contains the routing/status table and review verdict.
 - Backend, Frontend, and Integration documents respect their authority boundaries; full schemas and normative rules are not duplicated across documents.

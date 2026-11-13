@@ -53,9 +53,9 @@ Resilience design is implementation-ready only when:
 - Read [dependency-failure-controls.md](references/dependency-failure-controls.md) for deadlines, cancellation, retries, circuit breakers, bulkheads, and dependency policies.
 - Read [overload-health-and-recovery.md](references/overload-health-and-recovery.md) for backpressure, load shedding, rate limits, health probes, degradation, recovery, and disaster behavior.
 - Invoke `backend-api-design-standard` for public deadline, cancellation, idempotency, throttling, and error semantics.
-- Invoke `backend-error-handling-standard` for typed failures, retry classification, translation, compensation, and terminal handling.
-- Invoke `backend-caching-standard` and `backend-messaging-standard` for technology-specific consistency, fallback, replay, and delivery behavior.
-- Invoke `logging-standard` and `tracing-standard` for concrete protection, degradation, and recovery telemetry.
+- Invoke `exception-error-standard` for typed failures, retry classification, translation, compensation, and terminal handling.
+- Invoke `cache-standard` and `message-standard` for technology-specific consistency, fallback, replay, and delivery behavior.
+- Invoke `log-trace-standard` for concrete protection, degradation, and recovery telemetry.
 - Invoke `software-security-standard` when fail-open behavior, abuse controls, identity, authorization, or sensitive data are involved.
 
 ## System Design and SDD Boundary

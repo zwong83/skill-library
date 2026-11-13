@@ -65,4 +65,4 @@ For each selected middleware, provide:
 - throughput, payload/value size, connection/concurrency, storage/retention, headroom, quotas, and scaling;
 - logs, metrics, traces, alerts, dashboards, runbooks, support owner, maintenance, backup/restore where applicable, and verification.
 
-Use `backend-caching-standard` for cache semantics, `backend-messaging-standard` for queues/streams, `backend-database-persistence-standard` for durable stores, and the applicable operational/security/resilience standards. Load only the technology reference that is actually selected.
+Use `cache-standard` for cache semantics, `message-standard` for queues/streams, `db-standard` for durable stores, and the applicable operational/security/resilience standards. Load only the technology reference that is actually selected.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Exception and Error Handling"
+  short_description: "Design error contracts and exception boundaries"
+  default_prompt: "Use $exception-error-standard to review error contracts, exception responsibilities, and recovery."
+policy:
+  allow_implicit_invocation: true

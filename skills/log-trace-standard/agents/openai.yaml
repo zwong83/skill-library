@@ -1,0 +1,6 @@
+interface:
+  display_name: "Log and Trace Standard"
+  short_description: "Design correlated logs and distributed traces"
+  default_prompt: "Use $log-trace-standard to review structured logs, spans, and cross-service propagation."
+policy:
+  allow_implicit_invocation: true

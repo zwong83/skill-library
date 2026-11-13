@@ -1,0 +1,6 @@
+interface:
+  display_name: "Database Standard"
+  short_description: "Design and troubleshoot reliable persistence"
+  default_prompt: "Use $db-standard to review schemas, queries, transactions, and migrations."
+policy:
+  allow_implicit_invocation: true

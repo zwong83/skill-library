@@ -52,7 +52,7 @@ Configuration is implementation-ready only when:
 - Invoke `software-security-standard` for secret/key protection, access, audit, privacy, and secure failure.
 - Invoke `deployment-release-standard` when configuration changes participate in rollout, rollback, promotion, or feature release.
 - Invoke `backend-resilience-standard` when a configuration provider is a runtime dependency.
-- Invoke `logging-standard` and `backend-operability-standard` for safe diagnostics, drift alerts, ownership, and runbooks.
+- Invoke `log-trace-standard` and `backend-operability-standard` for safe diagnostics, drift alerts, ownership, and runbooks.
 
 ## System Design and SDD Boundary
 

@@ -29,7 +29,7 @@ Use this skill as the implementation-quality entrypoint for code writing, refact
 
 ## Conditional skill routing
 
-- Invoke `backend-error-handling-standard` when failure taxonomy, typed outcomes/exceptions, throw/catch/translation, retries, recovery, or boundary mapping is material. Do not copy Java-specific exception rules into language-neutral code.
+- Invoke `exception-error-standard` when failure taxonomy, typed outcomes/exceptions, throw/catch/translation, retries, recovery, or boundary mapping is material. Do not copy Java-specific exception rules into language-neutral code.
 - Invoke `code-comments` when public contracts or non-obvious intent, invariants, concurrency, security, compatibility, algorithms, or workarounds still require explanation after the code is clarified.
 - Invoke `solid-principles` only when an object/module design has concrete responsibility, substitutability, interface, extensibility, or dependency-direction evidence. Do not review all five principles by ritual.
 - Invoke `design-patterns` only when a recurring coupling, variation, construction, state, or coordination problem justifies comparing a named pattern with simpler alternatives.

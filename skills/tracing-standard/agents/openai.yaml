@@ -1,6 +1,0 @@
-interface:
-  display_name: "Tracing Standard"
-  short_description: "Design useful distributed tracing"
-  default_prompt: "Use $tracing-standard to design or review distributed tracing for this execution path."
-policy:
-  allow_implicit_invocation: true

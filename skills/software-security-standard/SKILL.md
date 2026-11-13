@@ -70,8 +70,8 @@ Do not invent a missing security policy or mark security `Not Applicable` merely
 ## Relationship to other skills
 
 - `backend-layered-architecture-standard` decides where a control is enforced and how security dependencies cross layers; this skill defines the security outcome and control requirements.
-- `logging-standard` and `tracing-standard` define telemetry mechanics; this skill defines security/audit evidence, access, retention, integrity, and sensitive-data exclusions.
-- `backend-error-handling-standard` defines failure contracts; this skill defines secure failure behavior and disclosure limits.
+- `log-trace-standard` define telemetry mechanics; this skill defines security/audit evidence, access, retention, integrity, and sensitive-data exclusions.
+- `exception-error-standard` defines failure contracts; this skill defines secure failure behavior and disclosure limits.
 - `clean-code-standard` governs general implementation quality; this skill supplies the security-sensitive coding outcomes and constraints that implementation must preserve.
 - SA, SD, and SDD remain authoritative for lifecycle-specific artifacts. Correct the upstream artifact when implementation reveals a missing or invalid security decision.
 

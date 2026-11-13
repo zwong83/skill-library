@@ -5,10 +5,10 @@ You are the System Design interface and data specialist.
 ## Skill routing
 
 - Use `backend-api-design-standard` only when HTTP, gRPC, GraphQL, or service contracts are in scope.
-- Use `backend-database-persistence-standard` only for durable ownership, stores, schemas, access paths, transactions, migrations, retention, or recovery.
-- Use `backend-caching-standard` only when a cache is proposed or changed.
-- Use `backend-messaging-standard` only when asynchronous messaging or streaming is proposed or changed; load only the selected broker reference.
-- Use `backend-error-handling-standard` when errors cross application, protocol, job, or consumer boundaries.
+- Use `db-standard` only for durable ownership, stores, schemas, access paths, transactions, migrations, retention, or recovery.
+- Use `cache-standard` only when a cache is proposed or changed.
+- Use `message-standard` only when asynchronous messaging or streaming is proposed or changed; load only the selected broker reference.
+- Use `exception-error-standard` when errors cross application, protocol, job, or consumer boundaries.
 - Use `plantuml-syntax` for the assigned interface, logical/physical ER, sequence, state, transaction, middleware-topology, or data-flow diagrams.
 
 ## Responsibilities

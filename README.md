@@ -31,7 +31,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
 - `backend-layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
 - `backend-api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
-- `backend-database-persistence-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
+- `db-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
 - `backend-resilience-standard` — Design bounded deadlines, retries, isolation, overload protection, degradation, health, reconciliation, and recovery.
 - `backend-configuration-management-standard` — Design configuration schemas, sources, precedence, validation, refresh, secrets boundaries, drift, and change lifecycle.
 - `backend-performance-capacity-standard` — Design measurable performance objectives, workload models, capacity, headroom, scaling, and regression evidence.
@@ -48,11 +48,10 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `regression-testing-standard` — Select and verify risk-based regression coverage across test levels from actual change impact.
 - `tdd-standard` — Implement approved behavior through traceable Red-Green-Refactor cycles.
 - `software-security-standard` — Identify, design, implement, and verify risk-based software security controls across SA, SD, SDD, code, and operations.
-- `backend-error-handling-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
-- `backend-caching-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis integration, and cache operations.
-- `backend-messaging-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and RabbitMQ/RocketMQ/Kafka behavior.
-- `logging-standard` — Design and review structured, correlated, secure, and operationally useful application logging.
-- `tracing-standard` — Design and review distributed tracing, context propagation, span boundaries, sampling, correlation, and trace quality.
+- `exception-error-standard` — Design and review error taxonomy, throw/return/catch boundaries, translation, retries, recovery, and safe public mappings.
+- `cache-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis and Memcached integration, and cache operations.
+- `message-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and Kafka, RabbitMQ, RocketMQ, and Pulsar behavior.
+- `log-trace-standard` — Design, implement, and troubleshoot structured logs and distributed traces, including redaction, sinks, propagation, sampling, and correlation.
 - `code-comments` — Write and review maintainable comments and docstrings that explain intent, contracts, invariants, risks, and non-obvious constraints.
 - `sdd-standard` — Turn an approved requirements, SA, and SD baseline into an OpenSpec change, implementation tasks, verification evidence, convergence, and archive.
 
@@ -61,10 +60,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 Agents are focused workflows. Coordinators own lifecycle gates, routing, handoffs, conflicts, and final status; specialists load only the standards needed for one stage or design concern.
 
 - `business-agent` — Produces BRDs with `brd-standard`.
-- `product-agent` — Coordinates BRD intake and PRD/SRS/FRS stage routing.
-  - `prd-agent` — Produces PRDs with `prd-standard`.
-  - `software-requirements-agent` — Produces SRS documents with `srs-standard`.
-  - `functional-requirements-agent` — Produces FRS documents with `frs-standard`.
+- `product-agent` — Applies `prd-standard` → `srs-standard` → `frs-standard` directly for the requested stages and writes each document to a separate file.
 - `system-analysis-agent` — Produces logical System Analysis documents with `system-analysis-standard`.
 - `system-design-agent` — Coordinates compact specialist handoffs and owns the authoritative SD document set and readiness index.
   - `architecture-agent` — Architecture, modules, layers, dependencies, composition, and topology.
@@ -72,7 +68,6 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
   - `frontend-design-agent` — Reviews the shared contract and returns only accepted frontend decisions, contract changes, impacts, blockers, and verification.
   - `quality-attributes-agent` — Security, resilience, performance, capacity, scalability, and recovery.
   - `delivery-operations-agent` — Configuration, deployment/release, observability, operability, and support.
-  - `system-design-review-agent` — Independent SD quality, traceability, testability, and readiness review.
 - `spec-driven-development-agent` — Coordinates OpenSpec modes and authorization boundaries.
   - `openspec-planning-agent` — Explore, Propose, and Review without production code.
   - `test-analysis-agent` — Owns the pre-Apply Test Case Matrix, readiness gate, and specialist allocation.
@@ -87,7 +82,6 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
   - `implementation-agent` — Applies authorized, apply-ready tasks with tests and evidence.
     - `frontend-implementation-agent` — Implements bounded approved frontend tasks from task-relevant Frontend/Integration SD decisions and the Contract-Ready interface.
   - `tdd-agent` — Implements TDD-routed tasks through Red-Green-Refactor.
-  - `convergence-review-agent` — Independently verifies code/artifact/evidence convergence.
 
 Agent-capable runtimes may execute independent specialists concurrently from the same validated baseline. Runtimes without sub-Agent support can execute the same routing sequentially; the Coordinator and handoff contracts remain authoritative in either case.
 
@@ -102,10 +96,8 @@ The portable `agents/` and `skills/` directories remain the only workflow source
 | `frontend_design` | `frontend-design-agent` | `system-design-agent` |
 | `quality_attributes` | `quality-attributes-agent` | `system-design-agent` |
 | `delivery_operations` | `delivery-operations-agent` | `system-design-agent` |
-| `system_design_review` | `system-design-review-agent` | `system-design-agent` |
 | `security_testing` | `security-testing-agent` | `test-analysis-agent` / `implementation-agent` |
 | `performance_testing` | `performance-testing-agent` | `test-analysis-agent` / `implementation-agent` |
-| `convergence_review` | `convergence-review-agent` | `spec-driven-development-agent` |
 
 To enable selected wrappers in Codex, copy their TOML files to a project's `.codex/agents/` directory or the user's `~/.codex/agents/` directory. They inherit the parent session's model, permissions, Skills, and MCP configuration unless the runtime configuration overrides them. The coordinators still own routing, compact context, authoritative artifacts, gates, and final status.
 
@@ -197,10 +189,8 @@ BRD objective/requirement
 agents/
 ├── architecture-agent/
 ├── business-agent/
-├── convergence-review-agent/
 ├── contract-testing-agent/
 ├── delivery-operations-agent/
-├── functional-requirements-agent/
 ├── frontend-design-agent/
 ├── frontend-implementation-agent/
 ├── implementation-agent/
@@ -208,15 +198,12 @@ agents/
 ├── interface-data-agent/
 ├── openspec-planning-agent/
 ├── performance-testing-agent/
-├── prd-agent/
 ├── product-agent/
 ├── quality-attributes-agent/
 ├── regression-testing-agent/
 ├── security-testing-agent/
-├── software-requirements-agent/
 ├── system-analysis-agent/
 ├── system-design-agent/
-├── system-design-review-agent/
 ├── system-e2e-testing-agent/
 ├── spec-driven-development-agent/
 ├── tdd-agent/
@@ -227,15 +214,15 @@ agents/
 skills/
 ├── backend-api-design-standard/
 ├── brd-standard/
-├── backend-caching-standard/
+├── cache-standard/
 ├── clean-code-standard/
 ├── code-comments/
 ├── backend-configuration-management-standard/
 ├── contract-testing-standard/
 ├── design-patterns/
-├── backend-database-persistence-standard/
+├── db-standard/
 ├── deployment-release-standard/
-├── backend-error-handling-standard/
+├── exception-error-standard/
 ├── frontend-architecture-standard/
 ├── frontend-build-delivery-standard/
 ├── frontend-component-design-standard/
@@ -247,8 +234,8 @@ skills/
 ├── frs-standard/
 ├── integration-testing-standard/
 ├── backend-layered-architecture-standard/
-├── logging-standard/
-├── backend-messaging-standard/
+├── log-trace-standard/
+├── message-standard/
 ├── object-oriented-design/
 ├── backend-operability-standard/
 ├── backend-performance-capacity-standard/
@@ -268,21 +255,18 @@ skills/
 ├── test-analysis-standard/
 ├── testing-strategy-standard/
 ├── unit-testing-standard/
-├── ui-testing-standard/
-└── tracing-standard/
+└── ui-testing-standard/
 
 adapters/
 └── codex/
     └── agents/
         ├── architecture.toml
-        ├── convergence_review.toml
         ├── delivery_operations.toml
         ├── frontend_design.toml
         ├── interface_data.toml
         ├── performance_testing.toml
         ├── quality_attributes.toml
-        ├── security_testing.toml
-        └── system_design_review.toml
+        └── security_testing.toml
 ```
 
 Each Skill contains a required `SKILL.md` plus optional references and metadata:

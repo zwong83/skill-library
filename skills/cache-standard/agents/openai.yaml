@@ -1,0 +1,6 @@
+interface:
+  display_name: "Cache Standard"
+  short_description: "Design and troubleshoot application caches"
+  default_prompt: "Use $cache-standard to review placement, keys, TTL, invalidation, and failure behavior."
+policy:
+  allow_implicit_invocation: true

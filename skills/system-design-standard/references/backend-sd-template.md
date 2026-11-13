@@ -28,7 +28,7 @@ Follow the reference's fixed per-feature construction: focused technical sequenc
 
 Define authoritative domain rules, source of truth, conceptual/logical/physical data models, keys/constraints, access paths, transactions/isolation/conflict behavior, lifecycle, privacy, retention/deletion, migration/backfill compatibility, indexing/partitioning/capacity assumptions, backup/restore, and recovery.
 
-Use `backend-database-persistence-standard` and [data-and-middleware-artifacts.md](data-and-middleware-artifacts.md) when durable state changes. Require a physical ERD, data dictionary, dialect/version-specific proposed DDL for affected structures, feature-linked parameterized DML/query catalog, transaction/concurrency matrix, index/access-path plan, and migration/backfill/validation/recovery artifacts. Link authoritative files under `output/SD/database/`; do not paste full copies into this document.
+Use `db-standard` and [data-and-middleware-artifacts.md](data-and-middleware-artifacts.md) when durable state changes. Require a physical ERD, data dictionary, dialect/version-specific proposed DDL for affected structures, feature-linked parameterized DML/query catalog, transaction/concurrency matrix, index/access-path plan, and migration/backfill/validation/recovery artifacts. Link authoritative files under `output/SD/database/`; do not paste full copies into this document.
 
 ## 5. Internal behavior and flows
 
@@ -40,7 +40,7 @@ Create the middleware register from [data-and-middleware-artifacts.md](data-and-
 
 For caches, define source of truth, key/value/TTL, invalidation, staleness, fallback, security, capacity, and observability. For messaging/streaming, define contract reference, topology, delivery/ordering, publish coordination, idempotency, acknowledgement/offset, retry, dead-letter/quarantine, replay, security, capacity, and operations. Apply equivalent completeness to search, scheduler, object storage, and other middleware actually selected.
 
-Use `backend-caching-standard` and `backend-messaging-standard` only when those technologies are selected. Load only the selected broker reference.
+Use `cache-standard` and `message-standard` only when those technologies are selected. Load only the selected broker reference.
 
 ## 7. Server security and privacy
 

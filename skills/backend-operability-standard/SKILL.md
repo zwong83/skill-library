@@ -50,7 +50,7 @@ A service is operationally ready only when:
 
 - Read [telemetry-alerts-and-diagnostics.md](references/telemetry-alerts-and-diagnostics.md) for operational questions, SLIs/SLOs, telemetry, dashboards, alerts, health, and safe diagnostics.
 - Read [runbooks-incidents-and-readiness.md](references/runbooks-incidents-and-readiness.md) for ownership, runbooks, incident response, maintenance, drills, support, and readiness review.
-- Invoke `logging-standard` and `tracing-standard` for concrete event and span contracts.
+- Invoke `log-trace-standard` for concrete event and span contracts.
 - Invoke `backend-resilience-standard` for runtime protection, health semantics, degradation, failover, and reconciliation design.
 - Invoke `deployment-release-standard` for deployment/release gates, rollback, feature exposure, and change evidence.
 - Invoke `backend-performance-capacity-standard` for capacity indicators, thresholds, forecasts, and saturation response.

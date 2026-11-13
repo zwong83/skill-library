@@ -60,7 +60,7 @@ A test strategy is ready only when:
 - Invoke `software-security-standard` for authoritative threat/control design and `security-testing-standard` for authorized, bounded verification of those controls.
 - Invoke `backend-performance-capacity-standard` for workload, performance, capacity, benchmark, load, stress, spike, soak, scalability, and performance-regression tests.
 - Invoke `backend-resilience-standard` for timeout, retry, overload, degradation, dependency-loss, failover, and recovery scenarios.
-- Invoke `backend-api-design-standard`, `backend-database-persistence-standard`, `backend-caching-standard`, and `backend-messaging-standard` for contract-, migration-, consistency-, and technology-specific tests.
+- Invoke `backend-api-design-standard`, `db-standard`, `cache-standard`, and `message-standard` for contract-, migration-, consistency-, and technology-specific tests.
 - Invoke `deployment-release-standard` and `backend-operability-standard` for pipeline gates, production verification, drills, telemetry, and operational readiness evidence.
 
 ## System Design and SDD Boundary

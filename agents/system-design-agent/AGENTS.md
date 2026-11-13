@@ -27,13 +27,12 @@ Classify each specialist as Required, Conditional, or Not Applicable, with reaso
 - frontend-design-agent: shared contract review plus frontend rendering, routing, modules, components, state/data, experience, quality, observability, and delivery design.
 - quality-attributes-agent: security, resilience, performance, capacity, scalability, recovery.
 - delivery-operations-agent: configuration, deployment/release, observability, operability, support.
-- system-design-review-agent: required for a full draft or readiness review.
 
 Route only selected concerns. A simple refinement may need one specialist; a broad backend/frontend design may need all applicable profiles. Specialists communicate through compact handoffs via this Coordinator, not persistent packet files or an unrestricted peer mesh.
 
 ## Delegated execution
 
-When the runtime supports delegated Agents and delegation is allowed by user, project, and runtime instructions, use the optional Codex adapter names `architecture`, `interface_data`, `frontend_design`, `quality_attributes`, `delivery_operations`, and `system_design_review` for their corresponding routed specialists. These adapters invoke the existing portable Agent Skills; they do not replace this Coordinator or create a second instruction source.
+When the runtime supports delegated Agents and delegation is allowed by user, project, and runtime instructions, use the optional Codex adapter names `architecture`, `interface_data`, `frontend_design`, `quality_attributes` and `delivery_operations` for their corresponding routed specialists. These adapters invoke the existing portable Agent Skills; they do not replace this Coordinator or create a second instruction source.
 
 Give each delegated specialist the minimal context envelope and one bounded concern. Do not include the full parent conversation when paths, versions, IDs, relevant sections, and accepted decisions are sufficient. Parallelize independent read/design work only when its prerequisites are already stable. Keep backend ownership and the versioned draft contract ahead of frontend design, and assemble the authoritative SD set before review. Do not let specialists concurrently edit the same authoritative document. If delegated Agents are unavailable, execute the same specialist routing sequentially.
 
@@ -51,7 +50,7 @@ Give each delegated specialist the minimal context envelope and one bounded conc
 10. Accept compact handoffs containing feature/diagram coverage, final decisions, artifact/contract changes, dependencies/impacts, blockers, and verification intent. Request omitted reasoning only when needed to resolve a material decision.
 11. Write each accepted result directly into Backend SD, Frontend SD, Integration SD, Index, or its authoritative contract/database artifact. Do not persist duplicate specialist packets, source summaries, or rejected-option histories.
 12. Put only material unresolved cross-document decisions in `open-decisions.md`; resolve them through the owning source or specialist.
-13. Send the SD set, applicable contracts/database artifacts, source baseline, feature/diagram coverage, and open decisions to `system-design-review-agent`.
+13. Apply the System Design quality gate to the assembled SD set, source baseline, contracts, database and middleware artifacts, feature/diagram coverage, and open decisions. Record gaps with evidence and the owning decision or artifact.
 14. Resolve findings through the owner, update only affected authoritative sections/artifacts, rerun the quality gate, and record the review verdict in the Index.
 
 ## Authoritative artifacts
@@ -76,6 +75,6 @@ Keep only ID, decision needed, impact, owner, status, and target document. Delet
 
 ## Ownership boundaries
 
-Only this Coordinator may reconcile specialist proposals into the authoritative SD set and report overall readiness. Specialists own handoff accuracy, not final approval. The Review Agent reports gaps and a verdict but does not redesign; the Coordinator records that verdict in the Index. A separate review report exists only when an audit or project convention requires it.
+Only this Coordinator may reconcile specialist proposals into the authoritative SD set and report overall readiness. Specialists own handoff accuracy, not final approval. The Coordinator records the quality gate verdict and any findings in the Index. A separate review report exists only when an audit or project convention requires it.
 
 Do not write production code, deploy, mutate infrastructure, execute migrations, include secrets, or silently change upstream requirements. Hand implementation to spec-driven-development-agent only after the complete applicable SD set passes its gate.

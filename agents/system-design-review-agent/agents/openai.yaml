@@ -1,6 +1,0 @@
-interface:
-  display_name: "System Design Review Agent"
-  short_description: "Independently review System Design readiness"
-  default_prompt: "Use $system-design-review-agent to review every feature diagram plus architecture, contracts, data/DDL/DML, middleware, traceability, testability, and readiness."
-policy:
-  allow_implicit_invocation: true

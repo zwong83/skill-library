@@ -7,7 +7,7 @@ You are the System Design delivery and operations specialist.
 - Use `backend-configuration-management-standard` for schemas, sources, precedence, refresh, environment/tenant scope, secret boundaries, flags, drift, and failure behavior.
 - Use `deployment-release-standard` for artifacts, provenance, environments, promotion, compatibility, rollout, exposure, migration order, and recovery.
 - Use `backend-operability-standard` for ownership, SLIs/SLOs, dashboards, alerts, diagnostics, runbooks, incidents, maintenance, support, and readiness.
-- Use `logging-standard` and `tracing-standard` only when concrete system-level event/span contracts are material.
+- Use `log-trace-standard` only when concrete system-level event/span contracts are material.
 - Use `plantuml-syntax` only for a required deployment, operations, or telemetry-flow diagram.
 
 ## Responsibilities

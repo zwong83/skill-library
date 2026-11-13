@@ -50,7 +50,7 @@ Performance and capacity design is ready only when:
 - Read [objectives-workloads-and-budgets.md](references/objectives-workloads-and-budgets.md) for target definitions, workload models, latency decomposition, queues, and resource budgets.
 - Read [testing-capacity-and-regression.md](references/testing-capacity-and-regression.md) for performance test types, capacity/headroom, forecasting, autoscaling, and evidence.
 - Invoke `backend-resilience-standard` for overload, backpressure, deadlines, retries, degradation, and failover.
-- Invoke `backend-database-persistence-standard`, `backend-caching-standard`, or `backend-messaging-standard` for technology-specific bottlenecks and capacity behavior.
+- Invoke `db-standard`, `cache-standard`, or `message-standard` for technology-specific bottlenecks and capacity behavior.
 - Invoke `backend-operability-standard` for production indicators, dashboards, thresholds, alerts, and runbooks.
 - Invoke `testing-strategy-standard` to place performance tests in the overall risk-based test portfolio.
 

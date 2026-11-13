@@ -13,7 +13,7 @@ Use this skill when an API is introduced, changed, reviewed, or implemented. Pro
 2. Define every operation's purpose, caller, authorization subject/action/resource, input, output, side effects, consistency, and completion semantics.
 3. For every field, specify type, format, constraints, required/optional status, nullable status, default behavior, omission semantics, repetition, and unknown-field behavior.
 4. Follow protocol semantics. For HTTP, use methods, status codes, headers, caching, and conditional requests consistently. For gRPC, define service methods, protobuf compatibility, status mapping, deadlines, and cancellation.
-5. Use stable, machine-readable errors. Coordinate public error contracts with `backend-error-handling-standard`; do not expose stack traces or internal implementation details.
+5. Use stable, machine-readable errors. Coordinate public error contracts with `exception-error-standard`; do not expose stack traces or internal implementation details.
 6. Define duplicate handling, idempotency, concurrency behavior, deadlines, cancellation, safe retry conditions, rate limits, and partial-success behavior.
 7. Prefer backward-compatible additive evolution. State versioning, support, deprecation, migration, and removal rules before the first breaking change.
 8. Keep transport DTOs separate from domain and persistence models when their responsibilities or evolution differ.
@@ -51,9 +51,9 @@ An API is implementation-ready only when:
 - Read [evolution-and-operations.md](references/evolution-and-operations.md) for compatibility, pagination, limits, observability, deprecation, and review checks.
 - Invoke `software-security-standard` for identity, authorization, isolation, sensitive data, validation, secrets, cryptography, audit, abuse controls, and security evidence.
 - Invoke `contract-testing-standard` for provider/consumer conformance and compatibility verification of the approved contract.
-- Invoke `backend-error-handling-standard` for the internal error model and public error translation.
+- Invoke `exception-error-standard` for the internal error model and public error translation.
 - Invoke `backend-resilience-standard` for deadlines, retries, circuit breakers, overload control, degradation, and recovery.
-- Invoke `logging-standard` and `tracing-standard` when event and span contracts are needed.
+- Invoke `log-trace-standard` when event and span contracts are needed.
 
 ## System Design and SDD Boundary
 

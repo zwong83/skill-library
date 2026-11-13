@@ -48,7 +48,7 @@ Do not comment obvious assignments, loops, branches, getters/setters, or syntax.
 ## Relationship to design and code quality
 
 - Use `object-oriented-design`, `solid-principles`, or `design-patterns` for structural design decisions; comments should explain the resulting non-obvious contract, not replace the design.
-- Use `logging-standard` for runtime diagnostic events. A comment is not runtime evidence, and a log message is not source documentation.
+- Use `log-trace-standard` for runtime diagnostic events. A comment is not runtime evidence, and a log message is not source documentation.
 - Use project coding/documentation standards for language-specific tags, formatting, generated docs, and lint rules.
 
 ## Expected output

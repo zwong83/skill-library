@@ -1,6 +1,0 @@
-interface:
-  display_name: "PRD Agent"
-  short_description: "Create and review product requirements"
-  default_prompt: "Use $prd-agent to create or review a PRD from an approved BRD baseline."
-policy:
-  allow_implicit_invocation: true

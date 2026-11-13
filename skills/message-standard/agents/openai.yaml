@@ -1,0 +1,6 @@
+interface:
+  display_name: "Messaging Standard"
+  short_description: "Design and troubleshoot asynchronous messaging"
+  default_prompt: "Use $message-standard to review message contracts, delivery guarantees, and broker behavior."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Structured log event baseline",
+  "type": "object",
+  "required": ["timestamp", "level", "service", "event", "message"],
+  "properties": {
+    "timestamp": {"type": "string", "format": "date-time"},
+    "level": {"type": "string", "enum": ["TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL"]},
+    "service": {"type": "string", "minLength": 1},
+    "event": {"type": "string", "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*$"},
+    "message": {"type": "string", "pattern": "^【[^】/]+/[^】]+】\\s+.+$"},
+    "trace_id": {"type": "string"},
+    "span_id": {"type": "string"},
+    "request_id": {"type": "string"},
+    "correlation_id": {"type": "string"},
+    "duration_ms": {"type": "number", "minimum": 0},
+    "error_code": {"type": "string"}
+  },
+  "additionalProperties": true,
+  "examples": [
+    {
+      "timestamp": "2026-10-05T08:10:00Z",
+      "level": "ERROR",
+      "service": "payment-service",
+      "event": "payment.failed",
+      "message": "【Payment/Create】 Payment failed",
+      "trace_id": "T1",
+      "payment_id": "P123",
+      "error_code": "PAYMENT_TIMEOUT"
+    }
+  ]
+}

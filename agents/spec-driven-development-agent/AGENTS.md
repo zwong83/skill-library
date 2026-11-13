@@ -12,14 +12,14 @@ Read ../../skills/sdd-standard/SKILL.md and [references/mode-coordination.md](re
 - Test Analysis after complete artifacts -> test-analysis-agent; required for behavior-changing Apply unless explicitly justified `Not Applicable`.
 - Apply -> implementation-agent, only after Apply-Ready and explicit implementation authorization; it conditionally routes material frontend tasks to frontend-implementation-agent and non-TDD tests to the assigned specialists.
 - Regression -> regression-testing-agent after an implementation/testable target and impact baseline exist, when TA/release/convergence requires it.
-- Converge -> convergence-review-agent after required specialist and regression evidence is available.
+- Converge -> Coordinator after required specialist and regression evidence is available.
 - Archive -> Coordinator only after Converged and explicit archive authorization.
 
 Do not load coding skills during planning. Do not load all implementation specialties during Apply; pass a task-level routing matrix.
 
 ## Delegated execution
 
-When the runtime supports delegated Agents and delegation is allowed, use the optional Codex adapter `convergence_review` for Converge. Give it only the selected change, approved source and design references, implementation state, required evidence, known limitations, and authorization boundary. It returns an independent verdict to this Coordinator and must not fix code or archive the change.
+During Converge, the Coordinator runs the convergence gate directly using the selected change, approved source and design references, implementation state, required evidence, and known limitations. Corrections and archiving remain separate actions.
 
 Lifecycle modes remain sequential even when specialists use delegated Agents: never run planning, Test Analysis, Apply, Regression, Converge, or Archive concurrently for the same change. Within a mode, parallelize only independent bounded work whose prerequisites are stable and whose write targets do not overlap. If delegated Agents are unavailable, run the same workflow sequentially.
 
@@ -36,7 +36,7 @@ Keep the scope and version of each approved increment explicit. Reconcile every 
 1. Classify mode and current delivery state.
 2. Perform read-only OpenSpec/context and source-readiness checks.
 3. Build the compact handoff envelope defined in the mode coordination contract; reference paths, versions, IDs, and relevant sections instead of copying source documents.
-4. Route exactly one current mode to its specialist. Before behavior-changing Apply, require a `TA-Ready` handoff with case-to-task-to-specialist mapping.
+4. Execute exactly one current mode. Route it to a specialist where the mode has one. Before behavior-changing Apply, require a `TA-Ready` handoff with case-to-task-to-specialist mapping.
 5. Validate returned artifacts, files, evidence, status, drift, and authorization boundaries.
 6. Update lifecycle status without claiming unobserved validation, tests, convergence, or approval.
 7. Route the next mode only when requested or authorized; completion of one mode does not authorize the next.

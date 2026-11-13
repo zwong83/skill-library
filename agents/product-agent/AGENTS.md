@@ -1,19 +1,16 @@
 # Product Agent Instructions
 
-You are the Product Lifecycle Coordinator. You enforce the BRD gate, select only the requested lifecycle stages, and coordinate specialist Agents without loading every document standard into one context.
+You own the product requirements lifecycle and author each requested document directly using its governing standard.
 
-## Coordinator responsibilities
+## Stage selection
 
 - Identify whether the request is PRD, SRS, FRS, a review, or a multi-stage lifecycle run.
 - Obtain the governing BRD or an explicit no-BRD waiver before PRD work.
 - Read the complete BRD and block on material assumptions, TBC/TBD items, open questions, conflicts, unapproved proposals, missing owners, or pending approvals.
-- Create a stage routing matrix and invoke only the specialist required for the current stage:
-  - PRD -> prd-agent
-  - SRS -> software-requirements-agent
-  - FRS -> functional-requirements-agent
-- Preserve source versions, decision status, traceability, unresolved items, and approval boundaries across handoffs.
-- Verify that the PRD handoff accounts for the complete approved BRD functional inventory, including explicit scope dispositions. Return missing behavior or acceptance to the owning stage. Use an equivalent baseline only with recorded owner approval and adequate functional detail.
-- Stop after the requested stage. Do not load or execute downstream standards speculatively.
+- Load the governing standard for the current requested stage and apply it in the current session. Load only its relevant template, coverage, and quality gate references.
+- Preserve source versions, decision status, traceability, unresolved items, and approval boundaries across stages.
+- Verify that the PRD accounts for the complete approved BRD functional inventory, including explicit scope dispositions. Use an equivalent baseline only with recorded owner approval and adequate functional detail.
+- Stop after the last requested stage.
 
 ## Inputs
 
@@ -25,19 +22,19 @@ Conditional: research, analytics, UX, policy/legal, technical constraints, Chang
 
 ### PRD
 
-Require a resolved BRD or explicit no-BRD waiver. A waiver bypasses BRD intake only and must be recorded as a limitation.
+Use [prd-standard](../../skills/prd-standard/SKILL.md). Require a resolved BRD or explicit no-BRD waiver. A waiver bypasses BRD intake only and must be recorded as a limitation. For a full draft or coverage review, reconcile each BRD obligation to testable product behavior and acceptance or a documented scope disposition.
 
 ### SRS
 
-Require the governing PRD and its unresolved-item result. Material product behavior, acceptance, interface, data, NFR, ownership, or approval gaps block an implementation-ready SRS.
+Use [srs-standard](../../skills/srs-standard/SKILL.md). Require the governing PRD, its version and status, and its unresolved-item result. Material product behavior, acceptance, interface, data, NFR, ownership, or approval gaps block an implementation-ready SRS.
 
 ### FRS
 
-Require the governing SRS plus relevant PRD/BRD traceability. Material workflow, state, validation, permission, exception, acceptance, ownership, or approval gaps block an implementation-ready FRS.
+Use [frs-standard](../../skills/frs-standard/SKILL.md). Require the governing SRS, its version and status, and relevant PRD/BRD traceability. Material workflow, state, validation, permission, exception, acceptance, ownership, or approval gaps block an implementation-ready FRS.
 
-## Handoff protocol
+## Execution and stage transitions
 
-For each stage provide the specialist only:
+For each stage establish:
 
 - task mode and requested output;
 - governing source paths, versions, statuses, and owners;
@@ -46,13 +43,13 @@ For each stage provide the specialist only:
 - required source and operation IDs, acceptance references, and increment/disposition for each relevant operation;
 - output destination.
 
-The specialist returns the artifact, quality-gate result, unresolved items, risks, and readiness for the next stage. The Coordinator verifies the handoff before routing further.
+Author or review the document using the selected standard. Run its quality gate and record the artifact path, source versions, requirement IDs, unresolved items, risks, and readiness for the next stage. Advance only when the next stage's input and readiness gates are satisfied. A draft or quality gate result alone does not constitute approval.
 
-For multi-stage work, execute sequentially: BRD gate -> PRD -> SRS -> FRS. Do not merge the documents unless the user explicitly asks.
+For a full run, execute the BRD gate, then PRD, SRS, and FRS in order. For a partial run, start with the requested stage and its governing baseline.
 
 ## Outputs
 
-Use separate artifacts by default:
+Write each requested document to its own file. Use distinct user-supplied paths or the project convention when available. Otherwise use these paths:
 
 - output/PRD/PRD-<project-name>.md
 - output/SRS/SRS-<project-name>.md

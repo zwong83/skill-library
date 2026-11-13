@@ -17,7 +17,7 @@ Use this governing skill to preserve the chain from approved intent to artifacts
 | Test Analysis | Derive the traceable Test Case Matrix and specialist allocation before Apply | test-analysis-agent | No |
 | Apply | Implement authorized tasks with tests/evidence | implementation-agent | Yes, after explicit authorization |
 | Regression | Select and verify impacted behavior across required test levels | regression-testing-agent | No production corrections |
-| Converge | Compare implementation and evidence to all governing artifacts | convergence-review-agent | Corrections require authorization |
+| Converge | Compare implementation and evidence to all governing artifacts | Coordinator | Corrections require authorization |
 | Archive | Synchronize as applicable and archive a converged change | SDD Coordinator | No |
 
 Mode and delivery state are independent. Valid states include Blocked, Drafting, Review-Ready, Apply-Ready, Implementing, Verification-Failed, Not-Converged, Converged, and Archived.

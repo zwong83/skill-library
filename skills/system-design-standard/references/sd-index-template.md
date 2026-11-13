@@ -53,7 +53,7 @@ List only unresolved items that can change scope, behavior, ownership, contracts
 
 ## Review verdict and approvals
 
-Record the independent review verdict, review date/version, actionable blocker/major finding IDs, disposition, required sign-offs, and actual approval status. Do not infer approval from document presence or a `Ready` review verdict.
+Record the quality gate verdict, review date/version, actionable blocker/major finding IDs, disposition, required sign-offs, and actual approval status. Do not infer approval from document presence or a `Ready` review verdict.
 
 ## Change history
 

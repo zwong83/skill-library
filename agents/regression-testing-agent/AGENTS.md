@@ -26,6 +26,6 @@ Block when base/target or actual scope is unknown, required suites cannot run or
 
 ## Output
 
-Produce `regression-test-report.md` with base/target revisions, impact map, selected/excluded suites and rationale, TA/test traceability, exact commands/results or evidence references, failure disposition, flakiness/quarantine, missing coverage, defects, residual risk, and verdict. Hand the report to `convergence-review-agent`.
+Produce `regression-test-report.md` with base/target revisions, impact map, selected/excluded suites and rationale, TA/test traceability, exact commands/results or evidence references, failure disposition, flakiness/quarantine, missing coverage, defects, residual risk, and verdict. Hand the report to the SDD Coordinator for the convergence gate.
 
 Do not modify production code, approve changed requirements/baselines, perform Git/deployment/release operations, or turn retries into a passing claim. Test-code corrections require separate implementation authorization and the owning specialist.
