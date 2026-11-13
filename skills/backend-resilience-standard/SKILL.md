@@ -22,39 +22,58 @@ Use this skill when a system depends on remote services, databases, brokers, cac
 11. Design recovery, reconciliation, replay, and manual intervention as first-class flows.
 12. Instrument every control so operators can distinguish normal protection from hidden failure.
 
-## Workflow
+## Mandatory Workflow
 
-1. Map critical user journeys, components, dependencies, shared resources, and failure domains.
+**Complete steps 1 through 10 in order for every resilience design, implementation, or review.** Record an outcome for every step. For an existing system, confirm applicable decisions against the approved design and current evidence. Explain each `Not applicable` outcome. Mark a step `Blocked` when a required input or decision is missing and stop dependent work.
+
+1. Identify the affected scope and task mode. Map critical user journeys, components, dependencies, shared resources, and failure domains.
 2. Define SLOs, latency budgets, availability targets, consistency requirements, RPO, RTO, and acceptable degraded modes.
-3. Enumerate failures: timeout, refusal, partial response, slow response, overload, stale data, duplicate, reordering, corruption, regional loss, and operator error.
+3. Identify the failure modes that matter to the scope, including slow or failed dependencies, partial or unknown outcomes, overload, stale or inconsistent data, infrastructure loss, and operator error. For each material failure, identify the affected requirement and shortlist controls using [control selection and reference routing](#control-selection-and-reference-routing).
 4. Allocate deadlines and cancellation behavior across the call chain.
-5. Define retry eligibility, ownership, backoff, jitter, maximum attempts, elapsed budget, and idempotency.
-6. Define circuit, bulkhead, concurrency, queue, backpressure, rate-limit, and load-shed controls only where justified.
-7. Define fallback, degradation, recovery, reconciliation, failover, and failback.
-8. Define health, readiness, liveness, metrics, logs, traces, alerts, runbooks, and control-plane safety.
-9. Verify normal, degraded, overload, dependency-loss, recovery, and disaster scenarios.
-10. Review against the readiness gate.
+5. Decide whether retries are safe and useful for each affected operation. Where selected, define eligibility, ownership, backoff, jitter, maximum attempts, elapsed budget, and idempotency.
+6. Select the circuit, isolation, and overload controls that fit the failure and resource constraints. Define applicable thresholds, limits, placement, and rejection behavior.
+7. Select safe failure, degradation, and recovery behavior. Define fallback, reconciliation, failover, and failback where the requirements justify them.
+8. Define applicable health, readiness, liveness, metrics, logs, traces, alerts, runbooks, and control-plane safety.
+9. Specify scenarios and acceptance criteria for the selected controls, covering normal behavior and the relevant failure and recovery paths. For implementation, run the applicable authorized checks. For review, assess the available evidence. Report checks that have yet to run as pending.
+10. Apply the readiness gate. Record the decision, evidence, unresolved gaps, and the owner and next action for each blocker.
 
 ## Readiness Gate
 
-Resilience design is implementation-ready only when:
+Claim implementation readiness only after all ten steps have recorded outcomes and the applicable criteria below are satisfied. A blocked step prevents readiness for the affected work.
 
 - critical journeys, dependencies, shared resources, failure domains, and SLOs are known;
 - deadline and cancellation budgets are allocated end to end;
-- retryable outcomes, retry owner, idempotency, backoff, jitter, and budgets are explicit;
-- circuit, isolation, queue, overload, and rate controls have thresholds and safe behavior;
-- degraded modes and fail-open/fail-closed decisions are approved;
+- retry eligibility is explicit, including ownership, idempotency, backoff, jitter, and budgets where retries are enabled;
+- selected circuit, isolation, queue, overload, and rate controls have thresholds and safe behavior;
+- degraded modes and fail-open or fail-closed decisions are approved where applicable;
 - health probes, recovery, reconciliation, failover, and failback are defined;
 - observability, alerts, runbooks, and verification scenarios exist;
 - unresolved safety or correctness decisions block affected implementation.
 
-## Reference Routing
+## Control Selection and Reference Routing
 
-- Read [dependency-failure-controls.md](references/dependency-failure-controls.md) for deadlines, cancellation, retries, circuit breakers, bulkheads, and dependency policies.
-- Read [overload-health-and-recovery.md](references/overload-health-and-recovery.md) for backpressure, load shedding, rate limits, health probes, degradation, recovery, and disaster behavior.
+For each material failure, compare plausible controls against the end-to-end time budget, correctness and safety constraints, failure domain, and recovery objectives. Choose the simplest control or combination that satisfies the requirements. An existing control can be retained when evidence shows it is sufficient. Check interactions such as retries adding load, queue wait consuming a deadline, and probes affecting recovery.
+
+Open the reference section that answers the current decision. Once a control is selected, follow the applicable rules in its section and use them as verification criteria. Add another section only when a separate requirement or finding calls for it. Record the failure addressed, rationale, owner, limits or triggers, behavior on activation, and how to verify the control.
+
+| Requirement or failure | Candidate to evaluate | Rules to follow when selected |
+|---|---|---|
+| Remote or blocking work can exceed its useful time | Deadlines, stage timeouts, and cancellation | [Deadlines and cancellation](references/dependency-failure-controls.md#deadlines-and-cancellation) |
+| A transient failure can be retried within budget without duplicate effects | Bounded retries with backoff and jitter | [Retries](references/dependency-failure-controls.md#retries) |
+| Sustained dependency failure needs a recovery interval and there is a safe response while calls are blocked | Circuit breaker | [Circuit breakers](references/dependency-failure-controls.md#circuit-breakers) |
+| One workload can starve another of shared resources | Separate pools, workers, or other bulkheads | [Bulkheads and resource isolation](references/dependency-failure-controls.md#bulkheads-and-resource-isolation) |
+| Finite capacity or traffic bursts threaten useful work | Bounded concurrency or queues, backpressure, admission control, or load shedding | [Overload control](references/overload-health-and-recovery.md#overload-control) |
+| Work must be limited over time or by caller, tenant, or operation | Scoped rate limits | [Rate limiting](references/overload-health-and-recovery.md#rate-limiting) |
+| A caller must distinguish failure outcomes or know whether work may have succeeded | Stable failure translation | [Failure translation](references/dependency-failure-controls.md#failure-translation) |
+| A reduced service can still meet safety and correctness requirements | Fallback or an approved degraded mode | [Degradation and fallback](references/overload-health-and-recovery.md#degradation-and-fallback) |
+| Traffic admission, startup, or process restart depends on health | Readiness, startup, or liveness probes | [Health, readiness, and liveness](references/overload-health-and-recovery.md#health-readiness-and-liveness) |
+| Partial or unknown outcomes, data loss, or infrastructure failure require recovery | Reconciliation, compensation, restore, or failover and failback | [Recovery and reconciliation](references/overload-health-and-recovery.md#recovery-and-reconciliation) |
+
+- Use [dependency policy](references/dependency-failure-controls.md#dependency-policy) when recording the combined policy for a dependency.
+- Use [verification scenarios](references/overload-health-and-recovery.md#verification-scenarios) for the failure paths covered by step 9.
 - Invoke `backend-api-design-standard` for public deadline, cancellation, idempotency, throttling, and error semantics.
 - Invoke `exception-error-standard` for typed failures, retry classification, translation, compensation, and terminal handling.
-- Invoke `cache-standard` and `message-standard` for technology-specific consistency, fallback, replay, and delivery behavior.
+- Invoke `cache-standard` for cache consistency or fallback and `message-standard` for broker replay or delivery behavior when the respective dependency is in scope.
 - Invoke `log-trace-standard` for concrete protection, degradation, and recovery telemetry.
 - Invoke `software-security-standard` when fail-open behavior, abuse controls, identity, authorization, or sensitive data are involved.
 
@@ -70,4 +89,4 @@ Use official client, protocol, runtime, orchestrator, and dependency documentati
 
 ## Expected Output
 
-Return the dependency and failure model, SLO and time-budget allocation, retry and idempotency policy, circuit and isolation controls, overload and rate policy, degraded modes, health semantics, recovery and disaster plan, observability and runbooks, verification scenarios, assumptions, and unresolved decisions.
+Return a numbered record of the ten workflow outcomes. For each affected failure, record the requirement, selected controls and rationale, operating limits, owner, and verification evidence or pending checks. For a full design, include the dependency and failure model, budgets, recovery and degraded behavior, observability, runbooks, and readiness verdict.
