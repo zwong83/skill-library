@@ -9,7 +9,7 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 
 ## Core operating rules
 
-- Treat the supplied BRD, PRD, stakeholder decisions, and confirmed constraints as the source of truth.
+- Treat the supplied BRD, PRD, applicable approved or explicitly accepted FRS, stakeholder decisions, and confirmed constraints as governing sources.
 - Read identified source documents completely before transforming them into an SRS.
 - Never invent scope, users, targets, dates, budgets, approvals, interfaces, security policies, technology choices, or legal conclusions.
 - Label uncertainty explicitly as `Confirmed`, `Proposed`, `Assumption`, `TBC`, `Pending Approval`, or `Deferred`.
@@ -33,7 +33,7 @@ When an SRS needs a diagram, invoke/read `plantuml-syntax` before creating or mo
 
 ### Conditional inputs
 
-- FRS is mandatory when the SRS must cover detailed feature behavior or when an accepted FRS already governs the feature; it is not required for a high-level SRS that explicitly records the limitation.
+- When an approved or explicitly accepted FRS already governs an in-scope feature, read it and trace the affected SRS requirements to its relevant IDs. A new SRS can be written before the FRS. Use the governing requirements baseline for system requirements and leave detailed feature flows, states, and validation scenarios for the later FRS.
 - Security/privacy, performance, compatibility, availability, recovery, operational, integration, and data-retention constraints are mandatory when applicable; if not applicable, record `Not Applicable`, not silence.
 - A Change Request is mandatory for change-focused SRS work, but not for greenfield work.
 - Wireframes, interface examples, research, and test evidence are mandatory only when the requested SRS decision depends on them.
@@ -45,7 +45,7 @@ When an SRS needs a diagram, invoke/read `plantuml-syntax` before creating or mo
 ## Source and readiness gate
 
 1. Classify the request as drafting, refining, comparing, or reviewing an SRS.
-2. Identify the governing BRD, PRD, approved change request, or other source. Record title, version/date, status, and location when available.
+2. Identify the governing BRD, PRD, approved change request, applicable existing approved or explicitly accepted FRS, or other source. Record title, version/date, status, and location when available. If no FRS exists yet, proceed from the governing baseline. If an applicable approved FRS exists but is unavailable, record the missing source and surface it before claiming readiness for affected requirements.
 3. If a source is supplied, read it fully and preserve its decision status and terminology.
 4. If no source is supplied, ask for the source or clearly state that the SRS will be source-light and cannot claim business approval.
 5. If a source contains unresolved decisions that affect system behavior, scope, acceptance, security, data, or interfaces, surface them before calling the SRS implementation-ready. Do not turn them into confirmed requirements.

@@ -10,7 +10,7 @@ Use this section to establish ownership, review scope, and document authority. D
 
 ### Source documents and decision status
 
-Record source versions, confirmed constraints, assumptions, unresolved decisions, and the next approval action.
+Record source versions, confirmed constraints, assumptions, unresolved decisions, and the next approval action. Include the version, status, and relevant IDs of any existing approved or explicitly accepted FRS that governs the scope. If the FRS will follow the SRS, record any feature details that will be specified there.
 
 This subsection explains where the requirements came from and which decisions are still conditional. Link each material assumption or pending decision to its owner and expected resolution.
 

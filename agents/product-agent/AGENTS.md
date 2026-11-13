@@ -26,7 +26,7 @@ Use [prd-standard](../../skills/prd-standard/SKILL.md). Require a resolved BRD o
 
 ### SRS
 
-Use [srs-standard](../../skills/srs-standard/SKILL.md). Require the governing PRD, its version and status, and its unresolved-item result. Material product behavior, acceptance, interface, data, NFR, ownership, or approval gaps block an implementation-ready SRS.
+Use [srs-standard](../../skills/srs-standard/SKILL.md). Require the governing PRD, its version and status, and its unresolved-item result. Write the SRS before the new FRS. Use any existing approved or explicitly accepted FRS that governs the scope as an additional source. Material product behavior, acceptance, interface, data, NFR, ownership, or approval gaps block an implementation-ready SRS.
 
 ### FRS
 

@@ -5,7 +5,8 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not convert gaps int
 ## Input readiness
 
 - Mandatory task, system identity, requirements baseline, and mode-specific source inputs are present.
-- Applicable FRS, security/privacy, performance, operational, integration, data-retention, and Change Request inputs are supplied or explicitly marked `Not Applicable`.
+- A new SRS can pass the input gate before the FRS is written. Detailed feature behavior belongs in the later FRS. If an existing approved or explicitly accepted FRS governs the scope, its relevant requirements are reflected in the SRS and traced to source IDs.
+- Applicable security/privacy, performance, operational, integration, data-retention, and Change Request inputs are supplied or explicitly marked `Not Applicable`.
 - Optional examples, diagrams, and implementation suggestions are not treated as blockers or approvals.
 
 ## Source and scope
