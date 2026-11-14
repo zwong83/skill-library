@@ -19,7 +19,7 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 
 | Changed concern | Conditional skill |
 |---|---|
-| Module/layer/object/pattern | `backend-layered-architecture-standard`, conditional OOD/SOLID/patterns |
+| Module/layer/object/pattern | `backend-layered-architecture-standard` for module layering. Use `clean-code-standard` for the relevant object-modeling, SOLID, or pattern references. |
 | API/service contract mapping | `backend-api-design-standard` |
 | Persistence/transactions/migrations | `db-standard` |
 | Resilience behavior | `backend-resilience-standard` |
@@ -49,7 +49,7 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 | Authorized security control verification | `security-testing-standard` |
 | Cross-level regression | `regression-testing-standard` |
 | Red-Green-Refactor | `tdd-standard` |
-| Non-obvious comments/contracts | `code-comments` |
+| Non-obvious comments/contracts | Relevant comment or API documentation reference from `clean-code-standard` |
 
 These skills map and verify approved decisions; they do not authorize a new strategy. Escalate material architecture, contract, ownership, consistency, security, recovery, deployment, operational, or test-strategy changes to System Design or the owning requirements artifact.
 

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Design Patterns"
-  short_description: "Choose patterns across languages"
-  default_prompt: "Use $design-patterns to evaluate language-appropriate design patterns for this design problem."
-policy:
-  allow_implicit_invocation: true

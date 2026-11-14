@@ -47,3 +47,7 @@ This catalog describes pattern intent without assuming a programming language. F
 - **Mediator vs Observer:** Mediator coordinates interactions; Observer publishes notifications. Decide whether a command/response or an event is intended.
 - **Factory vs Builder:** Factory chooses or creates a product; Builder assembles a complex value and validates construction.
 - **Template Method vs Strategy:** Template Method fixes the skeleton and varies steps; Strategy replaces an algorithm as a collaborator. Prefer the form that matches the change boundary and language idiom.
+
+## Pattern decision
+
+Record the problem, requirement or code evidence, constraints, and the simplest direct alternative. For the selected approach, identify the target-language roles, ownership, lifecycle, and extension point. Explain the cost in indirection, debugging, or resources and define the checks that verify the behavior. Cover failure, concurrency, and observability where the pattern changes them.

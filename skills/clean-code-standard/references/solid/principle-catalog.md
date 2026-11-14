@@ -1,5 +1,7 @@
 # SOLID Principle Catalog
 
+Start with a concrete difficulty such as repeated edits, a broken contract, a dependency cycle, or costly test setup. Review only the principles that explain it. Compare the current design, a minimal correction, and a language-native alternative. For each finding, report the evidence, affected contract, impact, correction, and verification. Distinguish a confirmed defect from a concern or optional improvement.
+
 ## Single Responsibility Principle
 
 A boundary should have one coherent responsibility and one primary reason to change at its abstraction level. The boundary may contain multiple operations when they protect the same invariant or support one capability.

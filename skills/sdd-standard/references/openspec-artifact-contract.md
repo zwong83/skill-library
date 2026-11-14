@@ -87,7 +87,7 @@ For each material decision, state:
 
 Use specialized skills in SDD as implementation-mapping and conformance references, not as permission to reselect the approved System Design. If a required material decision is absent or the implementation cannot conform, block and escalate to SD.
 
-- Invoke `object-oriented-design`, `solid-principles`, and `design-patterns` only to map or verify an approved object/module/pattern direction into concrete class, interface, protocol, responsibility, identity/value, relationship, ownership, lifecycle, dependency, and collaboration details. A new material paradigm or pattern decision belongs in SD. Do not force these abstractions onto a clearer language-native implementation.
+- Use the relevant `clean-code-standard` references to map or verify an approved object, module, or pattern direction, including applicable responsibilities, identities, contracts, ownership, lifecycle, dependencies, and collaboration. A new material paradigm or pattern decision belongs in SD. Do not force these abstractions onto a clearer language-native implementation.
 - Invoke `backend-layered-architecture-standard` only to map or verify approved module/layer boundaries, dependency direction, ports/adapters, transactions, composition, and test seams. Any material boundary or ownership change belongs in SD.
 - Invoke `backend-api-design-standard` only to map or verify approved protocol, operations, schemas, authorization boundaries, errors, idempotency, pagination, limits, compatibility, and deprecation into framework code and contract tests. A material public or internal contract change belongs in SD.
 - Invoke `db-standard` only to map or verify approved datastore, ownership, schema, constraints, access paths, transactions, isolation, migrations, retention, and recovery into concrete persistence code and tests. A material ownership, datastore, invariant, or consistency change belongs in SD.
@@ -124,7 +124,7 @@ Every task must:
 - include required tests or other evidence;
 - include migration, documentation, observability, rollout, rollback, and cleanup work when applicable;
 - apply `clean-code-standard` to production-code writing/refactoring and include naming, function/control-flow, nullability, side-effect, resource-lifecycle, and project-standard verification where applicable;
-- include `code-comments` work only for public contracts or non-obvious intent, invariants, concurrency, security, compatibility, algorithms, and workarounds; do not add a task to narrate obvious code;
+- use the comment and API documentation guidance in `clean-code-standard` when a public contract or non-obvious intent, invariant, concurrency constraint, security constraint, compatibility concern, algorithm, or workaround needs explanation;
 - be small enough to implement and verify without hiding unrelated changes;
 - respect dependency order.
 

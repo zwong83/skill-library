@@ -26,10 +26,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `frontend-observability-standard` — Define client errors, RUM, journey events, correlation, release/source-map, privacy, dashboards, and alerts.
 - `frontend-build-delivery-standard` — Define reproducible frontend builds, artifacts, public configuration, caching, promotion, rollout, and rollback.
 - `plantuml-syntax` — Reference PlantUML syntax and diagram types for requirements and system documentation.
-- `clean-code-standard` — Write, refactor, and review maintainable code using language-neutral naming, function, control-flow, failure, nullability, side-effect, and verification guidance.
-- `design-patterns` — Select and explain language-appropriate design patterns without forcing Java/Spring or any other ecosystem’s implementation style.
-- `object-oriented-design` — Model responsibilities, identity, values, invariants, relationships, ownership, lifecycle, and object collaboration using language-appropriate abstractions.
-- `solid-principles` — Review object-oriented and modular design quality using language-neutral SOLID reasoning without forcing extra abstractions.
+- `clean-code-standard` — Write, refactor, and review maintainable code with a mandatory workflow and task-selected guidance for naming, control flow, comments, object design, patterns, and SOLID.
 - `backend-layered-architecture-standard` — Design and review language-neutral layers, modules, dependency direction, ports/adapters, transaction ownership, and test seams.
 - `backend-api-design-standard` — Design stable HTTP, gRPC, GraphQL, and internal service contracts, compatibility, limits, security boundaries, and evolution.
 - `db-standard` — Design durable-data ownership, stores, schemas, access paths, transactions, migrations, retention, backup, and restore.
@@ -50,7 +47,6 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `cache-standard` — Design and review cache necessity, source of truth, keys, TTL, consistency, invalidation, resilience, Redis and Memcached integration, and cache operations.
 - `message-standard` — Design and review message contracts, delivery, idempotency, ordering, retry, dead letters, replay, and Kafka, RabbitMQ, RocketMQ, and Pulsar behavior.
 - `log-trace-standard` — Design, implement, and troubleshoot structured logs and distributed traces, including redaction, sinks, propagation, sampling, and correlation.
-- `code-comments` — Write and review maintainable comments and docstrings that explain intent, contracts, invariants, risks, and non-obvious constraints.
 - `sdd-standard` — Turn an approved requirements, SA, and SD baseline into an OpenSpec change, implementation tasks, verification evidence, convergence, and archive.
 
 ### Agents
@@ -214,9 +210,7 @@ skills/
 ├── brd-standard/
 ├── cache-standard/
 ├── clean-code-standard/
-├── code-comments/
 ├── contract-testing-standard/
-├── design-patterns/
 ├── db-standard/
 ├── deployment-release-standard/
 ├── exception-error-standard/
@@ -234,7 +228,6 @@ skills/
 ├── backend-layered-architecture-standard/
 ├── log-trace-standard/
 ├── message-standard/
-├── object-oriented-design/
 ├── plantuml-syntax/
 ├── prd-standard/
 ├── regression-testing-standard/
@@ -242,7 +235,6 @@ skills/
 ├── sdd-standard/
 ├── security-testing-standard/
 ├── software-security-standard/
-├── solid-principles/
 ├── srs-standard/
 ├── system-analysis-standard/
 ├── system-design-standard/
@@ -314,7 +306,7 @@ Every diagram should have a title, scope, explanation, source traceability, and 
 - Resolve or visibly record unresolved decisions; do not silently invent answers.
 - Keep requirements and design artifacts testable and traceable.
 - Apply object-oriented design, SOLID, and design patterns conditionally according to the selected language, paradigm, problem, and lifecycle stage.
-- Use `clean-code-standard` as the implementation/refactoring review entrypoint; keep naming and function/control-flow guidance in it while routing structural concerns to the specialized Skills.
+- Use `clean-code-standard` for implementation, refactoring, and focused object or module design. Load only the references needed for the task.
 - Make layer/dependency, error, caching, and messaging behavior explicit at SD level and concrete/testable at SDD level; do not introduce infrastructure without a requirement.
 - For frontend scope, establish backend domain/data/transaction/security authority first, jointly reach a versioned `Contract-Ready` interface, then allow backend and frontend detailed design and implementation tasks to proceed in parallel through the shared SD/SDD lifecycle.
 - Keep authoritative business rules and authorization on the server; frontend architecture, components, state/data, experience, performance, security, observability, and delivery map approved outcomes without creating a competing source of truth.

@@ -14,7 +14,7 @@ Block when expected behavior is unresolved, assigned cases lack an oracle, the b
 
 - Read `../../skills/unit-testing-standard/SKILL.md` and its applicable references.
 - Use `tdd-standard` only when the task is explicitly routed for Red-Green-Refactor; an end-to-end TDD task remains owned by `tdd-agent`.
-- Use `clean-code-standard` and `code-comments` only for authorized test-code maintainability concerns.
+- Use `clean-code-standard` only for authorized test-code maintainability concerns. Load its comment guidance when a test contract or non-obvious constraint needs explanation.
 
 ## Responsibilities
 

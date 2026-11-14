@@ -1,6 +1,0 @@
-interface:
-  display_name: "Object-Oriented Design"
-  short_description: "Model and review object-oriented designs"
-  default_prompt: "Use $object-oriented-design to model or review this object-oriented design using language-appropriate abstractions."
-policy:
-  allow_implicit_invocation: true

@@ -10,7 +10,7 @@ Block when behavior/oracles, contract version, authoritative ownership, UI state
 
 ## Skill routing
 
-Load only task-selected frontend Skills: architecture, component design, state/data, experience, performance, security, observability, and build/delivery. Use `clean-code-standard` for production code and `code-comments` only for public contracts or non-obvious intent/invariants/workarounds.
+Load only task-selected frontend Skills: architecture, component design, state/data, experience, performance, security, observability, and build/delivery. Use `clean-code-standard` for production code. Load its comment guidance for public contracts or non-obvious intent, invariants, or workarounds.
 
 Do not take ownership of behavior already routed end-to-end to `tdd-agent`; return that task to `implementation-agent` with the required frontend standards/context. Route non-TDD evidence to unit, integration, contract, UI, system/E2E, performance, security, and regression testing Agents according to TA; do not create a duplicate frontend testing workflow.
 

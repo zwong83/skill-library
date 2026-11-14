@@ -16,7 +16,7 @@ For brownfield scope, include current context/container/deployment views and the
 
 Define responsibilities, ownership, lifecycle, allowed/forbidden dependencies, composition root, ports/adapters where selected, transaction/failure ownership, and test seams. Include a component/dependency diagram that maps feature IDs to owning modules. Do not force a layer count or OOP model.
 
-Use `backend-layered-architecture-standard` when boundaries or dependency direction are material. Use `object-oriented-design`, `solid-principles`, or `design-patterns` only when the selected implementation paradigm and real design decision require them.
+Use `backend-layered-architecture-standard` when boundaries or dependency direction are material. Use the relevant `clean-code-standard` references for object modeling, SOLID, or patterns when a material design decision requires them.
 
 ## 3. Feature technical design
 

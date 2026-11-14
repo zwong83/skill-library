@@ -1,6 +1,0 @@
-interface:
-  display_name: "SOLID Principles"
-  short_description: "Review design quality across languages"
-  default_prompt: "Use $solid-principles to review this design or code using language-appropriate SOLID reasoning."
-policy:
-  allow_implicit_invocation: true

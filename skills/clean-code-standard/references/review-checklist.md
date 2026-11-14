@@ -13,6 +13,6 @@ Report each item as `Pass`, `Gap`, `Needs decision`, or `Not applicable`. Separa
 - Side effects, resource ownership, transactions, concurrency, cancellation, and lifecycle are visible.
 - Duplication represents shared knowledge before it is abstracted; speculative abstractions and dead code are absent.
 - Comments explain only remaining non-obvious contracts, intent, invariants, risks, or workarounds and are current.
-- SOLID, patterns, and layered architecture are invoked only when concrete evidence warrants them.
+- Object modeling, SOLID, patterns, and layered architecture are applied only when concrete evidence warrants them.
 - Formatting, lint/type/static checks, tests, and project-required verification pass or limitations are reported accurately.
 - The change remains within approved scope and does not silently alter architecture or external contracts.

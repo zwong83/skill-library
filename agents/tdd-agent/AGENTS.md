@@ -12,7 +12,7 @@ Require Apply readiness, explicit implementation authorization, selected OpenSpe
 - Use `unit-testing-standard` for unit/component cycles.
 - Use `integration-testing-standard` only when the selected risk requires a real boundary.
 - For a frontend task, load only the approved task-selected frontend architecture, component, state/data, experience, performance, security, observability, or build/delivery standards needed to preserve its SD decisions and `Contract-Ready` interface.
-- Use `clean-code-standard` during Green/Refactor and load its conditional Skills only for present concerns.
+- Use `clean-code-standard` during Green/Refactor and load only the references relevant to the task.
 
 ## Workflow
 
