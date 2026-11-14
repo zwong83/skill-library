@@ -40,4 +40,4 @@ State the required scope: none, per entity/key/group/partition, per producer, or
 
 ## Observability
 
-Measure publish acceptance/failure, end-to-end age, queue/partition lag, processing latency, retries/redeliveries, dedup hits, poison messages, DLQ depth, consumer availability, rebalance/failover, and replay progress. Correlate producer and consumer spans according to `log-trace-standard`.
+Measure publish and consume throughput and failures, end-to-end age, queue depth or partition lag, processing latency, retries and redeliveries, dedup hits, poison messages, DLQ depth, active consumers, rebalances and failover, and replay progress. Correlate producer and consumer spans according to `log-trace-standard`. Alert on actionable conditions such as rising message age or dead letters. Check the selected broker's operations guidance before changing settings.

@@ -31,6 +31,8 @@ Use only after source readiness, complete apply-required artifacts, strict valid
 | Errors | `exception-error-standard` |
 | Cache | `cache-standard` |
 | Messaging | `message-standard` with only the selected broker reference |
+| Lock, lease, fencing, or cache-backed deduplication | Applicable [cache coordination guidance](../../cache-standard/references/coordination-and-idempotency.md) |
+| Caching and messaging interact | [`middleware-engineering-agent`](../../../agents/middleware-engineering-agent/SKILL.md) for the approved task |
 | Frontend rendering/routing/modules | `frontend-architecture-standard` |
 | Frontend components/forms/design system | `frontend-component-design-standard` |
 | Frontend state/API data/cache/optimistic/offline | `frontend-state-data-standard` |

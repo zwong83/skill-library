@@ -58,10 +58,11 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
 - `system-analysis-agent` — Produces logical System Analysis documents with `system-analysis-standard`.
 - `system-design-agent` — Coordinates compact specialist handoffs and owns the authoritative SD document set and readiness index.
   - `architecture-agent` — Architecture, modules, layers, dependencies, composition, and topology.
-  - `interface-data-agent` — APIs, persistence, transactions, caching, messaging, consistency, and errors.
+  - `interface-data-agent` — APIs, persistence, transactions, caching, messaging, consistency, and errors. It uses `middleware-engineering-agent` when caching and messaging interact.
   - `frontend-design-agent` — Reviews the shared contract and returns only accepted frontend decisions, contract changes, impacts, blockers, and verification.
   - `quality-attributes-agent` — Security, resilience, performance, capacity, scalability, and recovery.
   - `delivery-operations-agent` — Configuration, deployment/release, observability, operability, and support.
+- `middleware-engineering-agent` — Mandatory workflow for selecting, integrating, and troubleshooting caching and messaging. Use directly or for an assigned decision that spans both.
 - `spec-driven-development-agent` — Coordinates OpenSpec modes and authorization boundaries.
   - `openspec-planning-agent` — Explore, Propose, and Review without production code.
   - `test-analysis-agent` — Owns the pre-Apply Test Case Matrix, readiness gate, and specialist allocation.
@@ -87,6 +88,7 @@ The portable `agents/` and `skills/` directories remain the only workflow source
 |---|---|---|
 | `architecture` | `architecture-agent` | `system-design-agent` |
 | `interface_data` | `interface-data-agent` | `system-design-agent` |
+| `middleware_engineering` | `middleware-engineering-agent` | Interface and Data / implementation |
 | `frontend_design` | `frontend-design-agent` | `system-design-agent` |
 | `quality_attributes` | `quality-attributes-agent` | `system-design-agent` |
 | `delivery_operations` | `delivery-operations-agent` | `system-design-agent` |
@@ -190,6 +192,7 @@ agents/
 ├── implementation-agent/
 ├── integration-testing-agent/
 ├── interface-data-agent/
+├── middleware-engineering-agent/
 ├── openspec-planning-agent/
 ├── performance-testing-agent/
 ├── product-agent/
@@ -252,6 +255,7 @@ adapters/
         ├── delivery_operations.toml
         ├── frontend_design.toml
         ├── interface_data.toml
+        ├── middleware_engineering.toml
         ├── performance_testing.toml
         ├── quality_attributes.toml
         └── security_testing.toml

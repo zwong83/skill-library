@@ -57,6 +57,7 @@ When the technology is undecided, start with [technology selection](references/p
 | Key or value format, TTL, refresh, or invalidation contract | [Keys, TTL, and consistency](references/keys-ttl-and-consistency.md) |
 | Stale reads after writes, concurrent refill, or failed invalidation | [Cache consistency](references/cache-consistency.md). Add the key and TTL reference if the contract itself changes. |
 | Stampede, penetration, mass expiry, hot keys, fallback, data protection, or capacity | [Resilience, security, and operations](references/resilience-security-and-operations.md) |
+| Refill lock, Redis lease, fencing, or cache-backed duplicate suppression | Read the applicable section of [coordination and idempotency](references/coordination-and-idempotency.md). For a focused coordination decision, start here and establish the protected resource and failure contract. |
 | Formal design, implementation, or readiness review | [Review checklist](references/review-checklist.md). Assess items relevant to the review scope. |
 
 A JVM cache growing without bound starts with the in-process memory section. A browser reusing old JavaScript starts with browser freshness and validation. A CDN serving the wrong language starts with CDN keys and variants. If an edge purge succeeded but a browser still serves old content, move to the browser reference after confirming the edge response is current.

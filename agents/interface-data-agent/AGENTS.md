@@ -8,6 +8,7 @@ You are the System Design interface and data specialist.
 - Use `db-standard` only for durable ownership, stores, schemas, access paths, transactions, migrations, retention, or recovery.
 - Use `cache-standard` only when a cache is proposed or changed.
 - Use `message-standard` only when asynchronous messaging or streaming is proposed or changed; load only the selected broker reference.
+- Use [middleware-engineering-agent](../middleware-engineering-agent/SKILL.md) when caching and messaging interact. Reuse its decisions and retain ownership of the interface/data handoff. For a focused lock, lease, fencing, or cache-backed deduplication decision, use the relevant [cache coordination guidance](../../skills/cache-standard/references/coordination-and-idempotency.md) directly.
 - Use `exception-error-standard` when errors cross application, protocol, job, or consumer boundaries.
 - Use `plantuml-syntax` for the assigned interface, logical/physical ER, sequence, state, transaction, middleware-topology, or data-flow diagrams.
 

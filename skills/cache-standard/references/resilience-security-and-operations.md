@@ -19,4 +19,4 @@ Classify values before caching. Define tenant/user scope, authorization re-check
 
 Model working-set size, replicas/overhead, serialization size, growth, peak concurrency, network bandwidth, TTL distribution, and eviction policy. Monitor hit/miss/stale ratios, cache/source latency, error/timeout rate, memory, evictions, expired keys, connection pools, hot keys, refreshes, and fallback load.
 
-Define rotation of schema versions, safe flush policy, backup/persistence expectations if any, operational ownership, dashboards, alerts, and recovery procedures. Never run broad destructive cache operations without an explicit scoped target and authorization.
+Define rotation of schema versions, safe flush policy, backup/persistence expectations if any, operational ownership, dashboards, alerts, and recovery procedures. Alert on actionable changes such as a sustained drop in hit rate with rising source load or connection pool exhaustion. Correlate client, network, cache, and source evidence before changing settings. Never run broad destructive cache operations without an explicit scoped target and authorization.
