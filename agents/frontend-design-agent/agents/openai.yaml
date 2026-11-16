@@ -1,6 +1,6 @@
 interface:
   display_name: "Frontend Design Agent"
-  short_description: "Design every frontend feature visually"
-  default_prompt: "Use $frontend-design-agent to review the shared contract and produce per-feature route, component, state, data-flow, and technical-sequence views."
+  short_description: "Coordinate contract-aligned frontend design"
+  default_prompt: "Use $frontend-design-agent to review the shared API contract, establish needed UX baselines before coordinating architecture, component/state, experience and quality/delivery agents, and return one consolidated frontend design."
 policy:
   allow_implicit_invocation: true

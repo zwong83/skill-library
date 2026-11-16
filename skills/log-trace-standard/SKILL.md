@@ -5,6 +5,8 @@ description: Design, implement, review, or troubleshoot structured application l
 
 # Log and Trace Standard
 
+When used by `diagnostics-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Identify the diagnostic, operational, or audit question. Logs record meaningful events at the owning boundary. Traces explain causal paths and latency across operations. Select logging, tracing, or their shared context based on the task. Follow the project's approved telemetry contract and existing libraries. For metrics-only work, use the applicable operability skill.
 
 ## Mandatory workflow

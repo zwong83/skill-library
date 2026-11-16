@@ -85,28 +85,15 @@ For each material decision, state:
 - performance, reliability, observability, deployment, migration, rollback, and compatibility implications as applicable;
 - approval status.
 
-Use specialized skills in SDD as implementation-mapping and conformance references, not as permission to reselect the approved System Design. If a required material decision is absent or the implementation cannot conform, block and escalate to SD.
+Consume approved technical decisions and supplied code/test evidence as data when mapping the design delta. Do not load implementation/testing workflows or implement/execute their guidance from this artifact workflow. Record module, API, data, security, resilience, middleware, frontend, diagnostics and delivery constraints by reference to their approved owners. Material missing decisions return to System Design or requirements; concrete code and test changes belong to independently invoked workflows.
 
-- Use the relevant `clean-code-standard` references to map or verify an approved object, module, or pattern direction, including applicable responsibilities, identities, contracts, ownership, lifecycle, dependencies, and collaboration. A new material paradigm or pattern decision belongs in SD. Do not force these abstractions onto a clearer language-native implementation.
-- Invoke `backend-layered-architecture-standard` only to map or verify approved module/layer boundaries, dependency direction, ports/adapters, transactions, composition, and test seams. Any material boundary or ownership change belongs in SD.
-- Invoke `backend-api-design-standard` only to map or verify approved protocol, operations, schemas, authorization boundaries, errors, idempotency, pagination, limits, compatibility, and deprecation into framework code and contract tests. A material public or internal contract change belongs in SD.
-- Invoke `db-standard` only to map or verify approved datastore, ownership, schema, constraints, access paths, transactions, isolation, migrations, retention, and recovery into concrete persistence code and tests. A material ownership, datastore, invariant, or consistency change belongs in SD.
-- Invoke `backend-resilience-standard` only to map or verify approved deadlines, retries, isolation, overload, degradation, health, reconciliation, failover, and recovery into concrete policies, configuration, telemetry, runbooks, and tests. A material failure or recovery strategy change belongs in SD.
-- Implement and verify configuration against the approved SD. A material configuration or secret-management policy change belongs in SD.
-- Implement and verify performance and capacity changes against the approved SD objectives, workload assumptions, budgets, scaling rules, and thresholds. A material objective, topology, or capacity strategy change belongs in SD.
-- Invoke `deployment-release-standard` only to map or verify approved artifacts, environments, compatibility, rollout/release, migration, health, rollback/roll-forward, and evidence. A material deployment or release strategy change belongs in SD, and artifact design never authorizes a live release.
-- Implement and verify operability against the approved SD, including applicable SLIs/SLOs, dashboards, alerts, diagnostics, and runbooks. Resolve new support commitments or material health or operations policy changes in SD.
-- Invoke `testing-strategy-standard` only to map or verify approved risk coverage, levels/types, environments, data, automation, non-functional tests, gates, traceability, and evidence. Missing acceptance behavior or material risk-coverage changes belong in the owning requirements or SD artifact.
-- Invoke `software-security-standard`, `exception-error-standard`, `cache-standard`, and `message-standard` only to implement and verify approved security, failure, cache, and messaging decisions. Concrete types, keys, schemas, TTLs, mappings, retry parameters, topics/queues, acknowledgements, idempotency, dead-letter, replay, and test behavior may be refined within approved constraints; a strategy or posture change belongs in SD.
-- Invoke `log-trace-standard` only to convert approved observability contracts into concrete events, fields, severity, redaction, span boundaries, propagation, sampling, correlation, and tests. A material change to observability strategy belongs in SD.
-- Invoke `frontend-architecture-standard`, `frontend-component-design-standard`, `frontend-state-data-standard`, `frontend-experience-standard`, `frontend-performance-standard`, `frontend-security-standard`, `frontend-observability-standard`, and `frontend-build-delivery-standard` only to map approved frontend SD decisions and the `Contract-Ready` interface into concrete routes, modules, components, state/data flows, UI states, budgets, controls, telemetry, artifacts, and tests. Material rendering/module/state ownership, public contract, security posture, support commitment, performance target, observability, or delivery-strategy changes belong in SD.
-- Invoke `plantuml-syntax` before creating PlantUML only when an implementation-delta diagram materially clarifies the approved design mapping. Do not duplicate SD diagrams without a change-specific reason.
+Use `plantuml-syntax` only when a change-specific design-mapping diagram is needed; do not duplicate approved System Design views without reason.
 
 Record concrete implementation contracts and verification intent in the design delta; keep statement-level placement and code edits in implementation tasks.
 
 ### Risks / Trade-offs
 
-Identify failure modes, technical debt, operational risk, dependency risk, mitigations, owners, and verification evidence. Material unresolved risks block apply readiness.
+Identify failure modes, technical debt, operational risk, dependency risk, mitigations, owners, and verification evidence. Material unresolved risks block artifact readiness.
 
 ### Verification approach
 
@@ -145,7 +132,7 @@ Do not claim that this supplemental file is a built-in OpenSpec artifact, and do
 
 ## Supplemental Test Analysis
 
-OpenSpec's active schema may not define a Test Analysis artifact. For behavior-changing work, `test-analysis-agent` may add `test-analysis.md` within the change directory or another project-approved evidence location after apply-required artifacts are complete.
+OpenSpec's active schema may not define a Test Analysis artifact. When independently requested, Test Analysis may supply a test plan from approved requirements/design and change impact. Link the supplied artifact from a project-approved location; do not invoke its agent or require complete OpenSpec artifacts for that independent analysis.
 
 The TA should contain source/change baseline, change-impact and risk registers, a complete Test Case Matrix with positive/negative/boundary and other applicable categories, exact oracles, unit/integration/contract/UI/system-E2E/performance/security/regression allocation, specialist prerequisites and expected outputs, data/environment/dependency/authorization needs, case-to-task-to-specialist mapping, coverage gaps, residual risk, and `TA-Ready` or `TA-Blocked` status.
 
@@ -153,8 +140,8 @@ Label this file as a supplemental extension when it is not part of the active Op
 
 ## Supplemental specialist test evidence
 
-When the project has no established evidence system, the applicable test specialists may place `unit-test-evidence.md`, `integration-test-evidence.md`, `contract-test-report.md`, `ui-test-report.md`, `system-e2e-test-report.md`, `performance-test-report.md`, `security-test-report.md`, or `regression-test-report.md` in the change directory or another approved location. Create only the reports required by the TA and project; retained CI/tool artifacts may be referenced instead of duplicating them.
+When the project has no established evidence system, the applicable test specialists may place `unit-test-evidence.md`, `integration-test-evidence.md`, `contract-test-report.md`, `ui-test-report.md`, `system-e2e-test-report.md`, `performance-test-report.md`, `security-test-report.md`, or `regression-test-report.md` in the change directory or another approved location. Create only reports required by the applicable test plan or project; retained CI/tool artifacts may be referenced instead of duplicating them.
 
-Each report must identify source/TA case IDs, baseline and environment, exact execution or review evidence, results, failures/skips/flakiness, limitations, residual risk, and owning specialist. UI and performance reports additionally retain their governed visual/accessibility or workload/capacity evidence; the regression report records selected/excluded suites and its unified verdict.
+Each report must identify source/case IDs and supplied TA IDs when available, baseline and environment, exact execution or review evidence, results, failures/skips/flakiness, limitations, residual risk, and owning specialist. UI and performance reports additionally retain their governed visual/accessibility or workload/capacity evidence; the regression report records selected/excluded suites and its unified verdict.
 
 Treat these files as supplemental extensions unless the observed schema defines them. Do not include them in `applyRequires`, claim OpenSpec validation covers their contents, or use them to override failed underlying evidence.

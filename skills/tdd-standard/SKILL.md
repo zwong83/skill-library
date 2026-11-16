@@ -16,20 +16,20 @@ Use this skill only after expected behavior and its test oracle are resolved and
 5. Record the Red evidence. A test first seen passing does not prove it could detect the missing behavior.
 6. Prefer fast unit/component cycles. Use an integration test to drive behavior only when the real boundary semantics are the risk.
 7. Do not over-mock internal implementation or design abstractions solely to satisfy a test.
-8. Keep each cycle traceable to TA/OpenSpec/source IDs and an implementation task.
+8. Keep each cycle traceable to approved source/scenario IDs, plus supplied TA/OpenSpec IDs when available and an implementation task.
 9. Run the focused test every cycle and broader affected suites at safe checkpoints.
 10. Stop when behavior is ambiguous, the test cannot express a stable oracle, or implementation requires a material design change.
 
 ## Workflow
 
-1. Select one approved task and its TA/OpenSpec scenario.
+1. Select one approved task and its approved scenario, optionally mapped to supplied TA/OpenSpec cases.
 2. Choose unit/component or integration level using the risk and boundary.
 3. Write the smallest meaningful failing test and capture the expected failure.
 4. Implement minimal code until the focused test passes.
 5. Run affected tests; refactor under green.
 6. Repeat for the next behavior, including material negative and edge cases.
 7. Run required format/static/build/unit/integration checks and record evidence.
-8. Mark the task complete only when behavior, code quality, tests, and evidence are complete.
+8. Mark TDD implementation complete only when behavior, code quality, cycle tests and required local evidence are complete. Report independent verification separately; do not close a combined acceptance task while its required evidence is missing.
 
 ## Reference routing
 

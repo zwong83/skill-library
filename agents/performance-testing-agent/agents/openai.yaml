@@ -1,6 +1,6 @@
 interface:
   display_name: "Performance Testing Agent"
   short_description: "Run governed load stress and capacity tests"
-  default_prompt: "Use $performance-testing-agent to execute the approved performance cases within the defined environment and safety limits."
+  default_prompt: "Use $performance-testing-agent independently with only performance-testing-standard to verify the approved assigned scope and return observed results and gaps; preserve supplied applicability decisions."
 policy:
   allow_implicit_invocation: true

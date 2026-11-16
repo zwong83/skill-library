@@ -1,0 +1,6 @@
+interface:
+  display_name: "Identity and Access Agent"
+  short_description: "Design authentication and authorization"
+  default_prompt: "Use $identity-access-agent to design or review backend authentication and authorization against the assigned API and architecture baseline."
+policy:
+  allow_implicit_invocation: true

@@ -5,6 +5,8 @@ description: Select or review frontend and backend languages and frameworks, dat
 
 # Languages and Database Engine Standard
 
+When used by `architecture-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. When used by `frontend-architecture-agent`, apply its frontend-only scope and skill boundary; route backend/database or other specialist decisions through `frontend-design-agent` instead of loading additional skills. Standalone use retains the applicable routing below.
+
 Choose the best-fit combination for the project's actual frontend surfaces, backend workloads, and persistent data. Treat languages, runtimes, frameworks, database engines, and query interfaces as separate decisions with compatibility dependencies. A framework, runtime, or ORM may constrain a choice and should be recorded when it matters.
 
 ## Mandatory workflow

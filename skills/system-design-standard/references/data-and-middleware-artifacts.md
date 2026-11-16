@@ -2,6 +2,10 @@
 
 Load this reference when a feature reads or changes durable data, introduces schema/access-path work, or uses database/cache/queue/stream/search/scheduler/object-storage or equivalent middleware.
 
+## Diagram-first design presentation
+
+In human-readable data/middleware design, present logical/physical ER, transaction/query access-path, lifecycle/migration and middleware topology/interaction views before their explanatory catalogs or rule tables. Reuse authoritative views with one maintained source. Keep executable SQL, schema files and exact dictionary/query parameters intact in their dedicated artifacts; diagrams explain relationships and behavior, not replace precise specifications. The Backend SD must embed the relevant views before linking these artifacts.
+
 ## Data design authority
 
 Backend SD owns data semantics, ownership, invariants, transactions, access behavior, migration, and recovery. Versioned database artifacts under `output/SD/database/` own physical structure and proposed SQL when no project convention exists. These are design artifacts; do not execute them or report them as applied migrations.

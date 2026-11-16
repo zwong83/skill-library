@@ -5,6 +5,8 @@ description: Design, implement, or review reproducible frontend builds, environm
 
 # Frontend Build and Delivery Standard
 
+When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
+
 Use this skill when frontend source must become reproducible, identifiable, safely configured, cacheable, promotable, observable, and recoverable artifacts.
 
 ## Core rules

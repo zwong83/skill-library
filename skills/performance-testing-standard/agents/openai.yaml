@@ -1,0 +1,3 @@
+interface:
+  display_name: "Performance Testing Standard"
+  short_description: "Plan and verify workload-based performance evidence"

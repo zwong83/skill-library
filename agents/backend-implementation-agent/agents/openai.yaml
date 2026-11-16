@@ -1,0 +1,6 @@
+interface:
+  display_name: "Backend Implementation Agent"
+  short_description: "Implement approved non-TDD backend tasks"
+  default_prompt: "Use $backend-implementation-agent to implement this authorized non-TDD backend task from approved behavior and design, returning code and local evidence."
+policy:
+  allow_implicit_invocation: true

@@ -9,7 +9,7 @@ Use this skill to verify approved security requirements and controls. It does no
 
 ## Entry and safety gate
 
-Require the authorized target and owner, environment, time window, source/TA case IDs, threat and control baseline, data classification, permitted techniques/tools, credentials/test identities, rate/concurrency limits, prohibited actions, stop/abort conditions, evidence handling, and incident/escalation contact. Production, shared, external, or third-party targets require explicit scope-specific authorization.
+Require the authorized target and owner, environment, time window, source/case IDs, threat and control baseline, data classification, permitted techniques/tools, credentials/test identities, rate/concurrency limits, prohibited actions, stop/abort conditions, evidence handling, and incident/escalation contact. Production, shared, external, or third-party targets require explicit scope-specific authorization.
 
 Stop when authorization, ownership, target boundaries, safety controls, expected security behavior, or evidence handling is unclear. Never expose an internal service to a public network, access credential stores, use real secrets unnecessarily, or continue after material instability or out-of-scope impact.
 
@@ -28,7 +28,7 @@ Stop when authorization, ownership, target boundaries, safety controls, expected
 
 ## Workflow
 
-1. Confirm authorization/safety, scope, assets, threats, controls, TA cases, environment, and evidence boundaries.
+1. Confirm authorization/safety, scope, assets, threats, controls, approved source/test cases, environment, and evidence boundaries.
 2. Build the security verification matrix and choose static, dependency, configuration, dynamic, manual-review, or operational techniques per risk.
 3. Execute approved non-destructive checks within rate, data, and stop limits; preserve exact evidence and system health.
 4. Validate and deduplicate findings, classify severity/confidence/impact, assign owners, and stop/escalate critical instability or scope breach.
@@ -39,9 +39,9 @@ Stop when authorization, ownership, target boundaries, safety controls, expected
 - Read [security-verification-matrix.md](references/security-verification-matrix.md) to map controls and threats to safe techniques and evidence.
 - Read [authorization-evidence-and-verdicts.md](references/authorization-evidence-and-verdicts.md) before dynamic execution or release-readiness reporting.
 - Invoke `software-security-standard` for the authoritative threat/control architecture and upstream gaps.
-- Invoke `backend-api-design-standard`, `db-standard`, `log-trace-standard`, or `deployment-release-standard` only for the selected control surface.
+- Invoke `api-design-standard`, `db-standard`, `log-trace-standard`, or `deployment-release-standard` only for the selected control surface.
 - Invoke `contract-testing-standard`, `integration-testing-standard`, or `system-e2e-testing-standard` when security behavior must be verified at that boundary or journey.
 
 ## Output
 
-Produce `security-test-report.md` or equivalent approved evidence. Return authorization/scope reference, source/TA/control IDs, target revision/environment, techniques/tools/rulesets, executed cases/results, validated findings and severity/confidence, suppressions/false positives, prohibited/unexecuted checks, system-health/abort events, evidence location/redaction, remediation/retest status, residual risk/owner, and `Security-Passed`, `Security-Failed`, or `Security-Blocked`.
+Produce `security-test-report.md` or equivalent approved evidence. Return authorization/scope reference, source/case/control IDs, target revision/environment, techniques/tools/rulesets, executed cases/results, validated findings and severity/confidence, suppressions/false positives, prohibited/unexecuted checks, system-health/abort events, evidence location/redaction, remediation/retest status, residual risk/owner, and `Security-Passed`, `Security-Failed`, or `Security-Blocked`.

@@ -1,19 +1,23 @@
 # Contract-First Parallel Frontend Design
 
-## Stage 1: backend domain baseline
+The main coordinator owns the [mandatory API and coordination workflow](../../system-design-agent/SKILL.md#mandatory-workflow); [frontend-design-agent/SKILL.md](../SKILL.md) owns frontend branch execution.
 
-Before detailed frontend design, require sufficiently stable backend ownership for domain rules, data/source of truth, transactions/consistency, server authorization, state transitions, and error categories. This need not be the complete backend SD.
+## Stage 1: shared baseline and API draft
+
+The main coordinator establishes known domain/data/source-of-truth ownership, business states, transaction/consistency expectations and server authorization from approved sources and backend evidence. It drafts the shared OpenAPI contract with `api-design-standard`. A complete backend SD is not a prerequisite.
 
 ## Stage 2: joint contract readiness
 
-The Interface/Data handoff proposes the service/API/event contract. The Frontend handoff evaluates it against approved journeys and UI needs. The System Design Coordinator owns reconciliation and records `Contract-Ready` only when applicable operations, fields, errors, authorization context/results, idempotency, concurrency, pagination/filter/sort, limits, deadlines/cancellation, compatibility, examples, and ownership are resolved.
+Backend and frontend coordinators review the same draft in `contract-review` mode. Frontend walks approved journeys, permitted actions, inputs/results and loading/empty/error/conflict/recovery states, exposing missing operations/fields, fan-out, client joins, ambiguous errors, unsafe retries and unsupported navigation/optimistic updates.
 
-Frontend feedback should expose excessive request fan-out, unstable client-side joins, duplicated business rules, ambiguous field/error semantics, missing partial/loading/recovery behavior, unsafe retries, and unsupported navigation or optimistic-update needs. It must not move authoritative business rules into the client merely for convenience.
+When missing interaction choices affect that review, Frontend can use a bounded `ux-baseline` Experience pass without requiring detailed architecture/components or a complete visual system. Accepted existing UX is reused; generated proposals are not approval.
 
-## Stage 3: parallel detail design
+The main coordinator resolves changes and records `Contract-Ready`, version/hash and review evidence. Branches neither independently edit the shared API nor move authoritative server rules into the client. Frontend-only work may reuse a confirmed unchanged contract; work without a shared API dependency records the applicable gate as `Not Applicable`.
 
-After `Contract-Ready`, backend and frontend specialists may refine their own boundaries in parallel from the versioned contract. They exchange only changed decision IDs and compact handoffs through the Coordinator. Any material contract change reopens affected decisions, tasks, mocks/fixtures, contract tests, and readiness.
+## Stage 3: parallel detailed design
+
+After the gate, the backend and frontend branches run in parallel. Frontend runs ordered sibling agents: conditional Experience UX baseline → Frontend Architecture → Components and State → Experience detail → Quality and Delivery. Each dedicated agent follows its own mandatory workflow and receives accepted predecessor decisions; approved experience and quality constraints are supplied before Architecture starts. The frontend coordinator resolves later findings through the original owners and returns one consolidated design. Changes go through the main coordinator and reopen only affected work. Unaffected work can continue against its valid baseline. Every returned design identifies the accepted contract version/hash.
 
 ## Handoff
 
-Backend SD records backend authority and internals; Frontend SD records frontend decisions; Integration SD records the accepted versioned contract semantics, cross-boundary dependencies, compatibility/evolution, and contract verification; the Index records readiness and unresolved items. Frontend implementation begins only through SDD after the applicable SD set is `SD-Ready` and implementation is separately authorized.
+The main coordinator writes accepted backend, frontend and integration content into the final SD set and records readiness in the Index. Frontend implementation begins only through SDD after applicable design readiness and separate implementation authorization.

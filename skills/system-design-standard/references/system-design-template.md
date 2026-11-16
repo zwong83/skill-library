@@ -19,6 +19,7 @@ Load the Index template plus only the applicable design templates. A backend-onl
 
 - Adapt sections to scope; use `Not Applicable` with a short source-based rationale instead of loading an irrelevant specialist.
 - Keep unknowns explicit as `TBC`, `Proposed`, `Assumption`, `Pending Approval`, `Open`, or `Deferred`.
+- Enforce diagrams first, supporting words second in every substantive technical section: relevant view(s), short caption, then compact exact rules/constraints/decision/evidence notes. Begin each design document with its overview after compact metadata; begin the Index with an authority/navigation diagram. Tables, inventories, placeholders and bare file links cannot replace technical views. Retain schemas/SQL and administrative records in their proper formats.
 - Use diagrams as the primary views. Every feature requires a dedicated target technical-flow diagram; brownfield changes also require current logic/problem views. Full designs include target architecture/main flow and applicable physical-data/middleware/deployment views.
 - Keep text normative for decisions, contracts, rules, constraints, exceptions, targets, ownership, and procedures.
 - Reference source IDs and other SD decision IDs instead of restating full upstream documents.

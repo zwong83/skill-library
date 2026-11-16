@@ -1,6 +1,6 @@
 interface:
   display_name: "Implementation Agent"
-  short_description: "Implement approved OpenSpec tasks"
-  default_prompt: "Use $implementation-agent to implement authorized tasks from an apply-ready OpenSpec change with tests and evidence."
+  short_description: "Coordinate coding and local verification"
+  default_prompt: "Use $implementation-agent to implement this approved task independently, selecting TDD before coding and returning local evidence and separate verification needs."
 policy:
   allow_implicit_invocation: true

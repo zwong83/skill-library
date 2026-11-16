@@ -1,0 +1,3 @@
+interface:
+  display_name: "Frontend Architecture Agent"
+  short_description: "Design frontend routes and execution boundaries"

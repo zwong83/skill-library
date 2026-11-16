@@ -22,4 +22,4 @@ Do not write production code or tests, initialize OpenSpec, install/upgrade tool
 
 ## Output
 
-Return mode, delivery state, OpenSpec context, source-gate result, artifact status, validation evidence, risks, unresolved items, and the exact next handoff. Apply readiness is not implementation authorization.
+Return mode, delivery state, OpenSpec context, source-gate result, artifact status, validation evidence, risks, unresolved items, and the exact next handoff. Artifact readiness is not implementation or testing authorization. Suggest independent next invocations without starting them.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Authorization Standard"
+  short_description: "Design permissions and access enforcement"
+  default_prompt: "Use $authorization-standard to define or review resource permissions, tenant isolation, policy lifecycle and server-side enforcement."
+policy:
+  allow_implicit_invocation: true

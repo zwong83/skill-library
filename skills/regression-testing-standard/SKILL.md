@@ -20,12 +20,18 @@ Use this skill to determine what existing behavior must be re-proven after code,
 9. Do not update assertions or baselines merely to match changed behavior unless the governing requirement/design approves that behavior.
 10. A regression verdict cannot be `Passed` while a required suite is failing, blocked, silently skipped, or lacks trustworthy evidence.
 
+## Existing tests and TDD evidence
+
+Start by mapping assigned cases to existing tests, including TDD tests. Reuse suitable test assets; add or extend tests only for uncovered behavior or distinct risks. Assign a new run when requested, required by a project/CI gate, or needed because code/test revisions, dependencies, configuration, environment, data or the coverage scope changed. Preserve active TDD-cycle ownership.
+
+In a review or evidence-reuse assignment, accept retained results only when their exact code/test snapshot, relevant environment/configuration/dependencies, case oracles, scope and provenance satisfy the current verification requirement. Record the evidence reference and reuse rationale; do not describe it as a new run. Missing, stale, flaky or insufficient evidence remains a gap and requires an appropriate check, not a pass. Focused TDD results do not automatically prove broader integration, regression or other specialist coverage. Reusing test files does not imply that their earlier results remain valid.
+
 ## Workflow
 
-1. Confirm the base/target revisions, approved change, actual diff, TA matrix, and prior baseline.
+1. Confirm the base/target revisions, approved change, actual diff, approved case plan or equivalent source/case expectations, and prior baseline.
 2. Build direct and transitive impact paths across modules, interfaces, data, configuration, dependencies, deployment, and user journeys.
 3. Select required suites/cases by risk and test level; identify gaps and assign them to the owning specialist.
-4. Execute in a diagnostic order: fast/static and unit signals, integration/contract, UI/system journeys, then applicable non-functional regression.
+4. Reconcile reusable current evidence, then execute requested/required uncovered checks in diagnostic order: fast/static and unit signals, integration/contract, UI/system journeys, then applicable non-functional regression. Review-only work reports execution gaps without launching new runs.
 5. Triage failures as product defect, test defect, environment issue, known accepted issue, or inconclusive evidence.
 6. Publish scope, results, exclusions, gaps, defects, residual risk, and `Regression-Passed`, `Regression-Failed`, or `Regression-Blocked`.
 
@@ -34,7 +40,7 @@ Use this skill to determine what existing behavior must be re-proven after code,
 - Read [impact-selection-and-suites.md](references/impact-selection-and-suites.md) to select coverage from change impact.
 - Read [regression-evidence-and-gates.md](references/regression-evidence-and-gates.md) for result classification, evidence, and verdict rules.
 - Invoke `unit-testing-standard`, `integration-testing-standard`, `contract-testing-standard`, `ui-testing-standard`, `system-e2e-testing-standard`, or `security-testing-standard` only for gaps or failures owned by that level/type.
-- Use the approved workload, comparable baseline, and assigned performance cases to assess performance regression evidence.
+- Use [performance-testing-standard](../performance-testing-standard/SKILL.md) in review mode to assess assigned performance cases, workload validity and baseline comparability. New load execution still requires its target/load prerequisites and authorization.
 - Invoke the relevant security, resilience, migration, deployment, or operability Skill only when that regression risk is in scope.
 
 ## Output

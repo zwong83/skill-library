@@ -5,6 +5,8 @@ description: Choose the cache technology that best fits a requirement, then sele
 
 # Cache Standard
 
+When used by `middleware-engineering-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Use this skill to treat caching as an explicit consistency and failure design. A cache is not automatically required because Redis or an in-memory store is available.
 
 ## Core rules

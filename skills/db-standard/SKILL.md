@@ -5,6 +5,8 @@ description: Design, implement, review, or troubleshoot reliable data persistenc
 
 # Database Standard
 
+When used by `architecture-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Use this skill when a change introduces or modifies durable state, a datastore, schema, query, index, transaction, migration, backfill, retention policy, or recovery behavior.
 
 ## Core Rules

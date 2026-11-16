@@ -5,6 +5,8 @@ description: Select, design, implement, or review layering inside backend module
 
 # Backend Layered Architecture Standard
 
+When used by `architecture-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Use this skill for the internal structure of backend modules. Cover responsibilities and dependencies within a module and the public contracts through which modules interact. Treat deployment topology, service decomposition, frontend architecture, and datastore or middleware selection as inputs owned by their respective designs.
 
 ## Core rules

@@ -1,6 +1,6 @@
 interface:
   display_name: "Contract Testing Agent"
   short_description: "Verify provider and consumer compatibility"
-  default_prompt: "Use $contract-testing-agent to execute the TA-assigned contract compatibility cases."
+  default_prompt: "Use $contract-testing-agent independently with only contract-testing-standard to verify the approved assigned scope and return observed results and gaps; preserve supplied applicability decisions."
 policy:
   allow_implicit_invocation: true

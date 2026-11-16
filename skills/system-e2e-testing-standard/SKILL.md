@@ -9,7 +9,7 @@ Use this skill when a business or operational outcome can be proven only through
 
 ## Core rules
 
-1. Trace every journey to approved requirements, TA cases, actors, starting state, business outcome, and critical risk.
+1. Trace every journey to approved requirements, approved source/test cases, actors, starting state, business outcome, and critical risk.
 2. Keep the E2E portfolio small and risk-based. Lower levels should prove detailed rule partitions; E2E proves wiring, configuration, identity, routing, persistence, and cross-component outcome.
 3. Define the exact system boundary, deployed versions, topology, feature/configuration state, external dependency treatment, and meaningful differences from production.
 4. Use controlled identities, tenants, data, time, and correlation IDs. Isolate and clean up all created state, including asynchronous messages, files, cache entries, and external test records.
@@ -22,7 +22,7 @@ Use this skill when a business or operational outcome can be proven only through
 
 ## Workflow
 
-1. Select TA cases requiring system/E2E proof and define the journey graph and boundary.
+1. Select approved source/test cases requiring system/E2E proof and define the journey graph and boundary.
 2. Confirm environment/topology, deployed revisions, identities, data, external dependencies, observability, isolation, cleanup, and authorization.
 3. Implement critical journeys with stable business-level oracles and bounded async coordination.
 4. Execute focused journeys, collect cross-component evidence, classify product/test/environment failures, and verify cleanup.
@@ -39,4 +39,4 @@ Use this skill when a business or operational outcome can be proven only through
 
 ## Output
 
-Produce `system-e2e-test-report.md` or equivalent retained evidence. Return source/TA case IDs, journey and component graph, deployed revisions/configuration, environment/data/identity/dependency plan, test files changed when authorized, commands/results, cross-component artifacts, cleanup result, fidelity gaps, flakiness/blockers, residual risk, and `E2E-Passed`, `E2E-Failed`, or `E2E-Blocked`.
+Produce `system-e2e-test-report.md` or equivalent retained evidence. Return source/case IDs, journey and component graph, deployed revisions/configuration, environment/data/identity/dependency plan, test files changed when authorized, commands/results, cross-component artifacts, cleanup result, fidelity gaps, flakiness/blockers, residual risk, and `E2E-Passed`, `E2E-Failed`, or `E2E-Blocked`.

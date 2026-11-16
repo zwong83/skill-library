@@ -1,6 +1,6 @@
 interface:
   display_name: "Integration Testing Agent"
-  short_description: "Verify real application and infrastructure boundaries"
-  default_prompt: "Use $integration-testing-agent to implement and verify the TA-assigned integration cases for this boundary."
+  short_description: "Cover logic across real integration boundaries"
+  default_prompt: "Use $integration-testing-agent independently with only integration-testing-standard to verify the approved assigned scope and return observed results and gaps; preserve supplied applicability decisions."
 policy:
   allow_implicit_invocation: true

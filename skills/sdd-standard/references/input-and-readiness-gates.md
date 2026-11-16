@@ -1,6 +1,6 @@
 # SDD Inputs and Readiness Gates
 
-Use this reference before proposing, analyzing tests, applying, converging, or archiving an OpenSpec change.
+Use this reference before proposing, reviewing, handing off, converging, synchronizing or archiving an OpenSpec change.
 
 ## Input classification
 
@@ -8,7 +8,7 @@ Use this reference before proposing, analyzing tests, applying, converging, or a
 
 For every mode:
 
-- task mode: Explore, Propose, Review, Test Analysis, Apply, Regression, Converge, or Archive;
+- task mode: Explore, Propose, Review, Handoff, Converge, Sync or Archive;
 - project root and feature/change identity;
 - OpenSpec CLI state, resolved executable, locally detected version, install scope/method when discoverable, and compatibility status; if unavailable, record the proposed official/project-approved installation source, version, scope, and authorization state;
 - OpenSpec context state; when initialized, include the active schema and change status; when uninitialized, record `Active schema: None` and separately identify any intended schema as proposed;
@@ -24,22 +24,12 @@ For a new or behavior-changing feature:
 
 If the project does not maintain a separate SRS or FRS, an authorized product/engineering owner must explicitly record `Not Applicable`, provide the rationale, and identify the equivalent normative source that contains complete, testable requirements and acceptance criteria. The agent must not decide non-applicability from absence alone, and a PRD may substitute only when this equivalence is explicitly approved.
 
-For Apply mode:
+For Handoff mode:
 
-- a selected OpenSpec change;
-- complete apply-required artifacts;
-- passing strict OpenSpec validation;
-- applicable `TA-Ready` Test Analysis with complete case-to-task-to-specialist allocation, or a recorded and approved `Not Applicable` rationale;
-- for frontend work, approved Frontend SD decisions and the applicable versioned frontend/backend interface recorded as `Contract-Ready` in the Index;
-- explicit implementation authorization.
-
-For Regression mode:
-
-- the selected change and approved TA matrix;
-- known base and target revisions plus the actual changed-file/diff scope;
-- available suite inventory, historical baseline, required environments/data/dependencies, and known flaky/quarantined tests;
-- completed specialist evidence required before the regression verdict;
-- authorization for any test execution or environment use not already covered.
+- a selected OpenSpec change with complete schema-required task artifacts and passing strict validation;
+- resolved acceptance criteria, task-relevant design/contract versions and bounded task scopes;
+- supplied test plans/evidence references when available, without requiring a universal TA artifact;
+- the user-selected output destination; exporting tasks does not authorize implementation or testing.
 
 For Converge mode:
 
@@ -94,7 +84,7 @@ An item is material when it can change scope, externally visible behavior, accep
 If any material item is unresolved:
 
 1. Set the state to `Blocked`.
-2. Do not declare artifacts apply-ready and do not implement.
+2. Do not declare the artifact package ready for handoff; do not implement from this workflow.
 3. Produce a decision-needed register:
 
    | Source | ID/Section | Unresolved item | Impact | Decision required | Owner |
@@ -105,16 +95,16 @@ If any material item is unresolved:
 
 ## Cross-artifact consistency gate
 
-Before Propose or Review, account for every approved operation or constraint in the selected increment. Before Test Analysis or Apply, verify each material in-scope row against the actual spec/scenario, affected contract version and task. Record other increments separately; stale approval or a valid OpenSpec schema cannot close a missing behavior.
+Before Propose or Review, account for every approved operation or constraint in the selected increment. Before Handoff, verify each material in-scope row against the actual spec/scenario, affected contract version and task. Record other increments separately; stale approval or a valid OpenSpec schema cannot close a missing behavior.
 
-Before `Apply-Ready`, verify:
+Before artifact readiness, verify:
 
 - proposal scope matches the approved source baseline;
 - capability names and delta specs match the proposal;
 - each requirement is unambiguous, testable, and represented by at least one scenario;
 - design decisions satisfy the requirements and do not contradict the applicable approved SD documents or contract authority;
 - tasks cover every in-scope requirement, design change, test, migration, documentation, and operational action;
-- applicable TA cases cover positive and applicable negative/boundary partitions, allocate material risks to justified test levels/specialists, and map to implementation tasks and expected evidence;
+- acceptance scenarios and expected verification evidence are explicit; when a test plan is supplied, record its coverage and gaps without executing or silently rewriting it;
 - no task introduces behavior absent from the approved specs;
 - removals and renames include compatibility and migration handling where applicable;
 - traceability identifiers are stable and complete;
@@ -126,6 +116,6 @@ Return exactly one verdict:
 
 - `Blocked` — mandatory input, material decision, approval, or dependency is missing.
 - `Draft` — inputs are sufficient for artifact work, but artifacts or validation are incomplete.
-- `Apply-Ready` — all gates pass; code changes still require explicit authorization.
+- `Artifact-Ready` — specification/task gates pass; coding and testing remain separately invoked workflows. If the tool reports apply-ready, preserve that observed label as tool metadata only.
 
 Include evidence for the verdict. Do not infer approval from silence, document presence, or a completed task list.

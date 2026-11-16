@@ -5,6 +5,8 @@ description: Design or review frontend server, client, URL, form, session, deriv
 
 # Frontend State and Data Standard
 
+When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
+
 Use this skill after backend data ownership and the shared interface contract are known or explicitly proposed.
 
 ## Core rules
@@ -29,7 +31,7 @@ Use this skill after backend data ownership and the shared interface contract ar
 ## Reference routing
 
 - Read [state-ownership-and-data-flow.md](references/state-ownership-and-data-flow.md) for the design matrix.
-- Invoke `backend-api-design-standard` and `contract-testing-standard` for shared request/response/error compatibility.
+- Invoke `api-design-standard` and `contract-testing-standard` for shared request/response/error compatibility.
 - Invoke `cache-standard` only for principles shared with browser/client cache; this skill owns frontend state placement and UX behavior.
 - Invoke `frontend-security-standard` for storage, identity, and sensitive-data boundaries.
 

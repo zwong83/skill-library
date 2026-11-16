@@ -29,7 +29,7 @@ Keep As-Is and To-Be separate or use an unmistakable side-by-side comparison. Ne
 
 ## Required feature technical design block
 
-For every feature, include:
+For every feature, lead with its diagram(s) after only the feature title and compact identification metadata; the following list defines coverage, not permission to put prose before visuals. Include:
 
 - source and SA IDs, owner, entry point, preconditions, outputs, invariants, affected components/data/contracts, and verification intent;
 - a target sequence or activity diagram showing concrete technical responsibility, calls/events, decisions, transaction boundaries, and observable outcome;
@@ -45,7 +45,7 @@ Conditional views may be combined when the result remains readable. The dedicate
 
 Use a consistent per-feature construction:
 
-1. target technical sequence(s), split by operation/logical unit when needed;
+1. target technical sequence(s), split by operation/logical unit when needed, plus applicable current/problem and supporting views; include short captions after the diagrams;
 2. engineering-constraint table for idempotency, concurrency, timeout, retry, consistency, security, and recovery traps;
 3. interface/data/middleware impact table linking authoritative contracts and artifacts;
 4. error/result table covering trigger, public/internal outcome, retryability, owner, and evidence.
@@ -56,7 +56,7 @@ Show material alternate/failure branches in the sequence. For change scope, mark
 
 Give every diagram a stable ID such as `DIA-SYS-001`, `DIA-FEAT-ORD-001`, `DIA-DATA-001`, or `DIA-MW-001`. Each diagram records title, scope, As-Is/To-Be status, feature/source/decision IDs, owner, and assumptions/legend. The feature coverage matrix links diagram IDs, not copied diagrams.
 
-Keep reusable PlantUML sources under `output/SD/diagrams/` when no project convention exists. Link the `.puml` source from the authoritative section and embed an SVG/PNG preview when rendering support exists. A generated image without maintained source is insufficient, and an unrendered source must not be reported as visually validated.
+Keep reusable PlantUML sources under `output/SD/diagrams/` when no project convention exists. Link the `.puml` source from the authoritative section and embed an SVG/PNG preview when rendering support exists. A generated image without maintained source is insufficient, and an unrendered source must not be reported as visually validated. If rendering is unavailable, include readable diagram source inline at the start of the owning technical section and report the limitation; a source-file link alone does not meet diagram-first presentation. Missing required diagram content or prose-first technical explanations block affected readiness.
 
 ## Text discipline
 
@@ -64,4 +64,4 @@ After each diagram, include only compact design notes for exact rules, parameter
 
 ## PlantUML routing
 
-Invoke `plantuml-syntax` before authoring PlantUML. Use C4/context/component diagrams for architecture, sequence/activity for runtime logic, state for lifecycle, ER for data, and deployment/component diagrams for middleware and runtime topology. Load only the relevant syntax references.
+Use `plantuml-syntax` before authoring PlantUML when the assignment's skill boundary permits it. Restricted specialists use their allowed conventions/templates and available syntax/render tools; this reference does not expand their allowlist. Use C4/context/component diagrams for architecture, sequence/activity for runtime logic, state for lifecycle, ER for data, and deployment/component diagrams for middleware and runtime topology. Load only the relevant syntax references.

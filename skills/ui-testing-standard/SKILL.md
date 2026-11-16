@@ -9,7 +9,7 @@ Use this skill when correctness depends on what a user can see, operate, navigat
 
 ## Core rules
 
-1. Trace every test to an approved UI requirement, TA case, defect, compatibility risk, or accessibility obligation.
+1. Trace every test to an approved UI requirement, approved source/test case, defect, compatibility risk, or accessibility obligation.
 2. Separate component/rendering, interaction/state, visual, accessibility, compatibility, and end-to-end journey evidence; one category does not prove the others.
 3. Cover positive, negative, and boundary behavior for assigned UI cases, including loading, empty, error, disabled, unauthorized, slow, interrupted, and recovery states where applicable.
 4. Assert user-observable outcomes and forbidden effects. A screenshot alone is not a complete behavioral oracle.
@@ -22,7 +22,7 @@ Use this skill when correctness depends on what a user can see, operate, navigat
 
 ## Workflow
 
-1. Select TA cases assigned to UI and confirm observable states, supported matrix, and exact oracle.
+1. Select approved source/test cases assigned to UI and confirm observable states, supported matrix, and exact oracle.
 2. Allocate each case to component, interaction, visual, accessibility, compatibility, or UI end-to-end coverage.
 3. Define data, authentication/authorization state, environment, isolation, reset, selectors, and evidence.
 4. Implement the smallest stable tests that prove the assigned risk without duplicating lower-level coverage.
@@ -39,4 +39,4 @@ Use this skill when correctness depends on what a user can see, operate, navigat
 
 ## Output
 
-Return source/TA case IDs, UI category and supported matrix, tests and files changed when authorized, environment/data/selectors, commands and actual results, screenshots/traces/accessibility/visual evidence, baseline decisions, flaky or blocked cases, untested combinations, and residual risk. Never report an unexecuted browser or accessibility check as passing.
+Return source/case IDs, UI category and supported matrix, tests and files changed when authorized, environment/data/selectors, commands and actual results, screenshots/traces/accessibility/visual evidence, baseline decisions, flaky or blocked cases, untested combinations, and residual risk. Never report an unexecuted browser or accessibility check as passing.

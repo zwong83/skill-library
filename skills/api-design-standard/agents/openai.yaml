@@ -1,0 +1,6 @@
+interface:
+  display_name: "API Design Standard"
+  short_description: "Define shared OpenAPI contracts and service APIs"
+  default_prompt: "Use $api-design-standard to define or review a shared backend/frontend OpenAPI contract or an existing service API."
+policy:
+  allow_implicit_invocation: true

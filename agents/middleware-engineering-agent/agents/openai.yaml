@@ -1,6 +1,6 @@
 interface:
   display_name: "Middleware Engineering Agent"
-  short_description: "Design and troubleshoot caching and messaging"
-  default_prompt: "Use $middleware-engineering-agent to select, design, or troubleshoot caching and messaging for this task."
+  short_description: "Design cache, message and resilience behavior"
+  default_prompt: "Use $middleware-engineering-agent to assess cache, message and backend resilience requirements in order for the assigned task."
 policy:
   allow_implicit_invocation: true

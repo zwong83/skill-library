@@ -5,7 +5,9 @@ description: Design or review implementation-ready responsive, accessibility, lo
 
 # Frontend Experience Standard
 
-Use this skill to convert approved UX, visual/design-system references, accessibility obligations, localization, and platform support into explicit engineering decisions.
+When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
+
+Use this skill to convert approved UX, visual/design-system references, accessibility obligations, localization, and platform support into explicit engineering decisions. In frontend-experience-agent's early ux-baseline phase, express constraints for proposed choices from ui-ux-pro-max at journey level without requiring downstream route/component designs. Preserve proposal/acceptance status: generated choices cannot override approved product/brand direction or become requirements without the applicable acceptance basis.
 
 ## Core rules
 

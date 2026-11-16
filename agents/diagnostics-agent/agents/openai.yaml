@@ -1,0 +1,6 @@
+interface:
+  display_name: "Diagnostics Agent"
+  short_description: "Design logs, traces and actionable errors"
+  default_prompt: "Use $diagnostics-agent to design coherent backend logging, tracing and exception handling for the assigned troubleshooting scenarios."
+policy:
+  allow_implicit_invocation: true

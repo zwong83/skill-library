@@ -1,6 +1,6 @@
 interface:
   display_name: "Test Analysis Standard"
-  short_description: "Derive risk-based test scenarios and coverage"
-  default_prompt: "Use $test-analysis-standard to analyze this change and produce traceable unit, integration, and non-functional test scenarios."
+  short_description: "Define traceable cases and testing scope"
+  default_prompt: "Use $test-analysis-standard to plan tests or review coverage from approved requirements and change impact independently of OpenSpec."
 policy:
   allow_implicit_invocation: true

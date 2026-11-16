@@ -2,9 +2,9 @@
 
 Report each item as `Pass`, `Gap`, or `Not Applicable`:
 
-- Tests trace to a requirement, TA/OpenSpec scenario, defect, or explicit regression risk.
+- Tests trace to a requirement, approved scenario (optionally linked to TA/OpenSpec), defect, or explicit regression risk.
 - Assertions prove observable behavior and forbidden effects, not incidental private structure.
-- Every TA-assigned behavior has positive coverage; negative and exact boundary partitions plus state, error, duplicate, concurrency, cleanup, and forbidden-effect cases are covered where applicable or have an explicit disposition.
+- Every assigned behavior has positive coverage; negative and exact boundary partitions plus state, error, duplicate, concurrency, cleanup, and forbidden-effect cases are covered where applicable or have an explicit disposition.
 - Time, randomness, global state, and scheduling are controlled.
 - Doubles represent stable boundaries and have clear rationale.
 - Tests are independent, repeatable, order-insensitive, and free of arbitrary sleeps.

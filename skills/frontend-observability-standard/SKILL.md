@@ -5,6 +5,8 @@ description: Design, implement, or review frontend error capture, real-user moni
 
 # Frontend Observability Standard
 
+When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
+
 Use this skill when frontend behavior must be diagnosed, measured, correlated, or operated after delivery.
 
 ## Core rules

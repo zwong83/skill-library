@@ -1,11 +1,11 @@
 ---
 name: test-analysis-standard
-description: Analyze approved requirements, System Design, OpenSpec artifacts, and change impact to produce a complete traceable Test Case Matrix, specialist allocation, prerequisites, outputs, coverage, and evidence criteria before implementation; use for TA, not test-code generation.
+description: Analyze approved requirements, relevant design and change impact to produce a complete traceable Test Case Matrix, specialist allocation, prerequisites, outputs, coverage, and evidence criteria before coding or during a later coverage review; use for TA, not test-code generation.
 ---
 
 # Test Analysis Standard
 
-Use this skill after behavior and design are sufficiently resolved and before implementation begins. TA defines what must be proven and at which level; it does not write test code or replace the governing requirements.
+Use this skill independently for initial test planning or coverage review after a change. TA defines what must be proven and at which level; it does not write code, execute tests or replace requirements. Formal OpenSpec artifacts and lifecycle modes are optional context, not universal prerequisites. Preserve any explicitly mandated project gates.
 
 ## Core rules
 
@@ -21,32 +21,32 @@ Use this skill after behavior and design are sufficiently resolved and before im
 
 ## Workflow
 
-1. Confirm source baseline, selected change, affected components, and unresolved-item result.
-2. Build the change-impact and risk register.
+1. Confirm source baseline, selected scope/change, affected components, and unresolved-item result.
+2. Build the change-impact and risk register. When tests/evidence exist, inventory TDD and other coverage before proposing more tests. Identify suitable existing tests, reusable current evidence, required reruns and missing coverage; initial analysis does not require tests to exist yet.
 3. Identify test conditions and partition them into concrete cases, including positive, negative, and boundary categories.
-4. Assign level/type, governing specialist, execution owner, TDD route, priority, automation intent, prerequisites, environment, data, dependencies, output/evidence, and disposition.
-5. Map cases to implementation tasks and release/convergence gates.
+4. Apply the conditional contract/system-E2E criteria in [test-level-selection.md](references/test-level-selection.md#conditional-contract-and-systeme2e-testing) and record each applicability decision and rationale. Assign level/type, governing specialist, execution owner, TDD route, priority, automation intent, prerequisites, environment, data, dependencies, output/evidence, and disposition.
+5. Map cases to approved sources and risks. Link supplied implementation tasks or acceptance gates when available; initial analysis does not require task-planning artifacts.
 6. Record coverage gaps, assumptions, blocked cases, residual risk, and owners.
-7. Run the TA readiness gate before Apply.
+7. Run the analysis readiness gate and return the scoped plan or coverage-review findings to the user without invoking another workflow.
 
 ## Reference routing
 
 - Read [test-analysis-template.md](references/test-analysis-template.md) to create a TA artifact.
-- Read [test-level-selection.md](references/test-level-selection.md) when unit/integration/contract/system level selection or duplication is unclear.
+- Read [test-level-selection.md](references/test-level-selection.md) for the required contract/system-E2E applicability decisions and whenever level selection or duplication is unclear.
 - Invoke `unit-testing-standard` only to refine unit/component case expectations.
 - Invoke `integration-testing-standard` only to refine real-boundary cases and environment needs.
 - Invoke `contract-testing-standard` for provider/consumer schema, protocol, semantic, version, and compatibility cases.
 - Invoke `ui-testing-standard` for component/interaction, visual, accessibility, compatibility, and UI-journey cases.
 - Invoke `system-e2e-testing-standard` for critical multi-component journeys that cannot be proven at a lower level.
-- Use approved performance targets, representative workloads, and comparison baselines to define measurable performance and capacity cases.
+- Invoke [performance-testing-standard](../performance-testing-standard/SKILL.md) in planning mode for measurable performance/capacity cases, approved targets, representative workloads, comparable baselines and explicit execution prerequisites. Do not run load or invoke execution agents during TA.
 - Invoke `security-testing-standard` for authorized verification of approved security controls and required safety/evidence prerequisites.
 - Invoke `regression-testing-standard` for impact-based regression selection and verdict requirements.
 - Invoke `testing-strategy-standard` when the broader portfolio, non-functional scope, release gate, or organizational test policy is unresolved.
 
 ## Readiness gate
 
-TA is Apply-ready only when material requirements and design decisions are resolved; every material source/risk maps to complete cases; positive coverage exists; applicable negative and boundary partitions are present or explicitly not applicable; oracles, governing specialists, and execution owners are explicit; levels are justified; prerequisites, data, environments, dependencies, outputs, and evidence are available or planned; tasks are traceable; and skipped/blocked coverage is visible with an owner or accepted residual risk.
+Return `TA-Ready` only when both conditional-specialist applicability decisions are resolved with traceable rationale and coverage; material requirements and design decisions are resolved; every material source/risk maps to complete cases; positive coverage exists; applicable negative and boundary partitions are present or explicitly not applicable; oracles, governing specialists, and execution owners are explicit; levels are justified; prerequisites, data, environments, dependencies, outputs, and evidence are available or planned; source/risk traceability is complete and supplied tasks are linked when available; and skipped/blocked coverage is visible with an owner or accepted residual risk.
 
 ## Output
 
-Produce `test-analysis.md` in the project-approved evidence location. If stored inside an OpenSpec change without schema support, label it as a supplemental extension rather than a built-in artifact. Return baseline, risk register, complete Test Case Matrix, category/level/governing-specialist/execution-owner allocation, specialist prerequisites and expected outputs, data/environment/authorization plan, task mapping, coverage gaps, residual risk, and readiness verdict.
+Produce `test-analysis.md` or update the supplied plan in the user-approved evidence location. A supplied OpenSpec change can be referenced, but no OpenSpec project or schema is required. TA readiness is plan quality, not code authorization or execution success. Return baseline, risk register, complete Test Case Matrix, category/level/governing-specialist/execution-owner allocation, specialist prerequisites and expected outputs, data/environment/authorization plan, task mapping, coverage gaps, residual risk, and readiness verdict.

@@ -5,6 +5,8 @@ description: Write, refactor, or review maintainable code across languages. Use 
 
 # Clean Code Standard
 
+When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
+
 Use this skill for code writing, refactoring, review, and focused object or module design. Prefer the simplest language-appropriate design that expresses the required behavior and preserves its contracts.
 
 ## Core rules

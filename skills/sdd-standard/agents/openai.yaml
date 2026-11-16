@@ -1,6 +1,6 @@
 interface:
   display_name: "OpenSpec SDD Standard"
-  short_description: "Run gated OpenSpec spec-driven delivery"
-  default_prompt: "Use $sdd-standard to turn an approved System Design set into a gated OpenSpec change and verify it through convergence."
+  short_description: "Manage OpenSpec specifications and changes"
+  default_prompt: "Use $sdd-standard for OpenSpec artifact planning, task handoff or supplied-evidence review without running coding or testing workflows."
 policy:
   allow_implicit_invocation: true

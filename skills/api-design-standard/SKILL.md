@@ -1,11 +1,23 @@
 ---
-name: backend-api-design-standard
-description: Design, implement, or review stable HTTP, gRPC, GraphQL, and internal service APIs, including protocol choice, resource and operation semantics, schemas, validation, errors, idempotency, pagination, compatibility, versioning, authentication and authorization boundaries, rate limits, observability, and deprecation.
+name: api-design-standard
+description: Define and review shared backend/frontend OpenAPI contracts, and design or implement stable HTTP, gRPC, GraphQL and internal service APIs with explicit semantics, compatibility and verification.
 ---
 
-# Backend API Design Standard
+# API Design Standard
 
 Use this skill when an API is introduced, changed, reviewed, or implemented. Produce a contract that callers and providers can evolve independently without guessing.
+
+## System Design coordinator mode
+
+When invoked by `system-design-agent`, this skill and its own references are the coordinator's only additional skill dependency. Apply the API workflow here without invoking any other skills, including through reference routing. Route unresolved security, data, internal errors, resilience, logging, messaging or verification concerns to the relevant backend/frontend branch as questions with operation/decision IDs; consume returned evidence. Outside this coordinator mode, the specialized skill routing below remains available when applicable.
+
+The main coordinator authors and versions the shared HTTP contract using OpenAPI YAML/JSON. Swagger-compatible tooling may render or validate it; the machine-readable contract remains authoritative. Confirm the declared OpenAPI version and use matching installed validation tooling where available. Verify references, operation IDs, request/response/error schemas, parameters, field presence/nullability/constraints, security declarations and examples. Report exact checks and limitations; do not claim tooling ran when it did not.
+
+Confirm domain ownership and approved journeys before choosing operations. Where HTTP/OpenAPI is already the requested or accepted boundary, confirm that choice in workflow step 2 instead of reopening protocol selection without a material requirement. Preserve existing non-HTTP schemas rather than inventing equivalent OpenAPI operations; ask the relevant branch for their feasibility and compatibility evidence.
+
+Compare the operation catalogue against each approved action, permission, input, result, state effect and failure/recovery path. Schema validity is distinct from journey completeness. Record cross-boundary business semantics, authorization outcomes, idempotency/concurrency, limits, compatibility and verification in Integration SD and reference the contract's operation/schema IDs. Preserve server-side enforcement.
+
+Backend feasibility and frontend journey review must use the same version. Return proposed changes with rationale, affected IDs and consumer/provider impact. Only `system-design-agent` reconciles shared changes, records `Contract-Ready` and distributes the accepted version/hash. Later material changes reopen affected branch decisions, examples/mocks, contract verification and readiness; unrelated work may continue.
 
 ## Core Rules
 
@@ -13,7 +25,7 @@ Use this skill when an API is introduced, changed, reviewed, or implemented. Pro
 2. Define every operation's purpose, caller, authorization subject/action/resource, input, output, side effects, consistency, and completion semantics.
 3. For every field, specify type, format, constraints, required/optional status, nullable status, default behavior, omission semantics, repetition, and unknown-field behavior.
 4. Follow protocol semantics. For HTTP, use methods, status codes, headers, caching, and conditional requests consistently. For gRPC, define service methods, protobuf compatibility, status mapping, deadlines, and cancellation.
-5. Use stable, machine-readable errors. Coordinate public error contracts with `exception-error-standard`; do not expose stack traces or internal implementation details.
+5. Use stable, machine-readable errors; do not expose stack traces or internal implementation details. Obtain internal error-model decisions from branch evidence in coordinator mode, or use `exception-error-standard` in other modes.
 6. Define duplicate handling, idempotency, concurrency behavior, deadlines, cancellation, safe retry conditions, rate limits, and partial-success behavior.
 7. Prefer backward-compatible additive evolution. State versioning, support, deprecation, migration, and removal rules before the first breaking change.
 8. Keep transport DTOs separate from domain and persistence models when their responsibilities or evolution differ.
@@ -47,6 +59,8 @@ Claim implementation readiness only after all eight steps have a recorded outcom
 - observability and contract verification are planned.
 
 ## Reference Routing
+
+In coordinator mode, read only this skill's applicable references and request specialist evidence through the branches. The following cross-skill invocation routes apply only outside coordinator mode; this restriction also governs invocation wording in the references.
 
 - Start step 2 with [API design selection](references/contracts-and-protocols.md#api-design-selection). Read and apply the rules listed for each selected candidate. Consult another candidate's rules during selection only when they resolve a decision. Read [operation contracts](references/contracts-and-protocols.md#operation-contract) or [shared security and data boundaries](references/contracts-and-protocols.md#shared-security-and-data-boundaries) for the contract question at hand.
 - Read the relevant sections of [evolution and operations](references/evolution-and-operations.md) for compatibility, pagination, limits, observability, or deprecation. Apply the relevant [review checklist](references/evolution-and-operations.md#review-checklist) items in step 8.

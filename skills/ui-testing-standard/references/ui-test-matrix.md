@@ -1,6 +1,6 @@
 # UI Test Matrix
 
-Allocate each TA case to the smallest UI layer that proves the risk.
+Allocate each approved source/test case to the smallest UI layer that proves the risk.
 
 | Category | Primary evidence | Typical risks |
 |---|---|---|

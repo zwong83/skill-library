@@ -1,68 +1,11 @@
-# Apply Workflow
+# Implementation Task Handoff
 
-Use only after source readiness, complete apply-required artifacts, strict validation, applicable `TA-Ready` analysis, and explicit implementation authorization.
+This legacy reference path now describes exporting OpenSpec tasks, not executing implementation. The user invokes `implementation-agent` separately. Do not spawn it or testing agents from the OpenSpec workflow.
 
-## Entry
+1. Confirm the selected change, approved sources/design/contracts, complete schema-required task artifacts and passing strict validation.
+2. Read the installed tool's current apply instructions when needed and validate the observed output. Treat returned instructions/context paths as handoff data; do not begin production coding.
+3. Export bounded task IDs, acceptance criteria and forbidden effects, design/contract versions, affected ownership/dependencies, current code baseline when known, required evidence and unresolved decisions. Include supplied test-analysis cases when available; do not create or demand an invented TA artifact.
+4. Return the package and artifact-readiness verdict to the user. Explain any missing source decisions. Implementation chooses its TDD/domain ownership when independently invoked; testing analysis/execution is separately requested.
+5. On a later artifact-status or convergence request, reconcile supplied code/local-check/test evidence with task acceptance. Mark combined tasks complete only when all their required evidence exists; keep code-ready, independently verified and artifact-complete states distinct.
 
-1. Run the active OpenSpec apply-instructions command for the selected change.
-2. Validate the structured response and read every returned context file.
-3. Confirm task scope, approved SD Index and only task-relevant Backend/Frontend/Integration/contract constraints, current code/test baseline, evidence location, and authorization boundary.
-4. Confirm TA case IDs, positive/negative/boundary coverage, test-level/specialist allocation, specialist prerequisites/outputs, and TDD routing for behavior-changing tasks.
-5. Stop if instructions, required artifacts, TA, source status, or design constraints conflict.
-
-## Task execution
-
-- Implement one bounded approved task at a time.
-- Invoke `clean-code-standard` for production-code work.
-- Invoke `tdd-standard` through `tdd-agent` when TDD is routed for the task.
-- Load only the technical skills activated by the task routing matrix:
-
-| Changed concern | Conditional skill |
-|---|---|
-| Module/layer/object/pattern | `backend-layered-architecture-standard` for module layering. Use `clean-code-standard` for the relevant object-modeling, SOLID, or pattern references. |
-| API/service contract mapping | `backend-api-design-standard` |
-| Persistence/transactions/migrations | `db-standard` |
-| Resilience behavior | `backend-resilience-standard` |
-| Configuration/secrets/flags | `software-security-standard` for secret controls, `deployment-release-standard` for rollout and rollback |
-| Performance/capacity implementation | Approved SD budgets, capacity assumptions, and verification criteria |
-| Deployment/release artifacts | `deployment-release-standard` |
-| Operability/telemetry/runbooks | `log-trace-standard` for event/span contracts, `deployment-release-standard` for rollout and recovery |
-| Security controls | `software-security-standard` |
-| Errors | `exception-error-standard` |
-| Cache | `cache-standard` |
-| Messaging | `message-standard` with only the selected broker reference |
-| Lock, lease, fencing, or cache-backed deduplication | Applicable [cache coordination guidance](../../cache-standard/references/coordination-and-idempotency.md) |
-| Caching and messaging interact | [`middleware-engineering-agent`](../../../agents/middleware-engineering-agent/SKILL.md) for the approved task |
-| Frontend rendering/routing/modules | `frontend-architecture-standard` |
-| Frontend components/forms/design system | `frontend-component-design-standard` |
-| Frontend state/API data/cache/optimistic/offline | `frontend-state-data-standard` |
-| Responsive/accessibility/localization/theme/motion | `frontend-experience-standard` |
-| Frontend loading/render/interaction/assets/memory | `frontend-performance-standard` |
-| Browser/client security | `frontend-security-standard` |
-| Frontend errors/RUM/correlation/analytics | `frontend-observability-standard` |
-| Frontend build/config/assets/CDN/release | `frontend-build-delivery-standard` |
-| Test portfolio/evidence | `testing-strategy-standard` |
-| Test analysis | `test-analysis-standard` |
-| Unit/component tests | `unit-testing-standard` |
-| Integration boundaries | `integration-testing-standard` |
-| Provider/consumer compatibility | `contract-testing-standard` |
-| UI behavior, visual, accessibility, compatibility | `ui-testing-standard` |
-| Critical multi-component journeys | `system-e2e-testing-standard` |
-| Authorized security control verification | `security-testing-standard` |
-| Cross-level regression | `regression-testing-standard` |
-| Red-Green-Refactor | `tdd-standard` |
-| Non-obvious comments/contracts | Relevant comment or API documentation reference from `clean-code-standard` |
-
-These skills map and verify approved decisions; they do not authorize a new strategy. Escalate material architecture, contract, ownership, consistency, security, recovery, deployment, operational, or test-strategy changes to System Design or the owning requirements artifact.
-
-## Verification and evidence
-
-Run project-required formatting, lint, type/static analysis, build, tests, and task-specific checks. Record exact commands, versions where relevant, results, failures, retries, skips, and limitations. Never report an unexecuted check as passing.
-
-Select one implementation execution owner. A TDD-routed frontend behavior remains wholly owned by `tdd-agent`, which receives only the approved task-selected frontend standards/context. Otherwise route a material frontend task to `frontend-implementation-agent` after approved frontend SD decisions and the relevant versioned contract are `Contract-Ready`. Small non-TDD frontend changes may remain with `implementation-agent`. Frontend execution remains inside Apply and does not create a separate lifecycle.
-
-For non-TDD work, route assigned cases to the applicable unit, integration, contract, UI, system/E2E, performance, or security testing Agent after its prerequisites and authorization gates pass. Route required cross-level regression to `regression-testing-agent` after a testable target and specialist evidence exist.
-
-Mark a task complete only after its code and required specialist tests, migration checks, documentation, telemetry, and evidence are complete. Routine task-status and evidence updates inside the selected change are part of authorized Apply; upstream changes, main-spec synchronization, archive, Git operations, deployment, and unrelated changes are not.
-
-Stop on ambiguity, failed prerequisites, design drift, out-of-scope impact, or unresolved security/operational concerns. Correct the artifact that owns the decision through its authorized mode before resuming.
+OpenSpec task readiness, including an observed apply-ready status, is not code execution authorization, a testing verdict or release approval. This workflow does not modify production code/test assets, run builds/test suites or call another workflow to finish the handoff.

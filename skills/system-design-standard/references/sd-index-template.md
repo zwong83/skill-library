@@ -6,6 +6,10 @@ Keep this document short. It is the navigation, status, and approval authority, 
 
 Record project/system, SD version, status, date, author/owner/reviewers, target release, and approval status.
 
+## Visual navigation and authority map
+
+Immediately after document-control metadata, show a compact document/authority diagram linking the Index, applicable Backend/Frontend/Integration documents, shared contracts, database artifacts and maintained diagram sources. Show ownership and reference relationships, not copied technical designs. Embed the readable view (or inline source with a rendering limitation), then a brief caption. The remaining administrative registers follow this visual entry point and retain their tabular form.
+
 ## Source baseline
 
 List governing BRD/PRD/SRS/FRS/SA/Change Request or equivalent path, version, status, and relevant IDs. Record only material unresolved source items and the next owner action.
@@ -20,11 +24,11 @@ List governing BRD/PRD/SRS/FRS/SA/Change Request or equivalent path, version, st
 | Contract artifact(s) | | | Draft / Contract-Ready / Blocked / N/A | |
 | Database design artifact(s) | | | Draft / Data-Ready / Blocked / N/A | |
 
-List only applicable contract formats, such as OpenAPI, AsyncAPI, GraphQL schema, or Protobuf. Do not create unused placeholders.
+List only applicable contract formats, such as OpenAPI for the shared HTTP API, AsyncAPI, GraphQL schema or Protobuf. In agent-coordinated work, identify the main coordinator as the shared API owner. Do not create unused placeholders.
 
 ## Feature and diagram coverage
 
-Use the matrix from [feature-diagram-coverage.md](feature-diagram-coverage.md). Include every in-scope feature, source/SA IDs, owning document, diagram IDs, current/problem coverage for brownfield changes, target technical-flow coverage, conditional component/data/state/middleware views, verification, and status. Keep diagrams in their authoritative Backend/Frontend/Integration documents; the Index stores links and readiness only.
+Use the matrix from [feature-diagram-coverage.md](feature-diagram-coverage.md). Include every in-scope feature, source/SA IDs, owning document, diagram IDs, current/problem coverage for brownfield changes, target technical-flow coverage, conditional component/data/state/middleware views, verification, and status. Keep technical design diagrams in their authoritative Backend/Frontend/Integration documents; apart from its document/authority navigation view, the Index stores their links and readiness rather than duplicate technical content.
 
 ## Data and middleware artifact status
 
@@ -32,8 +36,8 @@ When applicable, record versions/statuses for the physical model, data dictionar
 
 ## Specialist routing and status
 
-| Profile | Required / Conditional / N/A | Trigger/source IDs | Status | Target document |
-|---|---|---|---|---|
+| Branch / profile | Parent / owner | Required / Conditional / N/A | Trigger/source IDs | Contract version/hash | Skills used | Status | Target document |
+|---|---|---|---|---|---|---|---|
 
 Keep this table compact. Do not duplicate specialist reasoning.
 
@@ -41,7 +45,7 @@ Keep this table compact. Do not duplicate specialist reasoning.
 
 Record:
 
-- `Contract-Ready`: status, contract version/hash, date, and unresolved impact;
+- `Contract-Ready`: status, contract version/hash, date, both applicable branch review results, validation evidence/limitations and unresolved impact;
 - `Backend-Ready`, `Frontend-Ready`, and `Integration-Ready` as applicable;
 - `Data-Ready` and `Middleware-Ready` when those scopes are applicable;
 - overall `SD-Ready`: Ready / Conditionally Ready / Blocked;

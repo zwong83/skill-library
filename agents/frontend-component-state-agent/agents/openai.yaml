@@ -1,0 +1,3 @@
+interface:
+  display_name: "Frontend Component and State Agent"
+  short_description: "Design component contracts and client state flows"

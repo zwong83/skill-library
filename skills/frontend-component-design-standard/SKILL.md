@@ -5,6 +5,8 @@ description: Design or review maintainable web UI component responsibilities, AP
 
 # Frontend Component Design Standard
 
+When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
+
 Use this skill when component responsibilities, contracts, composition, form behavior, or design-system integration need implementation-ready decisions.
 
 ## Core rules

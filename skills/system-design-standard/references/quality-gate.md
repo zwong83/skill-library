@@ -2,6 +2,8 @@
 
 Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design gap behind an unapproved technology choice.
 
+This technical checklist serves standalone design reviews and the assigned backend/frontend branch scope. The main `system-design-agent` applies the gate in its own `SKILL.md` using branch evidence; it does not load this reference or its parent skill.
+
 ## Input readiness
 
 - Mandatory task, system identity, and System Analysis baseline are present, or a provisional design is explicitly authorized.
@@ -11,7 +13,10 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 ## Source and architecture
 
 - Governing System Analysis and requirements are identified with version/status.
-- The specialist routing matrix classifies architecture, interface/data, frontend design, quality attributes, and delivery/operations as `Required`, `Conditional`, or `Not Applicable`, with source-based rationale.
+- The routing matrix classifies backend/frontend branches and applicable architecture/database, identity/access, middleware, diagnostics, conditional operations and final quality-review stages or dedicated ordered frontend architecture, component/state, experience and quality/delivery stages with source-based rationale. Ordered sibling ownership, accepted predecessor revisions and the contract baseline are explicit.
+- The applicable UX baseline was confirmed/reused or prepared through an early Experience pass before dependent architecture/components; version, acceptance basis and unresolved owner decisions are recorded. Search proposals are not implicit requirements, and existing design systems are preserved.
+- Frontend experience/support/quality constraints were supplied before frontend architecture; all four frontend stage dispositions and accepted revisions are recorded, with later findings returned to the original owners and affected checks repeated.
+- Quality/security/recovery requirements were supplied before architecture work. Identity and public-error feedback informed contract readiness. Later session/permission/outbox/data requirements returned to Architecture, and accepted revisions and final quality findings were propagated to affected downstream work.
 - Only routed concerns and document templates were loaded; accepted compact handoffs are written once to their authoritative targets, and material conflicts or unresolved decisions are reconciled or present in `open-decisions.md` before readiness.
 - The Index links the applicable Backend, Frontend, Integration, and contract artifacts with versions/statuses and contains the routing/status table and review verdict.
 - Backend, Frontend, and Integration documents respect their authority boundaries; full schemas and normative rules are not duplicated across documents.
@@ -25,6 +30,11 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - The design does not add components or complexity without a requirement or operational rationale.
 
 ## Diagram quality
+
+- Every design document opens with its context/overview after compact metadata, and the Index opens with an authority/navigation diagram before registers.
+- Every substantive technical section and feature block presents relevant diagrams before captions and supplementary notes/tables. Check actual section order, not just the diagram inventory. Prose-first technical sections, placeholders, generic diagrams standing in for specific behavior and bare source links are `Gap` and block affected readiness.
+- Early UX baseline outputs show affected journey/interaction and applicable layout/wireframe views before style/token notes, preserving proposal/acceptance labels. Scoped technical reviews use affected existing/annotated views or proposed fragments; blocker-only reports identify missing evidence without inventing a design.
+- Technical specialist handoffs follow the same ordering, with workflow records after technical content. Exact schemas, SQL, metadata and administrative registers retain their formats and are not substitutes for design views.
 
 - The feature/diagram coverage matrix contains every in-scope feature, source/SA IDs, owner, target document, diagram IDs, conditional views, verification, and status.
 - A full design contains target architecture and main runtime-flow views plus current architecture/main-flow/problem views for brownfield scope.
@@ -45,8 +55,10 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 
 - Interfaces define purpose, ownership, operations/messages, contracts, authentication/authorization, validation, errors, retries, timeouts, idempotency, versioning, and monitoring as applicable.
 - API protocol semantics, field presence/nullability/defaults, duplicate and concurrent behavior, pagination, payload/rate limits, compatibility, deprecation, and contract verification are explicit where applicable.
+- In agent-coordinated work, the main coordinator owns the OpenAPI contract; both affected branches reviewed the accepted version/hash. Shared contract changes were reconciled through that owner, and returned design/diagram/example evidence is current for the affected baseline. Structural validation is not treated as operation/journey coverage or approval.
 - Error handling defines taxonomy/codes, throw-or-return and translation boundaries, public mappings, retryability, terminal handling, cause preservation, and single-owner logging where applicable.
 - Data has a source of truth, owner, lifecycle, consistency boundary, access policy, retention/deletion rule, capacity assumption, and backup/recovery behavior.
+- Architecture owns data models, DDL/DML, transactions, indexes and migration design. Identity/Access supplies principal/session/permission requirements; Middleware supplies relevant outbox/inbox/deduplication requirements; neither creates a competing database authority.
 - Persistent data defines datastore rationale, keys and constraints, bounded access paths, index evidence, transaction/isolation and conflict behavior, migration/backfill compatibility, connection capacity, and tested restore expectations where applicable.
 - Every data-changing scope has conceptual/logical/physical models, an owned data dictionary, dialect/version-specific proposed DDL for affected structures, and traceability from feature/data IDs to schema artifacts.
 - Every state-changing operation and critical read path appears in a parameterized DML/query catalog with bounds, transaction, lock/conflict, index/access path, result/error, and verification.
@@ -56,7 +68,7 @@ Report each check as `Pass`, `Gap`, or `Needs decision`. Do not hide a design ga
 - The middleware register lists every current/proposed database, cache, queue/stream, search, scheduler, object-storage, or equivalent dependency with feature mapping, purpose, product/version or unresolved decision, owner, topology, contract/data, consistency, failure/recovery, capacity, security, observability, operations, and status.
 - Every selected middleware has a topology/deployment view and per-feature interaction sequence; middleware is not introduced without a requirement and explicit rationale.
 - Migrations, compatibility, and rollback implications are addressed when data or contracts change.
-- When frontend scope exists, backend domain/data/transaction/security ownership is explicit; the versioned frontend/backend contract has joint journey-driven review and `Contract-Ready` status before parallel detail or implementation readiness.
+- When frontend work depends on a shared contract, backend domain/data/transaction/security ownership is explicit. Verify joint journey-driven review and `Contract-Ready` status for a new or affected contract before parallel detail or implementation readiness. For frontend-only work, verify the accepted version still covers the affected journeys before reusing it.
 - The frontend design covers applicable rendering/routing/modules, server/client and trust boundaries, components/design system, complete UI states, state/data ownership, responsive/accessibility/localization, performance, client security, observability, build/delivery, and test evidence without duplicating authoritative backend rules.
 - Contract feedback resolves or registers request fan-out, client joins, field/error semantics, pagination/filter/sort, idempotency/concurrency, deadlines/cancellation, compatibility, mocks/examples, and unsupported UX needs.
 

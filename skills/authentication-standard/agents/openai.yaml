@@ -1,0 +1,6 @@
+interface:
+  display_name: "Authentication Standard"
+  short_description: "Design identity, sessions and token lifecycles"
+  default_prompt: "Use $authentication-standard to select or review authentication, credential validation and session/token lifecycle behavior for this system."
+policy:
+  allow_implicit_invocation: true

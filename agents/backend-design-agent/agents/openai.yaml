@@ -1,0 +1,6 @@
+interface:
+  display_name: "Backend Design Agent"
+  short_description: "Coordinate ordered backend design specialists"
+  default_prompt: "Use $backend-design-agent to run architecture, identity/access, middleware, diagnostics, conditional operations and final quality review in order."
+policy:
+  allow_implicit_invocation: true

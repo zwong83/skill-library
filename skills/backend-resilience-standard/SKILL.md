@@ -5,6 +5,8 @@ description: Design, implement, or review bounded failure and recovery behavior,
 
 # Backend Resilience Standard
 
+When used by `middleware-engineering-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Use this skill when a system depends on remote services, databases, brokers, caches, shared resources, or capacity-sensitive work, or when failure, overload, degradation, and recovery behavior must be explicit.
 
 ## Core Rules
@@ -71,7 +73,7 @@ Open the reference section that answers the current decision. Once a control is 
 
 - Use [dependency policy](references/dependency-failure-controls.md#dependency-policy) when recording the combined policy for a dependency.
 - Use [verification scenarios](references/overload-health-and-recovery.md#verification-scenarios) for the failure paths covered by step 9.
-- Invoke `backend-api-design-standard` for public deadline, cancellation, idempotency, throttling, and error semantics.
+- Invoke `api-design-standard` for public deadline, cancellation, idempotency, throttling, and error semantics.
 - Invoke `exception-error-standard` for typed failures, retry classification, translation, compensation, and terminal handling.
 - Invoke `cache-standard` for cache consistency or fallback and `message-standard` for broker replay or delivery behavior when the respective dependency is in scope.
 - Invoke `log-trace-standard` for concrete protection, degradation, and recovery telemetry.

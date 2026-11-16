@@ -2,7 +2,7 @@
 
 ## 1. Control and baseline
 
-Record change ID, scope, analyst, date, source paths/versions/statuses, OpenSpec change/schema, code baseline, and TA status.
+Record change ID, scope, analyst, date, source paths/versions/statuses, optional supplied task/change identifiers, code baseline, and TA status.
 
 ## 2. Change impact
 
@@ -21,7 +21,20 @@ Give every material behavior at least one positive case. Include negative and ex
 
 ## 5. Coverage and task mapping
 
-Map each material source requirement, OpenSpec scenario, design decision, and implementation task to one or more cases. Show positive/negative/boundary completeness, governing specialist, execution owner/TDD route, expected output, intentional exclusions, and duplicated coverage rationale.
+Map each material source requirement, approved source scenario, design decision, and supplied implementation task to one or more cases. Initial requirements-based analysis uses source/risk IDs; task mapping is added when tasks exist. Show positive/negative/boundary completeness, governing specialist, execution owner/TDD route, expected output, intentional exclusions, and duplicated coverage rationale.
+
+For available test coverage, record the existing test/evidence reference and whether each case needs new coverage, a rerun, or may reuse retained evidence with rationale. TDD-authored tests do not need duplicate ownership or recreation; scoped results must still match the required snapshot and conditions.
+
+### Conditional specialist applicability
+
+Apply the [contract/system-E2E selection criteria](test-level-selection.md#conditional-contract-and-systeme2e-testing). Record both decisions for every change; use separate rows for materially different scopes.
+
+| Specialist | Affected scope and source/risk IDs | Required / Not Applicable | Criterion and rationale | Required or alternative coverage case IDs and evidence criteria | Owner and residual gaps |
+|---|---|---|---|---|---|
+| contract-testing-agent | | | | | |
+| system-e2e-testing-agent | | | | | |
+
+Unresolved applicability is an open decision that blocks TA readiness. Planned execution prerequisites belong below; unavailable resources are not a reason for `Not Applicable`.
 
 ## 6. Data, environment, and dependencies
 
@@ -33,4 +46,4 @@ Define prerequisites, required pass evidence, defect disposition, flaky-test han
 
 ## 8. Open and blocked items
 
-Record the source gap, affected scenarios/tasks, decision needed, owner, and next action. Do not make TA Apply-ready while material expected behavior remains unknown.
+Record the source gap, affected scenarios/tasks, decision needed, owner, and next action. Do not make TA-Ready while material expected behavior remains unknown.

@@ -49,7 +49,7 @@ A test strategy is ready only when:
 
 - Read [risk-portfolio-and-techniques.md](references/risk-portfolio-and-techniques.md) for risk analysis, test levels/types, scenario design, techniques, and portfolio selection.
 - Read [automation-data-environments-and-evidence.md](references/automation-data-environments-and-evidence.md) for automation, isolation, doubles, environments, data, flakiness, gates, reporting, and evidence.
-- Invoke `test-analysis-standard` after approved requirements/design to derive change-specific scenarios, level allocation, task mapping, and the pre-Apply TA gate.
+- Invoke `test-analysis-standard` after approved requirements/design to derive change-specific scenarios, level allocation, task mapping, and the analysis readiness verdict.
 - Invoke `unit-testing-standard` for deterministic unit/component test design and review.
 - Invoke `integration-testing-standard` for real adapter, datastore, broker, cache, framework, serialization, and service-boundary tests.
 - Invoke `contract-testing-standard` for provider/consumer schema, protocol, semantic, version, and compatibility verification.
@@ -58,15 +58,15 @@ A test strategy is ready only when:
 - Invoke `regression-testing-standard` for change-impact suite selection, cross-level regression execution, and a unified regression verdict.
 - Invoke `tdd-standard` only when implementation is authorized and the task will follow Red-Green-Refactor.
 - Invoke `software-security-standard` for authoritative threat/control design and `security-testing-standard` for authorized, bounded verification of those controls.
-- Select performance and capacity tests from approved objectives, representative workloads, and the evidence each decision requires.
+- Invoke [performance-testing-standard](../performance-testing-standard/SKILL.md) in planning mode to select experiments from approved objectives and representative workloads; execution remains separately gated.
 - Invoke `backend-resilience-standard` for timeout, retry, overload, degradation, dependency-loss, failover, and recovery scenarios.
-- Invoke `backend-api-design-standard`, `db-standard`, `cache-standard`, and `message-standard` for contract-, migration-, consistency-, and technology-specific tests.
+- Invoke `api-design-standard`, `db-standard`, `cache-standard`, and `message-standard` for contract-, migration-, consistency-, and technology-specific tests.
 - Invoke `deployment-release-standard` for pipeline gates and production verification. Use the approved operational design for drills and readiness evidence.
 
-## System Design and SDD Boundary
+## Design, coding and testing boundaries
 
 - In System Design, decide risk coverage, required test levels/types, environments, evidence, non-functional verification, and release/operational gates.
-- In SDD, implement approved test cases, fixtures, doubles, harnesses, datasets, pipeline jobs, reports, and traceability; execute and record actual results.
+- In an independently invoked testing assignment, implement authorized test assets and execute approved cases within scope. OpenSpec artifact status and coding lifecycle modes are not universal execution prerequisites; keep each workflow's ownership distinct.
 - Return missing acceptance behavior, material architecture assumptions, or changed risk decisions to the owning requirements or System Design artifact.
 
 ## Expected Output

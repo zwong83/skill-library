@@ -1,6 +1,6 @@
 interface:
   display_name: "Regression Testing Agent"
   short_description: "Select and verify cross-level regression evidence"
-  default_prompt: "Use $regression-testing-agent to select and verify the risk-based regression scope for this change."
+  default_prompt: "Use $regression-testing-agent independently with only regression-testing-standard to verify the approved assigned scope and return observed results and gaps; preserve supplied applicability decisions."
 policy:
   allow_implicit_invocation: true

@@ -5,6 +5,8 @@ description: Design, implement, refactor, or review error and exception handling
 
 # Exception and Error Handling
 
+When used by `diagnostics-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Use this skill to make failures explicit, actionable, safe, and consistent. Error handling is part of the system contract, not a collection of local `try/catch` blocks.
 
 ## Core rules

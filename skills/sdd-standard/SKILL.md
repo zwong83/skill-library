@@ -1,75 +1,41 @@
 ---
 name: sdd-standard
-description: Run OpenSpec-backed Spec-Driven Development from approved requirements, System Analysis, and the applicable System Design document set through proposal, delta specs, design delta, tasks, implementation, convergence, and archive.
+description: Manage OpenSpec specifications and change artifacts from approved requirements and design, prepare task handoffs, review supplied implementation/testing evidence for convergence, and synchronize or archive explicitly requested changes; does not execute coding or testing workflows.
 ---
 
-# OpenSpec-Backed Spec-Driven Development
+# OpenSpec Specification and Change Management
 
-Use this governing skill to preserve the chain from approved intent to artifacts, code, tests, evidence, convergence, and archive. Select one mode and load only its routed references; do not preload implementation skills during planning.
+This skill owns OpenSpec artifacts and their lifecycle, not overall software delivery. The user invokes OpenSpec, Implementation and Testing independently. Requirements/design, task records, code snapshots and evidence connect them; no delivery coordinator or automatic cross-workflow dispatch is implied.
 
-## Modes
+## Modes and responsibility
 
-| Mode | Outcome | Routed Agent | Production code |
-|---|---|---|---|
-| Explore | Clarify sources, code, constraints, and decisions | openspec-planning-agent | No |
-| Propose | Create/complete apply-required OpenSpec artifacts | openspec-planning-agent | No |
-| Review | Evaluate readiness, artifacts, traceability, validation | openspec-planning-agent | No |
-| Test Analysis | Derive the traceable Test Case Matrix and specialist allocation before Apply | test-analysis-agent | No |
-| Apply | Implement authorized tasks with tests/evidence | implementation-agent | Yes, after explicit authorization |
-| Regression | Select and verify impacted behavior across required test levels | regression-testing-agent | No production corrections |
-| Converge | Compare implementation and evidence to all governing artifacts | Coordinator | Corrections require authorization |
-| Archive | Synchronize as applicable and archive a converged change | SDD Coordinator | No |
+| Mode | Work owned here |
+|---|---|
+| Explore | Inspect requirements, design, code context and unresolved decisions without production edits. |
+| Propose | Create/update proposal, specs, design mapping and task artifacts under the active schema. |
+| Review | Validate artifacts, semantic coverage and source/contract alignment. |
+| Handoff | Export approved task/context references for a separately invoked implementation or testing workflow. |
+| Converge | Review supplied code snapshot and retained verification evidence against approved specifications. |
+| Sync / Archive | Perform explicitly authorized specification synchronization or archive after the applicable gates. |
 
-Mode and delivery state are independent. Valid states include Blocked, Drafting, Review-Ready, Apply-Ready, Implementing, Verification-Failed, Not-Converged, Converged, and Archived.
+Implementation, Test Analysis, test execution and Regression are not modes of this workflow. OpenSpec may expose apply instructions: reading/exporting them is Handoff, not permission to implement. Do not invoke implementation or testing agents, edit their code/tests, generate test verdicts, or launch test/build/load/scanning commands. Artifact validation is permitted within this workflow. Evidence review can report missing or inconsistent results; it cannot invent execution or override a failed testing verdict.
 
-## Non-negotiable gates
+## Mandatory workflow
 
-- Read [references/input-and-readiness-gates.md](references/input-and-readiness-gates.md) before Propose, Test Analysis, Apply, Regression, Converge, or Archive.
-- Block when mandatory sources are missing, unapproved, contradictory, or contain material assumptions, TBC/TBD, open questions, pending approvals, unresolved proposals, missing acceptance criteria, or missing owners.
-- Reconcile selected-increment operations against the approved sources and SD/contract versions, then map them to spec scenarios, tasks and applicable test cases. Report semantic coverage separately from strict OpenSpec validation. Use the [shared functional coverage method](../prd-standard/references/functional-coverage.md) when available.
-- For behavior-changing implementation, require approved System Analysis, an `SD-Ready` Index, and the applicable Backend/Frontend/Integration/contract authorities plus requirements and Change Request.
-- Detect the local OpenSpec executable/version without an online update check. Read [references/openspec-bootstrap.md](references/openspec-bootstrap.md) only when installation, compatibility, PATH, or project initialization is unresolved.
-- Do not silently install/upgrade OpenSpec, edit PATH, initialize a project, create scope, write code, synchronize specs, archive, commit, push, or deploy.
-- Before behavior-changing Apply, require selected change/schema, complete apply-required artifacts, strict validation, `TA-Ready` analysis or justified `Not Applicable`, complete traceability, resolved material implementation concerns, and explicit user authorization.
-- Artifact approval is not implementation authorization. Task completion is not convergence.
-- If implementation reveals a source or design defect, stop and update the owning artifact through its authorized lifecycle.
+Complete steps 1–7 in order at the depth of the requested mode. Record Complete, Not Applicable with a scope reason, Blocked with owner/next action, or Pending for dependent work. Missing evidence is not a justified exclusion. Revisit affected steps when sources or versions change.
 
-## Mode routing
+1. Confirm the requested OpenSpec mode, project/change, scope and action authorization. Discover the installed executable/version and active schema locally; do not invent status or silently install/initialize tools.
+2. Read [input and readiness gates](references/input-and-readiness-gates.md), the approved source/design/contract baseline and only relevant project/change context. Resolve material ambiguity at its source before dependent artifact work.
+3. Read [artifact requirements](references/openspec-artifact-contract.md) and the active schema's dynamic instructions. Preserve its actual paths, dependencies and templates; technical mappings describe approved decisions rather than reselecting them.
+4. Perform only the requested artifact action. For Handoff use [task handoff guidance](references/apply-workflow.md); return tasks and optional OpenSpec instructions as data for the user to pass onward. Do not start coding or testing.
+5. Validate affected artifacts and semantic traceability. Distinguish a passing OpenSpec validation from complete requirements coverage and from tested software.
+6. For Converge, review supplied evidence using [convergence guidance](references/convergence-gate.md). Missing or failing required evidence yields Not Converged with a requested next action. For Sync/Archive require the applicable convergence/sync assessment and explicit authorization, then use the installed tool's observed capabilities.
+7. Return changed artifacts, source/version references, exact validation/review evidence, readiness or convergence status, unresolved items and suggested independent next invocation. Do not execute that next workflow automatically.
 
-### Explore, Propose, Review
+## Boundaries and outputs
 
-Use [references/openspec-artifact-contract.md](references/openspec-artifact-contract.md) and the active schema's dynamic instructions. OpenSpec determines artifact names, dependencies, templates, paths, and apply requirements. Validate observed structured output before relying on it; never fabricate project, change, schema, artifact, or status.
+Artifact readiness means the specification/task package is ready to consume; it does not authorize coding or prove test readiness. Retain OpenSpec's observed status names as tool data, not cross-workflow gates. Test plans and results are external inputs when required by the change; a specific TA file/status is not mandatory for every OpenSpec assignment. Required missing verification still prevents convergence/archive.
 
-A normal spec-driven flow may be proposal -> capability specs -> design -> tasks, but the active schema is authoritative.
+Use [bootstrap guidance](references/openspec-bootstrap.md) only when installation, compatibility, PATH or initialization is unresolved. Installation, project initialization, code/test changes, external mutations, Git operations, spec synchronization, archive and deployment retain their respective authorization boundaries. Approval of an artifact does not authorize another workflow.
 
-### Test Analysis
-
-After apply-required artifacts are complete and before behavior-changing Apply, invoke `test-analysis-agent`. Store `test-analysis.md` in the project-approved evidence location and label it supplemental when the active OpenSpec schema does not define it. The TA must contain a complete Test Case Matrix, case-to-task-to-specialist routing, and each specialist's prerequisites/output expectations. TA readiness is not implementation authorization.
-
-### Apply
-
-Read [references/apply-workflow.md](references/apply-workflow.md). Use the current dynamic apply instructions, read every returned context file, implement one bounded approved task at a time, load only task-selected technical skills, and record exact evidence.
-
-### Converge
-
-Read and execute [references/convergence-gate.md](references/convergence-gate.md). Verify:
-
-Source requirement -> capability requirement/scenario -> design decision -> TA case -> task -> specialist test -> code/evidence -> regression result.
-
-Checked tasks or passing unit tests alone do not prove convergence.
-
-### Archive
-
-Archive only after a Converged verdict, delta/main-spec synchronization assessment, and explicit archive authorization. Use the installed OpenSpec version's observed commands and report the exact result. Archive authorization does not imply Git push or deployment authorization.
-
-## Authorization boundaries
-
-Treat installation/upgrade, PATH/profile changes, project initialization, artifact scope changes, production code/tests/config/schema changes, external state changes, Git operations, main-spec synchronization, archive, and deployment/release as distinct actions. Obtain the authorization required by the active environment immediately before each mutation.
-
-Apply authorization covers approved code/tests and routine task/evidence updates inside the selected change. It does not cover upstream redesign, unrelated changes, main-spec synchronization, archive, Git, or deployment.
-
-## Handoff
-
-Every compact handoff reports mode, delivery state, project/OpenSpec context, selected change/schema, source and affected SD IDs/versions, unresolved result, artifact/validation status, tasks/files changed when applicable, exact verification, convergence verdict, risks/limitations, evidence location, and the next action with its authorization requirement. Reference authoritative paths/sections rather than copying full source or design content, and do not retain internal handoffs unless audit rules require it.
-
-Do not replace BRD, PRD, SRS/FRS, SA, or SD with OpenSpec artifacts. Do not include secrets or private production data, and never report checks or approval that were not observed.
+Return the requested mode, project/change/schema, artifact paths/versions, validation, scope and evidence coverage, blockers/owners, and next action. Do not replace governing requirements or System Design with OpenSpec artifacts, expose secrets, or weaken specifications to fit failing code.

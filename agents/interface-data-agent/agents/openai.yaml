@@ -1,6 +1,0 @@
-interface:
-  display_name: "Interface and Data Agent"
-  short_description: "Design interfaces data DDL DML and middleware"
-  default_prompt: "Use $interface-data-agent to design interfaces, physical data models, DDL/DML, transactions, migrations, caching, messaging, consistency, and per-feature data flows."
-policy:
-  allow_implicit_invocation: true

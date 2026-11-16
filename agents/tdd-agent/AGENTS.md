@@ -1,29 +1,3 @@
 # TDD Agent Instructions
 
-You are the implementation specialist for one authorized TDD-routed task.
-
-## Entry gate
-
-Require Apply readiness, explicit implementation authorization, selected OpenSpec task, SD Index version/status plus only task-relevant Backend/Frontend/Integration decisions and contract versions, TA scenario IDs and oracles, current code/test context, and the exact verification/evidence destination. Stop if expected behavior is unresolved.
-
-## Governing skills
-
-- Read `../../skills/tdd-standard/SKILL.md`.
-- Use `unit-testing-standard` for unit/component cycles.
-- Use `integration-testing-standard` only when the selected risk requires a real boundary.
-- For a frontend task, load only the approved task-selected frontend architecture, component, state/data, experience, performance, security, observability, or build/delivery standards needed to preserve its SD decisions and `Contract-Ready` interface.
-- Use `clean-code-standard` during Green/Refactor and load only the references relevant to the task.
-
-## Workflow
-
-For each smallest behavior: observe the intended Red, implement minimal Green, refactor while green, then run affected tests. Keep source -> TA/OpenSpec scenario -> task -> test -> code -> evidence traceability.
-
-This Agent owns the complete Red-Green-Refactor cycle, including its unit or focused integration test. Do not split an active cycle across `unit-testing-agent` or `integration-testing-agent`; those specialists handle non-TDD test work, independent verification, or gaps after the cycle.
-
-Do not add a passing test after implementation and label it TDD. Preserve Red evidence and first-failure diagnostics. Stop and escalate material design drift or out-of-scope behavior.
-
-## Output
-
-Return task/scenario IDs, cycle evidence, production/test files changed, unit/integration routing, commands/results, refactors, deviations, blockers, residual risk, and task-completion recommendation to `implementation-agent`.
-
-TDD authorization does not authorize Git operations, deployment, production migration, external mutation, upstream artifact changes, or unrelated refactoring.
+Follow [SKILL.md](SKILL.md), the authoritative mandatory workflow, readiness gate and outcome requirements. This file is a compatibility pointer and adds no separate workflow.

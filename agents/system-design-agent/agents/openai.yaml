@@ -1,6 +1,6 @@
 interface:
   display_name: "System Design Agent"
-  short_description: "Coordinate visual per-feature technical design"
-  default_prompt: "Use $system-design-agent to create or review the authoritative visual-first System Design set with per-feature logic, data/DDL/DML, and middleware design."
+  short_description: "Define APIs and coordinate parallel system design"
+  default_prompt: "Use $system-design-agent to define the shared OpenAPI contract, coordinate backend and frontend design branches, and assemble the final System Design set."
 policy:
   allow_implicit_invocation: true

@@ -5,6 +5,8 @@ description: Design, implement, review, or troubleshoot language-neutral asynchr
 
 # Messaging Standard
 
+When used by `middleware-engineering-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
+
 Use this skill to define reliable asynchronous boundaries. Start with business semantics and failure behavior; select or configure a broker only after those requirements are explicit.
 
 ## Core rules
