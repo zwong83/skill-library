@@ -5,6 +5,18 @@ description: Design or review maintainable web UI component responsibilities, AP
 
 # Frontend Component Design Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved journeys, routes/modules, UI states and relevant design-system assets.
+- **Conditional inputs:** Existing components/forms, state/API contracts and applicable accessibility constraints.
+- **Optional context:** Component examples and alternative composition.
+- **Outputs:** Component register/APIs, composition/state matrices, form/accessibility contracts and test seams.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Cover assigned responsibilities/states and identify unresolved dependencies.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill when component responsibilities, contracts, composition, form behavior, or design-system integration need implementation-ready decisions.

@@ -5,6 +5,18 @@ description: Implement, execute, or review assigned UI component, interaction, v
 
 # UI Testing Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved UI states/cases, visible/forbidden outcomes and supported browser/device/context matrix.
+- **Conditional inputs:** Governed visual/accessibility baselines where relevant; runnable UI/data/auth state and permissions for execution/writes; retained evidence for review.
+- **Optional context:** Design examples, screenshots and journey analytics.
+- **Outputs:** Authorized tests and matrix-based UI/visual/accessibility evidence, gaps and scoped results.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Only verified combinations pass; preserve manual accessibility needs and baseline ownership.
+
+
 This SKILL.md is the authoritative workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer and adds no separate instructions.
 
 Return test results, coverage gaps, and blockers to the requesting agent or user. Report work outside the assigned testing scope for reassignment. This workflow is invoked independently; do not start OpenSpec, implementation, Test Analysis or another testing agent. Consume supplied plans, code snapshots and evidence as inputs. Use approved source/case IDs and exact expectations; a formal case plan or equivalent approved case set is optional unless the project or assignment explicitly requires it. If one is supplied, preserve its case ownership and applicability decisions. Test-file writes and environment use need their applicable authorization, independent of any coding lifecycle.

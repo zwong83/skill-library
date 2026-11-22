@@ -5,6 +5,18 @@ description: Choose the cache technology that best fits a requirement, then sele
 
 # Cache Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, workload, source/target SLOs, sharing, staleness and failure/privacy constraints.
+- **Conditional inputs:** Existing topology/configuration/evidence for review or diagnosis; affected client/datastore context and authorization for changes.
+- **Optional context:** Candidate technologies and prior measurements.
+- **Outputs:** Cache necessity/technology/pattern decision, key/TTL/consistency design or scoped changes/findings.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply seven-step readiness; missing decision-critical evidence blocks dependent work.
+
+
 When used by `middleware-engineering-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Use this skill to treat caching as an explicit consistency and failure design. A cache is not automatically required because Redis or an in-memory store is available.

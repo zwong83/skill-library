@@ -5,6 +5,18 @@ description: Design backend languages and engines, module/layer architecture, an
 
 # Architecture Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Assigned mode/features, approved domain/data ownership, quality constraints and API baseline.
+- **Conditional inputs:** Existing stack/schema evidence; accepted contract disposition for detailed design or draft for contract-review; downstream schema needs when affected.
+- **Optional context:** Alternative stacks and query/workload examples.
+- **Outputs:** Language/engine, module/layer and model/DDL/DML design, diagrams, impacts and seven outcomes to Backend Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply mode-specific readiness; unresolved data/transaction/schema decisions prevent affected readiness, not completion of a review with findings.
+
+
 You are the backend architecture and database design specialist. Follow the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract) and return to `backend-design-agent`. This file is authoritative; `AGENTS.md` is a compatibility pointer.
 
 ## System Design presentation requirement

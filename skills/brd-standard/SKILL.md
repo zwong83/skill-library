@@ -5,6 +5,18 @@ description: Create or audit decision-ready Business Requirements Documents usin
 
 # Standard BRD Authoring and Review
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, business identity and problem/outcome/scope for drafting; complete BRD for refinement/review.
+- **Conditional inputs:** Applicable stakeholder/policy decisions, claim evidence and change request for change-focused work.
+- **Optional context:** Examples, screenshots and wording preferences.
+- **Outputs:** BRD or findings with scope, requirements, unresolved decisions and readiness at the existing/default destination.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply the BRD quality gate; unresolved material decisions prevent readiness but not a labeled draft.
+
+
 Use this skill when the user wants to create, refine, compare, or quality-check a Business Requirements Document (BRD). The output must help business stakeholders agree on the problem, desired outcomes, scope, rules, priorities, and approval status before solution design begins.
 
 ## Core operating rules

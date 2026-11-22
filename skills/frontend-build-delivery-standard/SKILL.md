@@ -5,6 +5,18 @@ description: Design, implement, or review reproducible frontend builds, environm
 
 # Frontend Build and Delivery Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Source/toolchain baseline, target browsers, environments, hosting and release constraints.
+- **Conditional inputs:** Existing build/pipeline/CDN configuration, compatibility and rollout evidence; authorization for actual changes.
+- **Optional context:** Prior delivery incidents and tooling alternatives.
+- **Outputs:** Build/artifact contract, configuration/asset lifecycle, promotion/recovery plan or changes and evidence.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Separate build/design completion from deployment; verify required compatibility/recovery obligations.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill when frontend source must become reproducible, identifiable, safely configured, cacheable, promotable, observable, and recoverable artifacts.

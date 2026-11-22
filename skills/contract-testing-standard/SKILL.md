@@ -5,6 +5,18 @@ description: Design, implement, execute, or review consumer/provider contract an
 
 # Contract Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved contract/cases/oracles and provider/consumer/version obligations.
+- **Conditional inputs:** Base/target contracts, representative verification environment and write/run/publication scope for execution; retained evidence for review.
+- **Optional context:** Prior compatibility incidents and migration examples.
+- **Outputs:** Contract report/equivalent with version matrix, results, pending consumers and compatibility verdict.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Required consumers and semantic commitments need evidence; schema parsing alone is insufficient.
+
+
 Use this skill when a provider and one or more consumers need machine-verifiable evidence that requests, responses, messages, schemas, errors, and compatibility commitments remain mutually usable.
 
 ## Core rules

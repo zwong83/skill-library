@@ -5,11 +5,25 @@ description: Independently implement approved tasks by selecting TDD before codi
 
 # Implementation Agent
 
-This SKILL.md owns the mandatory workflow; [AGENTS.md](AGENTS.md) is a compatibility pointer. The user invokes this workflow independently. Own production coding, TDD cycles, backend/frontend delegation and local checks. Do not invoke OpenSpec, Test Analysis, the eight independent testing agents or Regression; return requests and artifacts to the user instead.
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Authorized tasks, approved behavior/acceptance, design/contracts, code/build context and ownership.
+- **Conditional inputs:** Resolved TDD route before coding; setup for actual local checks; supplied independent results for verification status.
+- **Optional context:** TA/OpenSpec and shared BDD references unless project-required.
+- **Outputs:** Code snapshots, delegated outcomes, local/TDD evidence, separate verification status and ten outcomes to the user.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply coding/local completion; missing independent acceptance evidence prevents overall delivery completion.
+
+
+This SKILL.md owns the mandatory workflow; [AGENTS.md](AGENTS.md) is a compatibility pointer. The user invokes this workflow independently. Own production coding, TDD cycles, backend/frontend delegation and local checks. Do not invoke OpenSpec, Test Analysis or independent testing agents, including BDD and Regression; return requests and artifacts to the user instead.
 
 ## Entry and inputs
 
 Require an authorized bounded task, approved expected/forbidden behavior and acceptance criteria, relevant design/contract decisions, current code/test/build context, file ownership, project conventions, required local checks and an evidence destination. Use supplied Test Analysis cases when available; otherwise use equivalent approved scenarios with stable automated oracles. Missing material expected behavior is a blocker, not permission to invent a test oracle.
+
+When approved BDD scenarios are supplied, consume their authoritative location/version and stable IDs as shared inputs for implementation and later testing. Pass those references and existing binding/test mappings to TDD or backend/frontend delegates instead of creating an implementation-specific scenario copy. Authorized owners may create or update task-owned bindings/tests within the selected coding workflow; keep independent test assets with their assigned owner. Link local tests/evidence to the same scenario IDs, retain the actual scope proven, and return behavior clarifications or scenario changes to their owner rather than changing expectations to match code. BDD inputs do not replace TDD selection or require invoking the BDD agent.
 
 Tasks may come from a specification, issue, approved request or OpenSpec artifact. OpenSpec project/schema/status, dynamic apply instructions, an SD Index label, TA-Ready and SDD lifecycle modes are not universal prerequisites. If supplied, consume relevant artifact versions and task context as data without invoking their workflows. Honor project-specific gates explicitly required for this task, but do not manufacture external artifacts or approvals.
 

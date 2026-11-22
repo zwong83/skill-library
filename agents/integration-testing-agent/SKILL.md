@@ -5,6 +5,18 @@ description: Implement, execute, or review application-logic tests across named 
 
 # Integration Testing Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved scenarios/oracles, named real boundary and relevant application/dependency scope/versions.
+- **Conditional inputs:** Representative infrastructure/data/isolation/cleanup and authorization for runs/writes; original evidence for review.
+- **Optional context:** Prior defects, fixtures and coverage history.
+- **Outputs:** Authorized tests, real-boundary matrix, commands/results, fidelity limits and residual risk.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Preserve real-boundary proof and case outcomes; mocks or connectivity alone cannot establish integration behavior.
+
+
 This SKILL.md is the authoritative workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer and adds no separate instructions.
 
 Return test results, coverage gaps, and blockers to the requesting agent or user. Report work outside the assigned testing scope for reassignment. This workflow is invoked independently; do not start OpenSpec, implementation, Test Analysis or another testing agent. Consume supplied plans, code snapshots and evidence as inputs. Use approved source/case IDs and exact expectations; a formal case plan or equivalent approved case set is optional unless the project or assignment explicitly requires it. If one is supplied, preserve its case ownership and applicability decisions. Test-file writes and environment use need their applicable authorization, independent of any coding lifecycle.

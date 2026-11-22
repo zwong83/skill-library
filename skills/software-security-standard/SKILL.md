@@ -5,6 +5,18 @@ description: Identify, design, implement, or review risk-based software security
 
 # Software Security Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Lifecycle mode, assets/actors/trust boundaries and governing requirements/security context.
+- **Conditional inputs:** Applicable policy/privacy, identity, architecture, code or runtime evidence for the selected controls and stage.
+- **Optional context:** Threat examples, prior incidents and alternative controls.
+- **Outputs:** Threat/control/ownership and verification matrices, security decisions/findings, risks and traceability.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply input/readiness gates without inventing policy or treating design as verification.
+
+
 Use this skill to make software security explicit, owned, testable, and traceable throughout the delivery lifecycle. Apply controls according to assets, threats, data sensitivity, trust boundaries, approved policy, and risk; do not add security theater or invent compliance requirements.
 
 ## Core rules

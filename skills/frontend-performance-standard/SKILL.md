@@ -5,6 +5,18 @@ description: Design, implement, or review measurable web-frontend loading, rende
 
 # Frontend Performance Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Critical routes/journeys, device/network/user populations and approved performance targets.
+- **Conditional inputs:** Measurements and comparable environment for diagnosis/verification; code/assets/runtime context for changes.
+- **Optional context:** Historical trends and candidate optimizations.
+- **Outputs:** Budgets, bottleneck findings, selected controls, lab/RUM/regression plan and observed results.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Declare evidence comparability and limits; plans alone do not demonstrate performance attainment.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill when user-perceived loading, rendering, interaction, memory, or asset cost can affect product success.

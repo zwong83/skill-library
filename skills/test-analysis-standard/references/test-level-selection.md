@@ -9,7 +9,7 @@ Choose the lowest level that exercises the real risk with a trustworthy oracle.
 | Provider/consumer schema, protocol, semantic, or version compatibility | Contract |
 | User-visible component state, DOM/widget interaction, visual, accessibility, browser/device behavior | UI at the smallest trustworthy layer; ui-testing-agent outside active TDD |
 | Critical multi-component journey or deployed-system behavior | System/end-to-end |
-| Business acceptance and policy outcome | Acceptance |
+| Business acceptance and policy outcome | Acceptance; use bdd-testing-agent when assigned shared Given/When/Then specification or automation, while recording the actual underlying execution level |
 | Approved security control or abuse-case verification | Security with explicit target authorization and safety limits |
 | Performance/capacity or performance regression | Performance with `performance-testing-standard`; plan execution prerequisites and explicit load authorization |
 | Resilience, migration, accessibility, operations | Relevant non-functional type and specialist |
@@ -18,6 +18,12 @@ Choose the lowest level that exercises the real risk with a trustworthy oracle.
 Do not duplicate every scenario at every level. Use broader tests for boundaries and journeys that lower-level tests cannot prove. A test with mocked adapters remains a unit/component test; an integration test exercises at least one real integration boundary with representative behavior.
 
 Escalate level when the risk depends on framework configuration, transaction behavior, serialization, network protocol, database semantics, broker delivery, cache consistency, security enforcement, deployment topology, or multiple components collaborating.
+
+## BDD acceptance approach and ownership
+
+Use [bdd-testing-standard](../../bdd-testing-standard/SKILL.md) for requested BDD work or when concrete business examples improve shared acceptance understanding and executable verification. Do not require a BDD framework or separate suite for every change. BDD is an approach, not a replacement test level: record the actual unit, integration, UI or system/E2E boundary and one execution owner. API access alone does not establish the level. Given/When/Then prose alone is not executed evidence.
+
+Assign `bdd-testing-agent` for scoped scenario specification, acceptance automation, execution or review when no other active owner holds that work. Otherwise link the scenarios to the existing specialist's tests/evidence rather than assigning duplicate owners. Keep active TDD cycles with TDD. Preserve the conditional contract/E2E decisions below; BDD naming does not bypass those obligations or justify excluded broader runs. Surface conflicts for analysis review and independent user invocation, without dispatching agents.
 
 ## Conditional contract and system/E2E testing
 

@@ -5,6 +5,18 @@ description: Create or audit structured, AI-ready Product Requirements Documents
 
 # Standard PRD Authoring and Review
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, product identity and problem/users/outcome for drafting; complete PRD for refinement/review.
+- **Conditional inputs:** Governing BRD or explicit waiver under existing rules; research, constraints and change requests when decisions depend on them.
+- **Optional context:** Competitive examples, wireframes and wording preferences.
+- **Outputs:** PRD or findings with outcomes, feature/story/acceptance mapping, scope and unresolved decisions.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply PRD quality/readiness rules; document completion is not approval with material decisions unresolved.
+
+
 Use this skill when the user wants to create, refine, compare, or quality-check a Product Requirements Document (PRD), especially one that will guide both product teams and AI coding tools.
 
 The PRD is the product source of truth: why the product exists, who it serves, what behavior is needed, how success is measured, and what is explicitly out of scope. It is not automatically an architecture document or an authorization to make technical choices.
@@ -96,6 +108,8 @@ For each important requirement, make clear:
 - analytics or success signal when applicable.
 
 Acceptance criteria should cover the happy path, validation, permissions, empty states, failure behavior, and boundary conditions where relevant. Use Given/When/Then or a concise expected-result table when it improves testability.
+
+When BDD is selected, these approved criteria feed the independently invoked [BDD testing workflow](../../agents/bdd-testing-agent/SKILL.md). Product retains ownership of business expectations; scenario automation and execution belong to testing and are not implied by writing the PRD.
 
 ## Technical considerations boundary
 

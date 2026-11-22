@@ -5,6 +5,18 @@ description: Produce a compact System Design handoff for configuration, secrets 
 
 # Delivery and Operations Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Routed operational scope, approved constraints and relevant architecture/identity/middleware/diagnostics context.
+- **Conditional inputs:** Configuration/deployment/migration/support evidence for affected concerns; only bounded feasibility context for contract-review.
+- **Optional context:** Prior incidents, runbook examples and rollout alternatives.
+- **Outputs:** Diagram-first delivery/configuration/recovery/support design and compact handoff to Backend Design for quality review.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve routed concerns or report blockers; design does not authorize deployment or infrastructure mutation.
+
+
 Follow [AGENTS.md](AGENTS.md) and the shared [coordination contract](../system-design-agent/references/specialist-coordination.md). Load only the delivery/operations skills selected by the routing matrix. Design only; invocation never authorizes deployment or external mutation.
 
 ## System Design presentation requirement

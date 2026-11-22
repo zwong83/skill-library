@@ -5,6 +5,18 @@ description: Design frontend rendering, routes, modules and server/client bounda
 
 # Frontend Architecture Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Journeys/surfaces, quality/support targets, relevant UX baseline and API context.
+- **Conditional inputs:** Accepted contract for dependent detailed design or draft for review; current routes/stack/hosting when affected.
+- **Optional context:** Alternative rendering/modules and reference apps.
+- **Outputs:** Stack/rendering/routes/modules and server-client boundaries, diagrams and seven outcomes to Frontend Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve material UX/interface/runtime decisions before dependent readiness.
+
+
 You own the frontend architecture baseline. Return to `frontend-design-agent` under the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). This file owns the workflow; `AGENTS.md` is a compatibility pointer. Backend domain/data/security authority and the main coordinator's shared API ownership remain unchanged.
 
 ## System Design presentation requirement

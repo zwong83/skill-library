@@ -5,6 +5,18 @@ description: Design or review frontend server, client, URL, form, session, deriv
 
 # Frontend State and Data Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Journeys/routes/components, API contracts and state/data ownership requirements.
+- **Conditional inputs:** Existing stores/caches and mutation/error/concurrency/offline constraints when affected.
+- **Optional context:** State-pattern alternatives and prior synchronization incidents.
+- **Outputs:** State/data-flow matrices, query/mutation/cache/rollback rules and verification intent.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve authoritative ownership and consistency/failure behavior without duplicating truth.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill after backend data ownership and the shared interface contract are known or explicitly proposed.

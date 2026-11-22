@@ -6,6 +6,16 @@ Reusable workflows for AI agents that create and review business, product, softw
 
 This library is not limited to Codex. Its core content is Markdown-based and can be used by any AI agent or runtime that can read `SKILL.md` and follow Markdown instructions. Codex-specific metadata is included where useful, but it is optional to other runtimes.
 
+## Input and output contracts
+
+Every workflow `SKILL.md` exposes an **Input and output contract** with required inputs, conditional inputs, optional context, outputs, destination/consumer and completion criteria. These summaries point readers to the existing detailed workflow and gates; they do not replace them or broaden authority. The PlantUML syntax reference uses a lighter context/result contract.
+
+- Record the owning source, location/version and decision status; leave unknown ownership or approval explicit instead of inventing it.
+- Required inputs apply to the requested mode and scope. Conditional inputs become required only when the stated dependency applies. Optional examples never constitute approval, and missing optional context alone does not block work.
+- Block only work that depends on a missing required input. Planning may record future execution prerequisites; review may inspect retained evidence without a live target. Existing source/readiness gates and provisional/draft modes still govern.
+- Outputs use the existing, requested or documented default destination. Name their consumer without automatically invoking another workflow or producing duplicate handoff documents.
+- Completion means the requested scope and mode meet their existing gate. Keep design readiness, code/local checks, observed testing, approvals and release status distinct; planned or unavailable checks are not passes.
+
 ## What is included
 
 ### Skills
@@ -37,6 +47,7 @@ Skills provide reusable domain instructions, templates, quality gates, and refer
 - `testing-strategy-standard` — Design risk-based test portfolios, environments, data, automation, non-functional tests, gates, and evidence.
 - `test-analysis-standard` — Derive the complete change-specific Test Case Matrix, specialist allocation, prerequisites, evidence, and independent analysis-readiness verdict.
 - `unit-testing-standard` — Design and implement deterministic isolated application-logic unit tests.
+- `bdd-testing-standard` — Discover and specify Given/When/Then business examples, automate or verify acceptance checks, and retain traceable evidence through seven mandatory steps.
 - `integration-testing-standard` — Verify real databases, brokers, caches, services, frameworks, and other integration boundaries.
 - `contract-testing-standard` — Verify provider/consumer API, event, message, schema, version, and semantic compatibility.
 - `ui-testing-standard` — Verify UI rendering, interaction, visual behavior, accessibility, compatibility, and critical journeys.
@@ -83,6 +94,7 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
   - `frontend-implementation-agent` — Owns eight mandatory steps for authorized non-TDD frontend coding and local evidence.
 - `test-analysis-agent` — Independently plans cases, exact expectations, coverage, execution allocation and conditional contract/E2E decisions; does not spawn execution agents.
 - `unit-testing-agent` — Independently verifies isolated backend/frontend logic using only unit-testing-standard.
+- `bdd-testing-agent` — Independently specifies, automates, executes or reviews business acceptance scenarios using only bdd-testing-standard; records the actual test level and preserves one execution owner.
 - `integration-testing-agent` — Independently verifies logic across real boundaries using only integration-testing-standard.
 - `contract-testing-agent` — Uses only contract-testing-standard for TA Required scopes or equivalent explicit standalone scope/rationale; honors supplied exclusions.
 - `ui-testing-agent` — Independently verifies rendered states, interactions, visuals, accessibility and browser/device behavior using only ui-testing-standard.
@@ -93,7 +105,7 @@ Agents are focused workflows. Coordinators own lifecycle gates, routing, handoff
 
 The user chooses each entry point; no delivery coordinator is introduced. OpenSpec, Implementation and Testing exchange approved sources, task records, test plans, code snapshots and retained evidence as data. They do not invoke each other or require another workflow's lifecycle mode. Formal OpenSpec and TA artifacts are optional inputs unless the project explicitly requires them. Missing material behavior or execution authorization still blocks dependent work.
 
-All eight testing specialists, Test Analysis and TDD retain seven mandatory steps; backend/frontend coding retain eight and Implementation retains ten, directly in SKILL.md. Testing skills and [allocation guidance](agents/test-analysis-agent/references/specialist-coordination.md#dedicated-testing-skills) preserve one case owner, exact oracles, scope exclusions and failures. Implementation runs task-owned TDD/local checks but does not dispatch independent testing agents or claim their verdicts.
+All nine testing specialists, Test Analysis and TDD retain seven mandatory steps; backend/frontend coding retain eight and Implementation retains ten, directly in SKILL.md. Testing skills and [allocation guidance](agents/test-analysis-agent/references/specialist-coordination.md#dedicated-testing-skills) preserve one case owner, exact oracles, scope exclusions and failures. Implementation runs task-owned TDD/local checks but does not dispatch independent testing agents or claim their verdicts.
 
 When Implementation is directly invoked at root depth 0, its coding children are depth 1. Respect actual runtime depth/shared slots instead of assuming an SDD parent. Only independent scopes with stable prerequisites and exclusive writes may run concurrently. Code-ready/local-check status, independent verification status and OpenSpec artifact/acceptance status remain separate; a combined acceptance task cannot pass with missing required evidence.
 
@@ -131,6 +143,25 @@ To enable selected wrappers in Codex, copy their TOML files to a project's `.cod
 Testing after implementation begins by reviewing existing TDD tests and evidence. Reuse suitable tests, add coverage for gaps, and rerun affected checks when requested, required by project gates, or invalidated by changed snapshots/conditions. Retained results may be reused only with adequate provenance and scope; report reuse separately from new execution. Unit/integration testing agents are not automatically required after every TDD task.
 
 ## Independent workflow relationships
+
+```mermaid
+flowchart LR
+    F[Approved FRS behavior and acceptance] -.->|Primary oracle| B[bdd-testing-agent]
+    P[PRD goals and relevant design / API contracts] -.->|Supporting context| B
+    A[Test Analysis: cases and ownership] -.-> B
+    B --> S[bdd-testing-standard]
+    B --> C[One authoritative BDD scenario set]
+    C -.->|Same location, IDs and version| I[Implementation guidance]
+    C -.->|Same scenarios| V[Acceptance testing through bindings]
+    V --> E[Separate evidence for each run]
+    T[Existing TDD / integration / UI / E2E tests] -.->|Reuse assets and suitable evidence| B
+```
+
+BDD is an optional approach to business acceptance, not a ninth test level or a mandatory duplicate suite. Its agent and standard each contain seven mandatory steps. The user invokes the workflow independently before coding for scenario specification or during testing for acceptance automation/verification. Record the actual execution boundary and one owner per case, retain active TDD ownership, and preserve required contract/E2E checks. Dashed arrows show supplied inputs, not automatic delegation. Production code remains with Implementation; BDD-Specified is distinct from BDD-Passed.
+
+Approved FRS feature behavior and acceptance criteria are BDD's primary input; use explicitly identified equivalent approved criteria when no FRS exists. Specify all selected approved behavior before or after coding, and execute against the relevant implementation/environment. Retain required unimplemented cases, record approved later-increment scope separately, and return missing expectations to Product instead of deriving them from existing code.
+
+Write and approve one authoritative BDD scenario set, then reuse its location/version and stable IDs in both implementation and testing. Scenarios define behavior, bindings/fixtures implement verification, and each run produces separate evidence. Reuse existing approved FRS scenarios or maintained feature files; handoffs and Test Analysis reference them instead of maintaining copies. Revise scenarios for approved behavior changes, clarifications or coverage gaps grounded in approved behavior, then reassess affected tests/evidence. A new phase or run does not require rewriting scenarios.
 
 Requirements and System Design remain upstream authorities. After those decisions exist, the user invokes the needed workflow independently. Dashed arrows below are supplied data/evidence, not automatic agent delegation or a mandatory execution sequence.
 
@@ -194,6 +225,7 @@ agents/
 ├── architecture-agent/
 ├── backend-design-agent/
 ├── backend-implementation-agent/
+├── bdd-testing-agent/
 ├── business-agent/
 ├── contract-testing-agent/
 ├── delivery-operations-agent/
@@ -227,6 +259,7 @@ skills/
 ├── api-design-standard/
 ├── authentication-standard/
 ├── authorization-standard/
+├── bdd-testing-standard/
 ├── brd-standard/
 ├── cache-standard/
 ├── clean-code-standard/
@@ -296,7 +329,7 @@ Each Skill contains a required `SKILL.md` plus optional references and metadata:
 └── agents/openai.yaml
 ```
 
-Each Agent contains a discoverable `SKILL.md` and an `AGENTS.md` entrypoint. The System Design, Backend Design and Frontend Design coordinators and the Architecture, Identity/Access, Middleware, Diagnostics and four dedicated frontend specialists, plus the OpenSpec agent, Implementation, Backend Implementation, Frontend Implementation, Test Analysis, TDD and all eight testing specialists, keep their authoritative workflows directly in `SKILL.md`; their `AGENTS.md` files are compatibility pointers. Other agents retain their existing `AGENTS.md` workflow:
+Each Agent contains a discoverable `SKILL.md` and an `AGENTS.md` entrypoint. The System Design, Backend Design and Frontend Design coordinators and the Architecture, Identity/Access, Middleware, Diagnostics and four dedicated frontend specialists, plus the OpenSpec agent, Implementation, Backend Implementation, Frontend Implementation, Test Analysis, TDD and all nine testing specialists, keep their authoritative workflows directly in `SKILL.md`; their `AGENTS.md` files are compatibility pointers. Other agents retain their existing `AGENTS.md` workflow:
 
 ```text
 <agent-name>/

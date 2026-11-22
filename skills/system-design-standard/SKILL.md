@@ -5,6 +5,18 @@ description: Create or audit a visual-first, implementation-ready System Design 
 
 # Standard System Design
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode/scope and approved System Analysis for new design unless provisional work is explicitly requested; applicable SD set for review/refinement.
+- **Conditional inputs:** Decision-relevant requirements/UX/quality/operations/interface constraints and verified current-system evidence for brownfield work.
+- **Optional context:** Alternative proposals and supplementary references.
+- **Outputs:** Authoritative Index, Backend/Frontend/Integration SD and applicable versioned contract/data artifacts or findings.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply diagram-first coverage/readiness gates; preserve artifact authorities and distinguish provisional/review results from approval.
+
+
 Turn an approved System Analysis and requirements baseline into an explicit, reviewable technical design. Keep authoritative backend, frontend, and integration concerns separate so each participant loads only the context it needs.
 
 ## Relationship to the agent workflow

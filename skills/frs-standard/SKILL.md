@@ -5,6 +5,18 @@ description: Create or audit detailed Functional Requirements Specifications wit
 
 # Standard Functional Requirements Specification
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, feature identity/goal and authoritative requirements or explicit functional brief for new work; complete FRS for review/refinement.
+- **Conditional inputs:** SRS/PRD/BRD, UX, interfaces, quality constraints and change requests when behavior depends on them.
+- **Optional context:** Screenshots, wording preferences and supplementary examples.
+- **Outputs:** FRS or findings with flows/states/rules, acceptance, traceability and open decisions at the existing/default destination.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply source/readiness gates; unresolved material behavior or sign-offs prevent an approved/ready claim.
+
+
 Use this skill when the user wants to create, refine, compare, or quality-check an FRS for a product or feature. The FRS translates approved business/product/system intent into detailed, testable functional behavior that developers and QA can implement and verify without guessing.
 
 ## Core operating rules
@@ -67,6 +79,7 @@ When an FRS needs a diagram, invoke/read `plantuml-syntax` before creating or mo
    - dependencies and external behavior;
    - acceptance criteria and traceability.
 5. Use Given/When/Then or concise expected-result tables for critical paths.
+   When BDD is selected, pass approved scenarios and stable source IDs as inputs to the independently invoked [BDD testing workflow](../../agents/bdd-testing-agent/SKILL.md). Keep functional behavior decisions here; writing an FRS does not authorize or execute tests.
 6. Keep NFR references linked from the SRS or record feature-specific quality constraints without duplicating the entire SRS.
 7. Maintain traceability:
 

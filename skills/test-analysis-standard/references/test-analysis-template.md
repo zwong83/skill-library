@@ -21,6 +21,10 @@ Give every material behavior at least one positive case. Include negative and ex
 
 ## 5. Coverage and task mapping
 
+For BDD-selected cases, record the source-to-Given/When/Then-scenario-to-test mapping, approval/open questions, actual underlying test level, one execution owner and existing evidence reuse. BDD is an approach, not an extra level or an automatic second suite. Preserve active TDD ownership and conditional contract/E2E obligations.
+
+Reference the authoritative BDD scenario location/version and IDs used by implementation and testing; do not copy those definitions into a second maintained scenario set. Link the matrix's exact expectations to those scenarios and add case-specific data or boundary details only where needed. Keep binding/test references and each run's evidence separate, and record proposed scenario gaps/changes for the owning source rather than silently redefining expectations here.
+
 Map each material source requirement, approved source scenario, design decision, and supplied implementation task to one or more cases. Initial requirements-based analysis uses source/risk IDs; task mapping is added when tasks exist. Show positive/negative/boundary completeness, governing specialist, execution owner/TDD route, expected output, intentional exclusions, and duplicated coverage rationale.
 
 For available test coverage, record the existing test/evidence reference and whether each case needs new coverage, a rerun, or may reuse retained evidence with rationale. TDD-authored tests do not need duplicate ownership or recreation; scoped results must still match the required snapshot and conditions.

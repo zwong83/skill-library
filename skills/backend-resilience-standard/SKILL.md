@@ -5,6 +5,18 @@ description: Design, implement, or review bounded failure and recovery behavior,
 
 # Backend Resilience Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Affected journeys/dependencies, failure domains and required service/recovery behavior.
+- **Conditional inputs:** Budgets, consistency/topology and failure evidence for affected decisions; target authorization for actual changes/runs.
+- **Optional context:** Prior incidents and alternative controls.
+- **Outputs:** Failure model, time/resource budgets, control ownership, recovery behavior and evidence/plans.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply ten-step readiness; unresolved material budgets or failure semantics block affected readiness.
+
+
 When used by `middleware-engineering-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Use this skill when a system depends on remote services, databases, brokers, caches, shared resources, or capacity-sensitive work, or when failure, overload, degradation, and recovery behavior must be explicit.

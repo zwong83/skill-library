@@ -5,6 +5,18 @@ description: Plan, implement, execute or review benchmark, load, stress, spike, 
 
 # Performance Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, operation/boundary, approved measurable objectives and workload/data/target scope.
+- **Conditional inputs:** Comparable baseline for comparisons; qualified generator, instrumentation, environment, limits/abort plan and explicit load authorization for runs; raw evidence for review.
+- **Optional context:** Historical trends and additional workload examples.
+- **Outputs:** Performance plan/assets or report with workload validity, measurements, verdicts and limitations.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply seven-step verdict rules; plans, invalid load or non-comparable results cannot establish a pass.
+
+
 Use this skill to determine whether a named system/revision meets its approved performance objectives under a defined workload, and to report the limits of that evidence. Do not choose product SLOs, redesign the system, assume a load tool or claim production capacity from an unqualified environment.
 
 ## Modes and inputs

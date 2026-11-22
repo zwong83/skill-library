@@ -5,6 +5,18 @@ description: Design, implement, or review frontend error capture, real-user moni
 
 # Frontend Observability Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Operational questions/journeys, data classification/consent, ownership and correlation needs.
+- **Conditional inputs:** Backend telemetry contracts, release identity, tools and retention/access constraints when affected.
+- **Optional context:** Historical telemetry and dashboard examples.
+- **Outputs:** Event/error/RUM schemas, correlation/privacy/sampling rules, dashboard/runbook needs and evidence.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Answer scoped questions within privacy constraints; instrumentation plans are not measured evidence.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill when frontend behavior must be diagnosed, measured, correlated, or operated after delivery.

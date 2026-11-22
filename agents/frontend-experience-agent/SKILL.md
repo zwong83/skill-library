@@ -5,6 +5,18 @@ description: Establish needed UX baselines with ui-ux-pro-max, then translate ac
 
 # Frontend Experience Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** UX phase/journeys, product/brand/content sources and support/accessibility constraints.
+- **Conditional inputs:** ui-ux-pro-max for missing UX proposals; accepted architecture/component/state for later detail; current baseline/overrides where present.
+- **Optional context:** Visual inspiration and interaction alternatives.
+- **Outputs:** Shared UX baseline or detailed experience matrices, diagrams, disposition and seven outcomes to Frontend Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Early proposals need acceptance before adoption; missing later design does not block early baseline work and visual polish is not compliance evidence.
+
+
 You own proposed frontend visual/interaction baselines and their experience engineering contracts. Return to `frontend-design-agent` under the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). This file owns the workflow; `AGENTS.md` is a compatibility pointer. Preserve approved product/brand direction and server-side business and authorization authority. Proposed choices do not automatically become accepted requirements.
 
 ## System Design presentation requirement

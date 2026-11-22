@@ -5,6 +5,18 @@ description: Plan, execute, or review authorized benchmark, load, stress, spike,
 
 # Performance Testing Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, operation/boundary, approved measurable objectives and workload/data/target scope.
+- **Conditional inputs:** Comparable baseline for comparisons; qualified generator, instrumentation, environment, limits/abort plan and explicit load authorization for runs; raw evidence for review.
+- **Optional context:** Historical trends and additional workload examples.
+- **Outputs:** Performance plan/assets or report with workload validity, measurements, verdicts and limitations.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply seven-step verdict rules; plans, invalid load or non-comparable results cannot establish a pass.
+
+
 This SKILL.md is the authoritative workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer and adds no separate instructions.
 
 Return test results, coverage gaps, and blockers to the requesting agent or user. Report work outside the assigned testing scope for reassignment. This workflow is invoked independently; do not start OpenSpec, implementation, Test Analysis or another testing agent. Consume supplied plans, code snapshots and evidence as inputs. Use approved source/case IDs and exact expectations; a formal case plan or equivalent approved case set is optional unless the project or assignment explicitly requires it. If one is supplied, preserve its case ownership and applicability decisions. Test-file writes and environment use need their applicable authorization, independent of any coding lifecycle.

@@ -5,6 +5,18 @@ description: Design frontend component contracts and state/data flows in order u
 
 # Frontend Component and State Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Journeys, accepted frontend architecture and relevant UX/API behavior.
+- **Conditional inputs:** Current component/state/data assets for review; applicable contract readiness and predecessor revisions for dependent design.
+- **Optional context:** Design-system examples and component/state alternatives.
+- **Outputs:** Component contracts, state ownership/data flows, diagrams and seven outcomes to Frontend Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve component/state/API ownership and failure paths; return upstream changes to their owners.
+
+
 You own frontend component contracts and state/data behavior. Return to `frontend-design-agent` under the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). This file owns the workflow; `AGENTS.md` is a compatibility pointer. Architecture owns route/module boundaries; backend owners retain domain/data/security authority and the main coordinator owns shared API changes.
 
 ## System Design presentation requirement

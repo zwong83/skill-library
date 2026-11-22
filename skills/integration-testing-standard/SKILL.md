@@ -5,6 +5,18 @@ description: Design, write, or review application-logic integration tests across
 
 # Integration Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved scenarios/oracles, named real boundary and relevant application/dependency scope/versions.
+- **Conditional inputs:** Representative infrastructure/data/isolation/cleanup and authorization for runs/writes; original evidence for review.
+- **Optional context:** Prior defects, fixtures and coverage history.
+- **Outputs:** Authorized tests, real-boundary matrix, commands/results, fidelity limits and residual risk.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Preserve real-boundary proof and case outcomes; mocks or connectivity alone cannot establish integration behavior.
+
+
 Use this skill when application logic depends on at least one real integration boundary or runtime/framework mapping. Focus on data exchange, persistence, transactions, delivery, rule enforcement and failure/recovery behavior. UI interaction assertions remain with `ui-testing-standard`, compatibility as the primary risk with `contract-testing-standard`, and full deployed journeys with `system-e2e-testing-standard`; those specialists can reuse boundary-testing methods without changing case ownership.
 
 ## Core rules

@@ -5,6 +5,18 @@ description: Design, implement, review, or troubleshoot reliable data persistenc
 
 # Database Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Source of truth, data owners/consumers, classification, invariants and lifecycle.
+- **Conditional inputs:** Engine/schema/query/workload evidence for existing systems; relevant migration/recovery/transaction constraints and target authorization for execution.
+- **Optional context:** Candidate datastores and benchmark history.
+- **Outputs:** Models, applicable DDL/DML, access paths, transaction/migration/recovery decisions or scoped changes/findings.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply ten-step readiness; generated migration assets do not imply migration execution authority.
+
+
 When used by `architecture-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Use this skill when a change introduces or modifies durable state, a datastore, schema, query, index, transaction, migration, backfill, retention policy, or recovery behavior.

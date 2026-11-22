@@ -5,6 +5,18 @@ description: Implement approved software behavior through disciplined Red-Green-
 
 # TDD Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** One authorized task, approved behavior/stable oracle, current code/tests and exact ownership.
+- **Conditional inputs:** Real-boundary setup when selected; source/task IDs when supplied; retained cycle evidence for review.
+- **Optional context:** Existing builders and prior defect examples.
+- **Outputs:** Task-owned production/tests and observed Red-Green-Refactor evidence to the implementation owner/requester.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Observe intended Red before Green; post-hoc tests are not TDD and local proof is not independent acceptance.
+
+
 Use this skill only after expected behavior and its test oracle are resolved and implementation is authorized. TDD is an implementation workflow, not a substitute for requirements, System Design, or Test Analysis.
 
 ## Core rules

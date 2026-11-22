@@ -5,6 +5,18 @@ description: Design, implement, review, or troubleshoot language-neutral asynchr
 
 # Messaging Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Message purpose, producers/consumers, business semantics and delivery/consistency requirements.
+- **Conditional inputs:** Existing schemas/topology/broker versions, capacity/recovery evidence and authorization for actual changes.
+- **Optional context:** Alternative brokers/patterns and prior incidents.
+- **Outputs:** Messaging contracts/topology, publish/consume/retry/recovery design or scoped changes/findings.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply seven-step readiness with explicit guarantees, ownership and failure handling.
+
+
 When used by `middleware-engineering-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Use this skill to define reliable asynchronous boundaries. Start with business semantics and failure behavior; select or configure a broker only after those requirements are explicit.

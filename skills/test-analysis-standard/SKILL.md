@@ -5,6 +5,18 @@ description: Analyze approved requirements, relevant design and change impact to
 
 # Test Analysis Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Analysis/review scope, approved behavior/acceptance, relevant design and change-impact context.
+- **Conditional inputs:** Diff/snapshot and tests/results for post-implementation review; task IDs/formal artifacts only when supplied or required.
+- **Optional context:** Prior defects and supplementary risk evidence.
+- **Outputs:** Case Matrix/plan, allocation, applicability decisions, prerequisites and TA readiness in the existing/requested artifact.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve source/risk/oracle/owner coverage and conditional decisions; planned setup may suffice for analysis, never for a test pass.
+
+
 Use this skill independently for initial test planning or coverage review after a change. TA defines what must be proven and at which level; it does not write code, execute tests or replace requirements. Formal OpenSpec artifacts and lifecycle modes are optional context, not universal prerequisites. Preserve any explicitly mandated project gates.
 
 ## Core rules
@@ -32,6 +44,7 @@ Use this skill independently for initial test planning or coverage review after 
 ## Reference routing
 
 - Read [test-analysis-template.md](references/test-analysis-template.md) to create a TA artifact.
+- Consult [bdd-testing-standard](../bdd-testing-standard/SKILL.md) in specification mode for business acceptance examples. Record BDD as the approach, the actual underlying level and one execution owner; reuse existing scenarios/tests and preserve active TDD ownership. BDD is selected when requested or useful for shared executable acceptance, not mandatory for every change.
 - Read [test-level-selection.md](references/test-level-selection.md) for the required contract/system-E2E applicability decisions and whenever level selection or duplication is unclear.
 - Invoke `unit-testing-standard` only to refine unit/component case expectations.
 - Invoke `integration-testing-standard` only to refine real-boundary cases and environment needs.

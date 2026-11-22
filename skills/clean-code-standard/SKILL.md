@@ -5,6 +5,18 @@ description: Write, refactor, or review maintainable code across languages. Use 
 
 # Clean Code Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, code/design scope, expected behavior/contracts and language/repository conventions.
+- **Conditional inputs:** Current code and verification baseline for changes/review; explicit exploratory assumptions when authoritative design inputs are absent.
+- **Optional context:** Alternative idioms/patterns.
+- **Outputs:** Scoped improvements or actionable findings, rationale and verification evidence.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Preserve behavior and seven-step readiness; separate correctness defects, maintainability risks and preferences.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill for code writing, refactoring, review, and focused object or module design. Prefer the simplest language-appropriate design that expresses the required behavior and preserves its contracts.

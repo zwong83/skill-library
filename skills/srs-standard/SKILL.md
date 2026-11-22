@@ -5,6 +5,18 @@ description: Create or audit implementation-ready Software Requirements Specific
 
 # Standard Software Requirements Specification
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, system identity and accepted requirements for new work; complete SRS for refinement/review.
+- **Conditional inputs:** Existing governing accepted FRS, applicable quality/interface/data constraints and change requests.
+- **Optional context:** Examples, notation preferences and labeled implementation suggestions.
+- **Outputs:** SRS or findings with system requirements/NFRs/interfaces, traceability and open decisions at the existing/default destination.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply source/readiness gates; unresolved material decisions or sign-offs prevent approved/implementation-ready claims.
+
+
 Use this skill when the user wants to create, refine, compare, or quality-check an SRS. The SRS translates approved business and product intent into complete software-level requirements that development, QA, operations, and stakeholders can use as a shared reference.
 
 ## Core operating rules

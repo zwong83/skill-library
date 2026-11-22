@@ -5,6 +5,18 @@ description: Design or review web-frontend rendering, routing, feature/module bo
 
 # Frontend Architecture Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Journeys/surfaces, support targets, backend responsibilities, quality goals and API context.
+- **Conditional inputs:** Current routes/modules/hosting and accepted predecessor decisions for affected existing or dependent design.
+- **Optional context:** Alternative rendering/architecture examples.
+- **Outputs:** Rendering/hosting strategy, route/module/trust maps, dependency rules and verification needs.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve material architecture/dependency decisions and retain unresolved prerequisites as blockers.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill after user journeys, system boundaries, backend domain ownership, and the draft frontend/backend contract are known.

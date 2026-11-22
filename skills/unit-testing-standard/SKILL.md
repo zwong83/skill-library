@@ -5,6 +5,18 @@ description: Design, write, or review deterministic application-logic unit tests
 
 # Unit Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved isolated logic cases/oracles, code/test scope and project conventions.
+- **Conditional inputs:** Tooling and write/run authorization for implementation/execution; original commands/results for review.
+- **Optional context:** Fixtures, coverage/mutation history and known flakes.
+- **Outputs:** Unit tests or findings, scenario mapping, isolation choices, commands/results and coverage limits.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Preserve deterministic isolated proof; incomplete or unrun cases cannot count as passed.
+
+
 Use this skill for isolated logic such as business rules, calculations, validation, transformations, decisions, state transitions and non-rendered modules, without real network, database, broker, cache, filesystem or external service integration. Frontend logic can be tested directly; rendering, DOM/widget interaction, visual and accessibility assertions belong to `ui-testing-standard`. UI specialists may reuse isolation and doubles techniques here without transferring UI case ownership.
 
 ## Core rules

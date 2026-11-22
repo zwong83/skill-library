@@ -5,6 +5,18 @@ description: Design or review implementation-ready responsive, accessibility, lo
 
 # Frontend Experience Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Journeys, UX/content sources, accessibility/localization targets and support matrix.
+- **Conditional inputs:** Accepted component/state/tokens for detailed work; UI evidence for review; browser setup only for requested executable checks.
+- **Optional context:** Visual references and interaction alternatives.
+- **Outputs:** Responsive/state/accessibility/localization/theme/motion rules and verification plan/findings.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Cover required supported behavior; design review does not prove unrun browser/accessibility checks.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill to convert approved UX, visual/design-system references, accessibility obligations, localization, and platform support into explicit engineering decisions. In frontend-experience-agent's early ux-baseline phase, express constraints for proposed choices from ui-ux-pro-max at journey level without requiring downstream route/component designs. Preserve proposal/acceptance status: generated choices cannot override approved product/brand direction or become requirements without the applicable acceptance basis.

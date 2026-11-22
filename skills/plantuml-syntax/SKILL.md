@@ -6,6 +6,15 @@ allowed-tools: Read, Glob, Grep
 
 # PlantUML Syntax Reference
 
+## Reference input and result
+
+- **Required context:** The diagram question or intended view, relevant actors/elements/relationships, and existing PlantUML source when correcting a diagram. Identify the owning source and version where supplied; do not invent domain behavior from syntax examples.
+- **Conditional context:** Diagram type, renderer/version, includes and layout constraints when compatibility depends on them. Rendering tools are needed only for requested rendering/validation, not for consulting the reference.
+- **Optional context:** Style examples and notation preferences.
+- **Expected result and consumer:** Syntax guidance, a diagram source example or scoped corrections for the invoking authoring agent/user at its existing artifact location. This reference does not own business/design decisions or require a separate report.
+- **Verification limits:** Distinguish syntax guidance from an actually rendered/validated diagram; report unresolved renderer/version limitations without claiming execution.
+
+
 ## Overview
 
 PlantUML is a Java-based tool that creates diagrams from text descriptions. It supports comprehensive UML diagrams and many non-UML diagram types.

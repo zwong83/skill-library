@@ -5,6 +5,18 @@ description: Design, implement, or review a risk-based software testing strategy
 
 # Testing Strategy Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Scope, requirements, critical journeys, architecture risks and acceptance obligations.
+- **Conditional inputs:** Actual diff/suites for change-specific strategy; environments/data, organizational gates and non-functional targets when relevant.
+- **Optional context:** Historical defects and portfolio metrics.
+- **Outputs:** Test portfolio, traceability, environment/automation/gate strategy and evidence/defect gaps.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply strategy readiness and distinguish planned coverage from observed verification.
+
+
 Use this skill when a feature, system, migration, or release needs a deliberate test portfolio and evidence. It coordinates specialized test concerns without forcing one test pyramid or toolchain onto every architecture.
 
 ## Core Rules

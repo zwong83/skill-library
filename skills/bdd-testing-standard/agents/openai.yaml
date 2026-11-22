@@ -1,0 +1,6 @@
+interface:
+  display_name: "BDD Testing Standard"
+  short_description: "Turn business examples into traceable acceptance checks"
+  default_prompt: "Use $bdd-testing-standard to define precise Given/When/Then scenarios and prepare or assess their executable acceptance evidence within the assigned scope."
+policy:
+  allow_implicit_invocation: true

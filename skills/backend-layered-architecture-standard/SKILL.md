@@ -5,6 +5,18 @@ description: Select, design, implement, or review layering inside backend module
 
 # Backend Layered Architecture Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, module/use-case scope, invariants, ownership and dependency constraints.
+- **Conditional inputs:** Current code for review/refactoring; framework/transaction/persistence context when material.
+- **Optional context:** Alternative layering examples.
+- **Outputs:** Layer/module/dependency matrices, flows, enforcement and scoped findings/changes.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply eight-step readiness while preserving approved behavior and ownership.
+
+
 When used by `architecture-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Use this skill for the internal structure of backend modules. Cover responsibilities and dependencies within a module and the public contracts through which modules interact. Treat deployment topology, service decomposition, frontend architecture, and datastore or middleware selection as inputs owned by their respective designs.

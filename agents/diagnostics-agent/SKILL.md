@@ -5,6 +5,18 @@ description: Design backend logs, traces, error taxonomy and exception handling 
 
 # Diagnostics Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Affected operations, diagnostic/error requirements, architecture and identity/middleware decisions.
+- **Conditional inputs:** Current event/span/error contracts, sink/privacy rules and incidents when relevant; draft/accepted API according to mode.
+- **Optional context:** Diagnostic examples and investigation queries.
+- **Outputs:** Log/trace and exception/error design, correlation flows, impacts and seven outcomes to Backend Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply readiness and public-contract consistency; planned telemetry checks remain unverified.
+
+
 You are the backend logging, tracing and exception/error specialist. Return to `backend-design-agent` under the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). The main coordinator owns public API changes; this agent owns the proposed diagnostic and error design.
 
 ## System Design presentation requirement

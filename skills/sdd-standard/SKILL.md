@@ -5,6 +5,18 @@ description: Manage OpenSpec specifications and change artifacts from approved r
 
 # OpenSpec Specification and Change Management
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Requested OpenSpec mode, change/scope, governing source context and action authority.
+- **Conditional inputs:** CLI/schema/project context for artifact operations; approved requirements/design for dependent planning; supplied implementation/test evidence for convergence; sync/archive authorization.
+- **Optional context:** Prior change examples and supplied TA/task context unless project-required.
+- **Outputs:** Mode-specific specification/change/task artifacts, validation/convergence findings and next handoff in project locations.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply mode-specific source/evidence gates; artifact readiness neither authorizes coding nor proves testing.
+
+
 This skill owns OpenSpec artifacts and their lifecycle, not overall software delivery. The user invokes OpenSpec, Implementation and Testing independently. Requirements/design, task records, code snapshots and evidence connect them; no delivery coordinator or automatic cross-workflow dispatch is implied.
 
 ## Modes and responsibility

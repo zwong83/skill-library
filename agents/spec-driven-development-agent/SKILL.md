@@ -5,6 +5,18 @@ description: Manage OpenSpec specification/change artifacts, task handoffs, evid
 
 # Spec-Driven Development Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Requested OpenSpec mode, change/scope, governing source context and action authority.
+- **Conditional inputs:** CLI/schema/project context for artifact operations; approved requirements/design for dependent planning; supplied implementation/test evidence for convergence; sync/archive authorization.
+- **Optional context:** Prior change examples and supplied TA/task context unless project-required.
+- **Outputs:** Mode-specific specification/change/task artifacts, validation/convergence findings and next handoff in project locations.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply mode-specific source/evidence gates; artifact readiness neither authorizes coding nor proves testing.
+
+
 This SKILL.md owns the workflow; [AGENTS.md](AGENTS.md) is a compatibility pointer. The retained agent name identifies the OpenSpec specification workflow, not an overall delivery coordinator.
 
 Use [sdd-standard](../../skills/sdd-standard/SKILL.md) for its mandatory seven-step workflow and [OpenSpec mode boundaries](references/mode-coordination.md). Own Explore, Propose, Review, Handoff, Converge and explicitly authorized Sync/Archive. You may delegate bounded artifact planning to `openspec-planning-agent`; keep that work within this OpenSpec workflow.

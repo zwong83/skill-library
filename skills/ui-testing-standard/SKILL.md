@@ -5,6 +5,18 @@ description: Design, implement, execute, or review traceable user-interface test
 
 # UI Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved UI states/cases, visible/forbidden outcomes and supported browser/device/context matrix.
+- **Conditional inputs:** Governed visual/accessibility baselines where relevant; runnable UI/data/auth state and permissions for execution/writes; retained evidence for review.
+- **Optional context:** Design examples, screenshots and journey analytics.
+- **Outputs:** Authorized tests and matrix-based UI/visual/accessibility evidence, gaps and scoped results.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Only verified combinations pass; preserve manual accessibility needs and baseline ownership.
+
+
 Use this skill when correctness depends on what a user can see, operate, navigate, or understand through a graphical interface.
 
 ## Core rules

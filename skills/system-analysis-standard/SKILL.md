@@ -5,6 +5,18 @@ description: Create or audit visual-first, implementation-oriented System Analys
 
 # Standard System Analysis
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, identity and complete accepted requirements for new analysis; complete analysis for refinement/review.
+- **Conditional inputs:** Governing FRS or authorized testable equivalent for detailed features; current/change evidence and applicable quality/integration constraints.
+- **Optional context:** Research, screenshots and notation preferences unless decision-critical.
+- **Outputs:** Visual-first System Analysis, feature/diagram coverage, logical flows/data/states and traceable gaps.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply source/visual coverage gates; material unresolved logic or missing required views prevents design readiness.
+
+
 Use this skill when the user wants to create, refine, compare, or quality-check a System Analysis document. The output explains how the required system behavior is decomposed and allocated at a logical level so that technical design can begin from a consistent analysis baseline.
 
 This skill governs the System Analysis artifact. Invoke conditional companion skills only where this standard directs; they provide focused analysis guidance without replacing SA ownership.

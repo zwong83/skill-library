@@ -5,6 +5,18 @@ description: Design, implement or review permission policies and enforcement for
 
 # Authorization Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved actions/resources, actors, policy, ownership and tenant boundaries.
+- **Conditional inputs:** Identity attributes, existing enforcement, policy lifecycle and API/data constraints when affected.
+- **Optional context:** Alternative policy models and denial incidents.
+- **Outputs:** Permission/enforcement matrices, consistency/lifecycle rules, denial semantics and verification.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve seven-step outcomes without broadening approved permissions.
+
+
 Determine whether a trusted actor may perform a specific action on a resource in its current context. Consume the authentication principal contract; possession of a valid session or JWT does not grant every operation.
 
 ## Core rules

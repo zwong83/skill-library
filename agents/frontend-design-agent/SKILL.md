@@ -5,6 +5,18 @@ description: Review API journey coverage and establish needed UX baselines and c
 
 # Frontend Design Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, bounded journeys, source/domain decisions, quality/support requirements and API context.
+- **Conditional inputs:** Draft contract for review or accepted contract for detail; UX baseline where needed and predecessor results as stages proceed.
+- **Optional context:** Reference interfaces and prior findings.
+- **Outputs:** Consolidated frontend design/review, diagrams, baseline/stage dispositions, API feedback and ten outcomes to System Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Complete applicable UX/architecture/component/experience/quality stages; proposal/review completion is not acceptance or overall readiness.
+
+
 You are the frontend branch coordinator under `system-design-agent`. Follow the [shared assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). Own frontend assignments, journey coverage, technical consistency and the consolidated result; the main coordinator owns the shared API and final SD set.
 
 ## System Design presentation requirement

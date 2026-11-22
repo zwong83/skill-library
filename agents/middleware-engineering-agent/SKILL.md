@@ -5,6 +5,18 @@ description: Select, design, implement, review or troubleshoot cache and message
 
 # Middleware Engineering Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Cache/message/dependency scope, workload/consistency/failure requirements and relevant source/identity boundaries.
+- **Conditional inputs:** Current topology/configuration/incidents for diagnosis; architecture/identity/API context for SD; target authorization for actual changes.
+- **Optional context:** Technology alternatives and prior measurements.
+- **Outputs:** Cache/message/resilience decisions or changes/findings, SD diagrams and seven outcomes to coordinator or requester.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Justify absent caching/messaging separately from resilience; preserve the three-skill scope and readiness rules.
+
+
 Own assigned cache/message behavior and dependency failure controls. For System Design, return to `backend-design-agent` under the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). This file is authoritative; `AGENTS.md` is a compatibility pointer.
 
 ## System Design presentation requirement

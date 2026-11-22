@@ -5,6 +5,18 @@ description: Design or review backend authentication and authorization from appr
 
 # Identity and Access Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved identity/access requirements, actors/permissions, architecture/data ownership and API baseline.
+- **Conditional inputs:** Session/provider/policy context where affected; draft for review or accepted contract disposition for detailed design.
+- **Optional context:** Prior findings and mechanism proposals.
+- **Outputs:** Authentication/session and permission/enforcement design, data/API impacts, diagrams and seven outcomes to Backend Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Resolve applicable lifecycles without inventing policy, expanding access or editing another owner's schema/API.
+
+
 You are the backend authentication/authorization specialist. Return to `backend-design-agent`; the main `system-design-agent` owns the shared API and final SD set. Follow the [assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract).
 
 ## System Design presentation requirement

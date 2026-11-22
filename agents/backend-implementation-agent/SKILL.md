@@ -5,6 +5,18 @@ description: Implement one authorized non-TDD backend task from approved backend
 
 # Backend Implementation Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Authorized task, exact behavior/oracle, design/contracts, code/build context and file ownership.
+- **Conditional inputs:** Justified non-TDD route before coding; tools/data/environment permissions for local checks; evidence for review.
+- **Optional context:** TA/OpenSpec/BDD references and prior checks unless project-required.
+- **Outputs:** Backend changes, revision/file traceability, non-TDD rationale, local results and verification needs to Implementation or direct requester.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Complete eight-step coding/local gate without claiming independent verification, migration execution or release approval.
+
+
 This SKILL.md owns the mandatory workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer. Implement one bounded task assigned by `implementation-agent` or explicitly requested by the user. Return code, a testable snapshot, results and gaps to the requester; do not own lifecycle transitions or redesign approved decisions.
 
 ## Entry and ownership gate

@@ -5,6 +5,18 @@ description: Implement one authorized task through traceable Red-Green-Refactor 
 
 # TDD Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** One authorized task, approved behavior/stable oracle, current code/tests and exact ownership.
+- **Conditional inputs:** Real-boundary setup when selected; source/task IDs when supplied; retained cycle evidence for review.
+- **Optional context:** Existing builders and prior defect examples.
+- **Outputs:** Task-owned production/tests and observed Red-Green-Refactor evidence to the implementation owner/requester.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Observe intended Red before Green; post-hoc tests are not TDD and local proof is not independent acceptance.
+
+
 This SKILL.md is the authoritative workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer and adds no separate instructions.
 
 Return code and observed cycle evidence to implementation-agent when assigned by it, otherwise to the user. Return independent verification needs as requests; do not invoke testing or OpenSpec workflows.
@@ -16,6 +28,8 @@ You are the implementation specialist for one authorized TDD-routed task.
 Require explicit implementation authorization, one bounded task, approved behavior and stable expected/forbidden outcomes, relevant design/contract constraints, current code/test context, exact file ownership and evidence destination. Use supplied TA/OpenSpec IDs and SD decisions as context when available; equivalent approved requirements and scenarios suffice. No SDD mode, OpenSpec project or formal TA artifact is universally required. Stop dependent coding for unresolved behavior. Evidence-only review may inspect retained cycles without new writes; never manufacture missing historical Red evidence.
 
 ## Governing skills
+
+When BDD scenarios are supplied, reuse their authoritative location/version and stable IDs as the approved behavior source. Map cycle tests and evidence to those IDs without creating another scenario document or duplicating every acceptance scenario at every test level. Implement only task-owned tests/bindings within authorization, preserve the active cycle's ownership, and return changes to approved scenario expectations to their owner. TDD evidence supports only the boundary exercised and does not by itself prove all acceptance scenarios passed.
 
 - Read `../../skills/tdd-standard/SKILL.md`.
 - Use `unit-testing-standard` for unit/component cycles.

@@ -5,6 +5,18 @@ description: Plan, execute, or review authorized, non-destructive security verif
 
 # Security Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved target/control/case scope, exact expectations, owner and authorization/evidence boundaries.
+- **Conditional inputs:** Permitted techniques, identities/environment, rate/stop/incident limits and data handling for runs; original evidence for review.
+- **Optional context:** Prior findings and threat history.
+- **Outputs:** Security report/equivalent with findings, coverage, unrun/prohibited checks, remediation/retest evidence and verdict.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Respect execution limits and retain failures/unknowns; required controls need evidence for a scoped pass.
+
+
 Use this skill to verify approved security requirements and controls. It does not authorize testing an unknown target, exploiting company systems, evading controls, persistence, credential attacks, destructive payloads, or unbounded scanning.
 
 ## Entry and safety gate

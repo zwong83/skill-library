@@ -5,6 +5,18 @@ description: Select, execute, and assess cross-level regression coverage from th
 
 # Regression Testing Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Base/target revisions, actual change impact, approved expectations and relevant suite inventory.
+- **Conditional inputs:** Representative data/environment and authorization for execution; original specialist/results evidence for review.
+- **Optional context:** Defect history and flake/coverage trends.
+- **Outputs:** Regression selection/report with inclusion/exclusion rationale, results, gaps and scoped verdict.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Evidence must cover affected risk at target conditions; preserve failures and unrun required checks.
+
+
 This SKILL.md is the authoritative workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer and adds no separate instructions.
 
 Return test results, coverage gaps, and blockers to the requesting agent or user. Report work outside the assigned testing scope for reassignment. This workflow is invoked independently; do not start OpenSpec, implementation, Test Analysis or another testing agent. Consume supplied plans, code snapshots and evidence as inputs. Use approved source/case IDs and exact expectations; a formal case plan or equivalent approved case set is optional unless the project or assignment explicitly requires it. If one is supplied, preserve its case ownership and applicability decisions. Test-file writes and environment use need their applicable authorization, independent of any coding lifecycle.

@@ -5,6 +5,18 @@ description: Select, design, implement or review identity verification and sessi
 
 # Authentication Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Actors/clients, identity journeys, trust boundaries and requirements.
+- **Conditional inputs:** Provider/session/API context, assurance/recovery/privacy rules and relevant existing evidence.
+- **Optional context:** Alternative mechanisms and incident examples.
+- **Outputs:** Authentication/session flows, validation/lifecycle/revocation decisions and verification needs.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply seven-step readiness; design does not authorize implementation.
+
+
 Establish who the caller is and how that identity remains trustworthy over its lifecycle. Authorization policy is a separate decision. Select mechanisms from requirements and approved identity infrastructure; do not assume every application needs JWTs or a new identity provider.
 
 ## Core rules

@@ -5,6 +5,18 @@ description: Define and review shared backend/frontend OpenAPI contracts, and de
 
 # API Design Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Mode, consumers/use cases, ownership and interface requirements.
+- **Conditional inputs:** Existing contract/compatibility policy for evolution; security, traffic and latency constraints when relevant.
+- **Optional context:** Consumer examples and alternative proposals.
+- **Outputs:** Versioned contract/design or findings, operation/schema/error/security decisions and validation evidence.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply eight-step readiness; recommendations and planned checks are not approval or execution.
+
+
 Use this skill when an API is introduced, changed, reviewed, or implemented. Produce a contract that callers and providers can evolve independently without guessing.
 
 ## System Design coordinator mode

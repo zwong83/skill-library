@@ -5,6 +5,18 @@ description: Implement one authorized non-TDD frontend task through a mandatory 
 
 # Frontend Implementation Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Authorized frontend task, exact UI/behavior expectations, design/contracts, code/build context and ownership.
+- **Conditional inputs:** Justified non-TDD route before coding; UX/state/support baseline and permissions/environment for local checks.
+- **Optional context:** TA/OpenSpec/BDD references and prior screenshots/checks unless project-required.
+- **Outputs:** Frontend changes, revision/file traceability, non-TDD rationale, local results and verification needs to Implementation or direct requester.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Complete eight-step coding/local gate without replacing independent UI/accessibility or acceptance verification.
+
+
 This SKILL.md owns the mandatory workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer. Implement one bounded task assigned by `implementation-agent` or explicitly requested by the user. Return code, a testable snapshot, results and gaps to the requester; do not own lifecycle transitions or redesign approved decisions.
 
 ## Entry and ownership gate

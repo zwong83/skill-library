@@ -5,6 +5,18 @@ description: Design, implement, or review web-client security for untrusted cont
 
 # Frontend Security Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Client assets/trust boundaries, identity/session context and approved security requirements.
+- **Conditional inputs:** Code, dependencies, storage and deployment configuration for affected controls; authorized scope for verification.
+- **Optional context:** Prior findings and threat examples.
+- **Outputs:** Client threat/control/ownership matrix, content/session/browser rules and verification evidence/gaps.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Preserve server authority and approved controls; unresolved enforcement/evidence remains explicit.
+
+
 When used by a dedicated frontend design specialist, honor that agent's explicit skill boundary, including transitive references. Route other concerns as evidence or change requests through `frontend-design-agent`; do not load additional skills or take over another specialist's decisions. Standalone use retains the applicable routing below.
 
 Use this skill for browser/client-specific controls within an approved security architecture and data classification.

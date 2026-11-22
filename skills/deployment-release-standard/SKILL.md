@@ -5,6 +5,18 @@ description: Design, implement, or review safe software build, deployment, and r
 
 # Deployment and Release Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Release unit/artifact, environments, owners, risk and compatibility requirements.
+- **Conditional inputs:** Existing pipeline/topology, migration/recovery obligations and evidence; authorization for actual delivery actions.
+- **Optional context:** Prior rollout incidents and alternative strategies.
+- **Outputs:** Artifact/pipeline model, rollout/migration/recovery plan, gates, owners and evidence.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply mode-specific readiness; delivery design is not a deployed release or authorization to deploy.
+
+
 Use this skill when software, configuration, schema, infrastructure, or a feature must move safely from source through environments into user-visible operation.
 
 ## Core Rules

@@ -5,6 +5,18 @@ description: Select, execute, and review risk-based regression coverage across u
 
 # Regression Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Base/target revisions, actual change impact, approved expectations and relevant suite inventory.
+- **Conditional inputs:** Representative data/environment and authorization for execution; original specialist/results evidence for review.
+- **Optional context:** Defect history and flake/coverage trends.
+- **Outputs:** Regression selection/report with inclusion/exclusion rationale, results, gaps and scoped verdict.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Evidence must cover affected risk at target conditions; preserve failures and unrun required checks.
+
+
 Use this skill to determine what existing behavior must be re-proven after code, configuration, schema, dependency, infrastructure, or contract changes.
 
 ## Core rules

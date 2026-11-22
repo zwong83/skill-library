@@ -5,6 +5,18 @@ description: Design, implement, execute, or review traceable system and end-to-e
 
 # System and End-to-End Testing Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved critical journey/cases, actors/start/end states and system/component boundary.
+- **Conditional inputs:** Deployed versions/topology, identities/data/dependencies, observability/cleanup and authorization for execution; correlated evidence for review.
+- **Optional context:** Journey incidents and representative traffic examples.
+- **Outputs:** Authorized tests and journey report with authoritative effects, fidelity gaps and E2E verdict.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Required cross-component outcomes need evidence; UI success or an HTTP response alone cannot prove the journey.
+
+
 Use this skill when a business or operational outcome can be proven only through multiple deployed components, services, interfaces, data stores, or asynchronous stages working together.
 
 ## Core rules

@@ -5,6 +5,18 @@ description: Design, implement, review, or troubleshoot structured application l
 
 # Log and Trace Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Diagnostic/audit/operational questions, affected operations and telemetry/privacy requirements.
+- **Conditional inputs:** Existing events/spans/correlation/sinks and runtime evidence for diagnosis; code/target scope for changes.
+- **Optional context:** Incident examples and dashboard preferences.
+- **Outputs:** Event/span/correlation/handling rules, diagnostic changes or findings and verification.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Complete seven outcomes; telemetry must support the diagnostic claim without exposing restricted data.
+
+
 When used by `diagnostics-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Identify the diagnostic, operational, or audit question. Logs record meaningful events at the owning boundary. Traces explain causal paths and latency across operations. Select logging, tracing, or their shared context based on the task. Follow the project's approved telemetry contract and existing libraries. For metrics-only work, use the applicable operability skill.

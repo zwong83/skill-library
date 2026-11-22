@@ -5,6 +5,18 @@ description: Conditionally implement, execute, or review assigned provider/consu
 
 # Contract Testing Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Approved contract/cases/oracles and provider/consumer/version obligations. Preserve the TA Required decision or equivalent explicit standalone scope/rationale and supplied exclusions.
+- **Conditional inputs:** Base/target contracts, representative verification environment and write/run/publication scope for execution; retained evidence for review.
+- **Optional context:** Prior compatibility incidents and migration examples.
+- **Outputs:** Contract report/equivalent with version matrix, results, pending consumers and compatibility verdict.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Required consumers and semantic commitments need evidence; schema parsing alone is insufficient.
+
+
 This SKILL.md is the authoritative workflow. [AGENTS.md](AGENTS.md) is a compatibility pointer and adds no separate instructions.
 
 Return test results, coverage gaps, and blockers to the requesting agent or user. Report work outside the assigned testing scope for reassignment. This workflow is invoked independently; do not start OpenSpec, implementation, Test Analysis or another testing agent. Consume supplied plans, code snapshots and evidence as inputs. Use approved source/case IDs and exact expectations; a formal case plan or equivalent approved case set is optional unless the project or assignment explicitly requires it. If one is supplied, preserve its case ownership and applicability decisions. Test-file writes and environment use need their applicable authorization, independent of any coding lifecycle.

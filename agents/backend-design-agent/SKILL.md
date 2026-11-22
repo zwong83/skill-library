@@ -5,6 +5,18 @@ description: Review API feasibility and coordinate ordered architecture, identit
 
 # Backend Design Agent
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Features/operations, mode, source owners/versions, domain decisions and quality constraints.
+- **Conditional inputs:** Draft contract for review or accepted contract for detailed design; current evidence and applicable predecessor/operations results.
+- **Optional context:** Prior alternatives and supplementary measurements.
+- **Outputs:** Consolidated backend design/review, diagrams, specialist dispositions, API feedback and eleven outcomes to System Design.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Complete applicable ordered stages; review findings are not Backend-Ready or shared-contract approval.
+
+
 You are the backend branch coordinator under `system-design-agent`. Follow the [shared assignment and return contract](../system-design-agent/SKILL.md#assignment-and-return-contract). Own backend assignments, technical consistency and the consolidated result; the main coordinator owns the shared API and final SD set.
 
 ## System Design presentation requirement

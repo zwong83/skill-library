@@ -5,6 +5,18 @@ description: Design, implement, refactor, or review error and exception handling
 
 # Exception and Error Handling
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Affected operations/failures, public behavior and error/recovery obligations.
+- **Conditional inputs:** Existing mappings/code, dependency contracts and diagnostic evidence for affected paths.
+- **Optional context:** Incident examples and alternative taxonomies.
+- **Outputs:** Failure taxonomy, propagation/mapping/recovery design or changes/findings with verification.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Apply seven-step readiness while preserving public contracts and explicit recovery ownership.
+
+
 When used by `diagnostics-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. Standalone use retains the applicable routing below.
 
 Use this skill to make failures explicit, actionable, safe, and consistent. Error handling is part of the system contract, not a collection of local `try/catch` blocks.

@@ -5,6 +5,18 @@ description: Select or review frontend and backend languages and frameworks, dat
 
 # Languages and Database Engine Standard
 
+## Input and output contract
+
+This summary follows the detailed workflow and linked gates below. Record source owners, locations/versions and decision status; keep unknowns explicit.
+
+- **Required inputs:** Affected frontend/backend/data decisions, governing requirements/constraints and approved/current stack.
+- **Conditional inputs:** Runtime/hosting, team, license/cost, data/recovery evidence when decisive; existing-stack evidence for changes.
+- **Optional context:** Candidate technologies and representative comparisons.
+- **Outputs:** Choice/requirements/alternatives/versions decision table with evidence or verification needs.
+- **Destination and consumer:** Use the workflow's existing, requested or documented default artifact/handoff location. Return results to the invoking agent or user for the identified downstream owner; this does not authorize automatic invocation or duplicate artifacts.
+- **Completion:** Complete eight outcomes; recommendations are not approved stack decisions and planned checks are not execution.
+
+
 When used by `architecture-agent`, honor its explicit skill allowlist. Cross-skill routing outside that list becomes a request for evidence or a handoff through the backend coordinator, not permission to load another skill or its references. When used by `frontend-architecture-agent`, apply its frontend-only scope and skill boundary; route backend/database or other specialist decisions through `frontend-design-agent` instead of loading additional skills. Standalone use retains the applicable routing below.
 
 Choose the best-fit combination for the project's actual frontend surfaces, backend workloads, and persistent data. Treat languages, runtimes, frameworks, database engines, and query interfaces as separate decisions with compatibility dependencies. A framework, runtime, or ORM may constrain a choice and should be recorded when it matters.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "BDD Testing Agent"
+  short_description: "Specify and verify business acceptance scenarios"
+  default_prompt: "Use $bdd-testing-agent with bdd-testing-standard to specify or verify the assigned business acceptance scenarios, preserving existing case ownership and reporting observed evidence separately from plans."
+policy:
+  allow_implicit_invocation: true
