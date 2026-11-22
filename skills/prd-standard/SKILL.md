@@ -21,6 +21,8 @@ Use this skill when the user wants to create, refine, compare, or quality-check 
 
 The PRD is the product source of truth: why the product exists, who it serves, what behavior is needed, how success is measured, and what is explicitly out of scope. It is not automatically an architecture document or an authorization to make technical choices.
 
+When a product requirement depends on an unresolved UX decision, optionally use installed `ui-ux-pro-max` following [bounded Product UX exploration](references/product-ux-exploration.md). Reuse existing accepted journeys and concepts first. Record proposed versus accepted behavior and pass the same decisions to Frontend Experience; detailed visual/component design remains downstream. This supporting skill is not required for every PRD.
+
 ## Core operating rules
 
 - Treat user-provided facts, research, and confirmed decisions as the source of truth.

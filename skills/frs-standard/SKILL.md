@@ -19,6 +19,8 @@ This summary follows the detailed workflow and linked gates below. Record source
 
 Use this skill when the user wants to create, refine, compare, or quality-check an FRS for a product or feature. The FRS translates approved business/product/system intent into detailed, testable functional behavior that developers and QA can implement and verify without guessing.
 
+When a feature flow, interaction or usability decision must be clarified to specify behavior, optionally use installed `ui-ux-pro-max` through [bounded Product UX exploration](../prd-standard/references/product-ux-exploration.md). Reuse accepted product/UX sources, express accepted outcomes as testable FRS behavior, and return unresolved product choices to their owner. This does not authorize detailed visual design or implementation and is not required for every FRS.
+
 ## Core operating rules
 
 - Treat the supplied SRS, PRD, BRD, approved change request, and confirmed stakeholder decisions as the source of truth.

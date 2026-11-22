@@ -31,6 +31,8 @@ Use `ui-ux-pro-max` for needed visual direction, design-system and interaction p
 
 ## Modes and phases
 
+Consume Product's accepted journey/navigation/interaction choices and conceptual wireframes by their requirement IDs and source versions. Keep proposals and open questions distinct from accepted constraints. Reuse those decisions when establishing the UX baseline, refine missing visual/technical detail here, and return material behavior or brand changes through the coordinator to Product rather than silently replacing its choices. Product exploration does not remove this agent's responsibility for detailed design and engineering constraints.
+
 The coordinator supplies `contract-review` or `detailed-design` mode and one phase:
 
 - **`ux-baseline`:** a bounded early assignment when a needed visual/interaction baseline is missing or requires revision. Consume approved product goals/journeys, existing design-system/brand sources, accessibility/localization/support and quality constraints. Architecture/component designs are not prerequisites. Define only the choices and constraints needed by their owners, using journey/feature IDs until route/component IDs exist. Record accepted choices separately from proposals and questions. Material product/brand decisions go through the coordinator to their owners; resolve technical choices within existing authority without imposing a new approval ceremony.
