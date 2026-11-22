@@ -163,22 +163,58 @@ Approved FRS feature behavior and acceptance criteria are BDD's primary input; u
 
 Write and approve one authoritative BDD scenario set, then reuse its location/version and stable IDs in both implementation and testing. Scenarios define behavior, bindings/fixtures implement verification, and each run produces separate evidence. Reuse existing approved FRS scenarios or maintained feature files; handoffs and Test Analysis reference them instead of maintaining copies. Revise scenarios for approved behavior changes, clarifications or coverage gaps grounded in approved behavior, then reassess affected tests/evidence. A new phase or run does not require rewriting scenarios.
 
-Requirements and System Design remain upstream authorities. After those decisions exist, the user invokes the needed workflow independently. Dashed arrows below are supplied data/evidence, not automatic agent delegation or a mandatory execution sequence.
+The normal OpenSpec-based delivery sequence is requirements and analysis, System Design, OpenSpec planning/task handoff, Implementation, independent testing, then OpenSpec convergence review. Independence describes who invokes and owns each workflow; it does not remove the order of their artifact dependencies. The user invokes each stage when its inputs are ready. In the diagram, solid arrows show delegation; dashed arrows show supplied artifacts/evidence. Testing is a grouping of independently invoked workflows, not a coordinator agent.
 
 ```mermaid
-flowchart LR
-    R[Approved requirements and design] -.-> O[OpenSpec artifacts]
-    R -.-> I[Implementation]
-    R -.-> T[Testing: analysis and execution]
-    O -.->|Optional approved task package| I
-    O -.->|Optional specification context| T
-    T -.->|Supplied cases or defect evidence| I
+flowchart TD
+    B[Business] -.->|BRD| P[Product: PRD / SRS / FRS]
+    P -.->|Approved requirements| SA[System Analysis]
+    SA -.->|Approved System Analysis| SD[System Design]
+    SD -.->|Define and validate first| API[Shared OpenAPI contract]
+    SD -->|After contract readiness| BE[Backend Design]
+    SD -->|After contract readiness| FE[Frontend Design]
+
+    BE -->|1| BA[Architecture]
+    BE -->|2| IA[Identity / Access]
+    BE -->|3| MW[Middleware]
+    BE -->|4| DG[Diagnostics]
+    BE -->|5 when applicable| DO[Delivery / Operations]
+    BE -->|6 final review| QA[Quality Attributes]
+
+    FE -->|Early UX baseline when needed; later experience detail| FX[Frontend Experience]
+    FE --> FA[Frontend Architecture]
+    FE --> FC[Components / State]
+    FE -->|Final review| FQ[Frontend Quality / Delivery]
+
+    SD -.->|Approved consolidated design| O[OpenSpec: planning and task handoff]
+    O --> OP[Optional OpenSpec Planning]
+    O -.->|Approved task package| I[Implementation]
+    I -->|TDD-selected tasks| TD[TDD]
+    I -->|Non-TDD backend tasks| BI[Backend Implementation]
+    I -->|Non-TDD frontend tasks| FI[Frontend Implementation]
+
+    subgraph TEST[Independent testing workflows]
+        TA[Test Analysis]
+        T[Selected testing specialists]
+    end
+    P -.->|Approved behavior and acceptance| TA
+    SD -.->|Relevant design and contracts| TA
+    O -.->|Scenario and task context| TA
+    I -.->|Code snapshot and local evidence| TA
+    TA -.->|Cases and ownership; no automatic dispatch| T
     I -.->|Code snapshot and local evidence| T
-    I -.->|Supplied implementation evidence| O
-    T -.->|Supplied verification evidence| O
+    T -.->|Defect evidence for authorized correction| I
+    I -.->|Implementation evidence| C[OpenSpec: convergence review]
+    T -.->|Verification evidence| C
+    O -.->|Specifications and acceptance baseline| C
+    C -.->|Applicable gates and explicit authorization| A[OpenSpec: sync / archive]
 ```
 
-Example user invocations: ask OpenSpec to propose a change; independently ask Test Analysis to plan cases; ask Implementation to code approved behavior; ask selected testing specialists to verify a snapshot; later ask OpenSpec to review supplied evidence and archive when authorized. Any unnecessary step can be omitted when its distinct output is not needed; required behavior, authorization and acceptance evidence cannot be silently skipped.
+Backend detailed stages follow the numbered order, with Delivery/Operations conditional. Frontend establishes a missing UX baseline before Architecture and Components/State, then performs detailed Experience work and final Quality/Delivery review. Both branches work from the same accepted contract and the main coordinator consolidates their results before the approved design handoff. Bounded branch contract-review feedback precedes contract readiness; the diagram's branch arrows describe detailed design.
+
+OpenSpec planning/handoff, convergence and sync/archive are modes of the same agent, not three coordinators. For the normal sequence, pass its approved task package to Implementation rather than deriving a competing task plan directly from System Design. Implementation selects TDD or justified non-TDD routes per task. Test Analysis may plan cases before coding and later review actual impact/coverage; independent execution follows when the relevant implementation/environment is available. BDD uses the shared FRS-derived scenario set described above, without creating separate implementation/testing copies.
+
+Example user invocations: ask OpenSpec to prepare and validate the task package from approved design; ask Implementation to implement that package; independently ask Test Analysis to assess coverage and selected testing specialists to verify the snapshot; then ask OpenSpec to review supplied evidence for convergence and sync/archive when authorized. Suitable existing TDD/tests/evidence are reused under their validity rules. Standalone coding or testing from equivalent approved inputs remains supported when OpenSpec is not being used; it is an alternative entry path, not the primary sequence shown here. Required behavior, authorization and acceptance evidence cannot be silently skipped.
 
 The default outputs are separate documents because each artifact has a different audience, purpose, change cadence, and approval gate:
 

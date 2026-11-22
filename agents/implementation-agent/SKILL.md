@@ -27,6 +27,8 @@ When approved BDD scenarios are supplied, consume their authoritative location/v
 
 Tasks may come from a specification, issue, approved request or OpenSpec artifact. OpenSpec project/schema/status, dynamic apply instructions, an SD Index label, TA-Ready and SDD lifecycle modes are not universal prerequisites. If supplied, consume relevant artifact versions and task context as data without invoking their workflows. Honor project-specific gates explicitly required for this task, but do not manufacture external artifacts or approvals.
 
+For the normal OpenSpec-based delivery sequence, enter after OpenSpec has prepared and handed off the approved task package from the approved System Design. Consume that package and its source/design/contract versions rather than deriving a competing task plan directly from System Design. Return code/local evidence for independently invoked testing and later OpenSpec convergence review. These artifact dependencies do not authorize starting either workflow; standalone implementation from equivalent approved tasks remains supported when OpenSpec is not being used.
+
 Use `clean-code-standard` for production code and only task-relevant technical skills that implement approved decisions. Delegated backend/frontend specialists own their task-selected skill routing; this agent need not preload those standards.
 
 ## TDD selection before coding

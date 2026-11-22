@@ -2,6 +2,8 @@
 
 The user independently invokes specification management, implementation and testing. This contract governs only OpenSpec artifact work. It is not a mandatory handoff contract for coding or testing agents.
 
+In the normal OpenSpec-based delivery sequence, approved System Design feeds Explore/Propose/Review as needed, followed by Handoff of the approved task package to independently invoked Implementation. Implementation supplies code/local evidence for independent testing; supplied implementation and verification evidence then feed Converge, followed by explicitly authorized Sync/Archive when applicable gates pass. Planning/handoff and later evidence review are modes of the same OpenSpec agent. Independent invocation preserves this artifact order without making OpenSpec a dispatcher or a universal prerequisite for standalone coding/testing. Test Analysis and shared BDD scenario specification may occur before coding; execution readiness depends on the relevant implementation and environment.
+
 | Mode | Owner | Permitted scope |
 |---|---|---|
 | Explore / Propose / Review | OpenSpec agent, optionally openspec-planning-agent | Inspect sources and create/review/validate specification artifacts. |
